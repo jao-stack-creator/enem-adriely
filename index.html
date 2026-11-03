@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redação da Adriely</title>
+<meta name="description" content="Hoje: dia da redação. O básico explicado, o tema de treino e a redação coringa.">
+<meta property="og:title" content="Redação da Adriely">
+<meta property="og:description" content="Hoje: dia da redação. O básico explicado, o tema de treino e a redação coringa.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Lexend:wght@400;700&display=swap">
+<style>
+/* Paleta: azul de caneta + amarelo de marca-texto. Layout: uma coluna pensada para celular; cada seção é um "caderno" com etiqueta colorida; checklists em bolinhas de cartão-resposta; a redação-modelo numa folha pautada. */
+:root {
+  --bg: #F5F7FC;
+  --surface: #FFFFFF;
+  --ink: #18203A;
+  --muted: #4E5874;
+  --line: #D8DEEE;
+  --accent: #2445B5;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E4EAFB;
+  --sun: #F5C518;
+  --sun-soft: #FFF5C2;
+  --warn: #C0392B;
+  --warn-soft: #FCE6E3;
+  --rule: #C9D6EE;
+  --margin: #E8A0A0;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Lexend", "Segoe UI", system-ui, sans-serif;
+  --lh-sheet: 30px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+    --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+    --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+    --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+  --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+  --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+  --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h2 { font-size: 1.75rem; font-weight: 750; letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, input:focus-visible + .bubble, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+strong { font-weight: 700; }
+.muted { color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.stack-lg { display: flex; flex-direction: column; gap: 22px; }
+
+/* Hero */
+.hero { padding-block: 40px 8px; display: flex; flex-direction: column; gap: 16px; }
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.hero h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 1.12rem; max-width: 60ch; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.nav a { text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: 0.92rem; }
+.nav a:hover { border-color: var(--accent); }
+
+/* Seção como caderno */
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 16px; }
+.tab { align-self: flex-start; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.tab.sun { background: var(--sun-soft); color: var(--ink); }
+.intro { font-size: 1.05rem; max-width: 62ch; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.stat b { font-family: var(--font-display); font-size: 2.3rem; font-weight: 800; line-height: 1; color: var(--accent); display: block; font-variant-numeric: tabular-nums; }
+.stat span { font-weight: 700; }
+
+.note { border-radius: 12px; padding: 14px 16px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 6px; }
+.note.sun { background: var(--sun-soft); }
+.note.warn { background: var(--warn-soft); }
+.note .label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+.note.warn .label { color: var(--warn); }
+
+ul.clean { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+ul.clean li { padding-left: 22px; position: relative; }
+ul.clean li::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+ul.clean.x li::before { background: var(--warn); border-radius: 2px; transform: rotate(45deg); }
+
+/* Fórmula da média */
+.calc { font-family: var(--font-display); font-size: 1.05rem; background: var(--surface); border: 1px dashed var(--accent); border-radius: 12px; padding: 14px 16px; }
+
+/* Bolinhas de cartão-resposta */
+.check { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; padding: 6px 0; }
+.check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.bubble { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--ink); margin-top: 1px; display: grid; place-items: center; transition: background .15s; }
+.check input:checked + .bubble { background: var(--ink); }
+.check input:checked + .bubble + .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+.day { display: grid; grid-template-columns: 64px 1fr; gap: 14px; }
+.day .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 12px; background: var(--accent); color: var(--accent-ink); padding: 8px 4px; align-self: start; line-height: 1.1; }
+.day .date small { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.day .date b { font-size: 1.7rem; }
+.day.light .date { background: var(--sun); color: #2A2200; }
+.day h3 { margin-bottom: 4px; }
+
+/* Competências */
+.comp { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: start; }
+.comp .n { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; background: var(--accent-soft); color: var(--accent); border-radius: 10px; text-align: center; padding: 8px 0; }
+
+/* Proposta estilo ENEM */
+.proposta { background: var(--surface); border: 2px solid var(--ink); border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.proposta .head { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+.tema { font-weight: 700; background: var(--sun-soft); padding: 1px 4px; border-radius: 3px; }
+.texto { border-left: 3px solid var(--line); padding-left: 14px; display: flex; flex-direction: column; gap: 6px; }
+.texto .t { font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.08em; }
+.texto cite { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+
+/* Esqueleto */
+.bone { display: flex; flex-direction: column; gap: 8px; }
+.bone .part { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.bone .lines { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.slot { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 4px; font-weight: 700; }
+
+/* Repertórios */
+.rep .who { font-family: var(--font-display); font-weight: 750; font-size: 1.1rem; }
+.rep .when { font-size: 0.92rem; color: var(--muted); }
+.rep q { font-style: italic; }
+
+/* Folha pautada */
+.sheet { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 16px 56px; overflow: hidden; }
+.sheet .nums { position: absolute; left: 0; top: 16px; width: 40px; text-align: right; font-size: 0.75rem; color: var(--muted); line-height: var(--lh-sheet); font-variant-numeric: tabular-nums; user-select: none; }
+.sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 46px; width: 1px; background: var(--margin); }
+.sheet .body {
+  line-height: var(--lh-sheet); font-size: 16px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--lh-sheet) - 1px), var(--rule) calc(var(--lh-sheet) - 1px), var(--rule) var(--lh-sheet));
+}
+.sheet .body p { text-indent: 2em; }
+.sheet .title-line { text-align: center; font-weight: 700; }
+mark.fix { background: var(--sun-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+.legend { display: flex; gap: 10px; align-items: center; font-size: 0.92rem; }
+.legend i { width: 28px; height: 14px; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 3px; display: inline-block; flex: none; }
+
+.five { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.five .card { padding: 14px; gap: 4px; }
+.five .k { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: 0.95rem; }
+
+/* Linha do tempo da prova */
+.timeline { display: flex; flex-direction: column; gap: 0; border-left: 3px solid var(--accent-soft); margin-left: 8px; }
+.timeline .step { position: relative; padding: 0 0 18px 20px; }
+.timeline .step::before { content: ""; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.timeline .step .time { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+.final { background: var(--accent); color: var(--accent-ink); border-radius: 18px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+.final h2 { font-size: 1.9rem; }
+.final p { font-size: 1.06rem; }
+footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+
+/* Liberação por dia */
+.today-pill { align-self: flex-start; display: inline-flex; gap: 8px; align-items: center; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 0.95rem; }
+.today-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); }
+.new-badge { align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sun); color: #2A2200; border-radius: 6px; padding: 3px 8px; }
+.tabrow { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.mission { border: 2px solid var(--accent); }
+.mission .tab { margin-bottom: 2px; }
+.road { display: flex; flex-direction: column; gap: 10px; }
+.road .item { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.road .item .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 10px; padding: 6px 4px; line-height: 1.1; background: var(--accent-soft); color: var(--accent); }
+.road .item .date small { display: block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.road .item .date b { font-size: 1.4rem; }
+.road .item.is-today { border: 2px solid var(--sun); }
+.road .item.is-today .date { background: var(--sun); color: #2A2200; }
+.road .item.is-locked { opacity: 0.78; }
+.road .item.is-locked .date { background: var(--line); color: var(--muted); }
+.road .state { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; gap: 6px; align-items: center; color: var(--accent); }
+.road .is-locked .state { color: var(--muted); }
+.road .is-today .state { color: var(--ink); }
+.road .state svg { width: 13px; height: 13px; }
+.road h3 { font-size: 1.08rem; margin-top: 2px; }
+.road p { font-size: 0.95rem; color: var(--muted); }
+
+/* Para quem nunca viu */
+.howto { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.howto div { display: flex; gap: 10px; align-items: flex-start; }
+.howto .n, .parts .n { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-family: var(--font-display); font-weight: 800; display: grid; place-items: center; }
+.parts { display: grid; gap: 10px; }
+.parts .card { flex-direction: row; gap: 12px; align-items: flex-start; padding: 14px; }
+.parts .lines { font-size: 0.85rem; color: var(--muted); }
+.gloss { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 0; }
+.gloss div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.gloss dt { font-family: var(--font-display); font-weight: 750; font-size: 1.05rem; }
+.gloss dd { margin: 4px 0 0; color: var(--muted); }
+.gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
+  <h1>Adriely, rumo à <span>Fisioterapia</span></h1>
+  <div class="today-pill"><span class="dot"></span>Hoje: dia da redação</div>
+  <p class="lede">Esta é a <strong>parte de hoje</strong> do seu guia para o primeiro ENEM: <strong>só redação</strong>. Leia com calma, faça o treino no papel e, amanhã, você recebe a próxima parte.</p>
+  <nav class="nav" aria-label="Partes do guia">
+    <a href="#hoje-3">Missão de hoje</a>
+    <a href="#redacao">Redação</a>
+    <a href="#treino">Tema de treino</a>
+    <a href="#coringa">Redação coringa</a>
+  </nav>
+</header>
+
+<section id="como-usar">
+  <div class="card stack">
+    <h3>Nunca usou um guia assim? É fácil:</h3>
+    <div class="howto">
+      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>, logo abaixo. Ela diz o que fazer hoje.</p></div>
+      <div><span class="n">2</span><p>Toque nos <strong>textos azuis sublinhados</strong> para ir direto à parte certa.</p></div>
+      <div><span class="n">3</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+      <div><span class="n">4</span><p>Ficou com dúvida numa palavra? Veja <a href="#palavras">o dicionário da redação</a>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hoje-3" class="mission-sec">
+  <div class="card mission stack">
+    <span class="tab sun">Missão de hoje · terça, 3/11</span>
+    <h2>Dia da redação</h2>
+    <label class="check"><input type="checkbox" id="m3-1"><span class="bubble"></span><span class="txt">Ler <a href="#redacao">Redação: o básico explicado</a>, com calma.</span></label>
+    <label class="check"><input type="checkbox" id="m3-2"><span class="bubble"></span><span class="txt">Fazer o <a href="#treino">tema de treino</a> com cronômetro de 1h10, no papel.</span></label>
+    <label class="check"><input type="checkbox" id="m3-3"><span class="bubble"></span><span class="txt">Dar uma lida na <a href="#coringa">redação coringa</a>. Hoje é só para conhecer, não precisa decorar.</span></label>
+    <label class="check"><input type="checkbox" id="m3-4"><span class="bubble"></span><span class="txt">Tirar foto da folha definitiva e mandar para correção.</span></label>
+  </div>
+</section>
+
+<section id="redacao">
+  <div class="tabrow"><span class="tab sun">A parte mais importante</span></div>
+  <h2>Redação: o básico explicado</h2>
+  <p class="intro">A redação do ENEM é um texto <strong>dissertativo-argumentativo</strong>. Parece difícil, mas é simples: você <strong>defende uma opinião</strong> sobre o tema com <strong>argumentos</strong> e, no final, <strong>propõe uma solução</strong> para o problema.</p>
+
+  <h3>A redação tem 4 partes (4 parágrafos)</h3>
+  <div class="parts">
+    <div class="card"><span class="n">1</span><div><strong>Introdução</strong> <span class="lines">· 4 a 5 linhas</span><p>Apresenta o assunto e diz <strong>a sua opinião</strong> sobre ele.</p></div></div>
+    <div class="card"><span class="n">2</span><div><strong>Desenvolvimento 1</strong> <span class="lines">· 7 a 8 linhas</span><p>Explica o <strong>primeiro motivo</strong> do problema, com um exemplo.</p></div></div>
+    <div class="card"><span class="n">3</span><div><strong>Desenvolvimento 2</strong> <span class="lines">· 7 a 8 linhas</span><p>Explica o <strong>segundo motivo</strong> do problema, com outro exemplo.</p></div></div>
+    <div class="card"><span class="n">4</span><div><strong>Conclusão</strong> <span class="lines">· 5 a 6 linhas</span><p>Dá uma <strong>solução</strong> para o problema: quem deve fazer o quê, e como.</p></div></div>
+  </div>
+
+  <h3 id="palavras">Dicionário da redação</h3>
+  <p>Palavras que aparecem neste guia e na prova, explicadas de um jeito simples:</p>
+  <dl class="gloss">
+    <div><dt>Tema</dt><dd>O assunto sobre o qual você vai escrever. Ele vem <em>entre aspas</em> na proposta.</dd></div>
+    <div><dt>Textos motivadores</dt><dd>Os textos curtos que vêm junto com o tema, para dar ideias. Pode usar as ideias, mas <em>não pode copiar</em>.</dd></div>
+    <div><dt>Dissertativo-argumentativo</dt><dd>Um texto em que você dá a sua opinião e mostra, com motivos, que ela faz sentido.</dd></div>
+    <div><dt>Tese</dt><dd>A <em>sua opinião</em> sobre o tema, numa frase. Ela fica no fim da introdução.</dd></div>
+    <div><dt>Argumento</dt><dd>Um motivo que sustenta a sua opinião. Cada desenvolvimento explica um.</dd></div>
+    <div><dt>Repertório</dt><dd>Um conhecimento de fora que você traz: uma lei, um livro, um filósofo, um fato histórico. Mostra que você sabe <em>mais do que está na prova</em>.</dd></div>
+    <div><dt>Conectivo</dt><dd>Palavra que liga uma ideia na outra, como <em>"além disso"</em> e <em>"portanto"</em>.</dd></div>
+    <div><dt>Proposta de intervenção</dt><dd>A <em>solução</em> que você sugere no último parágrafo.</dd></div>
+    <div><dt>Competência</dt><dd>Cada um dos 5 pontos que o corretor avalia para dar a nota.</dd></div>
+    <div><dt>Recuo</dt><dd>O espacinho no começo da primeira linha de cada parágrafo.</dd></div>
+    <div><dt>Rascunho</dt><dd>Onde você escreve primeiro, pode errar e riscar. <em>Não vale nota.</em></dd></div>
+    <div><dt>Folha definitiva</dt><dd>A folha que vale nota. Você passa o texto a limpo nela, com caneta preta.</dd></div>
+  </dl>
+
+  <h3>As 5 competências (cada uma vale até 200 pontos)</h3>
+  <div class="stack">
+    <div class="comp"><div class="n">C1</div><div><strong>Escrever certo.</strong> Português formal: ortografia, acentos, concordância, vírgulas. Nada de gírias ou "a gente".</div></div>
+    <div class="comp"><div class="n">C2</div><div><strong>Entender o tema e usar repertório.</strong> Falar exatamente do tema pedido e trazer conhecimentos de fora (um autor, uma lei, um fato histórico) que tenham relação com ele.</div></div>
+    <div class="comp"><div class="n">C3</div><div><strong>Argumentar com organização.</strong> Ter uma opinião clara e defendê-la do começo ao fim, sem fugir da linha.</div></div>
+    <div class="comp"><div class="n">C4</div><div><strong>Ligar as ideias.</strong> Usar conectivos ("além disso", "portanto") para o texto fluir de um parágrafo para o outro.</div></div>
+    <div class="comp"><div class="n">C5</div><div><strong>Propor uma solução completa.</strong> No final, dizer quem deve fazer o quê, como, para quê, e detalhar. Essa solução precisa respeitar os direitos humanos.</div></div>
+  </div>
+
+  <div class="note warn">
+    <span class="label">O que faz a redação valer zero</span>
+    <ul class="clean x">
+      <li>Fugir totalmente do tema.</li>
+      <li>Escrever outro tipo de texto (poema, carta, narração).</li>
+      <li>Escrever <strong>7 linhas ou menos</strong>.</li>
+      <li>Copiar os textos motivadores.</li>
+      <li>Colocar desenhos, ofensas ou uma parte sem nenhuma relação com o texto.</li>
+      <li><strong>Assinar ou escrever seu nome</strong> na folha de redação.</li>
+      <li>Entregar a folha em branco.</li>
+    </ul>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h3>Tamanho</h3><p>No máximo <strong>30 linhas</strong>. O ideal é ficar entre 25 e 30.</p></div>
+    <div class="card"><h3>Rascunho</h3><p>Pode usar à vontade, mas <strong>só a folha definitiva vale</strong>. Passe a limpo com caneta preta.</p></div>
+    <div class="card"><h3>Título</h3><p>É <strong>opcional</strong>. Se não tiver uma boa ideia, pode deixar sem.</p></div>
+  </div>
+</section>
+
+<section id="treino">
+  <div class="tabrow"><span class="tab">Para treinar hoje</span></div>
+  <h2>Tema de treino</h2>
+  <p class="intro">Esta proposta segue o mesmo formato da prova real. Se você recebeu o treino impresso, use as folhas de papel. Se não, dá para ler por aqui e escrever numa folha com 30 linhas numeradas.</p>
+
+  <div class="proposta">
+    <div class="head">Proposta de redação</div>
+    <p>A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema <span class="tema">"Desafios para a inclusão da pessoa com deficiência no mercado de trabalho brasileiro"</span>, apresentando proposta de intervenção que respeite os direitos humanos. Selecione, organize e relacione, de forma coerente e coesa, argumentos e fatos para defesa de seu ponto de vista.</p>
+
+    <div class="texto">
+      <span class="t">TEXTO I</span>
+      <p>"A pessoa com deficiência tem direito ao trabalho de sua livre escolha e aceitação, em ambiente acessível e inclusivo, em igualdade de oportunidades com as demais pessoas."</p>
+      <cite>Lei Brasileira de Inclusão (Lei nº 13.146/2015), art. 34.</cite>
+    </div>
+
+    <div class="texto">
+      <span class="t">TEXTO II</span>
+      <p>A Lei nº 8.213/1991, no art. 93, conhecida como Lei de Cotas, obriga empresas com 100 ou mais empregados a reservar parte das vagas para pessoas com deficiência ou reabilitadas:</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Nº de empregados</th><th>Vagas reservadas</th></tr></thead>
+          <tbody>
+            <tr><td>100 a 200</td><td>2%</td></tr>
+            <tr><td>201 a 500</td><td>3%</td></tr>
+            <tr><td>501 a 1.000</td><td>4%</td></tr>
+            <tr><td>Acima de 1.000</td><td>5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="texto">
+      <span class="t">TEXTO III</span>
+      <p>Segundo o IBGE (PNAD Contínua 2022), o Brasil tem cerca de 18,6 milhões de pessoas com deficiência. A participação delas no mercado de trabalho, porém, é bem menor que a do restante da população.</p>
+    </div>
+
+    <div class="texto">
+      <span class="t">TEXTO IV</span>
+      <p>Capacitismo é o preconceito que trata a pessoa com deficiência como incapaz, menos produtiva ou dependente. Ele aparece em atitudes do dia a dia, como duvidar da competência de um colega cadeirante, e também na falta de rampas, intérpretes de Libras e programas de computador acessíveis nos locais de trabalho.</p>
+      <cite>Texto escrito para este treino.</cite>
+    </div>
+  </div>
+
+  <h3>Como fazer o treino</h3>
+  <div class="stack" id="treino-list">
+    <label class="check"><input type="checkbox" id="t-1"><span class="bubble"></span><span class="txt">Separe 1h10 sem celular por perto. Use o cronômetro.</span></label>
+    <label class="check"><input type="checkbox" id="t-2"><span class="bubble"></span><span class="txt">Leia o tema e os textos. Sublinhe as palavras-chave do tema: <strong>inclusão</strong>, <strong>pessoa com deficiência</strong>, <strong>mercado de trabalho</strong>.</span></label>
+    <label class="check"><input type="checkbox" id="t-3"><span class="bubble"></span><span class="txt">Escolha 2 causas do problema (veja as <a href="#causas">causas coringa</a>).</span></label>
+    <label class="check"><input type="checkbox" id="t-4"><span class="bubble"></span><span class="txt">Faça o rascunho seguindo o <a href="#coringa">esqueleto</a>.</span></label>
+    <label class="check"><input type="checkbox" id="t-5"><span class="bubble"></span><span class="txt">Passe a limpo numa folha com 30 linhas numeradas.</span></label>
+    <label class="check"><input type="checkbox" id="t-6"><span class="bubble"></span><span class="txt">Mande para correção.</span></label>
+  </div>
+  <div class="note sun">
+    <span class="label">Uma ideia que pode ajudar</span>
+    <p>Você quer Fisioterapia. Pode usar o que já sabe sobre <strong>reabilitação e acessibilidade</strong> como argumento. Isso mostra que o texto é seu, e os corretores valorizam isso.</p>
+  </div>
+</section>
+
+<section id="coringa">
+  <div class="tabrow"><span class="tab sun">Seu molde para domingo</span></div>
+  <h2>Redação coringa</h2>
+  <p class="intro">A ideia é chegar na prova com uma <strong>estrutura pronta</strong> e alguns <strong>repertórios decorados</strong> que servem para quase qualquer tema. No domingo, você só encaixa o tema novo.</p>
+  <div class="note warn">
+    <span class="label">Atenção</span>
+    <p>O coringa é para <strong>adaptar</strong>, nunca para copiar igual. Todo repertório precisa ter ligação clara com o tema do dia. Se não tiver, você perde pontos na C2.</p>
+  </div>
+
+  <h3>O esqueleto: 4 parágrafos</h3>
+  <p>As palavras pretas são fixas: você pode usar sempre. Os <span class="slot">quadrinhos azuis</span> são espaços vazios: você troca pelo que serve para o tema do dia.</p>
+  <div class="stack">
+    <div class="card bone">
+      <div class="part"><h3>Introdução</h3><span class="lines">4 a 5 linhas</span></div>
+      <p><span class="slot">repertório</span> + a ideia dele. Essa reflexão se aplica a <span class="slot">tema</span>, já que <span class="slot">o problema no Brasil</span>. Esse cenário é resultado de <span class="slot">causa 1</span> e de <span class="slot">causa 2</span>.</p>
+    </div>
+    <div class="card bone">
+      <div class="part"><h3>Desenvolvimento 1</h3><span class="lines">7 a 8 linhas</span></div>
+      <p>Em primeira análise, <span class="slot">causa 1</span>. Isso ocorre porque <span class="slot">explicação</span>. <span class="slot">exemplo</span>. Dessa forma, <span class="slot">consequência</span>.</p>
+    </div>
+    <div class="card bone">
+      <div class="part"><h3>Desenvolvimento 2</h3><span class="lines">7 a 8 linhas</span></div>
+      <p>Além disso, <span class="slot">causa 2</span>. Segundo <span class="slot">repertório 2</span>, <span class="slot">ideia</span>. Nesse sentido, <span class="slot">explicação ligada ao tema</span>. Consequentemente, <span class="slot">consequência</span>.</p>
+    </div>
+    <div class="card bone">
+      <div class="part"><h3>Conclusão</h3><span class="lines">5 a 6 linhas</span></div>
+      <p>Portanto, é necessário <span class="slot">resolver o problema</span>. Para isso, <span class="slot">agente</span> deve <span class="slot">ação</span>, por meio de <span class="slot">meio</span>, a fim de <span class="slot">finalidade</span>. <span class="slot">detalhamento</span>. Assim, <span class="slot">retomar o repertório da introdução</span>.</p>
+    </div>
+  </div>
+
+  <h3 id="causas">Causas coringa</h3>
+  <p>Quase todo problema social do Brasil pode ser explicado por uma destas causas. O mais fácil é usar uma ligada ao <strong>Estado</strong> e outra ligada à <strong>educação ou ao preconceito</strong>.</p>
+  <div class="grid">
+    <div class="card"><h3>Omissão do Estado</h3><p class="muted">Faltam leis, fiscalização ou investimento. Ou a lei existe, mas não é cumprida.</p></div>
+    <div class="card"><h3>Falta de educação</h3><p class="muted">A escola e a mídia não discutem o assunto, e as pessoas não são conscientizadas.</p></div>
+    <div class="card"><h3>Preconceito histórico</h3><p class="muted">O problema vem do passado e continua sendo tratado como "normal".</p></div>
+  </div>
+
+  <h3>Repertórios coringa (decore 3 ou 4)</h3>
+  <div class="stack">
+    <div class="card rep">
+      <div class="who">Constituição Federal de 1988, art. 6º</div>
+      <p>Garante como direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer e a segurança, entre outros.</p>
+      <p class="when">Quando usar: qualquer tema que envolva um direito que não está sendo garantido.</p>
+    </div>
+    <div class="card rep">
+      <div class="who">Gilberto Dimenstein, "O Cidadão de Papel"</div>
+      <p>O jornalista mostra que muitos direitos garantidos por lei no Brasil existem só "no papel" e não se concretizam na prática.</p>
+      <p class="when">Quando usar: quando existe uma lei sobre o tema, mas ela não funciona. Combina muito com o tema de treino.</p>
+    </div>
+    <div class="card rep">
+      <div class="who">Paulo Freire</div>
+      <p><q>Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda.</q></p>
+      <p class="when">Quando usar: no 2º desenvolvimento ou na conclusão, quando a solução passa pela escola.</p>
+    </div>
+    <div class="card rep">
+      <div class="who">Zygmunt Bauman, "modernidade líquida"</div>
+      <p>O sociólogo diz que, no mundo atual, as relações humanas ficaram frágeis, rápidas e superficiais.</p>
+      <p class="when">Quando usar: temas sobre internet, redes sociais, consumo, solidão.</p>
+    </div>
+    <div class="card rep">
+      <div class="who">Hannah Arendt, "banalidade do mal"</div>
+      <p>A filósofa mostra que injustiças se tornam "normais" quando as pessoas param de questioná-las.</p>
+      <p class="when">Quando usar: preconceito, violência, indiferença com quem sofre.</p>
+    </div>
+  </div>
+
+  <h3>Exemplo completo, numa folha de redação</h3>
+  <p>Tema de exemplo: <strong>"Caminhos para combater a desinformação no Brasil"</strong>. Este é outro tema de propósito, para você ver o coringa funcionando sem estragar o seu treino.</p>
+  <div class="legend"><i></i><span>Parte amarela: se repete em qualquer tema. O resto você troca.</span></div>
+  <div class="sheet" id="sheet">
+    <div class="nums" id="nums" aria-hidden="true"></div>
+    <div class="body" id="sheet-body">
+      <p><mark class="fix">No livro "O Cidadão de Papel", o jornalista Gilberto Dimenstein argumenta que muitos direitos assegurados pela lei brasileira não se concretizam na prática. Essa reflexão se aplica</mark> ao acesso à informação de qualidade, garantido pela Constituição Federal de 1988, mas ameaçado pela disseminação de notícias falsas no país. <mark class="fix">Esse cenário é resultado da negligência estatal</mark> na regulação do ambiente digital <mark class="fix">e da carência de educação</mark> midiática na formação dos cidadãos.</p>
+      <p><mark class="fix">Em primeira análise, a omissão do Estado favorece</mark> a propagação da desinformação. <mark class="fix">Isso ocorre porque</mark> as plataformas digitais lucram com o engajamento, e conteúdos sensacionalistas, muitas vezes falsos, tendem a circular mais rápido que os verdadeiros. Sem regras claras de transparência e responsabilização, esse modelo segue sem controle, o que prejudica desde campanhas de vacinação até processos eleitorais. <mark class="fix">Dessa forma, o direito</mark> à informação <mark class="fix">permanece, como diria Dimenstein, apenas no papel.</mark></p>
+      <p><mark class="fix">Além disso, a falta de educação</mark> midiática <mark class="fix">agrava o problema. Segundo o educador Paulo Freire, "se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda". Nesse sentido, quando a escola não ensina</mark> a checar fontes e a ler criticamente o que circula nas redes, os indivíduos ficam vulneráveis a conteúdos enganosos e passam a compartilhá-los sem perceber. <mark class="fix">Consequentemente,</mark> a desinformação se multiplica no meio digital.</p>
+      <p><mark class="fix">Portanto, é necessário</mark> combater a desinformação no Brasil. <mark class="fix">Para isso, o Ministério da Educação, em parceria com as secretarias estaduais, deve incluir</mark> a educação midiática no currículo escolar, <mark class="fix">por meio de</mark> oficinas práticas de checagem de fatos, <mark class="fix">a fim de formar cidadãos críticos</mark> diante do que consomem. <mark class="fix">Essas oficinas devem ser conduzidas por professores capacitados</mark> e jornalistas convidados. Além disso, cabe ao Congresso Nacional aprovar normas que exijam transparência das plataformas digitais. <mark class="fix">Assim, o acesso</mark> à informação <mark class="fix">deixará de ser um direito apenas de papel.</mark></p>
+    </div>
+  </div>
+  <p class="muted">Na folha real, o tamanho da letra muda o número de linhas. O importante é ficar perto de 30, sem passar.</p>
+
+  <h3>Como usar o coringa no domingo</h3>
+  <div class="howto">
+    <div><span class="n">1</span><p>Leia o tema e descubra <strong>qual é o problema</strong>.</p></div>
+    <div><span class="n">2</span><p>Escolha <strong>2 causas</strong> da lista de causas coringa.</p></div>
+    <div><span class="n">3</span><p>Escolha <strong>2 repertórios</strong> que combinem com o tema.</p></div>
+    <div><span class="n">4</span><p>Encaixe tudo no <strong>esqueleto</strong> e escreva o rascunho.</p></div>
+  </div>
+
+  <h3>Os 5 elementos da solução (conclusão)</h3>
+  <p>Sem os 5, você perde pontos na C5. Veja como eles aparecem no exemplo:</p>
+  <div class="five">
+    <div class="card"><span class="k">Agente</span><p>Quem faz: o Ministério da Educação e as secretarias.</p></div>
+    <div class="card"><span class="k">Ação</span><p>O que faz: incluir a educação midiática no currículo.</p></div>
+    <div class="card"><span class="k">Meio</span><p>Como faz: com oficinas de checagem de fatos.</p></div>
+    <div class="card"><span class="k">Finalidade</span><p>Para quê: formar cidadãos críticos.</p></div>
+    <div class="card"><span class="k">Detalhamento</span><p>Explica melhor algo: oficinas com professores capacitados e jornalistas.</p></div>
+  </div>
+
+  <h3>Conectivos para variar</h3>
+  <div class="stack">
+    <div><strong>Para começar um parágrafo:</strong><div class="chips"><span>Em primeira análise</span><span>Inicialmente</span><span>Em primeiro plano</span></div></div>
+    <div><strong>Para somar uma ideia:</strong><div class="chips"><span>Além disso</span><span>Ademais</span><span>Somado a isso</span><span>Outrossim</span></div></div>
+    <div><strong>Para mostrar consequência:</strong><div class="chips"><span>Consequentemente</span><span>Por conseguinte</span><span>Com isso</span></div></div>
+    <div><strong>Para concluir:</strong><div class="chips"><span>Portanto</span><span>Dessa forma</span><span>Logo</span><span>Assim</span></div></div>
+  </div>
+</section>
+
+<section id="amanha">
+  <div class="note sun">
+    <span class="label">E amanhã?</span>
+    <p>Hoje é só redação. Amanhã você recebe a próxima parte do guia, com o que cai no domingo e como a nota te leva para a UDF ou o UniCEUB.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "adriely-%s-v1";
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+  document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {
+    if (state[box.id]) box.checked = true;
+    box.addEventListener("change", function () {
+      state[box.id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+  var body = document.getElementById("sheet-body");
+  var nums = document.getElementById("nums");
+  function numberLines() {
+    if (!body || !nums || !body.offsetHeight) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight) || 30;
+    var count = Math.max(1, Math.round(body.offsetHeight / lh));
+    var out = [];
+    for (var i = 1; i <= count; i++) out.push(i);
+    nums.innerHTML = out.join("<br>");
+  }
+  numberLines();
+  window.addEventListener("resize", numberLines);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(numberLines);
+})();
+</script>
+
+</body>
+</html>

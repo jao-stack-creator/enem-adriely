@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quarta da Adriely</title>
+<meta name="description" content="Hoje: o que cai no domingo, como a nota te leva para a faculdade e dicas de Linguagens.">
+<meta property="og:title" content="Quarta da Adriely">
+<meta property="og:description" content="Hoje: o que cai no domingo, como a nota te leva para a faculdade e dicas de Linguagens.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Lexend:wght@400;700&display=swap">
+<style>
+/* Paleta: azul de caneta + amarelo de marca-texto. Layout: uma coluna pensada para celular; cada seção é um "caderno" com etiqueta colorida; checklists em bolinhas de cartão-resposta; a redação-modelo numa folha pautada. */
+:root {
+  --bg: #F5F7FC;
+  --surface: #FFFFFF;
+  --ink: #18203A;
+  --muted: #4E5874;
+  --line: #D8DEEE;
+  --accent: #2445B5;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E4EAFB;
+  --sun: #F5C518;
+  --sun-soft: #FFF5C2;
+  --warn: #C0392B;
+  --warn-soft: #FCE6E3;
+  --rule: #C9D6EE;
+  --margin: #E8A0A0;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Lexend", "Segoe UI", system-ui, sans-serif;
+  --lh-sheet: 30px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+    --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+    --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+    --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+  --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+  --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+  --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h2 { font-size: 1.75rem; font-weight: 750; letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, input:focus-visible + .bubble, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+strong { font-weight: 700; }
+.muted { color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.stack-lg { display: flex; flex-direction: column; gap: 22px; }
+
+/* Hero */
+.hero { padding-block: 40px 8px; display: flex; flex-direction: column; gap: 16px; }
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.hero h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 1.12rem; max-width: 60ch; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.nav a { text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: 0.92rem; }
+.nav a:hover { border-color: var(--accent); }
+
+/* Seção como caderno */
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 16px; }
+.tab { align-self: flex-start; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.tab.sun { background: var(--sun-soft); color: var(--ink); }
+.intro { font-size: 1.05rem; max-width: 62ch; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.stat b { font-family: var(--font-display); font-size: 2.3rem; font-weight: 800; line-height: 1; color: var(--accent); display: block; font-variant-numeric: tabular-nums; }
+.stat span { font-weight: 700; }
+
+.note { border-radius: 12px; padding: 14px 16px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 6px; }
+.note.sun { background: var(--sun-soft); }
+.note.warn { background: var(--warn-soft); }
+.note .label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+.note.warn .label { color: var(--warn); }
+
+ul.clean { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+ul.clean li { padding-left: 22px; position: relative; }
+ul.clean li::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+ul.clean.x li::before { background: var(--warn); border-radius: 2px; transform: rotate(45deg); }
+
+/* Fórmula da média */
+.calc { font-family: var(--font-display); font-size: 1.05rem; background: var(--surface); border: 1px dashed var(--accent); border-radius: 12px; padding: 14px 16px; }
+
+/* Bolinhas de cartão-resposta */
+.check { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; padding: 6px 0; }
+.check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.bubble { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--ink); margin-top: 1px; display: grid; place-items: center; transition: background .15s; }
+.check input:checked + .bubble { background: var(--ink); }
+.check input:checked + .bubble + .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+.day { display: grid; grid-template-columns: 64px 1fr; gap: 14px; }
+.day .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 12px; background: var(--accent); color: var(--accent-ink); padding: 8px 4px; align-self: start; line-height: 1.1; }
+.day .date small { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.day .date b { font-size: 1.7rem; }
+.day.light .date { background: var(--sun); color: #2A2200; }
+.day h3 { margin-bottom: 4px; }
+
+/* Competências */
+.comp { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: start; }
+.comp .n { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; background: var(--accent-soft); color: var(--accent); border-radius: 10px; text-align: center; padding: 8px 0; }
+
+/* Proposta estilo ENEM */
+.proposta { background: var(--surface); border: 2px solid var(--ink); border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.proposta .head { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+.tema { font-weight: 700; background: var(--sun-soft); padding: 1px 4px; border-radius: 3px; }
+.texto { border-left: 3px solid var(--line); padding-left: 14px; display: flex; flex-direction: column; gap: 6px; }
+.texto .t { font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.08em; }
+.texto cite { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+
+/* Esqueleto */
+.bone { display: flex; flex-direction: column; gap: 8px; }
+.bone .part { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.bone .lines { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.slot { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 4px; font-weight: 700; }
+
+/* Repertórios */
+.rep .who { font-family: var(--font-display); font-weight: 750; font-size: 1.1rem; }
+.rep .when { font-size: 0.92rem; color: var(--muted); }
+.rep q { font-style: italic; }
+
+/* Folha pautada */
+.sheet { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 16px 56px; overflow: hidden; }
+.sheet .nums { position: absolute; left: 0; top: 16px; width: 40px; text-align: right; font-size: 0.75rem; color: var(--muted); line-height: var(--lh-sheet); font-variant-numeric: tabular-nums; user-select: none; }
+.sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 46px; width: 1px; background: var(--margin); }
+.sheet .body {
+  line-height: var(--lh-sheet); font-size: 16px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--lh-sheet) - 1px), var(--rule) calc(var(--lh-sheet) - 1px), var(--rule) var(--lh-sheet));
+}
+.sheet .body p { text-indent: 2em; }
+.sheet .title-line { text-align: center; font-weight: 700; }
+mark.fix { background: var(--sun-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+.legend { display: flex; gap: 10px; align-items: center; font-size: 0.92rem; }
+.legend i { width: 28px; height: 14px; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 3px; display: inline-block; flex: none; }
+
+.five { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.five .card { padding: 14px; gap: 4px; }
+.five .k { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: 0.95rem; }
+
+/* Linha do tempo da prova */
+.timeline { display: flex; flex-direction: column; gap: 0; border-left: 3px solid var(--accent-soft); margin-left: 8px; }
+.timeline .step { position: relative; padding: 0 0 18px 20px; }
+.timeline .step::before { content: ""; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.timeline .step .time { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+.final { background: var(--accent); color: var(--accent-ink); border-radius: 18px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+.final h2 { font-size: 1.9rem; }
+.final p { font-size: 1.06rem; }
+footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+
+/* Liberação por dia */
+.today-pill { align-self: flex-start; display: inline-flex; gap: 8px; align-items: center; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 0.95rem; }
+.today-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); }
+.new-badge { align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sun); color: #2A2200; border-radius: 6px; padding: 3px 8px; }
+.tabrow { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.mission { border: 2px solid var(--accent); }
+.mission .tab { margin-bottom: 2px; }
+.road { display: flex; flex-direction: column; gap: 10px; }
+.road .item { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.road .item .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 10px; padding: 6px 4px; line-height: 1.1; background: var(--accent-soft); color: var(--accent); }
+.road .item .date small { display: block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.road .item .date b { font-size: 1.4rem; }
+.road .item.is-today { border: 2px solid var(--sun); }
+.road .item.is-today .date { background: var(--sun); color: #2A2200; }
+.road .item.is-locked { opacity: 0.78; }
+.road .item.is-locked .date { background: var(--line); color: var(--muted); }
+.road .state { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; gap: 6px; align-items: center; color: var(--accent); }
+.road .is-locked .state { color: var(--muted); }
+.road .is-today .state { color: var(--ink); }
+.road .state svg { width: 13px; height: 13px; }
+.road h3 { font-size: 1.08rem; margin-top: 2px; }
+.road p { font-size: 0.95rem; color: var(--muted); }
+
+/* Para quem nunca viu */
+.howto { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.howto div { display: flex; gap: 10px; align-items: flex-start; }
+.howto .n, .parts .n { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-family: var(--font-display); font-weight: 800; display: grid; place-items: center; }
+.parts { display: grid; gap: 10px; }
+.parts .card { flex-direction: row; gap: 12px; align-items: flex-start; padding: 14px; }
+.parts .lines { font-size: 0.85rem; color: var(--muted); }
+.gloss { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 0; }
+.gloss div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.gloss dt { font-family: var(--font-display); font-weight: 750; font-size: 1.05rem; }
+.gloss dd { margin: 4px 0 0; color: var(--muted); }
+.gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
+  <h1>Adriely, rumo à <span>Fisioterapia</span></h1>
+  <div class="today-pill"><span class="dot"></span>Hoje: Linguagens e a sua meta</div>
+  <p class="lede">Esta é a <strong>parte de quarta</strong> do seu guia: o que cai no domingo, como a nota te leva para a faculdade e dicas de Linguagens.</p>
+  <nav class="nav" aria-label="Partes do guia">
+    <a href="#hoje-4">Missão de hoje</a>
+    <a href="#comecar">O 1º dia</a>
+    <a href="#nota">A nota e a faculdade</a>
+    <a href="#linguagens">Linguagens</a>
+  </nav>
+</header>
+
+<section id="como-usar">
+  <div class="card stack">
+    <h3>Nunca usou um guia assim? É fácil:</h3>
+    <div class="howto">
+      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>, logo abaixo. Ela diz o que fazer hoje.</p></div>
+      <div><span class="n">2</span><p>Toque nos <strong>textos azuis sublinhados</strong> para ir direto à parte certa.</p></div>
+      <div><span class="n">3</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hoje-4" class="mission-sec">
+  <div class="card mission stack">
+    <span class="tab sun">Missão de hoje · quarta, 4/11</span>
+    <h2>Dia de Linguagens e da sua meta</h2>
+    <label class="check"><input type="checkbox" id="m4-1"><span class="bubble"></span><span class="txt">Ler a correção da redação de ontem e reescrever os trechos que precisam melhorar.</span></label>
+    <label class="check"><input type="checkbox" id="m4-2"><span class="bubble"></span><span class="txt">Ler <a href="#comecar">O que cai no domingo</a> e <a href="#nota">Como a nota te leva para a faculdade</a>.</span></label>
+    <label class="check"><input type="checkbox" id="m4-3"><span class="bubble"></span><span class="txt">Ver o local de prova no Cartão de Confirmação, na Página do Participante do INEP.</span></label>
+    <label class="check"><input type="checkbox" id="m4-4"><span class="bubble"></span><span class="txt">Ler as <a href="#linguagens">dicas de Linguagens</a> e resolver 20 questões de Linguagens de provas antigas.</span></label>
+  </div>
+</section>
+
+<section id="comecar">
+  <div class="tabrow"><span class="tab">Primeiro, respira</span></div>
+  <h2>O que cai no domingo</h2>
+  <p class="intro">O ENEM tem dois dias de prova, em dois domingos seguidos. Este domingo é o <strong>1º dia</strong>. Ciências da Natureza e Matemática ficam para o 2º dia, no domingo seguinte.</p>
+  <div class="grid">
+    <div class="card stat"><b>45</b><span>Linguagens</span><p class="muted">Português, Literatura, Artes, Educação Física e 5 questões de Inglês ou Espanhol (a língua que você escolheu na inscrição).</p></div>
+    <div class="card stat"><b>45</b><span>Ciências Humanas</span><p class="muted">História, Geografia, Filosofia e Sociologia.</p></div>
+    <div class="card stat"><b>1</b><span>Redação</span><p class="muted">Um texto de até 30 linhas sobre um tema que você só descobre na hora.</p></div>
+  </div>
+  <div class="note">
+    <span class="label">Tempo total: 5h30</span>
+    <p>Dá tempo de fazer tudo com calma se você se organizar. Na sexta, este guia libera uma sugestão de como dividir esse tempo.</p>
+  </div>
+  <div class="note sun">
+    <span class="label">Faça isso hoje</span>
+    <p>Entre na Página do Participante do INEP e veja o seu <strong>Cartão de Confirmação</strong>. Lá estão o endereço do local de prova e o horário. Os portões fecham no <strong>horário de Brasília</strong>, e quem chega depois não entra.</p>
+  </div>
+</section>
+
+<section id="nota">
+  <div class="tabrow"><span class="tab">A sua meta</span></div>
+  <h2>Como a nota te leva para a UDF ou o UniCEUB</h2>
+  <p class="intro">As duas são faculdades particulares. Isso é bom: a nota do ENEM abre portas, mas não é a única porta.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Para entrar</h3>
+      <p>As duas aceitam a nota do ENEM no lugar do vestibular. E se a prova não for como você quer, as duas têm <strong>vestibular próprio</strong>. A Fisioterapia continua no seu caminho.</p>
+    </div>
+    <div class="card">
+      <h3>Prouni</h3>
+      <p>Bolsa do governo de <strong>50% ou 100%</strong> da mensalidade. Precisa de <strong>média de pelo menos 450</strong> e <strong>redação diferente de zero</strong>, além dos critérios de renda da família.</p>
+    </div>
+    <div class="card">
+      <h3>Fies</h3>
+      <p>Financiamento do governo para pagar a faculdade. Pede a mesma coisa: <strong>média de 450 ou mais</strong> e redação diferente de zero.</p>
+    </div>
+  </div>
+  <div class="note">
+    <span class="label">Sua meta em uma frase</span>
+    <p><strong>Média acima de 450 e a redação bem longe do zero.</strong> Quanto mais alta a nota, mais chance de bolsa, porque Fisioterapia é um curso concorrido.</p>
+  </div>
+
+  <h3>Por que a redação é tão importante</h3>
+  <p>O Prouni usa a média das 5 notas do ENEM, e todas contam igual. Nas provas de questões, as notas costumam ficar mais ou menos entre 350 e 750. A redação vai de <strong>0 a 1000</strong>. Por isso é ela que mais mexe na sua média:</p>
+  <div class="calc">Subir 200 pontos na redação = <strong>+40 pontos na média</strong> (200 ÷ 5 = 40)</div>
+
+  <h3>Como o ENEM dá a nota (TRI)</h3>
+  <p>O ENEM não conta só quantas questões você acertou. Ele olha <strong>quais</strong> você acertou. Se você erra as fáceis e acerta as difíceis, o sistema entende que pode ter sido chute e dá menos pontos.</p>
+  <ul class="clean">
+    <li><strong>Garanta as fáceis primeiro.</strong> Elas valem muito.</li>
+    <li><strong>Nunca deixe questão em branco.</strong> Em branco é erro na certa. No chute você ainda pode acertar.</li>
+    <li>Travou numa questão? Marque no caderno, pule e volte depois.</li>
+  </ul>
+</section>
+
+<section id="linguagens">
+  <div class="tabrow"><span class="tab">Linguagens</span></div>
+  <h2>Dicas para as questões de Linguagens</h2>
+  <p class="intro">São 45 questões. A boa notícia: quase todas dependem mais de <strong>ler com atenção</strong> do que de decorar matéria.</p>
+  <div class="card">
+      <h3>Linguagens</h3>
+      <ul class="clean">
+        <li>Quase tudo é <strong>interpretação de texto</strong>. A resposta está no texto, não na sua opinião.</li>
+        <li>Leia primeiro a pergunta (o comando) e depois o texto. Assim você já sabe o que procurar.</li>
+        <li>Desconfie de alternativas com "sempre", "nunca", "somente". Costumam estar erradas.</li>
+        <li>Em Inglês ou Espanhol, você não precisa entender todas as palavras. Procure as que parecem com o português.</li>
+      </ul>
+    </div>
+</section>
+
+<section id="amanha">
+  <div class="note sun">
+    <span class="label">E amanhã?</span>
+    <p>Amanhã é dia de Ciências Humanas e de decorar o esqueleto da redação.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "adriely-%s-v1";
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+  document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {
+    if (state[box.id]) box.checked = true;
+    box.addEventListener("change", function () {
+      state[box.id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+  var body = document.getElementById("sheet-body");
+  var nums = document.getElementById("nums");
+  function numberLines() {
+    if (!body || !nums || !body.offsetHeight) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight) || 30;
+    var count = Math.max(1, Math.round(body.offsetHeight / lh));
+    var out = [];
+    for (var i = 1; i <= count; i++) out.push(i);
+    nums.innerHTML = out.join("<br>");
+  }
+  numberLines();
+  window.addEventListener("resize", numberLines);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(numberLines);
+})();
+</script>
+
+</body>
+</html>
