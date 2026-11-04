@@ -214,6 +214,38 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
+/* Simulado estilo ENEM */
+:root { --ok: #1E7A46; --ok-soft: #E1F4E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #6FD39A; --ok-soft: #163A26; } }
+:root[data-theme="dark"] { --ok: #6FD39A; --ok-soft: #163A26; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eq { gap: 12px; }
+.eq-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-family: var(--font-display); font-weight: 800; }
+.eq-area { font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; }
+.eq-text { background: var(--bg); border-left: 3px solid var(--line); border-radius: 0 10px 10px 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-text cite { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.eq-cmd { font-weight: 700; }
+.alts { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.alt { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.alt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.alt .letter { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.alt .alt-t { min-width: 0; }
+.alt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.alt:has(input:checked) .letter { background: var(--ink); color: var(--bg); }
+.alt:has(input:focus-visible) { outline: 3px solid var(--sun); outline-offset: 2px; }
+.alts .alt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.alts .alt.is-right .letter { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.alts .alt.is-wrong { border-color: var(--warn); background: var(--warn-soft); }
+.alts .alt.is-wrong .letter { background: var(--warn); border-color: var(--warn); color: var(--surface); }
+.alt:has(input:disabled) { cursor: default; }
+.eq-check, .sim-reset { align-self: flex-start; font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.sim-reset { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.eq-fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-fb.is-ok { background: var(--ok-soft); } .eq-fb.is-ok .eq-res { color: var(--ok); font-weight: 700; }
+.eq-fb.is-no { background: var(--warn-soft); } .eq-fb.is-no .eq-res { color: var(--warn); font-weight: 700; }
+.eq-fb.is-empty { background: var(--sun-soft); }
+.sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
+
 /* Teste rápido */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
@@ -234,12 +266,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é dia de <span>História</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: História do Brasil e do mundo</div>
-  <p class="lede">Hoje o foco é <strong>História</strong>: Brasil Colônia, Brasil Império e História Contemporânea. Está tudo explicado do zero, com um teste rápido no fim de cada parte.</p>
+  <p class="lede">Hoje o foco é <strong>História</strong>: Brasil Colônia, Brasil Império e História Contemporânea. Está tudo explicado do zero, com um teste rápido no fim de cada parte e um simulado de 10 questões.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-hist">Missão de hoje</a>
     <a href="#colonia">Colônia</a>
     <a href="#imperio">Império</a>
     <a href="#contemporanea">Contemporânea</a>
+    <a href="#simulado">Simulado</a>
     <a href="#redacao-hist">Use na redação</a>
   </nav>
 </header>
@@ -264,7 +297,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <label class="check"><input type="checkbox" id="h-2"><span class="bubble"></span><span class="txt">Ler <a href="#imperio">Brasil Império</a> e fazer o teste rápido (≈ 40 min).</span></label>
     <label class="check"><input type="checkbox" id="h-3"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos. Água, alongamento, nada de celular.</span></label>
     <label class="check"><input type="checkbox" id="h-4"><span class="bubble"></span><span class="txt">Ler <a href="#contemporanea">História Contemporânea</a> e fazer o teste rápido (≈ 50 min).</span></label>
-    <label class="check"><input type="checkbox" id="h-5"><span class="bubble"></span><span class="txt">Resolver 10 questões de História de provas antigas do ENEM (<a href="#provas">onde achar</a>).</span></label>
+    <label class="check"><input type="checkbox" id="h-5"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
     <label class="check"><input type="checkbox" id="h-6"><span class="bubble"></span><span class="txt">Ler <a href="#redacao-hist">Use na redação</a>: 4 fatos de História que viram repertório.</span></label>
   </div>
 </section>
@@ -420,6 +453,204 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   </div>
 </section>
 
+<section id="simulado" class="sim">
+  <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
+  <h2>Simulado de História</h2>
+  <p class="intro">Dez questões no estilo do ENEM sobre o que você estudou hoje: Colônia, Império e História Contemporânea.</p>
+  <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer as 10 em até 30 minutos, como na prova.</p></div>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">Brasil Colônia</span></div>
+    <div class="eq-text"><p>Nos engenhos do Nordeste colonial, a produção de açúcar dependia de grandes extensões de terra, de um único produto cultivado em larga escala e do trabalho forçado de africanos escravizados. O açúcar era embarcado para a Europa, onde alcançava altos preços.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A organização produtiva descrita revela que a economia colonial estava voltada, principalmente, para</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
+      <label class="alt"><input type="radio" name="hist-q1" value="A"><span class="letter">A</span><span class="alt-t">o abastecimento do mercado interno da colônia.</span></label>
+      <label class="alt"><input type="radio" name="hist-q1" value="B"><span class="letter">B</span><span class="alt-t">a autossuficiência das vilas do litoral.</span></label>
+      <label class="alt"><input type="radio" name="hist-q1" value="C"><span class="letter">C</span><span class="alt-t">os interesses comerciais da metrópole portuguesa.</span></label>
+      <label class="alt"><input type="radio" name="hist-q1" value="D"><span class="letter">D</span><span class="alt-t">a valorização do trabalho livre e assalariado.</span></label>
+      <label class="alt"><input type="radio" name="hist-q1" value="E"><span class="letter">E</span><span class="alt-t">a diversificação da produção agrícola.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Latifúndio, monocultura, trabalho escravizado e exportação formam o modelo de plantation, que existia para gerar lucro para Portugal (o pacto colonial).</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">Brasil Colônia</span></div>
+    <div class="eq-text"><p>Por quase um século, o Quilombo dos Palmares reuniu milhares de pessoas que fugiram do cativeiro. Seus moradores cultivavam roças, trocavam produtos com povoados vizinhos e organizavam a defesa contra as expedições enviadas para destruí-lo.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A experiência de Palmares evidencia que, no período colonial, os africanos escravizados</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="hist-q2" value="A"><span class="letter">A</span><span class="alt-t">construíram formas de resistência e de organização social próprias.</span></label>
+      <label class="alt"><input type="radio" name="hist-q2" value="B"><span class="letter">B</span><span class="alt-t">aceitaram passivamente a condição imposta pelos senhores.</span></label>
+      <label class="alt"><input type="radio" name="hist-q2" value="C"><span class="letter">C</span><span class="alt-t">lutaram pela independência política do Brasil.</span></label>
+      <label class="alt"><input type="radio" name="hist-q2" value="D"><span class="letter">D</span><span class="alt-t">foram integrados à sociedade colonial como trabalhadores livres.</span></label>
+      <label class="alt"><input type="radio" name="hist-q2" value="E"><span class="letter">E</span><span class="alt-t">receberam apoio da Coroa portuguesa para fundar vilas.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O ENEM valoriza a ideia de que os escravizados resistiram ativamente. Palmares é o maior exemplo disso.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">Brasil Colônia</span></div>
+    <div class="eq-text"><p>No século XVIII, a Coroa portuguesa exigia a quinta parte de todo o ouro extraído em Minas Gerais. Quando a arrecadação anual não atingia a meta, podia ser decretada a derrama, a cobrança forçada dos impostos atrasados.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A política fiscal descrita no texto contribuiu diretamente para</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="hist-q3" value="A"><span class="letter">A</span><span class="alt-t">a invasão holandesa no Nordeste.</span></label>
+      <label class="alt"><input type="radio" name="hist-q3" value="B"><span class="letter">B</span><span class="alt-t">a abolição da escravidão em 1888.</span></label>
+      <label class="alt"><input type="radio" name="hist-q3" value="C"><span class="letter">C</span><span class="alt-t">a criação das capitanias hereditárias.</span></label>
+      <label class="alt"><input type="radio" name="hist-q3" value="D"><span class="letter">D</span><span class="alt-t">a eclosão da Guerra do Paraguai.</span></label>
+      <label class="alt"><input type="radio" name="hist-q3" value="E"><span class="letter">E</span><span class="alt-t">a Inconfidência Mineira, articulada por membros da elite local.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A ameaça da derrama, somada às ideias do Iluminismo, levou parte da elite mineira a planejar a Inconfidência, em 1789.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">Brasil Colônia</span></div>
+    <div class="eq-text"><p>Os jesuítas reuniam os povos indígenas em aldeamentos, onde eram ensinados a doutrina cristã, a língua portuguesa e novos hábitos de trabalho. Ao mesmo tempo, epidemias de varíola e sarampo, trazidas pelos europeus, provocavam grande mortalidade nessas comunidades.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O texto indica que a colonização trouxe aos povos indígenas</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="hist-q4" value="A"><span class="letter">A</span><span class="alt-t">a preservação integral de suas tradições.</span></label>
+      <label class="alt"><input type="radio" name="hist-q4" value="B"><span class="letter">B</span><span class="alt-t">transformações culturais impostas e grandes perdas populacionais.</span></label>
+      <label class="alt"><input type="radio" name="hist-q4" value="C"><span class="letter">C</span><span class="alt-t">a ampliação de seus territórios tradicionais.</span></label>
+      <label class="alt"><input type="radio" name="hist-q4" value="D"><span class="letter">D</span><span class="alt-t">a igualdade de direitos em relação aos colonos.</span></label>
+      <label class="alt"><input type="radio" name="hist-q4" value="E"><span class="letter">E</span><span class="alt-t">o fim dos contatos com os europeus.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A catequese tentava substituir a cultura indígena, e as doenças europeias mataram muitos indígenas, que não tinham defesa contra elas.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">Brasil Império</span></div>
+    <div class="eq-text"><p>A Constituição de 1824 estabelecia que só poderiam votar os cidadãos com uma renda anual mínima. Além disso, criava o Poder Moderador, exercido pelo imperador, que podia dissolver a Câmara dos Deputados e escolher os senadores.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">As características descritas indicam que o sistema político do Império</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="hist-q5" value="A"><span class="letter">A</span><span class="alt-t">garantia a participação de toda a população nas eleições.</span></label>
+      <label class="alt"><input type="radio" name="hist-q5" value="B"><span class="letter">B</span><span class="alt-t">seguia o modelo socialista de governo.</span></label>
+      <label class="alt"><input type="radio" name="hist-q5" value="C"><span class="letter">C</span><span class="alt-t">eliminava a influência dos grandes proprietários.</span></label>
+      <label class="alt"><input type="radio" name="hist-q5" value="D"><span class="letter">D</span><span class="alt-t">concentrava poder no imperador e restringia a participação política aos mais ricos.</span></label>
+      <label class="alt"><input type="radio" name="hist-q5" value="E"><span class="letter">E</span><span class="alt-t">assegurava o direito de voto às mulheres.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Voto censitário (só para quem tinha renda) e Poder Moderador (palavra final do imperador): poder concentrado e participação limitada.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">Brasil Império</span></div>
+    <div class="eq-text"><p>"Art. 1º Ficam proibidas as aquisições de terras devolutas por outro título que não seja o de compra."</p><cite>BRASIL. Lei nº 601, de 18 de setembro de 1850 (Lei de Terras).</cite></div>
+    <p class="eq-cmd">Ao estabelecer essa regra, a lei contribuiu para</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="hist-q6" value="A"><span class="letter">A</span><span class="alt-t">dificultar o acesso à terra pelos mais pobres, reforçando a concentração fundiária.</span></label>
+      <label class="alt"><input type="radio" name="hist-q6" value="B"><span class="letter">B</span><span class="alt-t">democratizar o acesso à terra para os ex-escravizados.</span></label>
+      <label class="alt"><input type="radio" name="hist-q6" value="C"><span class="letter">C</span><span class="alt-t">estimular a reforma agrária ainda no século XIX.</span></label>
+      <label class="alt"><input type="radio" name="hist-q6" value="D"><span class="letter">D</span><span class="alt-t">doar terras públicas aos imigrantes europeus.</span></label>
+      <label class="alt"><input type="radio" name="hist-q6" value="E"><span class="letter">E</span><span class="alt-t">acabar com os latifúndios no Brasil.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Se a terra só podia ser comprada, quem não tinha dinheiro (libertos, pobres, imigrantes) ficou sem ela. Essa lei aparece de novo amanhã, em Geografia.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">Brasil Império</span></div>
+    <div class="eq-text"><p>Após a Lei Áurea, muitos libertos permaneceram nas fazendas em troca de moradia e comida, enquanto outros migraram para as cidades, onde passaram a viver em cortiços e a ocupar trabalhos mal remunerados. Nenhuma política pública lhes garantiu terra, educação ou emprego.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A situação descrita ajuda a explicar, no Brasil atual,</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="hist-q7" value="A"><span class="letter">A</span><span class="alt-t">a ausência de desigualdades raciais.</span></label>
+      <label class="alt"><input type="radio" name="hist-q7" value="B"><span class="letter">B</span><span class="alt-t">o fim da concentração de renda.</span></label>
+      <label class="alt"><input type="radio" name="hist-q7" value="C"><span class="letter">C</span><span class="alt-t">a origem histórica da desigualdade racial e da exclusão da população negra.</span></label>
+      <label class="alt"><input type="radio" name="hist-q7" value="D"><span class="letter">D</span><span class="alt-t">a igualdade de oportunidades no mercado de trabalho.</span></label>
+      <label class="alt"><input type="radio" name="hist-q7" value="E"><span class="letter">E</span><span class="alt-t">a distribuição de terras às comunidades quilombolas no século XIX.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A abolição sem integração deixou a população negra à margem. É uma das raízes do racismo estrutural, ideia que você usou na sua redação.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">História Contemporânea</span></div>
+    <div class="eq-text"><p>"Art. 1º Os homens nascem e são livres e iguais em direitos. As distinções sociais só podem fundamentar-se na utilidade comum."</p><cite>Declaração dos Direitos do Homem e do Cidadão, 1789.</cite></div>
+    <p class="eq-cmd">O trecho expressa um princípio que se opunha diretamente</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="hist-q8" value="A"><span class="letter">A</span><span class="alt-t">às ideias do Iluminismo.</span></label>
+      <label class="alt"><input type="radio" name="hist-q8" value="B"><span class="letter">B</span><span class="alt-t">à formação dos Estados nacionais.</span></label>
+      <label class="alt"><input type="radio" name="hist-q8" value="C"><span class="letter">C</span><span class="alt-t">ao desenvolvimento do comércio.</span></label>
+      <label class="alt"><input type="radio" name="hist-q8" value="D"><span class="letter">D</span><span class="alt-t">à participação da burguesia na política.</span></label>
+      <label class="alt"><input type="radio" name="hist-q8" value="E"><span class="letter">E</span><span class="alt-t">aos privilégios de nascimento da nobreza e do clero no Antigo Regime.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Na França antes da Revolução, nobres e clero tinham privilégios só por terem nascido nesses grupos. A Declaração afirma o contrário: todos são iguais em direitos.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">História Contemporânea</span></div>
+    <div class="eq-text"><p>Nas fábricas inglesas do início do século XIX, homens, mulheres e crianças cumpriam jornadas que podiam passar de 14 horas por dia, em ambientes sem ventilação e sob vigilância constante dos supervisores.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">As condições de trabalho descritas estimularam, ao longo do século XIX,</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="hist-q9" value="A"><span class="letter">A</span><span class="alt-t">o fim imediato da produção industrial.</span></label>
+      <label class="alt"><input type="radio" name="hist-q9" value="B"><span class="letter">B</span><span class="alt-t">a volta dos trabalhadores ao sistema feudal.</span></label>
+      <label class="alt"><input type="radio" name="hist-q9" value="C"><span class="letter">C</span><span class="alt-t">a proibição das máquinas a vapor.</span></label>
+      <label class="alt"><input type="radio" name="hist-q9" value="D"><span class="letter">D</span><span class="alt-t">a organização de sindicatos e movimentos operários por direitos.</span></label>
+      <label class="alt"><input type="radio" name="hist-q9" value="E"><span class="letter">E</span><span class="alt-t">a redução da população urbana.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Diante da exploração, os trabalhadores se organizaram em sindicatos e lutaram por jornadas menores e pelo fim do trabalho infantil.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">História Contemporânea</span></div>
+    <div class="eq-text"><p>Durante a Ditadura Militar, músicas, peças de teatro e reportagens passavam pela análise de censores antes de chegar ao público. Muitos artistas passaram a usar metáforas e duplos sentidos para driblar essa vigilância.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A estratégia dos artistas mencionada no texto revela</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="hist-q10" value="A"><span class="letter">A</span><span class="alt-t">apoio irrestrito ao governo militar.</span></label>
+      <label class="alt"><input type="radio" name="hist-q10" value="B"><span class="letter">B</span><span class="alt-t">uma forma de resistência à censura imposta pelo Estado.</span></label>
+      <label class="alt"><input type="radio" name="hist-q10" value="C"><span class="letter">C</span><span class="alt-t">desinteresse da arte pelos problemas políticos.</span></label>
+      <label class="alt"><input type="radio" name="hist-q10" value="D"><span class="letter">D</span><span class="alt-t">a liberdade de expressão garantida pelo AI-5.</span></label>
+      <label class="alt"><input type="radio" name="hist-q10" value="E"><span class="letter">E</span><span class="alt-t">a ausência de controle sobre os meios de comunicação.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">As metáforas eram uma forma de criticar o governo sem ser censurado. O AI-5, ao contrário, aumentou a censura.</p></div>
+  </article>
+  <div class="sim-end card">
+    <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
+    <button type="button" class="sim-reset">Refazer o simulado</button>
+  </div>
+</section>
+<script>
+(function () {
+  document.querySelectorAll(".sim").forEach(function (sim) {
+    var qs = Array.prototype.slice.call(sim.querySelectorAll(".eq"));
+    var score = sim.querySelector(".sim-score");
+    function update() {
+      var done = qs.filter(function (q) { return q.dataset.done; });
+      var ok = done.filter(function (q) { return q.dataset.done === "ok"; }).length;
+      if (!done.length) { score.textContent = "Responda as questões para ver quantas você acertou."; return; }
+      var msg = "Você acertou " + ok + " de " + done.length + (done.length === 1 ? " questão respondida." : " questões respondidas.");
+      if (done.length === qs.length) {
+        msg = "Resultado: você acertou " + ok + " de " + qs.length + ". ";
+        msg += ok >= 9 ? "Excelente! Você está pronta para esse conteúdo." : ok >= 6 ? "Muito bem! Releia a explicação das que errou." : "Tudo bem errar no treino: releia as partes do dia e tente de novo amanhã cedo.";
+      }
+      score.textContent = msg;
+    }
+    qs.forEach(function (q) {
+      var btn = q.querySelector(".eq-check"), fb = q.querySelector(".eq-fb"), res = q.querySelector(".eq-res"), exp = q.querySelector(".eq-exp");
+      btn.addEventListener("click", function () {
+        var sel = q.querySelector("input:checked");
+        if (!sel) { fb.hidden = false; exp.hidden = true; fb.className = "eq-fb is-empty"; res.textContent = "Escolha uma alternativa antes de confirmar."; return; }
+        var ans = q.dataset.ans, right = sel.value === ans;
+        q.querySelectorAll(".alt").forEach(function (lab) {
+          var inp = lab.querySelector("input"); inp.disabled = true;
+          if (inp.value === ans) lab.classList.add("is-right");
+          else if (inp === sel) lab.classList.add("is-wrong");
+        });
+        q.dataset.done = right ? "ok" : "no";
+        fb.hidden = false; exp.hidden = false;
+        fb.className = "eq-fb " + (right ? "is-ok" : "is-no");
+        res.textContent = right ? "Acertou! Letra " + ans + "." : "Não foi dessa vez. A resposta certa é a letra " + ans + ".";
+        btn.hidden = true;
+        update();
+      });
+    });
+    sim.querySelector(".sim-reset").addEventListener("click", function () {
+      qs.forEach(function (q) {
+        delete q.dataset.done;
+        q.querySelectorAll(".alt").forEach(function (lab) { lab.classList.remove("is-right", "is-wrong"); var i = lab.querySelector("input"); i.disabled = false; i.checked = false; });
+        q.querySelector(".eq-fb").hidden = true; q.querySelector(".eq-check").hidden = false;
+      });
+      update();
+      sim.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
 <section id="redacao-hist">
   <div class="tabrow"><span class="tab sun">Bônus</span></div>
   <h2>Use na redação</h2>
@@ -434,7 +665,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <section id="provas">
   <div class="note">
-    <span class="label">Onde achar provas antigas</span>
+    <span class="label">Quer treinar mais?</span>
     <p>O INEP publica todas as provas e gabaritos de graça: <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener">gov.br/inep → Provas e gabaritos</a>. Pegue a prova do 1º dia. As questões de Ciências Humanas são as de número 46 a 90.</p>
   </div>
 </section>

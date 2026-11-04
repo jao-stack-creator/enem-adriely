@@ -214,6 +214,38 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
+/* Simulado estilo ENEM */
+:root { --ok: #1E7A46; --ok-soft: #E1F4E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #6FD39A; --ok-soft: #163A26; } }
+:root[data-theme="dark"] { --ok: #6FD39A; --ok-soft: #163A26; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eq { gap: 12px; }
+.eq-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-family: var(--font-display); font-weight: 800; }
+.eq-area { font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; }
+.eq-text { background: var(--bg); border-left: 3px solid var(--line); border-radius: 0 10px 10px 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-text cite { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.eq-cmd { font-weight: 700; }
+.alts { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.alt { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.alt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.alt .letter { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.alt .alt-t { min-width: 0; }
+.alt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.alt:has(input:checked) .letter { background: var(--ink); color: var(--bg); }
+.alt:has(input:focus-visible) { outline: 3px solid var(--sun); outline-offset: 2px; }
+.alts .alt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.alts .alt.is-right .letter { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.alts .alt.is-wrong { border-color: var(--warn); background: var(--warn-soft); }
+.alts .alt.is-wrong .letter { background: var(--warn); border-color: var(--warn); color: var(--surface); }
+.alt:has(input:disabled) { cursor: default; }
+.eq-check, .sim-reset { align-self: flex-start; font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.sim-reset { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.eq-fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-fb.is-ok { background: var(--ok-soft); } .eq-fb.is-ok .eq-res { color: var(--ok); font-weight: 700; }
+.eq-fb.is-no { background: var(--warn-soft); } .eq-fb.is-no .eq-res { color: var(--warn); font-weight: 700; }
+.eq-fb.is-empty { background: var(--sun-soft); }
+.sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
+
 /* Teste rápido */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
@@ -234,10 +266,11 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é <span>Linguagens e redação</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: Linguagens e redação</div>
-  <p class="lede">Último dia de estudo! De manhã, <strong>Linguagens</strong>. À tarde, uma <strong>redação de treino</strong> com o coringa. À noite, descanso.</p>
+  <p class="lede">Último dia de estudo! De manhã, <strong>Linguagens</strong> e um simulado de 10 questões. À tarde, uma <strong>redação de treino</strong> com o coringa. À noite, descanso.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-sab">Missão de hoje</a>
     <a href="#linguagens">Linguagens</a>
+    <a href="#simulado">Simulado</a>
     <a href="#lembretes">Lembretes</a>
     <a href="#treino2">Tema de treino</a>
     <a href="#coringa">Redação coringa</a>
@@ -263,7 +296,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <h2>Linguagens e redação</h2>
     <p class="muted"><strong>Manhã</strong></p>
     <label class="check"><input type="checkbox" id="s-1"><span class="bubble"></span><span class="txt">Ler <a href="#linguagens">Linguagens</a> e fazer o teste rápido (≈ 1 hora).</span></label>
-    <label class="check"><input type="checkbox" id="s-2"><span class="bubble"></span><span class="txt">Resolver 10 questões de Linguagens de provas antigas, as de número 1 a 45 (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="s-2"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
     <p class="muted"><strong>Tarde</strong></p>
     <label class="check"><input type="checkbox" id="s-3"><span class="bubble"></span><span class="txt">Reler os <a href="#lembretes">lembretes da sua redação</a>.</span></label>
     <label class="check"><input type="checkbox" id="s-4"><span class="bubble"></span><span class="txt">Fazer o <a href="#treino2">tema de treino</a> com cronômetro de 1h10, usando o <a href="#coringa">esqueleto coringa</a>.</span></label>
@@ -356,6 +389,204 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     </div>
   </div>
 </section>
+
+<section id="simulado" class="sim">
+  <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
+  <h2>Simulado de Linguagens</h2>
+  <p class="intro">Dez questões no estilo do ENEM. As duas últimas são de língua estrangeira: faça só a da língua que você escolheu na inscrição (Inglês ou Espanhol). A outra é bônus.</p>
+  <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer as 10 em até 30 minutos, como na prova.</p></div>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">Linguagens · Funções da linguagem</span></div>
+    <div class="eq-text"><p>Doe sangue. Uma única doação pode salvar até quatro vidas. Procure o hemocentro mais perto de você.</p><cite>Campanha de doação de sangue (texto elaborado para este simulado).</cite></div>
+    <p class="eq-cmd">Nesse texto de campanha, predomina a função da linguagem</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
+      <label class="alt"><input type="radio" name="ling-q1" value="A"><span class="letter">A</span><span class="alt-t">referencial, pois apenas informa dados científicos.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="B"><span class="letter">B</span><span class="alt-t">apelativa, pois busca convencer o leitor a agir.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="C"><span class="letter">C</span><span class="alt-t">fática, pois testa o canal de comunicação.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="D"><span class="letter">D</span><span class="alt-t">metalinguística, pois explica o próprio código.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="E"><span class="letter">E</span><span class="alt-t">emotiva, pois expressa os sentimentos do autor.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Verbos no imperativo ("doe", "procure") chamam o leitor para agir. Isso é a função apelativa (ou conativa).</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">Linguagens · Variação linguística</span></div>
+    <div class="eq-text"><p>— Ocê vai na festa de São João amanhã?<br>— Vô sim, sô! Num perco por nada.</p><cite>Diálogo entre dois amigos do interior de Minas Gerais (texto elaborado para este simulado).</cite></div>
+    <p class="eq-cmd">O modo de falar dos personagens deve ser entendido como</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="ling-q2" value="A"><span class="letter">A</span><span class="alt-t">uma variação regional da língua, adequada à conversa informal.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="B"><span class="letter">B</span><span class="alt-t">um erro de português que deve ser corrigido.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="C"><span class="letter">C</span><span class="alt-t">prova de que os personagens não foram à escola.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="D"><span class="letter">D</span><span class="alt-t">uma linguagem própria de textos científicos.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="E"><span class="letter">E</span><span class="alt-t">uma forma de falar que não pertence ao português.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Para o ENEM, não existe fala errada, mas sim fala adequada à situação. Tratar esse jeito de falar como erro é preconceito linguístico.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">Linguagens · Literatura</span></div>
+    <div class="eq-text"><p>TEXTO I<br>"Minha terra tem palmeiras,<br>Onde canta o Sabiá"<br>(Gonçalves Dias, "Canção do exílio", 1843)<br><br>TEXTO II<br>"Minha terra tem palmares<br>Onde gorjeia o mar"<br>(Oswald de Andrade, "Canto de regresso à pátria", 1925)</p></div>
+    <p class="eq-cmd">Ao retomar o poema de Gonçalves Dias, o texto de Oswald de Andrade</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="ling-q3" value="A"><span class="letter">A</span><span class="alt-t">copia o poema romântico sem nenhuma alteração de sentido.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="B"><span class="letter">B</span><span class="alt-t">critica o uso de rimas na poesia brasileira.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="C"><span class="letter">C</span><span class="alt-t">rejeita qualquer referência à natureza do Brasil.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="D"><span class="letter">D</span><span class="alt-t">faz uma paródia, trocando "palmeiras" por "palmares" e trazendo uma referência à resistência negra.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="E"><span class="letter">E</span><span class="alt-t">imita o Barroco, com seus conflitos religiosos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">É uma paródia (intertextualidade com mudança de sentido). "Palmares" lembra o quilombo e dá um tom crítico à visão romântica e idealizada do Brasil.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">Linguagens · Funções da linguagem</span></div>
+    <div class="eq-text"><p>"Lutar com palavras<br>é a luta mais vã.<br>Entanto lutamos<br>mal rompe a manhã."</p><cite>ANDRADE, C. D. O lutador.</cite></div>
+    <p class="eq-cmd">Nesses versos, o poeta fala sobre a dificuldade de escrever usando a própria escrita. Isso caracteriza a função</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="ling-q4" value="A"><span class="letter">A</span><span class="alt-t">fática.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="B"><span class="letter">B</span><span class="alt-t">referencial.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="C"><span class="letter">C</span><span class="alt-t">apelativa.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="D"><span class="letter">D</span><span class="alt-t">emotiva.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="E"><span class="letter">E</span><span class="alt-t">metalinguística.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Quando a linguagem fala de si mesma (um poema sobre escrever poemas), a função é metalinguística.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">Linguagens · Figuras de linguagem</span></div>
+    <div class="eq-text"><p>"Que maravilha: o ônibus atrasou quarenta minutos, começou a chover e, quando finalmente cheguei, a loja tinha acabado de fechar."</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O efeito de humor da frase é construído principalmente por meio da</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="ling-q5" value="A"><span class="letter">A</span><span class="alt-t">metáfora, pois compara o ônibus à chuva.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="B"><span class="letter">B</span><span class="alt-t">personificação, pois dá vida à loja.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="C"><span class="letter">C</span><span class="alt-t">ironia, pois "maravilha" expressa o contrário do que o falante sente.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="D"><span class="letter">D</span><span class="alt-t">hipérbole, pois exagera o tamanho da loja.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="E"><span class="letter">E</span><span class="alt-t">antítese, pois opõe dia e noite.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Chamar uma situação ruim de "maravilha" é dizer o contrário do que se pensa: ironia.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">Linguagens · Literatura</span></div>
+    <div class="eq-text"><p>"Tupi, or not tupi that is the question."</p><cite>ANDRADE, O. Manifesto Antropófago, 1928.</cite></div>
+    <p class="eq-cmd">Ao brincar com a famosa frase de Shakespeare, o Manifesto Antropófago propõe que a cultura brasileira</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="ling-q6" value="A"><span class="letter">A</span><span class="alt-t">"devore" as influências estrangeiras e as transforme em algo novo e brasileiro.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="B"><span class="letter">B</span><span class="alt-t">copie fielmente os modelos culturais europeus.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="C"><span class="letter">C</span><span class="alt-t">rejeite qualquer contato com outras culturas.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="D"><span class="letter">D</span><span class="alt-t">volte às regras do Parnasianismo.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="E"><span class="letter">E</span><span class="alt-t">abandone as tradições indígenas.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Antropofagia é "comer" a cultura de fora e misturá-la com a nossa, criando algo original. É uma das ideias centrais do Modernismo.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">Linguagens · Gêneros textuais</span></div>
+    <div class="eq-text"><p>É inaceitável que, em pleno século XXI, tantas escolas públicas ainda não tenham biblioteca. Precisamos tratar a leitura como prioridade, porque um país que não lê não consegue se desenvolver.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">As expressões "é inaceitável" e "precisamos", junto com a defesa de um ponto de vista, indicam que o trecho pertence a um(a)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="ling-q7" value="A"><span class="letter">A</span><span class="alt-t">notícia.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="B"><span class="letter">B</span><span class="alt-t">artigo de opinião.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="C"><span class="letter">C</span><span class="alt-t">verbete de dicionário.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="D"><span class="letter">D</span><span class="alt-t">receita.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="E"><span class="letter">E</span><span class="alt-t">bula de remédio.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O autor defende uma opinião com argumentos. Notícia só informa, sem opinar.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">Linguagens · Educação Física</span></div>
+    <div class="eq-text"><p>Nas redes sociais, corpos editados por filtros e aplicativos se tornam referência. Muitos jovens passam a se sentir insatisfeitos com a própria aparência e recorrem a dietas radicais e até ao uso de anabolizantes.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O texto faz uma crítica</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="ling-q8" value="A"><span class="letter">A</span><span class="alt-t">à prática regular de atividades físicas.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="B"><span class="letter">B</span><span class="alt-t">ao uso das redes sociais para estudar.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="C"><span class="letter">C</span><span class="alt-t">à alimentação equilibrada.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="D"><span class="letter">D</span><span class="alt-t">aos esportes coletivos nas escolas.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="E"><span class="letter">E</span><span class="alt-t">à imposição de padrões de beleza que podem prejudicar a saúde.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A Educação Física no ENEM valoriza o corpo saudável e critica a busca por um padrão de beleza irreal.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">Inglês</span></div>
+    <div class="eq-text"><p>Recycling is important, but reducing consumption is even more important. The best waste is the waste we never produce.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">Segundo o texto, a atitude mais importante em relação ao lixo é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="ling-q9" value="A"><span class="letter">A</span><span class="alt-t">reciclar tudo o que for possível.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="B"><span class="letter">B</span><span class="alt-t">queimar os resíduos.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="C"><span class="letter">C</span><span class="alt-t">reduzir o consumo.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="D"><span class="letter">D</span><span class="alt-t">produzir mais embalagens.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="E"><span class="letter">E</span><span class="alt-t">enterrar o lixo em aterros.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"Reducing consumption is even more important" quer dizer que reduzir o consumo é ainda mais importante. Dica: "waste" é "lixo" ou "resíduo".</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">Espanhol</span></div>
+    <div class="eq-text"><p>En muchas ciudades latinoamericanas, el uso de la bicicleta crece porque es barata, no contamina y ayuda a evitar los atascos en el tráfico.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">De acordo com o texto, duas vantagens da bicicleta são</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="ling-q10" value="A"><span class="letter">A</span><span class="alt-t">ser rápida e evitar acidentes.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="B"><span class="letter">B</span><span class="alt-t">ser cara e confortável.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="C"><span class="letter">C</span><span class="alt-t">substituir o ônibus e o metrô.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="D"><span class="letter">D</span><span class="alt-t">não poluir e ajudar a evitar congestionamentos.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="E"><span class="letter">E</span><span class="alt-t">não precisar de manutenção e ser silenciosa.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"No contamina" é "não polui", e "atascos" quer dizer "congestionamentos". Cuidado: "barata", em espanhol, também significa "barata" (preço baixo).</p></div>
+  </article>
+  <div class="sim-end card">
+    <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
+    <button type="button" class="sim-reset">Refazer o simulado</button>
+  </div>
+</section>
+<script>
+(function () {
+  document.querySelectorAll(".sim").forEach(function (sim) {
+    var qs = Array.prototype.slice.call(sim.querySelectorAll(".eq"));
+    var score = sim.querySelector(".sim-score");
+    function update() {
+      var done = qs.filter(function (q) { return q.dataset.done; });
+      var ok = done.filter(function (q) { return q.dataset.done === "ok"; }).length;
+      if (!done.length) { score.textContent = "Responda as questões para ver quantas você acertou."; return; }
+      var msg = "Você acertou " + ok + " de " + done.length + (done.length === 1 ? " questão respondida." : " questões respondidas.");
+      if (done.length === qs.length) {
+        msg = "Resultado: você acertou " + ok + " de " + qs.length + ". ";
+        msg += ok >= 9 ? "Excelente! Você está pronta para esse conteúdo." : ok >= 6 ? "Muito bem! Releia a explicação das que errou." : "Tudo bem errar no treino: releia as partes do dia e tente de novo amanhã cedo.";
+      }
+      score.textContent = msg;
+    }
+    qs.forEach(function (q) {
+      var btn = q.querySelector(".eq-check"), fb = q.querySelector(".eq-fb"), res = q.querySelector(".eq-res"), exp = q.querySelector(".eq-exp");
+      btn.addEventListener("click", function () {
+        var sel = q.querySelector("input:checked");
+        if (!sel) { fb.hidden = false; exp.hidden = true; fb.className = "eq-fb is-empty"; res.textContent = "Escolha uma alternativa antes de confirmar."; return; }
+        var ans = q.dataset.ans, right = sel.value === ans;
+        q.querySelectorAll(".alt").forEach(function (lab) {
+          var inp = lab.querySelector("input"); inp.disabled = true;
+          if (inp.value === ans) lab.classList.add("is-right");
+          else if (inp === sel) lab.classList.add("is-wrong");
+        });
+        q.dataset.done = right ? "ok" : "no";
+        fb.hidden = false; exp.hidden = false;
+        fb.className = "eq-fb " + (right ? "is-ok" : "is-no");
+        res.textContent = right ? "Acertou! Letra " + ans + "." : "Não foi dessa vez. A resposta certa é a letra " + ans + ".";
+        btn.hidden = true;
+        update();
+      });
+    });
+    sim.querySelector(".sim-reset").addEventListener("click", function () {
+      qs.forEach(function (q) {
+        delete q.dataset.done;
+        q.querySelectorAll(".alt").forEach(function (lab) { lab.classList.remove("is-right", "is-wrong"); var i = lab.querySelector("input"); i.disabled = false; i.checked = false; });
+        q.querySelector(".eq-fb").hidden = true; q.querySelector(".eq-check").hidden = false;
+      });
+      update();
+      sim.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
 
 <section id="lembretes">
   <div class="tabrow"><span class="tab sun">Tarde · redação</span></div>

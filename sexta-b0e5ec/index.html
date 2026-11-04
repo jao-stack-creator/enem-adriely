@@ -214,6 +214,38 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
+/* Simulado estilo ENEM */
+:root { --ok: #1E7A46; --ok-soft: #E1F4E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #6FD39A; --ok-soft: #163A26; } }
+:root[data-theme="dark"] { --ok: #6FD39A; --ok-soft: #163A26; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eq { gap: 12px; }
+.eq-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-family: var(--font-display); font-weight: 800; }
+.eq-area { font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; }
+.eq-text { background: var(--bg); border-left: 3px solid var(--line); border-radius: 0 10px 10px 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-text cite { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.eq-cmd { font-weight: 700; }
+.alts { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.alt { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.alt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.alt .letter { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.alt .alt-t { min-width: 0; }
+.alt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.alt:has(input:checked) .letter { background: var(--ink); color: var(--bg); }
+.alt:has(input:focus-visible) { outline: 3px solid var(--sun); outline-offset: 2px; }
+.alts .alt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.alts .alt.is-right .letter { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.alts .alt.is-wrong { border-color: var(--warn); background: var(--warn-soft); }
+.alts .alt.is-wrong .letter { background: var(--warn); border-color: var(--warn); color: var(--surface); }
+.alt:has(input:disabled) { cursor: default; }
+.eq-check, .sim-reset { align-self: flex-start; font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.sim-reset { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.eq-fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-fb.is-ok { background: var(--ok-soft); } .eq-fb.is-ok .eq-res { color: var(--ok); font-weight: 700; }
+.eq-fb.is-no { background: var(--warn-soft); } .eq-fb.is-no .eq-res { color: var(--warn); font-weight: 700; }
+.eq-fb.is-empty { background: var(--sun-soft); }
+.sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
+
 /* Teste rápido */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
@@ -234,13 +266,14 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é dia de <span>Filosofia e Sociologia</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: ética, política e trabalho</div>
-  <p class="lede">Hoje o foco é <strong>Filosofia e Sociologia</strong>: ética, política e trabalho. Para cada pensador, só a ideia que o ENEM cobra, com teste rápido no fim de cada parte.</p>
+  <p class="lede">Hoje o foco é <strong>Filosofia e Sociologia</strong>: ética, política e trabalho. Para cada pensador, só a ideia que o ENEM cobra, com teste rápido e um simulado de 10 questões.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-filo">Missão de hoje</a>
     <a href="#etica">Ética</a>
     <a href="#politica">Política</a>
     <a href="#sociologia">Sociologia e trabalho</a>
     <a href="#resumo">Resumo de bolso</a>
+    <a href="#simulado">Simulado</a>
   </nav>
 </header>
 
@@ -265,7 +298,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <label class="check"><input type="checkbox" id="f-3"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
     <label class="check"><input type="checkbox" id="f-4"><span class="bubble"></span><span class="txt">Ler <a href="#sociologia">Sociologia e trabalho</a> e fazer o teste rápido (≈ 40 min).</span></label>
     <label class="check"><input type="checkbox" id="f-5"><span class="bubble"></span><span class="txt">Ler o <a href="#resumo">resumo de bolso</a> em voz alta, 2 vezes.</span></label>
-    <label class="check"><input type="checkbox" id="f-6"><span class="bubble"></span><span class="txt">Resolver 10 questões de Humanas de provas antigas (<a href="#provas">onde achar</a>).</span></label>
+    <label class="check"><input type="checkbox" id="f-6"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
   </div>
 </section>
 
@@ -433,9 +466,207 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   </div>
 </section>
 
+<section id="simulado" class="sim">
+  <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
+  <h2>Simulado de Filosofia e Sociologia</h2>
+  <p class="intro">Dez questões no estilo do ENEM sobre ética, política, sociologia e trabalho.</p>
+  <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer as 10 em até 30 minutos, como na prova.</p></div>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">Filosofia · Ética</span></div>
+    <div class="eq-text"><p>Sócrates percorria as praças de Atenas fazendo perguntas aos cidadãos. Ao final das conversas, muitos percebiam que não sabiam aquilo que acreditavam saber.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O método socrático tinha como objetivo</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
+      <label class="alt"><input type="radio" name="filo-q1" value="A"><span class="letter">A</span><span class="alt-t">ensinar verdades prontas aos jovens.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="B"><span class="letter">B</span><span class="alt-t">levar o interlocutor a reconhecer a própria ignorância e buscar o conhecimento.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="C"><span class="letter">C</span><span class="alt-t">defender o poder dos tiranos.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="D"><span class="letter">D</span><span class="alt-t">vencer os debates a qualquer custo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="E"><span class="letter">E</span><span class="alt-t">negar a possibilidade de qualquer conhecimento.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"Só sei que nada sei": reconhecer que não sabe é o primeiro passo para aprender.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">Filosofia · Ética</span></div>
+    <div class="eq-text"><p>"A virtude é uma disposição de caráter relacionada com a escolha, e consiste numa mediania entre dois vícios, um por excesso e outro por falta."</p><cite>Adaptado de: ARISTÓTELES. Ética a Nicômaco.</cite></div>
+    <p class="eq-cmd">Segundo essa concepção, a generosidade seria</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="filo-q2" value="A"><span class="letter">A</span><span class="alt-t">dar tudo o que se tem, sem limite.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="B"><span class="letter">B</span><span class="alt-t">nunca ajudar ninguém.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="C"><span class="letter">C</span><span class="alt-t">o equilíbrio entre a avareza e o desperdício.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="D"><span class="letter">D</span><span class="alt-t">uma obrigação imposta pelo Estado.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="E"><span class="letter">E</span><span class="alt-t">um sentimento que nasce pronto em cada pessoa.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Virtude é o meio-termo: nem de menos (avareza), nem de mais (desperdício).</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">Filosofia · Ética</span></div>
+    <div class="eq-text"><p>"Age de tal maneira que uses a humanidade, tanto na tua pessoa como na pessoa de qualquer outro, sempre e simultaneamente como fim e nunca simplesmente como meio."</p><cite>KANT, I. Fundamentação da Metafísica dos Costumes.</cite></div>
+    <p class="eq-cmd">De acordo com esse princípio, é eticamente condenável</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="filo-q3" value="A"><span class="letter">A</span><span class="alt-t">ajudar um colega a estudar.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="B"><span class="letter">B</span><span class="alt-t">cumprir uma promessa feita.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="C"><span class="letter">C</span><span class="alt-t">respeitar as leis do país.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="D"><span class="letter">D</span><span class="alt-t">dizer a verdade, mesmo quando é difícil.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="E"><span class="letter">E</span><span class="alt-t">enganar outra pessoa apenas para obter vantagem própria.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Enganar alguém para levar vantagem é usar a pessoa só como meio, e não como fim. Para Kant, isso é errado.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">Filosofia · Ética</span></div>
+    <div class="eq-text"><p>Durante uma epidemia, com poucas doses de vacina disponíveis, as autoridades de saúde decidiram vacinar primeiro os grupos com maior risco de morte, justificando que essa escolha salvaria o maior número de vidas possível.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A justificativa apresentada pelas autoridades está de acordo com os princípios do</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="filo-q4" value="A"><span class="letter">A</span><span class="alt-t">utilitarismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="B"><span class="letter">B</span><span class="alt-t">existencialismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="C"><span class="letter">C</span><span class="alt-t">absolutismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="D"><span class="letter">D</span><span class="alt-t">ceticismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="E"><span class="letter">E</span><span class="alt-t">fordismo.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Utilitarismo: a melhor ação é a que traz o maior bem para o maior número de pessoas.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">Filosofia · Política</span></div>
+    <div class="eq-text"><p>"Durante o tempo em que os homens vivem sem um poder comum capaz de os manter a todos em respeito, eles se encontram naquela condição a que se chama guerra; e uma guerra que é de todos os homens contra todos os homens."</p><cite>HOBBES, T. Leviatã.</cite></div>
+    <p class="eq-cmd">Para o autor, a solução para essa condição é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="filo-q5" value="A"><span class="letter">A</span><span class="alt-t">a ausência de qualquer governo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="B"><span class="letter">B</span><span class="alt-t">o retorno à vida simples no campo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="C"><span class="letter">C</span><span class="alt-t">a divisão do poder em três esferas independentes.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="D"><span class="letter">D</span><span class="alt-t">um pacto social que crie um Estado forte, capaz de garantir a paz.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="E"><span class="letter">E</span><span class="alt-t">a luta de classes entre burgueses e operários.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Hobbes defende que as pessoas abrem mão de parte da liberdade em troca de segurança, criando um Estado forte, o "Leviatã".</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">Filosofia · Política</span></div>
+    <div class="eq-text"><p>"O fim maior e principal para os homens unirem-se em sociedades políticas e submeterem-se a um governo é a conservação de sua propriedade." Para o autor, "propriedade" inclui a vida, a liberdade e os bens de cada pessoa.</p><cite>Adaptado de: LOCKE, J. Segundo Tratado sobre o Governo.</cite></div>
+    <p class="eq-cmd">Na teoria desse autor, se o governo violar esses direitos, o povo</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="filo-q6" value="A"><span class="letter">A</span><span class="alt-t">deve obedecer sempre, sem questionar.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="B"><span class="letter">B</span><span class="alt-t">tem o direito de resistir e substituir o governo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="C"><span class="letter">C</span><span class="alt-t">perde automaticamente todos os seus direitos.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="D"><span class="letter">D</span><span class="alt-t">deve voltar à guerra de todos contra todos.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="E"><span class="letter">E</span><span class="alt-t">precisa entregar seus bens ao rei.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Para Locke, o governo existe para proteger direitos naturais. Se não cumpre esse papel, perde a legitimidade, e o povo pode substituí-lo.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">Sociologia</span></div>
+    <div class="eq-text"><p>"Quando desempenho meus deveres de irmão, de esposo ou de cidadão, realizo deveres que estão definidos, fora de mim e de meus atos, no direito e nos costumes."</p><cite>Adaptado de: DURKHEIM, É. As regras do método sociológico.</cite></div>
+    <p class="eq-cmd">O trecho apresenta uma característica do conceito sociológico de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="filo-q7" value="A"><span class="letter">A</span><span class="alt-t">mais-valia.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="B"><span class="letter">B</span><span class="alt-t">ação social.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="C"><span class="letter">C</span><span class="alt-t">luta de classes.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="D"><span class="letter">D</span><span class="alt-t">indústria cultural.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="E"><span class="letter">E</span><span class="alt-t">fato social.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O fato social é exterior ao indivíduo (está "fora de mim"), coercitivo e geral. É o conceito central de Durkheim.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">Sociologia</span></div>
+    <div class="eq-text"><p>"O trabalhador torna-se tanto mais pobre quanto mais riqueza produz. [...] O trabalhador torna-se uma mercadoria tanto mais barata quanto mais mercadorias cria."</p><cite>Adaptado de: MARX, K. Manuscritos econômico-filosóficos, 1844.</cite></div>
+    <p class="eq-cmd">O texto descreve a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="filo-q8" value="A"><span class="letter">A</span><span class="alt-t">valorização crescente do trabalho operário.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="B"><span class="letter">B</span><span class="alt-t">ética protestante como origem do capitalismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="C"><span class="letter">C</span><span class="alt-t">alienação e a exploração do trabalhador no capitalismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="D"><span class="letter">D</span><span class="alt-t">solidariedade orgânica das sociedades modernas.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="E"><span class="letter">E</span><span class="alt-t">dominação carismática dos líderes políticos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O trabalhador produz riqueza que não fica com ele: é a exploração (mais-valia). E ele não se reconhece no que produz: é a alienação.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">Sociologia · Trabalho</span></div>
+    <div class="eq-text"><p>No filme "Tempos Modernos" (1936), o personagem de Charles Chaplin passa o dia apertando parafusos numa esteira que se move cada vez mais rápido, até sofrer um colapso nervoso.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A cena critica o modelo de produção</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="filo-q9" value="A"><span class="letter">A</span><span class="alt-t">fordista, baseado na linha de montagem e no trabalho repetitivo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="B"><span class="letter">B</span><span class="alt-t">toyotista, baseado na produção flexível.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="C"><span class="letter">C</span><span class="alt-t">artesanal, em que o trabalhador domina todo o processo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="D"><span class="letter">D</span><span class="alt-t">feudal, baseado na servidão.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="E"><span class="letter">E</span><span class="alt-t">digital, baseado em aplicativos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A esteira e o movimento repetido são marcas do fordismo. O filme mostra o trabalhador tratado como peça da máquina.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">Sociologia · Trabalho</span></div>
+    <div class="eq-text"><p>Uma pesquisa com entregadores por aplicativo mostrou jornadas longas, ausência de carteira assinada, de férias e de 13º salário, além de gastos com a própria moto, o combustível e o celular, que ficam por conta do trabalhador.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A situação descrita é um exemplo de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="filo-q10" value="A"><span class="letter">A</span><span class="alt-t">ampliação dos direitos trabalhistas.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="B"><span class="letter">B</span><span class="alt-t">fortalecimento dos sindicatos.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="C"><span class="letter">C</span><span class="alt-t">retorno ao modelo fordista clássico.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="D"><span class="letter">D</span><span class="alt-t">precarização das relações de trabalho.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="E"><span class="letter">E</span><span class="alt-t">redução da informalidade.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Menos direitos, mais riscos para o trabalhador: precarização. Esse processo também é chamado de uberização.</p></div>
+  </article>
+  <div class="sim-end card">
+    <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
+    <button type="button" class="sim-reset">Refazer o simulado</button>
+  </div>
+</section>
+<script>
+(function () {
+  document.querySelectorAll(".sim").forEach(function (sim) {
+    var qs = Array.prototype.slice.call(sim.querySelectorAll(".eq"));
+    var score = sim.querySelector(".sim-score");
+    function update() {
+      var done = qs.filter(function (q) { return q.dataset.done; });
+      var ok = done.filter(function (q) { return q.dataset.done === "ok"; }).length;
+      if (!done.length) { score.textContent = "Responda as questões para ver quantas você acertou."; return; }
+      var msg = "Você acertou " + ok + " de " + done.length + (done.length === 1 ? " questão respondida." : " questões respondidas.");
+      if (done.length === qs.length) {
+        msg = "Resultado: você acertou " + ok + " de " + qs.length + ". ";
+        msg += ok >= 9 ? "Excelente! Você está pronta para esse conteúdo." : ok >= 6 ? "Muito bem! Releia a explicação das que errou." : "Tudo bem errar no treino: releia as partes do dia e tente de novo amanhã cedo.";
+      }
+      score.textContent = msg;
+    }
+    qs.forEach(function (q) {
+      var btn = q.querySelector(".eq-check"), fb = q.querySelector(".eq-fb"), res = q.querySelector(".eq-res"), exp = q.querySelector(".eq-exp");
+      btn.addEventListener("click", function () {
+        var sel = q.querySelector("input:checked");
+        if (!sel) { fb.hidden = false; exp.hidden = true; fb.className = "eq-fb is-empty"; res.textContent = "Escolha uma alternativa antes de confirmar."; return; }
+        var ans = q.dataset.ans, right = sel.value === ans;
+        q.querySelectorAll(".alt").forEach(function (lab) {
+          var inp = lab.querySelector("input"); inp.disabled = true;
+          if (inp.value === ans) lab.classList.add("is-right");
+          else if (inp === sel) lab.classList.add("is-wrong");
+        });
+        q.dataset.done = right ? "ok" : "no";
+        fb.hidden = false; exp.hidden = false;
+        fb.className = "eq-fb " + (right ? "is-ok" : "is-no");
+        res.textContent = right ? "Acertou! Letra " + ans + "." : "Não foi dessa vez. A resposta certa é a letra " + ans + ".";
+        btn.hidden = true;
+        update();
+      });
+    });
+    sim.querySelector(".sim-reset").addEventListener("click", function () {
+      qs.forEach(function (q) {
+        delete q.dataset.done;
+        q.querySelectorAll(".alt").forEach(function (lab) { lab.classList.remove("is-right", "is-wrong"); var i = lab.querySelector("input"); i.disabled = false; i.checked = false; });
+        q.querySelector(".eq-fb").hidden = true; q.querySelector(".eq-check").hidden = false;
+      });
+      update();
+      sim.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
 <section id="provas">
   <div class="note">
-    <span class="label">Onde achar provas antigas</span>
+    <span class="label">Quer treinar mais?</span>
     <p>O INEP publica todas as provas e gabaritos de graça: <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener">gov.br/inep → Provas e gabaritos</a>. Pegue a prova do 1º dia. As questões de Ciências Humanas são as de número 46 a 90.</p>
   </div>
 </section>

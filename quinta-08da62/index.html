@@ -214,6 +214,38 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
+/* Simulado estilo ENEM */
+:root { --ok: #1E7A46; --ok-soft: #E1F4E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #6FD39A; --ok-soft: #163A26; } }
+:root[data-theme="dark"] { --ok: #6FD39A; --ok-soft: #163A26; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eq { gap: 12px; }
+.eq-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-family: var(--font-display); font-weight: 800; }
+.eq-area { font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; }
+.eq-text { background: var(--bg); border-left: 3px solid var(--line); border-radius: 0 10px 10px 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-text cite { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.eq-cmd { font-weight: 700; }
+.alts { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.alt { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.alt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.alt .letter { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.alt .alt-t { min-width: 0; }
+.alt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.alt:has(input:checked) .letter { background: var(--ink); color: var(--bg); }
+.alt:has(input:focus-visible) { outline: 3px solid var(--sun); outline-offset: 2px; }
+.alts .alt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.alts .alt.is-right .letter { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.alts .alt.is-wrong { border-color: var(--warn); background: var(--warn-soft); }
+.alts .alt.is-wrong .letter { background: var(--warn); border-color: var(--warn); color: var(--surface); }
+.alt:has(input:disabled) { cursor: default; }
+.eq-check, .sim-reset { align-self: flex-start; font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.sim-reset { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.eq-fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-fb.is-ok { background: var(--ok-soft); } .eq-fb.is-ok .eq-res { color: var(--ok); font-weight: 700; }
+.eq-fb.is-no { background: var(--warn-soft); } .eq-fb.is-no .eq-res { color: var(--warn); font-weight: 700; }
+.eq-fb.is-empty { background: var(--sun-soft); }
+.sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
+
 /* Teste rápido */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
@@ -234,11 +266,12 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é dia de <span>Geografia</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: questão agrária e meio ambiente</div>
-  <p class="lede">Hoje o foco é <strong>Geografia</strong>: a questão agrária no Brasil e o meio ambiente. Tudo explicado do zero, com um teste rápido no fim de cada parte.</p>
+  <p class="lede">Hoje o foco é <strong>Geografia</strong>: a questão agrária no Brasil e o meio ambiente. Tudo explicado do zero, com um teste rápido no fim de cada parte e um simulado de 10 questões.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-geo">Missão de hoje</a>
     <a href="#agraria">Questão agrária</a>
     <a href="#ambiente">Meio ambiente</a>
+    <a href="#simulado">Simulado</a>
     <a href="#redacao-geo">Use na redação</a>
   </nav>
 </header>
@@ -262,7 +295,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <label class="check"><input type="checkbox" id="g-1"><span class="bubble"></span><span class="txt">Ler <a href="#agraria">Questão agrária</a> e fazer o teste rápido (≈ 45 min).</span></label>
     <label class="check"><input type="checkbox" id="g-2"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
     <label class="check"><input type="checkbox" id="g-3"><span class="bubble"></span><span class="txt">Ler <a href="#ambiente">Meio ambiente</a> e fazer o teste rápido (≈ 45 min).</span></label>
-    <label class="check"><input type="checkbox" id="g-4"><span class="bubble"></span><span class="txt">Resolver 10 questões de Geografia de provas antigas do ENEM (<a href="#provas">onde achar</a>).</span></label>
+    <label class="check"><input type="checkbox" id="g-4"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
     <label class="check"><input type="checkbox" id="g-5"><span class="bubble"></span><span class="txt">Ler <a href="#redacao-geo">Use na redação</a>: temas de meio ambiente caem muito.</span></label>
   </div>
 </section>
@@ -409,6 +442,204 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   </div>
 </section>
 
+<section id="simulado" class="sim">
+  <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
+  <h2>Simulado de Geografia</h2>
+  <p class="intro">Dez questões no estilo do ENEM sobre questão agrária e meio ambiente.</p>
+  <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer as 10 em até 30 minutos, como na prova.</p></div>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">Questão agrária</span></div>
+    <div class="eq-text"><p>Dados do Censo Agropecuário mostram que um pequeno número de grandes estabelecimentos rurais ocupa a maior parte da área agrícola do país, enquanto milhões de pequenos estabelecimentos dividem uma área muito menor.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A situação descrita caracteriza</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
+      <label class="alt"><input type="radio" name="geo-q1" value="A"><span class="letter">A</span><span class="alt-t">a reforma agrária concluída.</span></label>
+      <label class="alt"><input type="radio" name="geo-q1" value="B"><span class="letter">B</span><span class="alt-t">a concentração fundiária.</span></label>
+      <label class="alt"><input type="radio" name="geo-q1" value="C"><span class="letter">C</span><span class="alt-t">o predomínio da agricultura de subsistência.</span></label>
+      <label class="alt"><input type="radio" name="geo-q1" value="D"><span class="letter">D</span><span class="alt-t">o equilíbrio na distribuição de terras.</span></label>
+      <label class="alt"><input type="radio" name="geo-q1" value="E"><span class="letter">E</span><span class="alt-t">o fim do latifúndio.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Poucos donos com muita terra e muitos donos com pouca terra: isso é concentração fundiária, que vem desde a Colônia.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">Questão agrária</span></div>
+    <div class="eq-text"><p>Com a chegada das colheitadeiras, uma única máquina passou a fazer o trabalho que antes ocupava dezenas de trabalhadores na colheita da cana e dos grãos.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">Uma consequência social desse processo foi</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="geo-q2" value="A"><span class="letter">A</span><span class="alt-t">o aumento da oferta de empregos no campo.</span></label>
+      <label class="alt"><input type="radio" name="geo-q2" value="B"><span class="letter">B</span><span class="alt-t">a valorização dos trabalhadores temporários.</span></label>
+      <label class="alt"><input type="radio" name="geo-q2" value="C"><span class="letter">C</span><span class="alt-t">a redução do tamanho das cidades.</span></label>
+      <label class="alt"><input type="radio" name="geo-q2" value="D"><span class="letter">D</span><span class="alt-t">a intensificação do êxodo rural.</span></label>
+      <label class="alt"><input type="radio" name="geo-q2" value="E"><span class="letter">E</span><span class="alt-t">o fim da produção para exportação.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Sem trabalho no campo, as pessoas migraram para as cidades. É o êxodo rural, que fez as cidades crescerem sem planejamento.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">Questão agrária</span></div>
+    <div class="eq-text"><p>Nas últimas décadas, áreas do Cerrado e do sul da Amazônia foram convertidas em grandes lavouras de soja e em pastagens. Esse avanço é acompanhado pela abertura de estradas e pelo crescimento de cidades ligadas ao agronegócio.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O processo descrito é conhecido como</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="geo-q3" value="A"><span class="letter">A</span><span class="alt-t">expansão da fronteira agrícola.</span></label>
+      <label class="alt"><input type="radio" name="geo-q3" value="B"><span class="letter">B</span><span class="alt-t">reforma agrária.</span></label>
+      <label class="alt"><input type="radio" name="geo-q3" value="C"><span class="letter">C</span><span class="alt-t">desertificação.</span></label>
+      <label class="alt"><input type="radio" name="geo-q3" value="D"><span class="letter">D</span><span class="alt-t">agricultura familiar.</span></label>
+      <label class="alt"><input type="radio" name="geo-q3" value="E"><span class="letter">E</span><span class="alt-t">urbanização litorânea.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A fronteira agrícola é a linha onde a agropecuária avança sobre áreas de vegetação nativa.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">Questão agrária</span></div>
+    <div class="eq-text"><p>Ela ocupa uma área menor que a do agronegócio, emprega muitas pessoas no campo e produz grande parte do feijão, da mandioca e do leite consumidos no país.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O texto descreve a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="geo-q4" value="A"><span class="letter">A</span><span class="alt-t">monocultura de exportação.</span></label>
+      <label class="alt"><input type="radio" name="geo-q4" value="B"><span class="letter">B</span><span class="alt-t">plantation colonial.</span></label>
+      <label class="alt"><input type="radio" name="geo-q4" value="C"><span class="letter">C</span><span class="alt-t">pecuária extensiva.</span></label>
+      <label class="alt"><input type="radio" name="geo-q4" value="D"><span class="letter">D</span><span class="alt-t">atividade mineradora.</span></label>
+      <label class="alt"><input type="radio" name="geo-q4" value="E"><span class="letter">E</span><span class="alt-t">agricultura familiar.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Pequenas propriedades, trabalho da família e alimentos para o mercado interno: agricultura familiar.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">Questão agrária</span></div>
+    <div class="eq-text"><p>Movimentos sociais do campo ocupam fazendas consideradas improdutivas para pressionar o governo a realizar desapropriações, com base no princípio constitucional de que a propriedade deve cumprir sua função social.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">A principal reivindicação desses movimentos é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="geo-q5" value="A"><span class="letter">A</span><span class="alt-t">a privatização das terras públicas.</span></label>
+      <label class="alt"><input type="radio" name="geo-q5" value="B"><span class="letter">B</span><span class="alt-t">a expansão do agronegócio exportador.</span></label>
+      <label class="alt"><input type="radio" name="geo-q5" value="C"><span class="letter">C</span><span class="alt-t">a reforma agrária.</span></label>
+      <label class="alt"><input type="radio" name="geo-q5" value="D"><span class="letter">D</span><span class="alt-t">o aumento do uso de agrotóxicos.</span></label>
+      <label class="alt"><input type="radio" name="geo-q5" value="E"><span class="letter">E</span><span class="alt-t">a venda de terras a estrangeiros.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Reforma agrária é redistribuir terras improdutivas para quem quer produzir. O MST é o movimento mais conhecido.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">Meio ambiente</span></div>
+    <div class="eq-text"><p>Após a retirada da mata ciliar para a criação de gado, moradores ribeirinhos perceberam que o rio ficou mais raso e barrento, e alguns trechos deixaram de ser navegáveis.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O fenômeno observado pelos moradores é o</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="geo-q6" value="A"><span class="letter">A</span><span class="alt-t">efeito estufa.</span></label>
+      <label class="alt"><input type="radio" name="geo-q6" value="B"><span class="letter">B</span><span class="alt-t">assoreamento.</span></label>
+      <label class="alt"><input type="radio" name="geo-q6" value="C"><span class="letter">C</span><span class="alt-t">fenômeno da inversão térmica.</span></label>
+      <label class="alt"><input type="radio" name="geo-q6" value="D"><span class="letter">D</span><span class="alt-t">aquecimento das águas oceânicas.</span></label>
+      <label class="alt"><input type="radio" name="geo-q6" value="E"><span class="letter">E</span><span class="alt-t">chuva ácida.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Sem a mata ciliar, a chuva leva terra para dentro do rio, que fica raso e entupido de sedimentos.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">Meio ambiente</span></div>
+    <div class="eq-text"><p>Medições feitas no mesmo horário mostram que a temperatura no centro de uma grande cidade, com muito asfalto, concreto e poucos parques, chega a ser vários graus maior que a dos bairros arborizados.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O fenômeno descrito é chamado de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="geo-q7" value="A"><span class="letter">A</span><span class="alt-t">ilha de calor.</span></label>
+      <label class="alt"><input type="radio" name="geo-q7" value="B"><span class="letter">B</span><span class="alt-t">inversão térmica.</span></label>
+      <label class="alt"><input type="radio" name="geo-q7" value="C"><span class="letter">C</span><span class="alt-t">El Niño.</span></label>
+      <label class="alt"><input type="radio" name="geo-q7" value="D"><span class="letter">D</span><span class="alt-t">desertificação.</span></label>
+      <label class="alt"><input type="radio" name="geo-q7" value="E"><span class="letter">E</span><span class="alt-t">efeito estufa natural.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Asfalto e concreto absorvem e guardam calor. Áreas verdes ajudam a refrescar.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">Meio ambiente</span></div>
+    <div class="eq-text"><p>A floresta amazônica libera, pela transpiração das árvores, enormes quantidades de vapor d'água. Levada pelos ventos, essa umidade contribui para as chuvas no Centro-Oeste e no Sudeste do Brasil.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">De acordo com o texto, o desmatamento da Amazônia pode</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="geo-q8" value="A"><span class="letter">A</span><span class="alt-t">aumentar as chuvas no Sudeste.</span></label>
+      <label class="alt"><input type="radio" name="geo-q8" value="B"><span class="letter">B</span><span class="alt-t">não ter nenhum efeito fora da floresta.</span></label>
+      <label class="alt"><input type="radio" name="geo-q8" value="C"><span class="letter">C</span><span class="alt-t">diminuir a temperatura do planeta.</span></label>
+      <label class="alt"><input type="radio" name="geo-q8" value="D"><span class="letter">D</span><span class="alt-t">reduzir as chuvas em outras regiões do país.</span></label>
+      <label class="alt"><input type="radio" name="geo-q8" value="E"><span class="letter">E</span><span class="alt-t">aumentar a umidade do Cerrado.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">São os "rios voadores". Menos floresta significa menos umidade e menos chuva em outras regiões, o que afeta a agricultura e o abastecimento de água.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">Meio ambiente</span></div>
+    <div class="eq-text"><p>"O desenvolvimento sustentável é aquele que atende às necessidades do presente sem comprometer a possibilidade de as gerações futuras atenderem às suas próprias necessidades."</p><cite>Adaptado de: Relatório Nosso Futuro Comum (Relatório Brundtland), 1987.</cite></div>
+    <p class="eq-cmd">Uma ação coerente com esse conceito é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="geo-q9" value="A"><span class="letter">A</span><span class="alt-t">ampliar o desmatamento para aumentar as exportações.</span></label>
+      <label class="alt"><input type="radio" name="geo-q9" value="B"><span class="letter">B</span><span class="alt-t">explorar ao máximo os recursos minerais disponíveis.</span></label>
+      <label class="alt"><input type="radio" name="geo-q9" value="C"><span class="letter">C</span><span class="alt-t">substituir florestas nativas por pastagens.</span></label>
+      <label class="alt"><input type="radio" name="geo-q9" value="D"><span class="letter">D</span><span class="alt-t">incentivar o consumo de produtos descartáveis.</span></label>
+      <label class="alt"><input type="radio" name="geo-q9" value="E"><span class="letter">E</span><span class="alt-t">investir em energia renovável e no reaproveitamento de resíduos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Energia limpa e reciclagem atendem ao presente sem esgotar os recursos para o futuro.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">Meio ambiente</span></div>
+    <div class="eq-text"><p>Em áreas do semiárido nordestino, o desmatamento da Caatinga, o uso intensivo do solo e longos períodos de seca vêm deixando a terra empobrecida, sem vegetação e com aspecto de deserto.</p><cite>Texto elaborado para este simulado.</cite></div>
+    <p class="eq-cmd">O processo descrito é a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="geo-q10" value="A"><span class="letter">A</span><span class="alt-t">salinização dos oceanos.</span></label>
+      <label class="alt"><input type="radio" name="geo-q10" value="B"><span class="letter">B</span><span class="alt-t">eutrofização.</span></label>
+      <label class="alt"><input type="radio" name="geo-q10" value="C"><span class="letter">C</span><span class="alt-t">desertificação.</span></label>
+      <label class="alt"><input type="radio" name="geo-q10" value="D"><span class="letter">D</span><span class="alt-t">urbanização.</span></label>
+      <label class="alt"><input type="radio" name="geo-q10" value="E"><span class="letter">E</span><span class="alt-t">formação de mangues.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Desertificação é quando o solo de uma região seca fica tão degradado que passa a parecer um deserto. A ação humana acelera o processo.</p></div>
+  </article>
+  <div class="sim-end card">
+    <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
+    <button type="button" class="sim-reset">Refazer o simulado</button>
+  </div>
+</section>
+<script>
+(function () {
+  document.querySelectorAll(".sim").forEach(function (sim) {
+    var qs = Array.prototype.slice.call(sim.querySelectorAll(".eq"));
+    var score = sim.querySelector(".sim-score");
+    function update() {
+      var done = qs.filter(function (q) { return q.dataset.done; });
+      var ok = done.filter(function (q) { return q.dataset.done === "ok"; }).length;
+      if (!done.length) { score.textContent = "Responda as questões para ver quantas você acertou."; return; }
+      var msg = "Você acertou " + ok + " de " + done.length + (done.length === 1 ? " questão respondida." : " questões respondidas.");
+      if (done.length === qs.length) {
+        msg = "Resultado: você acertou " + ok + " de " + qs.length + ". ";
+        msg += ok >= 9 ? "Excelente! Você está pronta para esse conteúdo." : ok >= 6 ? "Muito bem! Releia a explicação das que errou." : "Tudo bem errar no treino: releia as partes do dia e tente de novo amanhã cedo.";
+      }
+      score.textContent = msg;
+    }
+    qs.forEach(function (q) {
+      var btn = q.querySelector(".eq-check"), fb = q.querySelector(".eq-fb"), res = q.querySelector(".eq-res"), exp = q.querySelector(".eq-exp");
+      btn.addEventListener("click", function () {
+        var sel = q.querySelector("input:checked");
+        if (!sel) { fb.hidden = false; exp.hidden = true; fb.className = "eq-fb is-empty"; res.textContent = "Escolha uma alternativa antes de confirmar."; return; }
+        var ans = q.dataset.ans, right = sel.value === ans;
+        q.querySelectorAll(".alt").forEach(function (lab) {
+          var inp = lab.querySelector("input"); inp.disabled = true;
+          if (inp.value === ans) lab.classList.add("is-right");
+          else if (inp === sel) lab.classList.add("is-wrong");
+        });
+        q.dataset.done = right ? "ok" : "no";
+        fb.hidden = false; exp.hidden = false;
+        fb.className = "eq-fb " + (right ? "is-ok" : "is-no");
+        res.textContent = right ? "Acertou! Letra " + ans + "." : "Não foi dessa vez. A resposta certa é a letra " + ans + ".";
+        btn.hidden = true;
+        update();
+      });
+    });
+    sim.querySelector(".sim-reset").addEventListener("click", function () {
+      qs.forEach(function (q) {
+        delete q.dataset.done;
+        q.querySelectorAll(".alt").forEach(function (lab) { lab.classList.remove("is-right", "is-wrong"); var i = lab.querySelector("input"); i.disabled = false; i.checked = false; });
+        q.querySelector(".eq-fb").hidden = true; q.querySelector(".eq-check").hidden = false;
+      });
+      update();
+      sim.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
 <section id="redacao-geo">
   <div class="tabrow"><span class="tab sun">Bônus</span></div>
   <h2>Use na redação</h2>
@@ -423,7 +654,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <section id="provas">
   <div class="note">
-    <span class="label">Onde achar provas antigas</span>
+    <span class="label">Quer treinar mais?</span>
     <p>O INEP publica todas as provas e gabaritos de graça: <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener">gov.br/inep → Provas e gabaritos</a>. Pegue a prova do 1º dia. As questões de Ciências Humanas são as de número 46 a 90.</p>
   </div>
 </section>
