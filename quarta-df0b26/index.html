@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Quarta da Adriely</title>
-<meta name="description" content="Hoje: o que cai no domingo, como a nota te leva para a faculdade e dicas de Linguagens.">
-<meta property="og:title" content="Quarta da Adriely">
-<meta property="og:description" content="Hoje: o que cai no domingo, como a nota te leva para a faculdade e dicas de Linguagens.">
+<title>História da Adriely</title>
+<meta name="description" content="Hoje: História. Brasil Colônia, Brasil Império e História Contemporânea, com teste rápido.">
+<meta property="og:title" content="História da Adriely">
+<meta property="og:description" content="Hoje: História. Brasil Colônia, Brasil Império e História Contemporânea, com teste rápido.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -213,6 +213,17 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Teste rápido */
+.quiz { gap: 8px; }
+.quiz .q { font-weight: 400; }
+.quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
+.quiz ol.opts li::marker { font-weight: 700; color: var(--accent); }
+.quiz details { border-top: 1px dashed var(--line); padding-top: 8px; }
+.quiz summary { cursor: pointer; font-weight: 700; color: var(--accent); list-style: none; display: inline-flex; gap: 6px; align-items: center; padding: 4px 12px; border: 1.5px solid var(--accent); border-radius: 999px; }
+.quiz summary::-webkit-details-marker { display: none; }
+.quiz details[open] summary { background: var(--accent); color: var(--accent-ink); }
+.quiz details p { margin-top: 8px; background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
 </style>
 
 </head>
@@ -221,115 +232,220 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <header class="hero">
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
-  <h1>Adriely, rumo à <span>Fisioterapia</span></h1>
-  <div class="today-pill"><span class="dot"></span>Hoje: Linguagens e a sua meta</div>
-  <p class="lede">Esta é a <strong>parte de quarta</strong> do seu guia: o que cai no domingo, como a nota te leva para a faculdade e dicas de Linguagens.</p>
+  <h1>Adriely, hoje é dia de <span>História</span></h1>
+  <div class="today-pill"><span class="dot"></span>Hoje: História do Brasil e do mundo</div>
+  <p class="lede">Hoje o foco é <strong>História</strong>: Brasil Colônia, Brasil Império e História Contemporânea. Está tudo explicado do zero, com um teste rápido no fim de cada parte.</p>
   <nav class="nav" aria-label="Partes do guia">
-    <a href="#hoje-4">Missão de hoje</a>
-    <a href="#comecar">O 1º dia</a>
-    <a href="#nota">A nota e a faculdade</a>
-    <a href="#linguagens">Linguagens</a>
+    <a href="#hoje-hist">Missão de hoje</a>
+    <a href="#colonia">Colônia</a>
+    <a href="#imperio">Império</a>
+    <a href="#contemporanea">Contemporânea</a>
+    <a href="#redacao-hist">Use na redação</a>
   </nav>
 </header>
 
 <section id="como-usar">
   <div class="card stack">
-    <h3>Nunca usou um guia assim? É fácil:</h3>
+    <h3>Como estudar esta página</h3>
     <div class="howto">
-      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>, logo abaixo. Ela diz o que fazer hoje.</p></div>
-      <div><span class="n">2</span><p>Toque nos <strong>textos azuis sublinhados</strong> para ir direto à parte certa.</p></div>
-      <div><span class="n">3</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa.</p></div>
+      <div><span class="n">2</span><p>Leia cada época com calma. <strong>Não precisa decorar datas</strong>: o ENEM cobra causa e consequência.</p></div>
+      <div><span class="n">3</span><p>No fim de cada parte, faça o <strong>teste rápido</strong>. Toque em "Ver resposta" só depois de escolher a sua.</p></div>
+      <div><span class="n">4</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
     </div>
   </div>
 </section>
 
-<section id="hoje-4" class="mission-sec">
+<section id="hoje-hist" class="mission-sec">
   <div class="card mission stack">
     <span class="tab sun">Missão de hoje · quarta, 4/11</span>
-    <h2>Dia de Linguagens e da sua meta</h2>
-    <label class="check"><input type="checkbox" id="m4-1"><span class="bubble"></span><span class="txt">Ler a correção da redação de ontem e reescrever os trechos que precisam melhorar.</span></label>
-    <label class="check"><input type="checkbox" id="m4-2"><span class="bubble"></span><span class="txt">Ler <a href="#comecar">O que cai no domingo</a> e <a href="#nota">Como a nota te leva para a faculdade</a>.</span></label>
-    <label class="check"><input type="checkbox" id="m4-3"><span class="bubble"></span><span class="txt">Ver o local de prova no Cartão de Confirmação, na Página do Participante do INEP.</span></label>
-    <label class="check"><input type="checkbox" id="m4-4"><span class="bubble"></span><span class="txt">Ler as <a href="#linguagens">dicas de Linguagens</a> e resolver 20 questões de Linguagens de provas antigas.</span></label>
+    <h2>Dia de História</h2>
+    <label class="check"><input type="checkbox" id="h-1"><span class="bubble"></span><span class="txt">Ler <a href="#colonia">Brasil Colônia</a> e fazer o teste rápido (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="h-2"><span class="bubble"></span><span class="txt">Ler <a href="#imperio">Brasil Império</a> e fazer o teste rápido (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="h-3"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos. Água, alongamento, nada de celular.</span></label>
+    <label class="check"><input type="checkbox" id="h-4"><span class="bubble"></span><span class="txt">Ler <a href="#contemporanea">História Contemporânea</a> e fazer o teste rápido (≈ 50 min).</span></label>
+    <label class="check"><input type="checkbox" id="h-5"><span class="bubble"></span><span class="txt">Resolver 10 questões de História de provas antigas do ENEM (<a href="#provas">onde achar</a>).</span></label>
+    <label class="check"><input type="checkbox" id="h-6"><span class="bubble"></span><span class="txt">Ler <a href="#redacao-hist">Use na redação</a>: 4 fatos de História que viram repertório.</span></label>
   </div>
 </section>
 
-<section id="comecar">
-  <div class="tabrow"><span class="tab">Primeiro, respira</span></div>
-  <h2>O que cai no domingo</h2>
-  <p class="intro">O ENEM tem dois dias de prova, em dois domingos seguidos. Este domingo é o <strong>1º dia</strong>. Ciências da Natureza e Matemática ficam para o 2º dia, no domingo seguinte.</p>
+<section id="como-cai">
+  <div class="tabrow"><span class="tab">Antes de começar</span></div>
+  <h2>Como a História cai no ENEM</h2>
+  <p class="intro">A prova de Humanas tem 45 questões, e História costuma ser uma boa parte delas. O ENEM quase nunca pergunta "em que ano aconteceu tal coisa". Ele mostra um texto, uma imagem ou uma charge e pergunta <strong>por que aquilo aconteceu</strong> ou <strong>o que mudou depois</strong>.</p>
   <div class="grid">
-    <div class="card stat"><b>45</b><span>Linguagens</span><p class="muted">Português, Literatura, Artes, Educação Física e 5 questões de Inglês ou Espanhol (a língua que você escolheu na inscrição).</p></div>
-    <div class="card stat"><b>45</b><span>Ciências Humanas</span><p class="muted">História, Geografia, Filosofia e Sociologia.</p></div>
-    <div class="card stat"><b>1</b><span>Redação</span><p class="muted">Um texto de até 30 linhas sobre um tema que você só descobre na hora.</p></div>
-  </div>
-  <div class="note">
-    <span class="label">Tempo total: 5h30</span>
-    <p>Dá tempo de fazer tudo com calma se você se organizar. Na sexta, este guia libera uma sugestão de como dividir esse tempo.</p>
-  </div>
-  <div class="note sun">
-    <span class="label">Faça isso hoje</span>
-    <p>Entre na Página do Participante do INEP e veja o seu <strong>Cartão de Confirmação</strong>. Lá estão o endereço do local de prova e o horário. Os portões fecham no <strong>horário de Brasília</strong>, e quem chega depois não entra.</p>
+    <div class="card"><h3>Leia o texto primeiro</h3><p class="muted">A resposta quase sempre está no texto ou na imagem. O seu conhecimento ajuda a confirmar.</p></div>
+    <div class="card"><h3>Pense em causa e consequência</h3><p class="muted">"O que levou a isso?" e "o que isso provocou?" são as duas perguntas que mais aparecem.</p></div>
+    <div class="card"><h3>Ligue passado e presente</h3><p class="muted">O ENEM adora mostrar como algo do passado (como a escravidão) ainda afeta o Brasil de hoje.</p></div>
   </div>
 </section>
 
-<section id="nota">
-  <div class="tabrow"><span class="tab">A sua meta</span></div>
-  <h2>Como a nota te leva para a UDF ou o UniCEUB</h2>
-  <p class="intro">As duas são faculdades particulares. Isso é bom: a nota do ENEM abre portas, mas não é a única porta.</p>
+<!-- COLÔNIA -->
+<section id="colonia">
+  <div class="tabrow"><span class="tab">Parte 1 · 1500 a 1822</span></div>
+  <h2>Brasil Colônia</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Por mais de 300 anos, o Brasil existiu para <strong>gerar riqueza para Portugal</strong>, com base na <strong>terra concentrada</strong> e no <strong>trabalho de pessoas escravizadas</strong>.</p></div>
+
+  <h3>A linha do tempo</h3>
+  <div class="timeline">
+    <div class="step"><div class="time">1500</div><p><strong>Chegada dos portugueses.</strong> No começo, eles só exploram o <strong>pau-brasil</strong>, trocando objetos com os indígenas pelo trabalho de corte (o <em>escambo</em>).</p></div>
+    <div class="step"><div class="time">1534</div><p><strong>Capitanias hereditárias.</strong> O rei divide o território em grandes faixas de terra e entrega para nobres cuidarem. Quase todas fracassam.</p></div>
+    <div class="step"><div class="time">1549</div><p><strong>Governo-Geral.</strong> Portugal centraliza o poder. Tomé de Sousa funda <strong>Salvador</strong>, a primeira capital. Chegam os <strong>jesuítas</strong>, que catequizam os indígenas.</p></div>
+    <div class="step"><div class="time">Séc. XVI e XVII</div><p><strong>Ciclo do açúcar</strong> no Nordeste, nos <strong>engenhos</strong>. Começa o <strong>tráfico de africanos escravizados</strong> em grande escala.</p></div>
+    <div class="step"><div class="time">1630 a 1654</div><p><strong>Holandeses no Nordeste</strong> (Pernambuco), atrás do açúcar. Ficam conhecidos pelo governo de Maurício de Nassau.</p></div>
+    <div class="step"><div class="time">Séc. XVII</div><p><strong>Quilombo dos Palmares</strong> (Alagoas), o maior símbolo de resistência à escravidão. Seu líder, <strong>Zumbi</strong>, foi morto em 1695. Por isso, 20 de novembro é o Dia da Consciência Negra.</p></div>
+    <div class="step"><div class="time">Séc. XVIII</div><p><strong>Ciclo do ouro</strong> em Minas Gerais. Portugal cobra o <strong>quinto</strong> (20% do ouro) e, quando faltava, a <strong>derrama</strong> (cobrança à força). A capital vai para o <strong>Rio de Janeiro</strong> em 1763.</p></div>
+    <div class="step"><div class="time">1789 e 1798</div><p><strong>Inconfidência Mineira</strong> (elite de Minas, contra os impostos, inspirada no Iluminismo; Tiradentes foi executado) e <strong>Conjuração Baiana</strong> (popular, com alfaiates e soldados negros, queria também o fim da escravidão).</p></div>
+    <div class="step"><div class="time">1808</div><p><strong>A família real foge de Napoleão e vem para o Brasil.</strong> D. João abre os portos às nações amigas. O Brasil deixa de ser só colônia.</p></div>
+  </div>
+
+  <h3>As 4 ideias que mais caem</h3>
   <div class="grid">
-    <div class="card">
-      <h3>Para entrar</h3>
-      <p>As duas aceitam a nota do ENEM no lugar do vestibular. E se a prova não for como você quer, as duas têm <strong>vestibular próprio</strong>. A Fisioterapia continua no seu caminho.</p>
-    </div>
-    <div class="card">
-      <h3>Prouni</h3>
-      <p>Bolsa do governo de <strong>50% ou 100%</strong> da mensalidade. Precisa de <strong>média de pelo menos 450</strong> e <strong>redação diferente de zero</strong>, além dos critérios de renda da família.</p>
-    </div>
-    <div class="card">
-      <h3>Fies</h3>
-      <p>Financiamento do governo para pagar a faculdade. Pede a mesma coisa: <strong>média de 450 ou mais</strong> e redação diferente de zero.</p>
-    </div>
-  </div>
-  <div class="note">
-    <span class="label">Sua meta em uma frase</span>
-    <p><strong>Média acima de 450 e a redação bem longe do zero.</strong> Quanto mais alta a nota, mais chance de bolsa, porque Fisioterapia é um curso concorrido.</p>
+    <div class="card"><h3>Plantation</h3><p class="muted">O modelo de produção da colônia: <strong>latifúndio</strong> (terra enorme), <strong>monocultura</strong> (um só produto), <strong>trabalho escravizado</strong> e <strong>exportação</strong>.</p></div>
+    <div class="card"><h3>Pacto colonial</h3><p class="muted">A colônia só podia vender e comprar com Portugal. Toda a riqueza ia para a metrópole.</p></div>
+    <div class="card"><h3>Resistência</h3><p class="muted">Indígenas e africanos <strong>não aceitaram passivamente</strong>: fugas, quilombos, revoltas e preservação da cultura. O ENEM cobra muito isso.</p></div>
+    <div class="card"><h3>Povos indígenas</h3><p class="muted">Sofreram com escravização, doenças trazidas pelos europeus e a catequese, que tentava apagar a cultura deles.</p></div>
   </div>
 
-  <h3>Por que a redação é tão importante</h3>
-  <p>O Prouni usa a média das 5 notas do ENEM, e todas contam igual. Nas provas de questões, as notas costumam ficar mais ou menos entre 350 e 750. A redação vai de <strong>0 a 1000</strong>. Por isso é ela que mais mexe na sua média:</p>
-  <div class="calc">Subir 200 pontos na redação = <strong>+40 pontos na média</strong> (200 ÷ 5 = 40)</div>
-
-  <h3>Como o ENEM dá a nota (TRI)</h3>
-  <p>O ENEM não conta só quantas questões você acertou. Ele olha <strong>quais</strong> você acertou. Se você erra as fáceis e acerta as difíceis, o sistema entende que pode ter sido chute e dá menos pontos.</p>
-  <ul class="clean">
-    <li><strong>Garanta as fáceis primeiro.</strong> Elas valem muito.</li>
-    <li><strong>Nunca deixe questão em branco.</strong> Em branco é erro na certa. No chute você ainda pode acertar.</li>
-    <li>Travou numa questão? Marque no caderno, pule e volte depois.</li>
-  </ul>
+  <h3>Teste rápido</h3>
+  <div class="stack">
+    <div class="quiz card">
+      <p class="q"><b>1.</b> No Brasil Colônia, a produção de açúcar seguia o modelo de <em>plantation</em>. Esse modelo se caracterizava por:</p>
+      <ol class="opts"><li>pequenas propriedades e trabalho livre.</li><li>latifúndio, monocultura, mão de obra escravizada e produção para exportação.</li><li>várias culturas voltadas ao mercado interno.</li><li>fábricas e trabalho assalariado.</li><li>terras divididas igualmente entre os colonos.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Grande terra, um só produto, trabalho escravizado e venda para fora. Decore essas 4 palavras: elas aparecem em muitas questões.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>2.</b> O Quilombo dos Palmares, liderado por Zumbi, é lembrado hoje principalmente como:</p>
+      <ol class="opts"><li>uma revolta de comerciantes contra impostos.</li><li>um acordo de paz entre senhores e escravizados.</li><li>um símbolo da resistência negra à escravidão.</li><li>uma cidade fundada pelos jesuítas.</li><li>um movimento pela independência do Brasil.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Palmares reuniu milhares de pessoas que fugiram da escravidão e resistiu por quase um século.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>3.</b> A Inconfidência Mineira (1789) teve como uma de suas principais causas:</p>
+      <ol class="opts"><li>a cobrança de impostos sobre o ouro, como a derrama, e a influência das ideias iluministas.</li><li>a chegada da família real ao Brasil.</li><li>a abolição da escravidão.</li><li>a invasão holandesa em Minas Gerais.</li><li>a proclamação da República.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> A elite mineira estava revoltada com os impostos de Portugal e inspirada pelo Iluminismo e pela independência dos Estados Unidos.</p></details>
+    </div>
+  </div>
 </section>
 
-<section id="linguagens">
-  <div class="tabrow"><span class="tab">Linguagens</span></div>
-  <h2>Dicas para as questões de Linguagens</h2>
-  <p class="intro">São 45 questões. A boa notícia: quase todas dependem mais de <strong>ler com atenção</strong> do que de decorar matéria.</p>
-  <div class="card">
-      <h3>Linguagens</h3>
-      <ul class="clean">
-        <li>Quase tudo é <strong>interpretação de texto</strong>. A resposta está no texto, não na sua opinião.</li>
-        <li>Leia primeiro a pergunta (o comando) e depois o texto. Assim você já sabe o que procurar.</li>
-        <li>Desconfie de alternativas com "sempre", "nunca", "somente". Costumam estar erradas.</li>
-        <li>Em Inglês ou Espanhol, você não precisa entender todas as palavras. Procure as que parecem com o português.</li>
-      </ul>
+<!-- IMPÉRIO -->
+<section id="imperio">
+  <div class="tabrow"><span class="tab">Parte 2 · 1822 a 1889</span></div>
+  <h2>Brasil Império</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>O Brasil ficou <strong>independente</strong>, mas quase nada mudou para o povo: o poder continuou com os grandes fazendeiros, e a <strong>escravidão durou até 1888</strong>.</p></div>
+
+  <h3>A linha do tempo</h3>
+  <div class="timeline">
+    <div class="step"><div class="time">1822</div><p><strong>Independência</strong>, proclamada por D. Pedro I. Foi feita "de cima para baixo", pela elite, sem participação popular e mantendo a escravidão.</p></div>
+    <div class="step"><div class="time">1824</div><p><strong>Primeira Constituição</strong>, imposta pelo imperador (<em>outorgada</em>). Criou o <strong>Poder Moderador</strong>, que dava ao imperador a palavra final, e o <strong>voto censitário</strong>: só votava quem tinha certa renda.</p></div>
+    <div class="step"><div class="time">1831 a 1840</div><p><strong>Período Regencial.</strong> D. Pedro I abdica e o filho ainda é criança. O país é governado por regentes e explode em revoltas: <strong>Cabanagem</strong> (PA), <strong>Balaiada</strong> (MA), <strong>Sabinada</strong> (BA), <strong>Farroupilha</strong> (RS) e a <strong>Revolta dos Malês</strong> (Salvador, 1835, de africanos muçulmanos escravizados).</p></div>
+    <div class="step"><div class="time">1840</div><p><strong>Golpe da Maioridade.</strong> D. Pedro II assume com 14 anos para tentar acalmar o país. Começa o Segundo Reinado.</p></div>
+    <div class="step"><div class="time">Séc. XIX</div><p><strong>Café</strong> no Sudeste (Rio de Janeiro e depois São Paulo) vira a base da economia.</p></div>
+    <div class="step"><div class="time">1850</div><p><strong>Lei Eusébio de Queirós</strong> (proíbe o tráfico de africanos) e <strong>Lei de Terras</strong> (a terra só pode ser obtida por <strong>compra</strong>). A Lei de Terras impediu que pobres, ex-escravizados e imigrantes virassem donos de terra.</p></div>
+    <div class="step"><div class="time">1864 a 1870</div><p><strong>Guerra do Paraguai</strong>: Brasil, Argentina e Uruguai contra o Paraguai. O Exército sai fortalecido e começa a se envolver na política.</p></div>
+    <div class="step"><div class="time">1871 a 1888</div><p><strong>Abolição aos poucos:</strong> Lei do Ventre Livre (1871), Lei dos Sexagenários (1885) e <strong>Lei Áurea</strong> (13 de maio de 1888). A abolição veio <strong>sem nenhuma ajuda</strong> aos libertos: sem terra, sem escola, sem emprego.</p></div>
+    <div class="step"><div class="time">1889</div><p><strong>Proclamação da República</strong> por Marechal Deodoro, em 15 de novembro. O Império perdeu o apoio dos fazendeiros (irritados com a abolição), do Exército e da Igreja.</p></div>
+  </div>
+
+  <div class="note sun"><span class="label">A ideia mais importante desta parte</span><p>A abolição sem integração deixou a população negra à margem da sociedade, sem terra, educação ou trabalho digno. É daí que vem boa parte da <strong>desigualdade racial</strong> do Brasil de hoje. Você já usou essa ideia na sua redação sobre a mulher negra na mídia!</p></div>
+
+  <h3>Teste rápido</h3>
+  <div class="stack">
+    <div class="quiz card">
+      <p class="q"><b>4.</b> A Constituição de 1824 estabeleceu o voto censitário. Isso significa que:</p>
+      <ol class="opts"><li>todos os brasileiros podiam votar.</li><li>só as mulheres podiam votar.</li><li>só votava quem tinha uma renda mínima.</li><li>o voto era secreto e obrigatório.</li><li>os escravizados votavam nos seus senhores.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> "Censo" aqui quer dizer renda. Só os mais ricos participavam da política.</p></details>
     </div>
+    <div class="quiz card">
+      <p class="q"><b>5.</b> A Lei de Terras de 1850 determinou que as terras só poderiam ser adquiridas por compra. Uma consequência dessa lei foi:</p>
+      <ol class="opts"><li>a distribuição de terras para ex-escravizados.</li><li>a reforma agrária no Brasil.</li><li>a concentração de terras nas mãos de quem já era rico.</li><li>o fim dos latifúndios.</li><li>a doação de terras para os povos indígenas.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Quem não tinha dinheiro, como os libertos e os imigrantes pobres, ficou sem acesso à terra. Amanhã, em Geografia Agrária, você vai ver que isso ainda pesa hoje.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>6.</b> Sobre a Lei Áurea (1888), é correto afirmar que:</p>
+      <ol class="opts"><li>garantiu terras e escolas para os libertos.</li><li>aboliu a escravidão, mas não criou políticas de integração dos libertos à sociedade.</li><li>foi a primeira lei contra a escravidão no Brasil.</li><li>foi aprovada logo após a Independência.</li><li>indenizou as pessoas que foram escravizadas.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> A liberdade veio no papel, mas sem condições de vida. Lembra do "Cidadão de Papel" da redação coringa?</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEMPORÂNEA -->
+<section id="contemporanea">
+  <div class="tabrow"><span class="tab">Parte 3 · de 1789 até hoje</span></div>
+  <h2>História Contemporânea</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>É a época das <strong>grandes revoluções</strong>, das <strong>duas guerras mundiais</strong> e da disputa entre <strong>capitalismo e socialismo</strong>, que formaram o mundo em que vivemos.</p></div>
+
+  <h3>No mundo</h3>
+  <div class="timeline">
+    <div class="step"><div class="time">1789</div><p><strong>Revolução Francesa.</strong> O povo derruba o rei. Lema: <em>Liberdade, Igualdade e Fraternidade</em>. Cria a <strong>Declaração dos Direitos do Homem e do Cidadão</strong>. É o marco do início da Idade Contemporânea.</p></div>
+    <div class="step"><div class="time">Séc. XVIII e XIX</div><p><strong>Revolução Industrial</strong>, começando na Inglaterra. Máquinas a vapor, fábricas, <strong>êxodo rural</strong> e jornadas de trabalho muito longas, inclusive de crianças. Nascem os sindicatos.</p></div>
+    <div class="step"><div class="time">Séc. XIX</div><p><strong>Imperialismo.</strong> Países europeus dividem a <strong>África</strong> e a Ásia entre si (Conferência de Berlim, 1884–1885), sem respeitar os povos que viviam lá.</p></div>
+    <div class="step"><div class="time">1914 a 1918</div><p><strong>Primeira Guerra Mundial.</strong> Disputa entre potências europeias por territórios e mercados.</p></div>
+    <div class="step"><div class="time">1917</div><p><strong>Revolução Russa.</strong> Surge o primeiro país socialista, que depois vira a <strong>União Soviética (URSS)</strong>.</p></div>
+    <div class="step"><div class="time">1929</div><p><strong>Crise de 1929.</strong> A Bolsa de Nova York quebra e o mundo entra em crise. Desemprego em massa.</p></div>
+    <div class="step"><div class="time">1920 a 1945</div><p><strong>Totalitarismos:</strong> fascismo na Itália (Mussolini) e nazismo na Alemanha (Hitler). Governos autoritários, com perseguição a opositores e minorias.</p></div>
+    <div class="step"><div class="time">1939 a 1945</div><p><strong>Segunda Guerra Mundial.</strong> O <strong>Holocausto</strong> matou milhões de judeus e outros grupos. Termina com as bombas atômicas em Hiroshima e Nagasaki. Em 1945 é criada a <strong>ONU</strong>.</p></div>
+    <div class="step"><div class="time">1947 a 1991</div><p><strong>Guerra Fria:</strong> disputa entre <strong>EUA</strong> (capitalismo) e <strong>URSS</strong> (socialismo), sem guerra direta entre os dois. Inclui corrida armamentista e espacial, e o <strong>Muro de Berlim</strong> (1961–1989). Acaba com o fim da URSS, em 1991.</p></div>
+    <div class="step"><div class="time">Depois de 1945</div><p><strong>Descolonização</strong> da África e da Ásia: as colônias conquistam a independência.</p></div>
+  </div>
+
+  <h3>No Brasil (século XX): o que mais cai</h3>
+  <div class="grid">
+    <div class="card"><h3>Era Vargas (1930–1945)</h3><p class="muted">Getúlio Vargas chega ao poder em 1930. Voto feminino (1932). Ditadura do <strong>Estado Novo</strong> (1937–1945). Criação da <strong>CLT</strong> (1943), as leis trabalhistas que existem até hoje.</p></div>
+    <div class="card"><h3>Ditadura Militar (1964–1985)</h3><p class="muted">Golpe em 1964. O <strong>AI-5</strong> (1968) fechou o Congresso e aumentou a censura e a repressão. A economia cresceu no "milagre econômico", mas a desigualdade também. Termina após as <strong>Diretas Já</strong> (1984).</p></div>
+    <div class="card"><h3>Constituição de 1988</h3><p class="muted">A "Constituição Cidadã", criada depois da ditadura. Garante direitos sociais (o art. 6º da redação coringa!), cria o <strong>SUS</strong> e transforma o racismo em crime.</p></div>
+  </div>
+
+  <h3>Teste rápido</h3>
+  <div class="stack">
+    <div class="quiz card">
+      <p class="q"><b>7.</b> A Revolução Industrial, iniciada na Inglaterra, provocou:</p>
+      <ol class="opts"><li>o fim do trabalho nas cidades.</li><li>êxodo rural, crescimento das cidades e jornadas de trabalho exaustivas nas fábricas.</li><li>a volta do sistema feudal.</li><li>a diminuição da produção de mercadorias.</li><li>o fim imediato do trabalho infantil.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> As pessoas saíram do campo para trabalhar nas fábricas, em condições muito duras. Isso deu origem aos primeiros movimentos operários.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>8.</b> A Guerra Fria (1947–1991) recebeu esse nome porque:</p>
+      <ol class="opts"><li>aconteceu em países de clima frio.</li><li>EUA e URSS disputaram poder e influência sem entrar em guerra direta um contra o outro.</li><li>foi uma guerra curta e sem mortes.</li><li>envolveu apenas países da Europa.</li><li>terminou com a vitória da União Soviética.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Os dois lados competiam em armas, tecnologia, espaço e influência sobre outros países, mas nunca se enfrentaram diretamente.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>9.</b> A Consolidação das Leis do Trabalho (CLT), de 1943, foi criada durante:</p>
+      <ol class="opts"><li>o Império de D. Pedro II.</li><li>a Ditadura Militar.</li><li>a Era Vargas.</li><li>o governo de Tiradentes.</li><li>a Primeira República.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Vargas ficou conhecido como "pai dos pobres" por causa das leis trabalhistas, mesmo governando como ditador no Estado Novo.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>10.</b> O AI-5, de 1968, foi um marco da Ditadura Militar porque:</p>
+      <ol class="opts"><li>devolveu a democracia ao país.</li><li>aumentou a repressão, a censura e permitiu fechar o Congresso.</li><li>garantiu eleições diretas para presidente.</li><li>aboliu a escravidão.</li><li>criou o SUS.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Foi o ato mais duro da ditadura. Questões sobre censura costumam trazer letras de músicas da época.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="redacao-hist">
+  <div class="tabrow"><span class="tab sun">Bônus</span></div>
+  <h2>Use na redação</h2>
+  <p class="intro">Tudo o que você estudou hoje pode virar <strong>repertório</strong> na redação de domingo. Estes 4 combinam com muitos temas:</p>
+  <div class="stack">
+    <div class="card rep"><div class="who">Lei Áurea (1888) sem integração</div><p>A abolição não deu terra, escola nem trabalho aos libertos.</p><p class="when">Use em temas sobre racismo, desigualdade, trabalho ou educação.</p></div>
+    <div class="card rep"><div class="who">Lei de Terras (1850)</div><p>A terra passou a ser só de quem podia comprar, o que concentrou a propriedade.</p><p class="when">Use em temas sobre moradia, campo, fome ou desigualdade.</p></div>
+    <div class="card rep"><div class="who">Constituição de 1988</div><p>Garantiu direitos sociais depois da ditadura e criou o SUS.</p><p class="when">Use em quase qualquer tema. É o repertório mais seguro.</p></div>
+    <div class="card rep"><div class="who">Declaração dos Direitos do Homem (1789)</div><p>Afirmou que todos nascem livres e iguais em direitos.</p><p class="when">Use em temas sobre igualdade e direitos humanos.</p></div>
+  </div>
+</section>
+
+<section id="provas">
+  <div class="note">
+    <span class="label">Onde achar provas antigas</span>
+    <p>O INEP publica todas as provas e gabaritos de graça: <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener">gov.br/inep → Provas e gabaritos</a>. Pegue a prova do 1º dia. As questões de Ciências Humanas são as de número 46 a 90.</p>
+  </div>
 </section>
 
 <section id="amanha">
   <div class="note sun">
     <span class="label">E amanhã?</span>
-    <p>Amanhã é dia de Ciências Humanas e de decorar o esqueleto da redação.</p>
+    <p>Amanhã é dia de <strong>Geografia: questão agrária e meio ambiente</strong>. A Lei de Terras que você viu hoje vai aparecer de novo!</p>
   </div>
 </section>
+
 
 <footer>
   <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
@@ -339,7 +455,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <script>
 (function () {
-  var KEY = "adriely-%s-v1";
+  var KEY = "adriely-4-quarta-historia-v1";
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
   document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {
