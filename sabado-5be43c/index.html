@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sábado da Adriely</title>
-<meta name="description" content="Hoje: dia leve. Revisão e o checklist do domingo.">
+<meta name="description" content="Hoje: Linguagens de manhã e redação à tarde. À noite, separar tudo para domingo.">
 <meta property="og:title" content="Sábado da Adriely">
-<meta property="og:description" content="Hoje: dia leve. Revisão e o checklist do domingo.">
+<meta property="og:description" content="Hoje: Linguagens de manhã e redação à tarde. À noite, separar tudo para domingo.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -213,6 +213,17 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Teste rápido */
+.quiz { gap: 8px; }
+.quiz .q { font-weight: 400; }
+.quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
+.quiz ol.opts li::marker { font-weight: 700; color: var(--accent); }
+.quiz details { border-top: 1px dashed var(--line); padding-top: 8px; }
+.quiz summary { cursor: pointer; font-weight: 700; color: var(--accent); list-style: none; display: inline-flex; gap: 6px; align-items: center; padding: 4px 12px; border: 1.5px solid var(--accent); border-radius: 999px; }
+.quiz summary::-webkit-details-marker { display: none; }
+.quiz details[open] summary { background: var(--accent); color: var(--accent-ink); }
+.quiz details p { margin-top: 8px; background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
 </style>
 
 </head>
@@ -221,11 +232,14 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <header class="hero">
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
-  <h1>Adriely, rumo à <span>Fisioterapia</span></h1>
-  <div class="today-pill"><span class="dot"></span>Hoje: dia leve</div>
-  <p class="lede">Esta é a <strong>parte de sábado</strong>: um dia leve. Releia o esqueleto, separe o que levar e descanse.</p>
+  <h1>Adriely, hoje é <span>Linguagens e redação</span></h1>
+  <div class="today-pill"><span class="dot"></span>Hoje: Linguagens e redação</div>
+  <p class="lede">Último dia de estudo! De manhã, <strong>Linguagens</strong>. À tarde, uma <strong>redação de treino</strong> com o coringa. À noite, descanso.</p>
   <nav class="nav" aria-label="Partes do guia">
-    <a href="#hoje-7">Missão de hoje</a>
+    <a href="#hoje-sab">Missão de hoje</a>
+    <a href="#linguagens">Linguagens</a>
+    <a href="#lembretes">Lembretes</a>
+    <a href="#treino2">Tema de treino</a>
     <a href="#coringa">Redação coringa</a>
     <a href="#checklist">Checklist</a>
   </nav>
@@ -233,23 +247,155 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <section id="como-usar">
   <div class="card stack">
-    <h3>Nunca usou um guia assim? É fácil:</h3>
+    <h3>Como estudar esta página</h3>
     <div class="howto">
-      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>, logo abaixo. Ela diz o que fazer hoje.</p></div>
-      <div><span class="n">2</span><p>Toque nos <strong>textos azuis sublinhados</strong> para ir direto à parte certa.</p></div>
-      <div><span class="n">3</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+      <div><span class="n">1</span><p>Hoje tem duas partes: <strong>Linguagens de manhã</strong> e <strong>redação à tarde</strong>. Siga a missão.</p></div>
+      <div><span class="n">2</span><p>Em Linguagens, o mais importante é <strong>ler com atenção</strong>. Os conceitos daqui ajudam a entender as perguntas.</p></div>
+      <div><span class="n">3</span><p>No teste rápido, toque em "Ver resposta" só depois de escolher a sua.</p></div>
+      <div><span class="n">4</span><p>À noite, <strong>pare de estudar</strong>. Separe as coisas de domingo e durma cedo.</p></div>
     </div>
   </div>
 </section>
 
-<section id="hoje-7" class="mission-sec">
+<section id="hoje-sab" class="mission-sec">
   <div class="card mission stack">
     <span class="tab sun">Missão de hoje · sábado, 7/11</span>
-    <h2>Dia leve</h2>
-    <label class="check"><input type="checkbox" id="m7-1"><span class="bubble"></span><span class="txt">Só reler o esqueleto e os repertórios. Nada de redação inteira.</span></label>
-    <label class="check"><input type="checkbox" id="m7-2"><span class="bubble"></span><span class="txt">Separar tudo do <a href="#checklist">checklist do domingo</a> numa bolsa.</span></label>
-    <label class="check"><input type="checkbox" id="m7-3"><span class="bubble"></span><span class="txt">Ver o trajeto até o local de prova e quanto tempo leva.</span></label>
-    <label class="check"><input type="checkbox" id="m7-4"><span class="bubble"></span><span class="txt">Fazer algo que relaxe e dormir cedo. Não vire a noite estudando.</span></label>
+    <h2>Linguagens e redação</h2>
+    <p class="muted"><strong>Manhã</strong></p>
+    <label class="check"><input type="checkbox" id="s-1"><span class="bubble"></span><span class="txt">Ler <a href="#linguagens">Linguagens</a> e fazer o teste rápido (≈ 1 hora).</span></label>
+    <label class="check"><input type="checkbox" id="s-2"><span class="bubble"></span><span class="txt">Resolver 10 questões de Linguagens de provas antigas, as de número 1 a 45 (≈ 40 min).</span></label>
+    <p class="muted"><strong>Tarde</strong></p>
+    <label class="check"><input type="checkbox" id="s-3"><span class="bubble"></span><span class="txt">Reler os <a href="#lembretes">lembretes da sua redação</a>.</span></label>
+    <label class="check"><input type="checkbox" id="s-4"><span class="bubble"></span><span class="txt">Fazer o <a href="#treino2">tema de treino</a> com cronômetro de 1h10, usando o <a href="#coringa">esqueleto coringa</a>.</span></label>
+    <label class="check"><input type="checkbox" id="s-5"><span class="bubble"></span><span class="txt">Tirar foto da folha definitiva e mandar para correção.</span></label>
+    <p class="muted"><strong>Noite</strong></p>
+    <label class="check"><input type="checkbox" id="s-6"><span class="bubble"></span><span class="txt">Separar tudo do <a href="#checklist">checklist do domingo</a> numa bolsa e ver o trajeto até o local de prova.</span></label>
+    <label class="check"><input type="checkbox" id="s-7"><span class="bubble"></span><span class="txt">Fazer algo que relaxe e dormir cedo. Nada de virar a noite estudando.</span></label>
+  </div>
+</section>
+
+<!-- LINGUAGENS -->
+<section id="linguagens">
+  <div class="tabrow"><span class="tab">Manhã</span></div>
+  <h2>Linguagens</h2>
+  <p class="intro">São 45 questões, as de número 1 a 45. As 5 primeiras são de <strong>Inglês ou Espanhol</strong>, a língua que você escolheu na inscrição. O resto mistura Português, Literatura, Artes e Educação Física, e quase tudo é <strong>interpretação de texto</strong>.</p>
+
+  <h3>Funções da linguagem</h3>
+  <p>Toda mensagem tem um objetivo principal. O ENEM pergunta muito qual é ele:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Função</th><th>Objetivo</th><th>Onde aparece</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Referencial</strong></td><td>Informar, sem opinião</td><td>Notícia, texto científico</td></tr>
+        <tr><td><strong>Emotiva</strong></td><td>Mostrar os sentimentos de quem fala</td><td>Diário, desabafo, poema romântico</td></tr>
+        <tr><td><strong>Apelativa</strong></td><td>Convencer o leitor a fazer algo</td><td>Propaganda (verbos como "compre", "vote")</td></tr>
+        <tr><td><strong>Fática</strong></td><td>Testar ou manter o contato</td><td>"Alô?", "Tá me ouvindo?", "Né?"</td></tr>
+        <tr><td><strong>Metalinguística</strong></td><td>A linguagem explicando a si mesma</td><td>Dicionário, poema sobre como escrever poema</td></tr>
+        <tr><td><strong>Poética</strong></td><td>Chamar atenção para a forma da mensagem</td><td>Poesia, rimas, jogos de palavras, slogans</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Variação linguística</h3>
+  <div class="note"><span class="label">O tema preferido do ENEM em Português</span><p>A língua muda conforme a <strong>região</strong> (sotaques e palavras, como "mandioca", "aipim" e "macaxeira"), o <strong>grupo social</strong>, a <strong>época</strong> e a <strong>situação</strong> (formal ou informal). Para o ENEM, não existe fala "errada": existe fala <strong>adequada ou inadequada</strong> à situação. Rir do jeito de alguém falar é <strong>preconceito linguístico</strong>.</p></div>
+
+  <h3>Figuras de linguagem</h3>
+  <div class="grid">
+    <div class="card"><h3>Metáfora</h3><p class="muted">Comparação sem o "como": "Ela é uma <strong>flor</strong>."</p></div>
+    <div class="card"><h3>Comparação</h3><p class="muted">Com o "como": "Ela é delicada <strong>como</strong> uma flor."</p></div>
+    <div class="card"><h3>Metonímia</h3><p class="muted">Troca uma palavra por outra ligada a ela: "Li <strong>Machado de Assis</strong>" (a obra dele).</p></div>
+    <div class="card"><h3>Hipérbole</h3><p class="muted">Exagero: "Já te falei <strong>mil vezes</strong>."</p></div>
+    <div class="card"><h3>Ironia</h3><p class="muted">Dizer o contrário do que se pensa: "Que <strong>ótimo</strong>, perdi o ônibus."</p></div>
+    <div class="card"><h3>Antítese</h3><p class="muted">Ideias opostas lado a lado: "Era <strong>riso</strong> e <strong>choro</strong> ao mesmo tempo."</p></div>
+    <div class="card"><h3>Personificação</h3><p class="muted">Dar ações humanas a coisas: "O vento <strong>sussurrava</strong>."</p></div>
+    <div class="card"><h3>Eufemismo</h3><p class="muted">Suavizar algo duro: "Ele <strong>partiu</strong>" (morreu).</p></div>
+  </div>
+
+  <h3>Literatura em 5 movimentos</h3>
+  <div class="timeline">
+    <div class="step"><div class="time">Barroco (séc. XVII)</div><p>Conflito entre <strong>fé e prazer</strong>, frases cheias de contrastes. Gregório de Matos, o "Boca do Inferno", com suas sátiras.</p></div>
+    <div class="step"><div class="time">Arcadismo (séc. XVIII)</div><p>Vida simples no campo, natureza calma, equilíbrio. Tomás Antônio Gonzaga, um dos inconfidentes.</p></div>
+    <div class="step"><div class="time">Romantismo (séc. XIX)</div><p>Emoção, amor idealizado e <strong>nacionalismo</strong>. O indígena aparece como herói. José de Alencar e Castro Alves, o poeta dos escravizados.</p></div>
+    <div class="step"><div class="time">Realismo (fim do séc. XIX)</div><p><strong>Crítica à sociedade</strong>, personagens com defeitos, ironia. Machado de Assis ("Dom Casmurro").</p></div>
+    <div class="step"><div class="time">Modernismo (desde 1922)</div><p>Começa com a <strong>Semana de Arte Moderna de 1922</strong>. Liberdade na forma, linguagem do dia a dia e valorização da cultura brasileira. Oswald de Andrade (Manifesto Antropófago), Mário de Andrade, Drummond, Clarice Lispector.</p></div>
+  </div>
+
+  <h3>Artes, Educação Física e língua estrangeira</h3>
+  <div class="grid">
+    <div class="card"><h3>Artes</h3><p class="muted">Vanguardas europeias: <strong>Cubismo</strong> (formas geométricas, Picasso) e <strong>Surrealismo</strong> (imagens de sonho, Dalí). O ENEM também valoriza arte urbana, como o grafite, e a arte indígena e afro-brasileira.</p></div>
+    <div class="card"><h3>Educação Física</h3><p class="muted">Fala de <strong>práticas corporais</strong> (danças, lutas, esportes e brincadeiras) como parte da cultura. Critica a pressão por um <strong>padrão de beleza</strong> e defende o esporte como direito de todos, inclusive das pessoas com deficiência.</p></div>
+    <div class="card"><h3>Inglês ou Espanhol</h3><p class="muted">O enunciado vem em português: leia-o primeiro. Procure <strong>palavras parecidas</strong> com o português. Cuidado com os falsos amigos: em inglês, <em>pretend</em> é "fingir" e <em>library</em> é "biblioteca"; em espanhol, <em>exquisito</em> é "delicioso" e <em>embarazada</em> é "grávida".</p></div>
+  </div>
+
+  <h3>Teste rápido</h3>
+  <div class="stack">
+    <div class="quiz card">
+      <p class="q"><b>1.</b> Uma propaganda diz: "Vacine seu filho. Proteja quem você ama." A função da linguagem que predomina é a:</p>
+      <ol class="opts"><li>referencial.</li><li>fática.</li><li>apelativa.</li><li>metalinguística.</li><li>emotiva.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Os verbos "vacine" e "proteja" chamam o leitor para agir. Isso é a função apelativa (ou conativa).</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>2.</b> Um texto mostra que a mesma raiz se chama "mandioca", "aipim" ou "macaxeira", dependendo da região do Brasil. O texto trata de:</p>
+      <ol class="opts"><li>erro de português.</li><li>variação linguística regional.</li><li>função poética.</li><li>falta de escolaridade.</li><li>linguagem científica.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Nenhuma das três formas está errada. São variações da língua conforme a região.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>3.</b> Na frase "Estou morrendo de fome", há uma:</p>
+      <ol class="opts"><li>hipérbole.</li><li>ironia.</li><li>metonímia.</li><li>antítese.</li><li>personificação.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> É um exagero, a hipérbole. A pessoa não está morrendo de verdade.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>4.</b> A Semana de Arte Moderna de 1922 propunha:</p>
+      <ol class="opts"><li>copiar fielmente a arte europeia antiga.</li><li>voltar às regras rígidas da poesia clássica.</li><li>romper com as regras tradicionais e valorizar a cultura e a linguagem brasileiras.</li><li>proibir a arte popular.</li><li>escrever apenas em latim.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> O Modernismo quis uma arte livre e com a cara do Brasil.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>5.</b> Em uma conversa de WhatsApp, um amigo usa gírias e abreviações. Segundo a visão do ENEM, essa linguagem é:</p>
+      <ol class="opts"><li>errada em qualquer situação.</li><li>adequada à situação informal.</li><li>proibida pela gramática.</li><li>igual à linguagem de uma redação do ENEM.</li><li>sinal de que a pessoa não sabe português.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Combina com a conversa entre amigos. Já na redação de domingo, a linguagem precisa ser formal.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="lembretes">
+  <div class="tabrow"><span class="tab sun">Tarde · redação</span></div>
+  <h2>Lembretes da sua redação</h2>
+  <p class="intro">Na redação sobre a mulher negra na mídia, você mostrou que tem <strong>boas ideias e conhece o assunto</strong>. Para subir a nota, foque nestes 5 pontos:</p>
+  <div class="stack">
+    <div class="card"><h3>1. Proposta com os 5 elementos</h3><p class="muted">É o que mais vale: pode somar <strong>até 160 pontos</strong>. Agente, ação, meio, finalidade e detalhamento.</p></div>
+    <div class="card"><h3>2. Comece a introdução com um repertório</h3><p class="muted">Um fato, uma lei ou um autor logo na primeira frase. Depois, o tema e as duas causas.</p></div>
+    <div class="card"><h3>3. Não repita as palavras do tema</h3><p class="muted">Troque por sinônimos e pronomes: "elas", "esse grupo", "essas pessoas".</p></div>
+    <div class="card"><h3>4. Nada de "pra"</h3><p class="muted">Na redação, sempre "para". E confira a concordância: "eles tiveram", não "eles teve".</p></div>
+    <div class="card"><h3>5. Sem nome na folha</h3><p class="muted">Na escola você escreveu o nome no topo. <strong>No ENEM, isso zera a redação.</strong></p></div>
+  </div>
+</section>
+
+
+<section id="treino2">
+  <div class="tabrow"><span class="tab">Para treinar hoje à tarde</span></div>
+  <h2>2º tema de treino</h2>
+  <p class="intro">Agora o desafio é usar o <a href="#coringa">esqueleto coringa</a> num tema diferente. Use outra cópia das folhas de rascunho e definitiva.</p>
+  <div class="proposta">
+    <div class="head">Proposta de redação</div>
+    <p>A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema <span class="tema">"Desafios para o cuidado com a saúde mental dos jovens no Brasil"</span>, apresentando proposta de intervenção que respeite os direitos humanos. Selecione, organize e relacione, de forma coerente e coesa, argumentos e fatos para defesa de seu ponto de vista.</p>
+    <div class="texto">
+      <span class="t">TEXTO I</span>
+      <p>"A saúde é direito de todos e dever do Estado, garantido mediante políticas sociais e econômicas que visem à redução do risco de doença e de outros agravos e ao acesso universal e igualitário às ações e serviços para sua promoção, proteção e recuperação."</p>
+      <cite>Constituição Federal de 1988, art. 196.</cite>
+    </div>
+    <div class="texto">
+      <span class="t">TEXTO II</span>
+      <p>A Lei nº 13.935/2019 determina que as redes públicas de educação básica contem com serviços de psicologia e de serviço social para atender às necessidades dos estudantes.</p>
+    </div>
+    <div class="texto">
+      <span class="t">TEXTO III</span>
+      <p>Ansiedade antes de provas, comparação constante nas redes sociais e medo do futuro fazem parte da rotina de muitos jovens. Ainda assim, falar sobre saúde mental continua sendo visto por muita gente como "frescura", o que faz muitos adiarem a busca por ajuda.</p>
+      <cite>Texto escrito para este treino.</cite>
+    </div>
+  </div>
+  <div class="note sun">
+    <span class="label">Repertórios que combinam</span>
+    <p>Constituição de 1988, art. 196 (já está no texto, então traga também outro) · Zygmunt Bauman, "modernidade líquida" (redes sociais e relações frágeis) · Gilberto Dimenstein, "O Cidadão de Papel" (a lei existe, mas não chega a todas as escolas) · Paulo Freire (educação como solução).</p>
   </div>
 </section>
 
@@ -362,7 +508,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 </section>
 
 <section id="checklist">
-  <div class="tabrow"><span class="tab sun">Separe no sábado</span></div>
+  <div class="tabrow"><span class="tab sun">Separe hoje à noite</span></div>
   <h2>Checklist do domingo</h2>
   <div class="card stack" id="check-list">
     <label class="check"><input type="checkbox" id="c-1"><span class="bubble"></span><span class="txt"><strong>Documento oficial com foto</strong>, original e dentro da validade (RG, CNH ou outro aceito no edital).</span></label>
@@ -375,18 +521,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   </div>
 </section>
 
-<section class="final">
-  <h2>Adriely, você consegue.</h2>
-  <p>É o seu primeiro ENEM, e ninguém espera que você saiba tudo. Você não precisa gabaritar. Precisa garantir as questões que sabe, não deixar nada em branco e escrever uma redação organizada.</p>
-  <p>E lembre: se não sair do jeito que você quer, a UDF e o UniCEUB têm vestibular próprio. A Fisioterapia continua no seu caminho. Boa prova!</p>
-</section>
-
 <section id="amanha">
   <div class="note sun">
-    <span class="label">E amanhã?</span>
-    <p>Amanhã é o grande dia. Durma cedo!</p>
+    <span class="label">Amanhã é o dia</span>
+    <p>Você estudou a semana inteira. Amanhã cedo, abra o link de domingo para ver a missão do dia da prova. Durma bem!</p>
   </div>
 </section>
+
 
 <footer>
   <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
@@ -396,7 +537,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <script>
 (function () {
-  var KEY = "adriely-7-sabado-leve-v1";
+  var KEY = "adriely-7-sabado-linguagens-redacao-v1";
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
   document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {

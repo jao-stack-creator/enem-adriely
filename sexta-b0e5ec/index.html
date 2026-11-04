@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sexta da Adriely</title>
-<meta name="description" content="Hoje: o 2º tema de treino e como dividir o tempo da prova.">
-<meta property="og:title" content="Sexta da Adriely">
-<meta property="og:description" content="Hoje: o 2º tema de treino e como dividir o tempo da prova.">
+<title>Filosofia da Adriely</title>
+<meta name="description" content="Hoje: Filosofia e Sociologia. Ética, política e trabalho, com teste rápido.">
+<meta property="og:title" content="Filosofia da Adriely">
+<meta property="og:description" content="Hoje: Filosofia e Sociologia. Ética, política e trabalho, com teste rápido.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -213,6 +213,17 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Teste rápido */
+.quiz { gap: 8px; }
+.quiz .q { font-weight: 400; }
+.quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
+.quiz ol.opts li::marker { font-weight: 700; color: var(--accent); }
+.quiz details { border-top: 1px dashed var(--line); padding-top: 8px; }
+.quiz summary { cursor: pointer; font-weight: 700; color: var(--accent); list-style: none; display: inline-flex; gap: 6px; align-items: center; padding: 4px 12px; border: 1.5px solid var(--accent); border-radius: 999px; }
+.quiz summary::-webkit-details-marker { display: none; }
+.quiz details[open] summary { background: var(--accent); color: var(--accent-ink); }
+.quiz details p { margin-top: 8px; background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
 </style>
 
 </head>
@@ -221,217 +232,221 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <header class="hero">
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
-  <h1>Adriely, rumo à <span>Fisioterapia</span></h1>
-  <div class="today-pill"><span class="dot"></span>Hoje: dia do coringa</div>
-  <p class="lede">Esta é a <strong>parte de sexta</strong> do seu guia: o 2º tema de treino, a redação coringa para consultar e como dividir o tempo da prova.</p>
+  <h1>Adriely, hoje é dia de <span>Filosofia e Sociologia</span></h1>
+  <div class="today-pill"><span class="dot"></span>Hoje: ética, política e trabalho</div>
+  <p class="lede">Hoje o foco é <strong>Filosofia e Sociologia</strong>: ética, política e trabalho. Para cada pensador, só a ideia que o ENEM cobra, com teste rápido no fim de cada parte.</p>
   <nav class="nav" aria-label="Partes do guia">
-    <a href="#hoje-6">Missão de hoje</a>
-    <a href="#treino2">2º tema</a>
-    <a href="#coringa">Redação coringa</a>
-    <a href="#prova">Na hora da prova</a>
+    <a href="#hoje-filo">Missão de hoje</a>
+    <a href="#etica">Ética</a>
+    <a href="#politica">Política</a>
+    <a href="#sociologia">Sociologia e trabalho</a>
+    <a href="#resumo">Resumo de bolso</a>
   </nav>
 </header>
 
 <section id="como-usar">
   <div class="card stack">
-    <h3>Nunca usou um guia assim? É fácil:</h3>
+    <h3>Como estudar esta página</h3>
     <div class="howto">
-      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>, logo abaixo. Ela diz o que fazer hoje.</p></div>
-      <div><span class="n">2</span><p>Toque nos <strong>textos azuis sublinhados</strong> para ir direto à parte certa.</p></div>
-      <div><span class="n">3</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa.</p></div>
+      <div><span class="n">2</span><p>Para cada pensador, guarde <strong>só a ideia principal</strong>. É isso que o ENEM cobra.</p></div>
+      <div><span class="n">3</span><p>No fim de cada parte, faça o <strong>teste rápido</strong>. Toque em "Ver resposta" só depois de escolher a sua.</p></div>
+      <div><span class="n">4</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
     </div>
   </div>
 </section>
 
-<section id="hoje-6" class="mission-sec">
+<section id="hoje-filo" class="mission-sec">
   <div class="card mission stack">
     <span class="tab sun">Missão de hoje · sexta, 6/11</span>
-    <h2>Dia do coringa</h2>
-    <label class="check"><input type="checkbox" id="m6-1"><span class="bubble"></span><span class="txt">Fazer o <a href="#treino2">2º tema de treino</a> usando só o esqueleto coringa (1h10 de cronômetro).</span></label>
-    <label class="check"><input type="checkbox" id="m6-2"><span class="bubble"></span><span class="txt">Mandar a redação para correção.</span></label>
-    <label class="check"><input type="checkbox" id="m6-3"><span class="bubble"></span><span class="txt">Ler <a href="#prova">Na hora da prova</a> para saber como dividir o tempo.</span></label>
-    <label class="check"><input type="checkbox" id="m6-4"><span class="bubble"></span><span class="txt">Dormir cedo. O sono de sexta também conta.</span></label>
+    <h2>Dia de Filosofia e Sociologia</h2>
+    <label class="check"><input type="checkbox" id="f-1"><span class="bubble"></span><span class="txt">Ler <a href="#etica">Ética</a> e fazer o teste rápido (≈ 30 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-2"><span class="bubble"></span><span class="txt">Ler <a href="#politica">Política</a> e fazer o teste rápido (≈ 30 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-3"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
+    <label class="check"><input type="checkbox" id="f-4"><span class="bubble"></span><span class="txt">Ler <a href="#sociologia">Sociologia e trabalho</a> e fazer o teste rápido (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-5"><span class="bubble"></span><span class="txt">Ler o <a href="#resumo">resumo de bolso</a> em voz alta, 2 vezes.</span></label>
+    <label class="check"><input type="checkbox" id="f-6"><span class="bubble"></span><span class="txt">Resolver 10 questões de Humanas de provas antigas (<a href="#provas">onde achar</a>).</span></label>
   </div>
 </section>
 
-<section id="treino2">
-  <div class="tabrow"><span class="tab">Para treinar na sexta</span></div>
-  <h2>2º tema de treino</h2>
-  <p class="intro">Agora o desafio é usar o <a href="#coringa">esqueleto coringa</a> num tema diferente. Use outra cópia das folhas de rascunho e definitiva.</p>
-  <div class="proposta">
-    <div class="head">Proposta de redação</div>
-    <p>A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema <span class="tema">"Desafios para o cuidado com a saúde mental dos jovens no Brasil"</span>, apresentando proposta de intervenção que respeite os direitos humanos. Selecione, organize e relacione, de forma coerente e coesa, argumentos e fatos para defesa de seu ponto de vista.</p>
-    <div class="texto">
-      <span class="t">TEXTO I</span>
-      <p>"A saúde é direito de todos e dever do Estado, garantido mediante políticas sociais e econômicas que visem à redução do risco de doença e de outros agravos e ao acesso universal e igualitário às ações e serviços para sua promoção, proteção e recuperação."</p>
-      <cite>Constituição Federal de 1988, art. 196.</cite>
-    </div>
-    <div class="texto">
-      <span class="t">TEXTO II</span>
-      <p>A Lei nº 13.935/2019 determina que as redes públicas de educação básica contem com serviços de psicologia e de serviço social para atender às necessidades dos estudantes.</p>
-    </div>
-    <div class="texto">
-      <span class="t">TEXTO III</span>
-      <p>Ansiedade antes de provas, comparação constante nas redes sociais e medo do futuro fazem parte da rotina de muitos jovens. Ainda assim, falar sobre saúde mental continua sendo visto por muita gente como "frescura", o que faz muitos adiarem a busca por ajuda.</p>
-      <cite>Texto escrito para este treino.</cite>
-    </div>
-  </div>
-  <div class="note sun">
-    <span class="label">Repertórios que combinam</span>
-    <p>Constituição de 1988, art. 196 (já está no texto, então traga também outro) · Zygmunt Bauman, "modernidade líquida" (redes sociais e relações frágeis) · Gilberto Dimenstein, "O Cidadão de Papel" (a lei existe, mas não chega a todas as escolas) · Paulo Freire (educação como solução).</p>
-  </div>
+<section id="como-cai">
+  <div class="tabrow"><span class="tab">Antes de começar</span></div>
+  <h2>Como Filosofia e Sociologia caem no ENEM</h2>
+  <p class="intro">Quase sempre a questão traz um <strong>trecho de um pensador</strong> e pergunta o que ele quis dizer, ou pede para ligar a ideia dele a uma situação de hoje. Se você souber a <strong>ideia central</strong> de cada autor, já acerta muita coisa.</p>
+  <div class="note sun"><span class="label">Dica de ouro</span><p>Leia o trecho do autor duas vezes. A resposta certa costuma <strong>repetir a ideia do texto com outras palavras</strong>. Desconfie da alternativa que traz uma opinião que não está no texto.</p></div>
 </section>
 
-<section id="coringa">
-  <div class="tabrow"><span class="tab sun">Seu molde para domingo</span></div>
-  <h2>Redação coringa</h2>
-  <p class="intro">A ideia é chegar na prova com uma <strong>estrutura pronta</strong> e alguns <strong>repertórios decorados</strong> que servem para quase qualquer tema. No domingo, você só encaixa o tema novo.</p>
-  <div class="note warn">
-    <span class="label">Atenção</span>
-    <p>O coringa é para <strong>adaptar</strong>, nunca para copiar igual. Todo repertório precisa ter ligação clara com o tema do dia. Se não tiver, você perde pontos na C2.</p>
-  </div>
-
-  <h3>O esqueleto: 4 parágrafos</h3>
-  <p>As palavras pretas são fixas: você pode usar sempre. Os <span class="slot">quadrinhos azuis</span> são espaços vazios: você troca pelo que serve para o tema do dia.</p>
+<!-- ÉTICA -->
+<section id="etica">
+  <div class="tabrow"><span class="tab">Parte 1 · Filosofia</span></div>
+  <h2>Ética: como devemos agir?</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Ética é a parte da Filosofia que pensa sobre <strong>o que é certo e errado</strong> e sobre <strong>como viver bem</strong> com os outros.</p></div>
   <div class="stack">
-    <div class="card bone">
-      <div class="part"><h3>Introdução</h3><span class="lines">4 a 5 linhas</span></div>
-      <p><span class="slot">repertório</span> + a ideia dele. Essa reflexão se aplica a <span class="slot">tema</span>, já que <span class="slot">o problema no Brasil</span>. Esse cenário é resultado de <span class="slot">causa 1</span> e de <span class="slot">causa 2</span>.</p>
-    </div>
-    <div class="card bone">
-      <div class="part"><h3>Desenvolvimento 1</h3><span class="lines">7 a 8 linhas</span></div>
-      <p>Em primeira análise, <span class="slot">causa 1</span>. Isso ocorre porque <span class="slot">explicação</span>. <span class="slot">exemplo</span>. Dessa forma, <span class="slot">consequência</span>.</p>
-    </div>
-    <div class="card bone">
-      <div class="part"><h3>Desenvolvimento 2</h3><span class="lines">7 a 8 linhas</span></div>
-      <p>Além disso, <span class="slot">causa 2</span>. Segundo <span class="slot">repertório 2</span>, <span class="slot">ideia</span>. Nesse sentido, <span class="slot">explicação ligada ao tema</span>. Consequentemente, <span class="slot">consequência</span>.</p>
-    </div>
-    <div class="card bone">
-      <div class="part"><h3>Conclusão</h3><span class="lines">5 a 6 linhas</span></div>
-      <p>Portanto, é necessário <span class="slot">resolver o problema</span>. Para isso, <span class="slot">agente</span> deve <span class="slot">ação</span>, por meio de <span class="slot">meio</span>, a fim de <span class="slot">finalidade</span>. <span class="slot">detalhamento</span>. Assim, <span class="slot">retomar o repertório da introdução</span>.</p>
-    </div>
+    <div class="card rep"><div class="who">Sócrates (Grécia antiga)</div><p><q>Só sei que nada sei.</q> Reconhecer a própria ignorância é o começo do conhecimento. Ensinava fazendo perguntas, para a pessoa chegar sozinha à verdade.</p></div>
+    <div class="card rep"><div class="who">Aristóteles (Grécia antiga)</div><p>A virtude está no <strong>meio-termo</strong>, a "justa medida": a coragem fica entre o medo e a imprudência. O objetivo da vida é a <strong>felicidade</strong>. E o ser humano é um <strong>"animal político"</strong>: só se realiza vivendo em sociedade.</p></div>
+    <div class="card rep"><div class="who">Immanuel Kant (século XVIII)</div><p>Age de um jeito que <strong>todo mundo pudesse agir igual</strong> (o <em>imperativo categórico</em>). E trate as pessoas sempre como um fim, <strong>nunca só como um meio</strong> para conseguir algo. Para ele, o certo é cumprir o <strong>dever</strong>, não buscar vantagem.</p></div>
+    <div class="card rep"><div class="who">Utilitarismo (Bentham e Stuart Mill)</div><p>A ação certa é a que traz <strong>a maior felicidade para o maior número de pessoas</strong>. O que importa são as consequências.</p></div>
+    <div class="card rep"><div class="who">Jean-Paul Sartre (século XX)</div><p><q>A existência precede a essência.</q> Não nascemos prontos: nós nos construímos pelas escolhas que fazemos. Por isso somos <strong>totalmente responsáveis</strong> por elas.</p></div>
   </div>
 
-  <h3 id="causas">Causas coringa</h3>
-  <p>Quase todo problema social do Brasil pode ser explicado por uma destas causas. O mais fácil é usar uma ligada ao <strong>Estado</strong> e outra ligada à <strong>educação ou ao preconceito</strong>.</p>
+  <h3>Teste rápido</h3>
+  <div class="stack">
+    <div class="quiz card">
+      <p class="q"><b>1.</b> Para Aristóteles, a virtude da coragem está:</p>
+      <ol class="opts"><li>no medo total.</li><li>na imprudência.</li><li>no meio-termo entre o medo e a imprudência.</li><li>em obedecer sempre às leis.</li><li>em buscar o prazer.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Aristóteles = justa medida, meio-termo. Nem de mais, nem de menos.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>2.</b> "Age de tal modo que a tua ação possa se tornar uma lei universal." Essa ideia é de:</p>
+      <ol class="opts"><li>Kant.</li><li>Sócrates.</li><li>Maquiavel.</li><li>Marx.</li><li>Sartre.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> É o imperativo categórico de Kant. Pergunte-se: "e se todo mundo fizesse isso?".</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>3.</b> Um governo decide uma política pública escolhendo a opção que beneficia o maior número de pessoas. Essa decisão segue a lógica:</p>
+      <ol class="opts"><li>do existencialismo.</li><li>do utilitarismo.</li><li>da ética das virtudes.</li><li>do absolutismo.</li><li>do mito da caverna.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Utilitarismo: maior felicidade para o maior número.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- POLÍTICA -->
+<section id="politica">
+  <div class="tabrow"><span class="tab">Parte 2 · Filosofia</span></div>
+  <h2>Política: por que existe o Estado?</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Esses pensadores tentaram explicar <strong>por que as pessoas aceitam ser governadas</strong> e como o poder deve funcionar.</p></div>
+
+  <div class="stack">
+    <div class="card rep"><div class="who">Platão e o mito da caverna</div><p>Pessoas presas numa caverna acham que as sombras na parede são a realidade. Quem sai e vê a luz descobre a verdade. A ideia: <strong>o conhecimento nos liberta das aparências</strong>. Aparece em questões sobre mídia e fake news.</p></div>
+    <div class="card rep"><div class="who">Maquiavel, "O Príncipe" (1513)</div><p>Separou a <strong>política</strong> da <strong>moral religiosa</strong>. O governante precisa ser realista para manter o poder e, se não puder ser amado e temido ao mesmo tempo, é mais seguro ser temido.</p></div>
+  </div>
+
+  <h3>Os contratualistas</h3>
+  <p>Eles imaginam como seria a vida <strong>antes</strong> do Estado (o "estado de natureza") e explicam que as pessoas fazem um <strong>contrato social</strong> para viver em sociedade. Esta tabela cai muito:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Pensador</th><th>Estado de natureza</th><th>Para que serve o Estado</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hobbes</strong></td><td>Guerra de todos contra todos. <q>O homem é o lobo do homem.</q></td><td>Um Estado <strong>forte e absoluto</strong> (o "Leviatã") para garantir a paz e a segurança.</td></tr>
+        <tr><td><strong>Locke</strong></td><td>Pessoas já têm direitos naturais: <strong>vida, liberdade e propriedade</strong>.</td><td>Proteger esses direitos. Se o governo não cumprir, o povo pode derrubá-lo. Base do <strong>liberalismo</strong>.</td></tr>
+        <tr><td><strong>Rousseau</strong></td><td>O ser humano nasce bom. A <strong>propriedade privada</strong> gerou a desigualdade e corrompeu a sociedade.</td><td>Seguir a <strong>vontade geral</strong>, o bem comum do povo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card rep"><div class="who">Montesquieu (século XVIII)</div><p>Para evitar abusos, o poder deve ser dividido em <strong>três</strong>: <strong>Executivo</strong> (governa), <strong>Legislativo</strong> (faz as leis) e <strong>Judiciário</strong> (julga). É assim no Brasil até hoje.</p></div>
+
+  <h3>Teste rápido</h3>
+  <div class="stack">
+    <div class="quiz card">
+      <p class="q"><b>4.</b> Para Thomas Hobbes, as pessoas aceitam um Estado forte porque:</p>
+      <ol class="opts"><li>o ser humano nasce bom e quer ajudar os outros.</li><li>sem o Estado haveria uma guerra de todos contra todos.</li><li>o Estado deve proteger apenas a propriedade.</li><li>a vontade geral exige um rei.</li><li>Deus escolhe os governantes.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Hobbes = medo da violência. Trocamos liberdade por segurança.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>5.</b> A divisão do poder em Executivo, Legislativo e Judiciário, adotada pelo Brasil, foi defendida por:</p>
+      <ol class="opts"><li>Rousseau.</li><li>Maquiavel.</li><li>Montesquieu.</li><li>Platão.</li><li>Sócrates.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Montesquieu, no livro "O Espírito das Leis".</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>6.</b> "O homem nasce livre, e por toda parte encontra-se a ferros." Esse pensamento de Rousseau critica:</p>
+      <ol class="opts"><li>a natureza violenta do ser humano.</li><li>a sociedade, que tira a liberdade natural do ser humano.</li><li>a democracia.</li><li>a divisão dos poderes.</li><li>o conhecimento científico.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Para Rousseau, o problema não é o ser humano, é a sociedade desigual.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIOLOGIA -->
+<section id="sociologia">
+  <div class="tabrow"><span class="tab">Parte 3 · Sociologia</span></div>
+  <h2>Sociologia e trabalho</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>A Sociologia estuda <strong>como a sociedade funciona</strong>. Os três autores clássicos são Durkheim, Weber e Marx, e o <strong>trabalho</strong> é um dos temas preferidos do ENEM.</p></div>
+
+  <h3>Os 3 clássicos</h3>
   <div class="grid">
-    <div class="card"><h3>Omissão do Estado</h3><p class="muted">Faltam leis, fiscalização ou investimento. Ou a lei existe, mas não é cumprida.</p></div>
-    <div class="card"><h3>Falta de educação</h3><p class="muted">A escola e a mídia não discutem o assunto, e as pessoas não são conscientizadas.</p></div>
-    <div class="card"><h3>Preconceito histórico</h3><p class="muted">O problema vem do passado e continua sendo tratado como "normal".</p></div>
+    <div class="card"><h3>Émile Durkheim</h3><p class="muted">Criou o conceito de <strong>fato social</strong>: regras e costumes que existem fora de nós e nos pressionam a agir de certo jeito (como a escola obrigatória ou a moda). Quando as regras perdem força, surge a <strong>anomia</strong>.</p></div>
+    <div class="card"><h3>Max Weber</h3><p class="muted">Estudou a <strong>ação social</strong>: o sentido que as pessoas dão ao que fazem. Explicou os tipos de <strong>dominação</strong> (tradicional, carismática e legal) e a <strong>burocracia</strong>.</p></div>
+    <div class="card"><h3>Karl Marx</h3><p class="muted">A história é a <strong>luta de classes</strong>: burguesia (donos das fábricas) contra proletariado (trabalhadores). O lucro vem da <strong>mais-valia</strong>, o valor que o trabalhador produz e não recebe. O trabalhador fica <strong>alienado</strong>: não se reconhece no que produz.</p></div>
   </div>
 
-  <h3>Repertórios coringa (decore 3 ou 4)</h3>
-  <div class="stack">
-    <div class="card rep">
-      <div class="who">Constituição Federal de 1988, art. 6º</div>
-      <p>Garante como direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer e a segurança, entre outros.</p>
-      <p class="when">Quando usar: qualquer tema que envolva um direito que não está sendo garantido.</p>
-    </div>
-    <div class="card rep">
-      <div class="who">Gilberto Dimenstein, "O Cidadão de Papel"</div>
-      <p>O jornalista mostra que muitos direitos garantidos por lei no Brasil existem só "no papel" e não se concretizam na prática.</p>
-      <p class="when">Quando usar: quando existe uma lei sobre o tema, mas ela não funciona. Combina muito com o tema de treino.</p>
-    </div>
-    <div class="card rep">
-      <div class="who">Paulo Freire</div>
-      <p><q>Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda.</q></p>
-      <p class="when">Quando usar: no 2º desenvolvimento ou na conclusão, quando a solução passa pela escola.</p>
-    </div>
-    <div class="card rep">
-      <div class="who">Zygmunt Bauman, "modernidade líquida"</div>
-      <p>O sociólogo diz que, no mundo atual, as relações humanas ficaram frágeis, rápidas e superficiais.</p>
-      <p class="when">Quando usar: temas sobre internet, redes sociais, consumo, solidão.</p>
-    </div>
-    <div class="card rep">
-      <div class="who">Hannah Arendt, "banalidade do mal"</div>
-      <p>A filósofa mostra que injustiças se tornam "normais" quando as pessoas param de questioná-las.</p>
-      <p class="when">Quando usar: preconceito, violência, indiferença com quem sofre.</p>
-    </div>
-  </div>
-
-  <h3>Exemplo completo, numa folha de redação</h3>
-  <p>Tema de exemplo: <strong>"Caminhos para combater a desinformação no Brasil"</strong>. Este é outro tema de propósito, para você ver o coringa funcionando sem estragar o seu treino.</p>
-  <div class="legend"><i></i><span>Parte amarela: se repete em qualquer tema. O resto você troca.</span></div>
-  <div class="sheet" id="sheet">
-    <div class="nums" id="nums" aria-hidden="true"></div>
-    <div class="body" id="sheet-body">
-      <p><mark class="fix">No livro "O Cidadão de Papel", o jornalista Gilberto Dimenstein argumenta que muitos direitos assegurados pela lei brasileira não se concretizam na prática. Essa reflexão se aplica</mark> ao acesso à informação de qualidade, garantido pela Constituição Federal de 1988, mas ameaçado pela disseminação de notícias falsas no país. <mark class="fix">Esse cenário é resultado da negligência estatal</mark> na regulação do ambiente digital <mark class="fix">e da carência de educação</mark> midiática na formação dos cidadãos.</p>
-      <p><mark class="fix">Em primeira análise, a omissão do Estado favorece</mark> a propagação da desinformação. <mark class="fix">Isso ocorre porque</mark> as plataformas digitais lucram com o engajamento, e conteúdos sensacionalistas, muitas vezes falsos, tendem a circular mais rápido que os verdadeiros. Sem regras claras de transparência e responsabilização, esse modelo segue sem controle, o que prejudica desde campanhas de vacinação até processos eleitorais. <mark class="fix">Dessa forma, o direito</mark> à informação <mark class="fix">permanece, como diria Dimenstein, apenas no papel.</mark></p>
-      <p><mark class="fix">Além disso, a falta de educação</mark> midiática <mark class="fix">agrava o problema. Segundo o educador Paulo Freire, "se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda". Nesse sentido, quando a escola não ensina</mark> a checar fontes e a ler criticamente o que circula nas redes, os indivíduos ficam vulneráveis a conteúdos enganosos e passam a compartilhá-los sem perceber. <mark class="fix">Consequentemente,</mark> a desinformação se multiplica no meio digital.</p>
-      <p><mark class="fix">Portanto, é necessário</mark> combater a desinformação no Brasil. <mark class="fix">Para isso, o Ministério da Educação, em parceria com as secretarias estaduais, deve incluir</mark> a educação midiática no currículo escolar, <mark class="fix">por meio de</mark> oficinas práticas de checagem de fatos, <mark class="fix">a fim de formar cidadãos críticos</mark> diante do que consomem. <mark class="fix">Essas oficinas devem ser conduzidas por professores capacitados</mark> e jornalistas convidados. Além disso, cabe ao Congresso Nacional aprovar normas que exijam transparência das plataformas digitais. <mark class="fix">Assim, o acesso</mark> à informação <mark class="fix">deixará de ser um direito apenas de papel.</mark></p>
-    </div>
-  </div>
-  <p class="muted">Na folha real, o tamanho da letra muda o número de linhas. O importante é ficar perto de 30, sem passar.</p>
-
-  <h3>Como usar o coringa no domingo</h3>
-  <div class="howto">
-    <div><span class="n">1</span><p>Leia o tema e descubra <strong>qual é o problema</strong>.</p></div>
-    <div><span class="n">2</span><p>Escolha <strong>2 causas</strong> da lista de causas coringa.</p></div>
-    <div><span class="n">3</span><p>Escolha <strong>2 repertórios</strong> que combinem com o tema.</p></div>
-    <div><span class="n">4</span><p>Encaixe tudo no <strong>esqueleto</strong> e escreva o rascunho.</p></div>
-  </div>
-
-  <h3>Os 5 elementos da solução (conclusão)</h3>
-  <p>Sem os 5, você perde pontos na C5. Veja como eles aparecem no exemplo:</p>
-  <div class="five">
-    <div class="card"><span class="k">Agente</span><p>Quem faz: o Ministério da Educação e as secretarias.</p></div>
-    <div class="card"><span class="k">Ação</span><p>O que faz: incluir a educação midiática no currículo.</p></div>
-    <div class="card"><span class="k">Meio</span><p>Como faz: com oficinas de checagem de fatos.</p></div>
-    <div class="card"><span class="k">Finalidade</span><p>Para quê: formar cidadãos críticos.</p></div>
-    <div class="card"><span class="k">Detalhamento</span><p>Explica melhor algo: oficinas com professores capacitados e jornalistas.</p></div>
-  </div>
-
-  <h3>Conectivos para variar</h3>
-  <div class="stack">
-    <div><strong>Para começar um parágrafo:</strong><div class="chips"><span>Em primeira análise</span><span>Inicialmente</span><span>Em primeiro plano</span></div></div>
-    <div><strong>Para somar uma ideia:</strong><div class="chips"><span>Além disso</span><span>Ademais</span><span>Somado a isso</span><span>Outrossim</span></div></div>
-    <div><strong>Para mostrar consequência:</strong><div class="chips"><span>Consequentemente</span><span>Por conseguinte</span><span>Com isso</span></div></div>
-    <div><strong>Para concluir:</strong><div class="chips"><span>Portanto</span><span>Dessa forma</span><span>Logo</span><span>Assim</span></div></div>
-  </div>
-</section>
-
-<section id="prova">
-  <div class="tabrow"><span class="tab">Domingo</span></div>
-  <h2>Na hora da prova</h2>
-  <p class="intro">São 5h30 para 90 questões e a redação. Uma divisão que funciona bem:</p>
+  <h3>Como o trabalho mudou</h3>
   <div class="timeline">
-    <div class="step"><div class="time">Início · 5 min</div><p>Confira se o caderno está completo. Copie no cartão-resposta a <strong>frase que aparece na capa</strong>, que é obrigatória. Leia o tema da redação e anote ideias soltas no rascunho.</p></div>
-    <div class="step"><div class="time">≈ 1h50</div><p>Faça <strong>Linguagens</strong>. Enquanto isso, a cabeça vai amadurecendo as ideias da redação.</p></div>
-    <div class="step"><div class="time">≈ 1h10</div><p>Escreva a <strong>redação</strong>: rascunho seguindo o esqueleto, depois passe a limpo com caneta preta.</p></div>
-    <div class="step"><div class="time">≈ 1h50</div><p>Faça <strong>Ciências Humanas</strong>.</p></div>
-    <div class="step"><div class="time">Últimos 30 min</div><p>Volte nas questões que pulou, chute as que restarem e confira o <strong>cartão-resposta</strong>. Nenhuma em branco.</p></div>
+    <div class="step"><div class="time">Início do séc. XX</div><p><strong>Taylorismo</strong>: cada trabalhador faz uma tarefa simples, com tempo cronometrado, para produzir mais.</p></div>
+    <div class="step"><div class="time">Década de 1910</div><p><strong>Fordismo</strong>: a <strong>linha de montagem</strong> de Henry Ford. Produção em massa e trabalho repetitivo. Lembra o filme "Tempos Modernos", de Chaplin, que cai muito.</p></div>
+    <div class="step"><div class="time">Depois de 1970</div><p><strong>Toyotismo</strong>: produção flexível, só o necessário (<em>just in time</em>), trabalhador que faz várias funções e <strong>terceirização</strong>.</p></div>
+    <div class="step"><div class="time">Hoje</div><p><strong>Uberização</strong>: trabalho por aplicativo, sem carteira assinada e sem direitos como férias e 13º. Junto com a automação, aumenta a <strong>precarização</strong> e a <strong>informalidade</strong>.</p></div>
   </div>
+
+  <h3>Mais dois conceitos que caem</h3>
   <div class="grid">
-    <div class="card">
-      <h3>Para não se perder no tempo</h3>
-      <ul class="clean">
-        <li>A média é de cerca de <strong>2 a 3 minutos por questão</strong>.</li>
-        <li>Passe as respostas para o cartão <strong>aos poucos</strong> (por exemplo, a cada 15 questões), não tudo no final.</li>
-        <li>Se você é mais rápida em Humanas, pode trocar a ordem. Comece pelo que você tem mais facilidade.</li>
-      </ul>
+    <div class="card"><h3>Indústria cultural</h3><p class="muted">Adorno e Horkheimer (Escola de Frankfurt): a cultura vira <strong>mercadoria</strong> produzida em massa, que distrai e deixa as pessoas menos críticas.</p></div>
+    <div class="card"><h3>Modernidade líquida</h3><p class="muted">Bauman: relações, empregos e laços ficaram <strong>frágeis e passageiros</strong>. Já está na sua redação coringa!</p></div>
+  </div>
+
+  <h3>Teste rápido</h3>
+  <div class="stack">
+    <div class="quiz card">
+      <p class="q"><b>7.</b> A linha de montagem, com produção em massa e trabalho repetitivo, é característica do:</p>
+      <ol class="opts"><li>toyotismo.</li><li>fordismo.</li><li>feudalismo.</li><li>trabalho por aplicativo.</li><li>artesanato.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Ford criou a linha de montagem. Toyotismo é o oposto: produção flexível.</p></details>
     </div>
-    <div class="card">
-      <h3>Regras que você precisa saber</h3>
-      <ul class="clean">
-        <li>Só pode sair da sala depois de <strong>2 horas</strong> de prova.</li>
-        <li>Só pode levar o caderno de questões para casa nos <strong>últimos 30 minutos</strong>.</li>
-        <li>Celular <strong>desligado</strong> dentro do envelope que o fiscal entrega.</li>
-        <li><strong>Relógio não é permitido.</strong> O fiscal avisa o tempo.</li>
-      </ul>
+    <div class="quiz card">
+      <p class="q"><b>8.</b> Para Karl Marx, a mais-valia é:</p>
+      <ol class="opts"><li>o salário justo do trabalhador.</li><li>o imposto pago ao governo.</li><li>o valor produzido pelo trabalhador que fica com o patrão como lucro.</li><li>a poupança dos trabalhadores.</li><li>o preço das matérias-primas.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> O trabalhador produz mais do que recebe. A diferença é o lucro do dono.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>9.</b> Entregadores de aplicativo que trabalham muitas horas, sem carteira assinada e sem direitos trabalhistas, são um exemplo de:</p>
+      <ol class="opts"><li>precarização do trabalho.</li><li>fordismo clássico.</li><li>aumento dos direitos trabalhistas.</li><li>trabalho escravo legalizado.</li><li>fim do capitalismo.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> O nome dado a esse processo é "uberização", e ele também serve como tema de redação.</p></details>
+    </div>
+    <div class="quiz card">
+      <p class="q"><b>10.</b> Para Durkheim, um fato social é:</p>
+      <ol class="opts"><li>qualquer notícia de jornal.</li><li>uma regra ou costume que existe fora do indivíduo e o pressiona a agir de certa forma.</li><li>uma escolha totalmente livre de cada pessoa.</li><li>um conflito entre patrões e empregados.</li><li>um tipo de governo.</li></ol>
+      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> É exterior (vem de fora), coercitivo (pressiona) e geral (vale para todos).</p></details>
     </div>
   </div>
+</section>
+
+<section id="resumo">
+  <div class="tabrow"><span class="tab sun">Resumo de bolso</span></div>
+  <h2>Uma linha para cada pensador</h2>
+  <p class="intro">Se der um branco no domingo, lembre destas frases:</p>
+  <div class="tbl-wrap">
+    <table>
+      <tbody>
+        <tr><td><strong>Sócrates</strong></td><td>Só sei que nada sei</td></tr>
+        <tr><td><strong>Platão</strong></td><td>Mito da caverna: sair das aparências</td></tr>
+        <tr><td><strong>Aristóteles</strong></td><td>Meio-termo; ser humano é animal político</td></tr>
+        <tr><td><strong>Maquiavel</strong></td><td>Política separada da moral</td></tr>
+        <tr><td><strong>Hobbes</strong></td><td>Homem lobo do homem; Estado forte</td></tr>
+        <tr><td><strong>Locke</strong></td><td>Vida, liberdade e propriedade</td></tr>
+        <tr><td><strong>Rousseau</strong></td><td>Nasce bom, a sociedade corrompe</td></tr>
+        <tr><td><strong>Montesquieu</strong></td><td>Três poderes</td></tr>
+        <tr><td><strong>Kant</strong></td><td>Dever; "e se todos fizessem isso?"</td></tr>
+        <tr><td><strong>Utilitarismo</strong></td><td>Maior felicidade para o maior número</td></tr>
+        <tr><td><strong>Sartre</strong></td><td>Somos o que escolhemos</td></tr>
+        <tr><td><strong>Durkheim</strong></td><td>Fato social</td></tr>
+        <tr><td><strong>Weber</strong></td><td>Ação social; tipos de dominação</td></tr>
+        <tr><td><strong>Marx</strong></td><td>Luta de classes; mais-valia</td></tr>
+        <tr><td><strong>Bauman</strong></td><td>Modernidade líquida</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="provas">
   <div class="note">
-    <span class="label">Se der um branco</span>
-    <p>É normal, ainda mais no primeiro ENEM. Pare, respire fundo três vezes, beba água e pule para a próxima questão. A resposta costuma voltar quando você não está forçando.</p>
+    <span class="label">Onde achar provas antigas</span>
+    <p>O INEP publica todas as provas e gabaritos de graça: <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener">gov.br/inep → Provas e gabaritos</a>. Pegue a prova do 1º dia. As questões de Ciências Humanas são as de número 46 a 90.</p>
   </div>
 </section>
 
 <section id="amanha">
   <div class="note sun">
     <span class="label">E amanhã?</span>
-    <p>Amanhã é dia leve: só revisar e separar o que levar no domingo.</p>
+    <p>Amanhã, sábado, é <strong>Linguagens de manhã</strong> e <strong>redação à tarde</strong>. Depois, é descansar para domingo.</p>
   </div>
 </section>
+
 
 <footer>
   <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
@@ -441,7 +456,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <script>
 (function () {
-  var KEY = "adriely-6-sexta-coringa-v1";
+  var KEY = "adriely-6-sexta-filosofia-v1";
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
   document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {
