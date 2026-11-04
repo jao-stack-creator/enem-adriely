@@ -246,7 +246,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .eq-fb.is-empty { background: var(--sun-soft); }
 .sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
 
-/* Teste rápido */
+/* Tabelas */
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+/* Respostas abertas */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
 .quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
@@ -283,8 +286,8 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <h3>Como estudar esta página</h3>
     <div class="howto">
       <div><span class="n">1</span><p>Hoje tem duas partes: <strong>Linguagens de manhã</strong> e <strong>redação à tarde</strong>. Siga a missão.</p></div>
-      <div><span class="n">2</span><p>Em Linguagens, o mais importante é <strong>ler com atenção</strong>. Os conceitos daqui ajudam a entender as perguntas.</p></div>
-      <div><span class="n">3</span><p>No teste rápido, toque em "Ver resposta" só depois de escolher a sua.</p></div>
+      <div><span class="n">2</span><p>Em Linguagens, o mais importante é <strong>ler com atenção</strong>. Os conceitos daqui ajudam a entender o que as perguntas pedem.</p></div>
+      <div><span class="n">3</span><p>Depois de estudar, faça o <strong>simulado</strong> de 10 questões.</p></div>
       <div><span class="n">4</span><p>À noite, <strong>pare de estudar</strong>. Separe as coisas de domingo e durma cedo.</p></div>
     </div>
   </div>
@@ -295,7 +298,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <span class="tab sun">Missão de hoje · sábado, 7/11</span>
     <h2>Linguagens e redação</h2>
     <p class="muted"><strong>Manhã</strong></p>
-    <label class="check"><input type="checkbox" id="s-1"><span class="bubble"></span><span class="txt">Ler <a href="#linguagens">Linguagens</a> e fazer o teste rápido (≈ 1 hora).</span></label>
+    <label class="check"><input type="checkbox" id="s-1"><span class="bubble"></span><span class="txt">Estudar <a href="#linguagens">Linguagens</a> (≈ 1h30).</span></label>
     <label class="check"><input type="checkbox" id="s-2"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
     <p class="muted"><strong>Tarde</strong></p>
     <label class="check"><input type="checkbox" id="s-3"><span class="bubble"></span><span class="txt">Reler os <a href="#lembretes">lembretes da sua redação</a>.</span></label>
@@ -307,87 +310,168 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   </div>
 </section>
 
-<!-- LINGUAGENS -->
+<!-- ======================= LINGUAGENS ======================= -->
 <section id="linguagens">
   <div class="tabrow"><span class="tab">Manhã</span></div>
   <h2>Linguagens</h2>
-  <p class="intro">São 45 questões, as de número 1 a 45. As 5 primeiras são de <strong>Inglês ou Espanhol</strong>, a língua que você escolheu na inscrição. O resto mistura Português, Literatura, Artes e Educação Física, e quase tudo é <strong>interpretação de texto</strong>.</p>
+  <p class="intro">São 45 questões, as de número 1 a 45. As 5 primeiras são de <strong>Inglês ou Espanhol</strong>, a língua que você escolheu na inscrição. O resto mistura Português, Literatura, Artes, Educação Física e Tecnologias, e quase tudo é <strong>interpretação de texto</strong>.</p>
+  <div class="note sun"><span class="label">A regra de ouro de Linguagens</span><p>Leia primeiro o <strong>comando</strong> (a pergunta) e depois o texto. Assim você sabe o que procurar. A resposta está <strong>no texto</strong>, não na sua opinião. E desconfie de alternativas com "sempre", "nunca" e "somente".</p></div>
 
-  <h3>Funções da linguagem</h3>
-  <p>Toda mensagem tem um objetivo principal. O ENEM pergunta muito qual é ele:</p>
+  <h3>1. Gêneros textuais: cada texto tem um objetivo</h3>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Função</th><th>Objetivo</th><th>Onde aparece</th></tr></thead>
+      <thead><tr><th>Gênero</th><th>Para que serve</th><th>Como reconhecer</th></tr></thead>
       <tbody>
-        <tr><td><strong>Referencial</strong></td><td>Informar, sem opinião</td><td>Notícia, texto científico</td></tr>
-        <tr><td><strong>Emotiva</strong></td><td>Mostrar os sentimentos de quem fala</td><td>Diário, desabafo, poema romântico</td></tr>
-        <tr><td><strong>Apelativa</strong></td><td>Convencer o leitor a fazer algo</td><td>Propaganda (verbos como "compre", "vote")</td></tr>
-        <tr><td><strong>Fática</strong></td><td>Testar ou manter o contato</td><td>"Alô?", "Tá me ouvindo?", "Né?"</td></tr>
-        <tr><td><strong>Metalinguística</strong></td><td>A linguagem explicando a si mesma</td><td>Dicionário, poema sobre como escrever poema</td></tr>
-        <tr><td><strong>Poética</strong></td><td>Chamar atenção para a forma da mensagem</td><td>Poesia, rimas, jogos de palavras, slogans</td></tr>
+        <tr><td><strong>Notícia</strong></td><td>Informar um fato recente</td><td>Linguagem objetiva, sem opinião, responde "o quê, quem, quando, onde"</td></tr>
+        <tr><td><strong>Reportagem</strong></td><td>Aprofundar um assunto</td><td>Mais longa, com entrevistas, dados e diferentes pontos de vista</td></tr>
+        <tr><td><strong>Artigo de opinião</strong></td><td>Defender um ponto de vista</td><td>Assinado por um autor, com argumentos e expressões como "é preciso"</td></tr>
+        <tr><td><strong>Editorial</strong></td><td>Mostrar a opinião do jornal</td><td>Sem assinatura, fala em nome do veículo</td></tr>
+        <tr><td><strong>Crônica</strong></td><td>Refletir sobre o dia a dia</td><td>Texto curto, leve, muitas vezes com humor, a partir de um fato comum</td></tr>
+        <tr><td><strong>Charge</strong></td><td>Criticar um fato atual com humor</td><td>Desenho, muitas vezes com políticos ou fatos do momento</td></tr>
+        <tr><td><strong>Tirinha</strong></td><td>Contar uma pequena história com humor</td><td>Quadrinhos em sequência, geralmente com final surpreendente</td></tr>
+        <tr><td><strong>Propaganda</strong></td><td>Convencer a comprar ou a fazer algo</td><td>Imagem + texto curto, verbos como "compre", "vacine", "doe"</td></tr>
+        <tr><td><strong>Infográfico</strong></td><td>Explicar dados de forma visual</td><td>Mistura gráficos, ícones, números e textos curtos</td></tr>
+        <tr><td><strong>Meme</strong></td><td>Fazer humor ou crítica nas redes</td><td>Imagem conhecida + frase. Só faz sentido para quem conhece a referência</td></tr>
       </tbody>
     </table>
   </div>
 
-  <h3>Variação linguística</h3>
-  <div class="note"><span class="label">O tema preferido do ENEM em Português</span><p>A língua muda conforme a <strong>região</strong> (sotaques e palavras, como "mandioca", "aipim" e "macaxeira"), o <strong>grupo social</strong>, a <strong>época</strong> e a <strong>situação</strong> (formal ou informal). Para o ENEM, não existe fala "errada": existe fala <strong>adequada ou inadequada</strong> à situação. Rir do jeito de alguém falar é <strong>preconceito linguístico</strong>.</p></div>
+  <h3>2. Funções da linguagem</h3>
+  <p>Toda mensagem tem um foco principal. O ENEM pergunta muito qual é ele:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Função</th><th>O foco está em</th><th>Exemplo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Referencial</strong></td><td>Informar, sem opinião</td><td>Notícia, texto científico, verbete</td></tr>
+        <tr><td><strong>Emotiva</strong></td><td>Os sentimentos de quem fala (1ª pessoa: "eu")</td><td>Diário, desabafo, poema romântico</td></tr>
+        <tr><td><strong>Apelativa</strong></td><td>Convencer o leitor a agir ("você", imperativo)</td><td>Propaganda, campanha</td></tr>
+        <tr><td><strong>Fática</strong></td><td>Testar ou manter o contato</td><td>"Alô?", "Tá me ouvindo?", "Né?"</td></tr>
+        <tr><td><strong>Metalinguística</strong></td><td>A linguagem explicando a si mesma</td><td>Dicionário, poema sobre como escrever poema</td></tr>
+        <tr><td><strong>Poética</strong></td><td>A forma da mensagem: som, ritmo, jogo de palavras</td><td>Poesia, rimas, slogans criativos</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <h3>Figuras de linguagem</h3>
+  <h3>3. Variação linguística</h3>
+  <div class="note"><span class="label">O tema preferido do ENEM em Português</span><p>A língua muda, e <strong>nenhuma variação é "errada"</strong>. Existe fala <strong>adequada ou inadequada</strong> à situação. Rir do jeito de alguém falar é <strong>preconceito linguístico</strong>.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Regional</h3><p class="muted">Muda conforme o lugar: sotaques e palavras como "mandioca", "aipim" e "macaxeira", ou "tu" e "você".</p></div>
+    <div class="card"><h3>Social</h3><p class="muted">Muda conforme o grupo: idade, profissão, escolaridade. Gírias dos jovens e jargões dos médicos são exemplos.</p></div>
+    <div class="card"><h3>Histórica</h3><p class="muted">Muda com o tempo: "vossa mercê" virou "vosmecê", depois "você" e hoje "cê" ou "vc".</p></div>
+    <div class="card"><h3>Situacional</h3><p class="muted">Muda conforme a situação: falamos de um jeito com amigos e de outro numa entrevista de emprego. A <strong>redação do ENEM pede a norma-padrão</strong>.</p></div>
+  </div>
+
+  <h3>4. Figuras de linguagem</h3>
   <div class="grid">
     <div class="card"><h3>Metáfora</h3><p class="muted">Comparação sem o "como": "Ela é uma <strong>flor</strong>."</p></div>
     <div class="card"><h3>Comparação</h3><p class="muted">Com o "como": "Ela é delicada <strong>como</strong> uma flor."</p></div>
-    <div class="card"><h3>Metonímia</h3><p class="muted">Troca uma palavra por outra ligada a ela: "Li <strong>Machado de Assis</strong>" (a obra dele).</p></div>
+    <div class="card"><h3>Metonímia</h3><p class="muted">Troca uma palavra por outra ligada a ela: "Li <strong>Machado de Assis</strong>" (a obra dele), "Bebi um <strong>copo</strong>" (o conteúdo).</p></div>
     <div class="card"><h3>Hipérbole</h3><p class="muted">Exagero: "Já te falei <strong>mil vezes</strong>."</p></div>
     <div class="card"><h3>Ironia</h3><p class="muted">Dizer o contrário do que se pensa: "Que <strong>ótimo</strong>, perdi o ônibus."</p></div>
-    <div class="card"><h3>Antítese</h3><p class="muted">Ideias opostas lado a lado: "Era <strong>riso</strong> e <strong>choro</strong> ao mesmo tempo."</p></div>
+    <div class="card"><h3>Antítese</h3><p class="muted">Ideias opostas lado a lado: "Era <strong>riso</strong> e <strong>choro</strong>."</p></div>
+    <div class="card"><h3>Paradoxo</h3><p class="muted">Ideias opostas que parecem impossíveis juntas: "O amor é <strong>fogo que arde sem se ver</strong>" (Camões).</p></div>
     <div class="card"><h3>Personificação</h3><p class="muted">Dar ações humanas a coisas: "O vento <strong>sussurrava</strong>."</p></div>
     <div class="card"><h3>Eufemismo</h3><p class="muted">Suavizar algo duro: "Ele <strong>partiu</strong>" (morreu).</p></div>
+    <div class="card"><h3>Onomatopeia</h3><p class="muted">Palavra que imita um som: "<strong>tic-tac</strong>", "<strong>buum</strong>".</p></div>
   </div>
 
-  <h3>Literatura em 5 movimentos</h3>
-  <div class="timeline">
-    <div class="step"><div class="time">Barroco (séc. XVII)</div><p>Conflito entre <strong>fé e prazer</strong>, frases cheias de contrastes. Gregório de Matos, o "Boca do Inferno", com suas sátiras.</p></div>
-    <div class="step"><div class="time">Arcadismo (séc. XVIII)</div><p>Vida simples no campo, natureza calma, equilíbrio. Tomás Antônio Gonzaga, um dos inconfidentes.</p></div>
-    <div class="step"><div class="time">Romantismo (séc. XIX)</div><p>Emoção, amor idealizado e <strong>nacionalismo</strong>. O indígena aparece como herói. José de Alencar e Castro Alves, o poeta dos escravizados.</p></div>
-    <div class="step"><div class="time">Realismo (fim do séc. XIX)</div><p><strong>Crítica à sociedade</strong>, personagens com defeitos, ironia. Machado de Assis ("Dom Casmurro").</p></div>
-    <div class="step"><div class="time">Modernismo (desde 1922)</div><p>Começa com a <strong>Semana de Arte Moderna de 1922</strong>. Liberdade na forma, linguagem do dia a dia e valorização da cultura brasileira. Oswald de Andrade (Manifesto Antropófago), Mário de Andrade, Drummond, Clarice Lispector.</p></div>
-  </div>
-
-  <h3>Artes, Educação Física e língua estrangeira</h3>
+  <h3>5. Intertextualidade: um texto conversando com outro</h3>
   <div class="grid">
-    <div class="card"><h3>Artes</h3><p class="muted">Vanguardas europeias: <strong>Cubismo</strong> (formas geométricas, Picasso) e <strong>Surrealismo</strong> (imagens de sonho, Dalí). O ENEM também valoriza arte urbana, como o grafite, e a arte indígena e afro-brasileira.</p></div>
-    <div class="card"><h3>Educação Física</h3><p class="muted">Fala de <strong>práticas corporais</strong> (danças, lutas, esportes e brincadeiras) como parte da cultura. Critica a pressão por um <strong>padrão de beleza</strong> e defende o esporte como direito de todos, inclusive das pessoas com deficiência.</p></div>
-    <div class="card"><h3>Inglês ou Espanhol</h3><p class="muted">O enunciado vem em português: leia-o primeiro. Procure <strong>palavras parecidas</strong> com o português. Cuidado com os falsos amigos: em inglês, <em>pretend</em> é "fingir" e <em>library</em> é "biblioteca"; em espanhol, <em>exquisito</em> é "delicioso" e <em>embarazada</em> é "grávida".</p></div>
+    <div class="card"><h3>Paródia</h3><p class="muted">Retoma um texto para <strong>mudar o sentido</strong>, muitas vezes com humor ou crítica.</p></div>
+    <div class="card"><h3>Paráfrase</h3><p class="muted">Diz a mesma coisa com outras palavras, <strong>mantendo o sentido</strong>.</p></div>
+    <div class="card"><h3>Citação</h3><p class="muted">Repete o trecho exato, entre aspas.</p></div>
+    <div class="card"><h3>Alusão</h3><p class="muted">Faz uma referência rápida, sem citar diretamente.</p></div>
+  </div>
+  <p>A "Canção do exílio", de Gonçalves Dias (<q>Minha terra tem palmeiras, / Onde canta o Sabiá</q>), é o poema mais parodiado do Brasil e aparece muito no ENEM.</p>
+
+  <h3>6. Coesão: as palavras que ligam as ideias</h3>
+  <p>Saber o que cada conectivo indica ajuda nas questões e também na redação:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Relação</th><th>Conectivos</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Adição</strong></td><td>e, além disso, ademais, também</td></tr>
+        <tr><td><strong>Oposição</strong></td><td>mas, porém, contudo, entretanto, embora</td></tr>
+        <tr><td><strong>Causa</strong></td><td>porque, pois, já que, visto que</td></tr>
+        <tr><td><strong>Consequência</strong></td><td>portanto, logo, por isso, consequentemente</td></tr>
+        <tr><td><strong>Condição</strong></td><td>se, caso, desde que</td></tr>
+        <tr><td><strong>Finalidade</strong></td><td>para que, a fim de</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <h3>Teste rápido</h3>
-  <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>1.</b> Uma propaganda diz: "Vacine seu filho. Proteja quem você ama." A função da linguagem que predomina é a:</p>
-      <ol class="opts"><li>referencial.</li><li>fática.</li><li>apelativa.</li><li>metalinguística.</li><li>emotiva.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Os verbos "vacine" e "proteja" chamam o leitor para agir. Isso é a função apelativa (ou conativa).</p></details>
+  <h3>7. Literatura brasileira: os movimentos</h3>
+  <div class="timeline">
+    <div class="step"><div class="time">Quinhentismo (séc. XVI)</div><p>Textos sobre a terra recém-ocupada. A <strong>Carta de Pero Vaz de Caminha</strong> e os textos dos jesuítas, como o padre José de Anchieta.</p></div>
+    <div class="step"><div class="time">Barroco (séc. XVII)</div><p>Conflito entre <strong>fé e prazer</strong>, frases cheias de contrastes. Gregório de Matos, o "Boca do Inferno", com suas sátiras, e os sermões do padre Antônio Vieira.</p></div>
+    <div class="step"><div class="time">Arcadismo (séc. XVIII)</div><p>Vida simples no campo, natureza calma, equilíbrio. Tomás Antônio Gonzaga, um dos inconfidentes, com <em>Marília de Dirceu</em>.</p></div>
+    <div class="step"><div class="time">Romantismo (séc. XIX)</div><p>Emoção, amor idealizado e <strong>nacionalismo</strong>. O indígena aparece como herói (José de Alencar, <em>Iracema</em>). Gonçalves Dias e a "Canção do exílio". <strong>Castro Alves</strong>, o poeta dos escravizados, com <em>O navio negreiro</em>.</p></div>
+    <div class="step"><div class="time">Realismo (fim do séc. XIX)</div><p><strong>Crítica à sociedade</strong>, personagens com defeitos, ironia. <strong>Machado de Assis</strong> (<em>Dom Casmurro</em>, <em>Memórias Póstumas de Brás Cubas</em>). No <strong>Naturalismo</strong>, Aluísio Azevedo (<em>O Cortiço</em>) mostra o ser humano movido pelo meio e pelos instintos.</p></div>
+    <div class="step"><div class="time">Parnasianismo e Simbolismo</div><p>Os parnasianos queriam a <strong>forma perfeita</strong> ("arte pela arte"), como Olavo Bilac. Os simbolistas buscavam a <strong>musicalidade</strong> e o mistério, como Cruz e Sousa, filho de escravizados.</p></div>
+    <div class="step"><div class="time">Pré-Modernismo (início do séc. XX)</div><p>Mostra o Brasil real e seus problemas. Euclides da Cunha (<em>Os Sertões</em>, sobre Canudos), Lima Barreto (<em>Triste Fim de Policarpo Quaresma</em>) e Monteiro Lobato.</p></div>
+    <div class="step"><div class="time">Modernismo · 1ª fase (1922)</div><p>Começa com a <strong>Semana de Arte Moderna de 1922</strong>, em São Paulo. Liberdade na forma (versos livres, sem rima obrigatória), linguagem do dia a dia, humor e valorização da cultura brasileira. Oswald de Andrade (<strong>Manifesto Antropófago</strong>) e Mário de Andrade (<em>Macunaíma</em>).</p></div>
+    <div class="step"><div class="time">Modernismo · 2ª fase (1930)</div><p>O <strong>romance regionalista</strong> mostra a seca, a fome e a desigualdade: Graciliano Ramos (<em>Vidas Secas</em>), Rachel de Queiroz (<em>O Quinze</em>) e Jorge Amado. Na poesia, Carlos Drummond de Andrade, Cecília Meireles e Vinicius de Moraes.</p></div>
+    <div class="step"><div class="time">Modernismo · 3ª fase (1945)</div><p>Experimentação com a linguagem. Guimarães Rosa (<em>Grande Sertão: Veredas</em>), Clarice Lispector (<em>A Hora da Estrela</em>) e João Cabral de Melo Neto (<em>Morte e Vida Severina</em>).</p></div>
+    <div class="step"><div class="time">Contemporânea</div><p>Vozes que estavam à margem. <strong>Carolina Maria de Jesus</strong>, que escreveu sobre a fome na favela em <em>Quarto de Despejo</em> (1960), e <strong>Conceição Evaristo</strong>, com a ideia de <strong>"escrevivência"</strong>: a escrita a partir da vivência de mulheres negras. As duas caem muito.</p></div>
+  </div>
+
+  <h3>8. Artes</h3>
+  <div class="grid">
+    <div class="card"><h3>Vanguardas europeias</h3><p class="muted"><strong>Expressionismo</strong> (emoções fortes, como "O Grito", de Munch), <strong>Cubismo</strong> (formas geométricas, Picasso, que pintou "Guernica" sobre um bombardeio na guerra), <strong>Futurismo</strong> (velocidade e máquinas), <strong>Dadaísmo</strong> (absurdo e provocação: Duchamp expôs um mictório como obra de arte) e <strong>Surrealismo</strong> (imagens de sonho, Dalí).</p></div>
+    <div class="card"><h3>Arte moderna no Brasil</h3><p class="muted"><strong>Tarsila do Amaral</strong> pintou o "Abaporu" (1928), que inspirou o Manifesto Antropófago. <strong>Anita Malfatti</strong> foi atacada pelos críticos por ser moderna demais. <strong>Portinari</strong> pintou "Os Retirantes", sobre a fome no sertão.</p></div>
+    <div class="card"><h3>Arte contemporânea</h3><p class="muted">Performance, instalação e arte que faz pensar mais do que "ser bonita". O <strong>grafite</strong> e a arte urbana também são valorizados, como os trabalhos de OSGEMEOS.</p></div>
+    <div class="card"><h3>Música</h3><p class="muted">A <strong>Bossa Nova</strong> e a <strong>Tropicália</strong> (Caetano Veloso e Gilberto Gil, no fim dos anos 1960), que misturava o brasileiro com o estrangeiro. Na ditadura, as <strong>canções de protesto</strong> usavam metáforas para driblar a censura.</p></div>
+    <div class="card"><h3>Cultura popular</h3><p class="muted">Samba, frevo, maracatu, cordel, festas juninas. O ENEM valoriza essas manifestações como <strong>patrimônio cultural</strong>, além da arte indígena e afro-brasileira.</p></div>
+  </div>
+
+  <h3>9. Educação Física</h3>
+  <div class="grid">
+    <div class="card"><h3>Cultura corporal</h3><p class="muted">Danças, lutas, esportes, jogos e brincadeiras fazem parte da <strong>cultura</strong> de um povo. A <strong>capoeira</strong>, por exemplo, mistura luta, dança e música, e a roda de capoeira é patrimônio cultural reconhecido pela UNESCO.</p></div>
+    <div class="card"><h3>Padrões de beleza</h3><p class="muted">O ENEM critica a pressão por um corpo "perfeito", alimentada pelas redes sociais e pela mídia, que pode levar a dietas radicais, anabolizantes e transtornos alimentares.</p></div>
+    <div class="card"><h3>Saúde e sedentarismo</h3><p class="muted">Atividade física é saúde, e não só estética. O sedentarismo aumenta o risco de doenças.</p></div>
+    <div class="card"><h3>Esporte para todos</h3><p class="muted">O esporte é um <strong>direito</strong>, inclusive das pessoas com deficiência (como nos Jogos Paralímpicos). O ENEM diferencia o esporte de <strong>alto rendimento</strong> (competição) do esporte de <strong>participação</strong> (lazer e saúde).</p></div>
+  </div>
+
+  <h3>10. Tecnologias e internet</h3>
+  <ul class="clean">
+    <li><strong>Fake news:</strong> notícias falsas que se espalham rápido. Para identificar: conferir a fonte, a data e se outros veículos confiáveis publicaram.</li>
+    <li><strong>Bolhas e algoritmos:</strong> as redes mostram mais do que você já gosta, e isso pode fechar as pessoas em grupos que só pensam igual.</li>
+    <li><strong>Linguagem da internet:</strong> emojis, abreviações e memes são formas legítimas de comunicação, adequadas ao ambiente informal.</li>
+    <li><strong>Exclusão digital:</strong> nem todo mundo tem acesso à internet e a aparelhos, o que aumenta a desigualdade.</li>
+  </ul>
+
+  <h3>11. Inglês ou Espanhol</h3>
+  <p>O enunciado vem em <strong>português</strong>: leia-o primeiro. Você não precisa entender todas as palavras. Procure as que parecem com o português (os <strong>cognatos</strong>) e cuidado com os <strong>falsos amigos</strong>, palavras que parecem uma coisa e significam outra:</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Inglês</h3>
+      <ul class="clean">
+        <li><em>actually</em> = na verdade</li>
+        <li><em>pretend</em> = fingir</li>
+        <li><em>library</em> = biblioteca</li>
+        <li><em>college</em> = faculdade</li>
+        <li><em>push</em> = empurrar</li>
+        <li><em>parents</em> = pais</li>
+        <li><em>realize</em> = perceber</li>
+        <li><em>exit</em> = saída</li>
+      </ul>
     </div>
-    <div class="quiz card">
-      <p class="q"><b>2.</b> Um texto mostra que a mesma raiz se chama "mandioca", "aipim" ou "macaxeira", dependendo da região do Brasil. O texto trata de:</p>
-      <ol class="opts"><li>erro de português.</li><li>variação linguística regional.</li><li>função poética.</li><li>falta de escolaridade.</li><li>linguagem científica.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Nenhuma das três formas está errada. São variações da língua conforme a região.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>3.</b> Na frase "Estou morrendo de fome", há uma:</p>
-      <ol class="opts"><li>hipérbole.</li><li>ironia.</li><li>metonímia.</li><li>antítese.</li><li>personificação.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> É um exagero, a hipérbole. A pessoa não está morrendo de verdade.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>4.</b> A Semana de Arte Moderna de 1922 propunha:</p>
-      <ol class="opts"><li>copiar fielmente a arte europeia antiga.</li><li>voltar às regras rígidas da poesia clássica.</li><li>romper com as regras tradicionais e valorizar a cultura e a linguagem brasileiras.</li><li>proibir a arte popular.</li><li>escrever apenas em latim.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> O Modernismo quis uma arte livre e com a cara do Brasil.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>5.</b> Em uma conversa de WhatsApp, um amigo usa gírias e abreviações. Segundo a visão do ENEM, essa linguagem é:</p>
-      <ol class="opts"><li>errada em qualquer situação.</li><li>adequada à situação informal.</li><li>proibida pela gramática.</li><li>igual à linguagem de uma redação do ENEM.</li><li>sinal de que a pessoa não sabe português.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Combina com a conversa entre amigos. Já na redação de domingo, a linguagem precisa ser formal.</p></details>
+    <div class="card">
+      <h3>Espanhol</h3>
+      <ul class="clean">
+        <li><em>exquisito</em> = delicioso</li>
+        <li><em>embarazada</em> = grávida</li>
+        <li><em>oficina</em> = escritório</li>
+        <li><em>polvo</em> = pó</li>
+        <li><em>rato</em> = momento, pouco tempo</li>
+        <li><em>largo</em> = comprido</li>
+        <li><em>apellido</em> = sobrenome</li>
+        <li><em>cena</em> = jantar</li>
+      </ul>
     </div>
   </div>
+
+  <div class="note sun"><span class="label">Guarde isto</span><p>Ler o <strong>comando primeiro</strong>, identificar o <strong>gênero e o objetivo</strong> do texto, as <strong>funções da linguagem</strong>, <strong>variação linguística</strong> (nada é "errado", existe o adequado), <strong>paródia</strong> e intertextualidade, e os movimentos literários, principalmente o <strong>Modernismo de 1922</strong>.</p></div>
 </section>
 
 <section id="simulado" class="sim">
@@ -594,7 +678,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <p class="intro">Na redação sobre a mulher negra na mídia, você mostrou que tem <strong>boas ideias e conhece o assunto</strong>. Para subir a nota, foque nestes 5 pontos:</p>
   <div class="stack">
     <div class="card"><h3>1. Proposta com os 5 elementos</h3><p class="muted">É o que mais vale: pode somar <strong>até 160 pontos</strong>. Agente, ação, meio, finalidade e detalhamento.</p></div>
-    <div class="card"><h3>2. Comece a introdução com um repertório</h3><p class="muted">Um fato, uma lei ou um autor logo na primeira frase. Depois, o tema e as duas causas.</p></div>
+    <div class="card"><h3>2. Comece a introdução com um repertório</h3><p class="muted">Um fato, uma lei ou um autor logo na primeira frase. Depois, o tema e as duas causas. Você estudou muitos repertórios esta semana: Lei Áurea, Lei de Terras, Constituição de 1988, Bauman, Kant.</p></div>
     <div class="card"><h3>3. Não repita as palavras do tema</h3><p class="muted">Troque por sinônimos e pronomes: "elas", "esse grupo", "essas pessoas".</p></div>
     <div class="card"><h3>4. Nada de "pra"</h3><p class="muted">Na redação, sempre "para". E confira a concordância: "eles tiveram", não "eles teve".</p></div>
     <div class="card"><h3>5. Sem nome na folha</h3><p class="muted">Na escola você escreveu o nome no topo. <strong>No ENEM, isso zera a redação.</strong></p></div>

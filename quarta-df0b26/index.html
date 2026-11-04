@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>História da Adriely</title>
-<meta name="description" content="Hoje: História. Brasil Colônia, Brasil Império e História Contemporânea, com teste rápido.">
+<meta name="description" content="Hoje: História. Brasil Colônia, Império, História Contemporânea e República, com simulado de 10 questões.">
 <meta property="og:title" content="História da Adriely">
-<meta property="og:description" content="Hoje: História. Brasil Colônia, Brasil Império e História Contemporânea, com teste rápido.">
+<meta property="og:description" content="Hoje: História. Brasil Colônia, Império, História Contemporânea e República, com simulado de 10 questões.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -246,7 +246,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .eq-fb.is-empty { background: var(--sun-soft); }
 .sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
 
-/* Teste rápido */
+/* Tabelas */
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+/* Respostas abertas */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
 .quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
@@ -266,12 +269,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é dia de <span>História</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: História do Brasil e do mundo</div>
-  <p class="lede">Hoje o foco é <strong>História</strong>: Brasil Colônia, Brasil Império e História Contemporânea. Está tudo explicado do zero, com um teste rápido no fim de cada parte e um simulado de 10 questões.</p>
+  <p class="lede">Hoje o foco é <strong>História</strong>: Brasil Colônia, Brasil Império, História Contemporânea e Brasil República. Está tudo explicado do zero e, no fim, tem um simulado de 10 questões.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-hist">Missão de hoje</a>
     <a href="#colonia">Colônia</a>
     <a href="#imperio">Império</a>
     <a href="#contemporanea">Contemporânea</a>
+    <a href="#republica">República</a>
     <a href="#simulado">Simulado</a>
     <a href="#redacao-hist">Use na redação</a>
   </nav>
@@ -281,10 +285,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="card stack">
     <h3>Como estudar esta página</h3>
     <div class="howto">
-      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa.</p></div>
+      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa e quanto tempo cada parte leva.</p></div>
       <div><span class="n">2</span><p>Leia cada época com calma. <strong>Não precisa decorar datas</strong>: o ENEM cobra causa e consequência.</p></div>
-      <div><span class="n">3</span><p>No fim de cada parte, faça o <strong>teste rápido</strong>. Toque em "Ver resposta" só depois de escolher a sua.</p></div>
-      <div><span class="n">4</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+      <div><span class="n">3</span><p>Os quadros amarelos <strong>"Guarde isto"</strong> trazem o mais importante de cada parte. Releia antes de dormir.</p></div>
+      <div><span class="n">4</span><p>No fim, faça o <strong>simulado</strong> de 10 questões para ver o que ficou.</p></div>
     </div>
   </div>
 </section>
@@ -293,12 +297,12 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="card mission stack">
     <span class="tab sun">Missão de hoje · quarta, 4/11</span>
     <h2>Dia de História</h2>
-    <label class="check"><input type="checkbox" id="h-1"><span class="bubble"></span><span class="txt">Ler <a href="#colonia">Brasil Colônia</a> e fazer o teste rápido (≈ 40 min).</span></label>
-    <label class="check"><input type="checkbox" id="h-2"><span class="bubble"></span><span class="txt">Ler <a href="#imperio">Brasil Império</a> e fazer o teste rápido (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="h-1"><span class="bubble"></span><span class="txt">Estudar <a href="#colonia">Brasil Colônia</a> (≈ 1 hora).</span></label>
+    <label class="check"><input type="checkbox" id="h-2"><span class="bubble"></span><span class="txt">Estudar <a href="#imperio">Brasil Império</a> (≈ 50 min).</span></label>
     <label class="check"><input type="checkbox" id="h-3"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos. Água, alongamento, nada de celular.</span></label>
-    <label class="check"><input type="checkbox" id="h-4"><span class="bubble"></span><span class="txt">Ler <a href="#contemporanea">História Contemporânea</a> e fazer o teste rápido (≈ 50 min).</span></label>
+    <label class="check"><input type="checkbox" id="h-4"><span class="bubble"></span><span class="txt">Estudar <a href="#contemporanea">História Contemporânea</a> e <a href="#republica">Brasil República</a> (≈ 1h20).</span></label>
     <label class="check"><input type="checkbox" id="h-5"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
-    <label class="check"><input type="checkbox" id="h-6"><span class="bubble"></span><span class="txt">Ler <a href="#redacao-hist">Use na redação</a>: 4 fatos de História que viram repertório.</span></label>
+    <label class="check"><input type="checkbox" id="h-6"><span class="bubble"></span><span class="txt">Ler <a href="#redacao-hist">Use na redação</a>: fatos de História que viram repertório.</span></label>
   </div>
 </section>
 
@@ -309,148 +313,298 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="grid">
     <div class="card"><h3>Leia o texto primeiro</h3><p class="muted">A resposta quase sempre está no texto ou na imagem. O seu conhecimento ajuda a confirmar.</p></div>
     <div class="card"><h3>Pense em causa e consequência</h3><p class="muted">"O que levou a isso?" e "o que isso provocou?" são as duas perguntas que mais aparecem.</p></div>
-    <div class="card"><h3>Ligue passado e presente</h3><p class="muted">O ENEM adora mostrar como algo do passado (como a escravidão) ainda afeta o Brasil de hoje.</p></div>
+    <div class="card"><h3>Ligue passado e presente</h3><p class="muted">O ENEM adora mostrar como algo do passado, como a escravidão, ainda afeta o Brasil de hoje.</p></div>
+    <div class="card"><h3>Dê voz a quem foi silenciado</h3><p class="muted">Indígenas, africanos escravizados, mulheres e trabalhadores aparecem muito. A resposta certa costuma mostrar que eles <strong>agiram e resistiram</strong>, e não que foram passivos.</p></div>
   </div>
 </section>
 
-<!-- COLÔNIA -->
+<!-- ======================= COLÔNIA ======================= -->
 <section id="colonia">
   <div class="tabrow"><span class="tab">Parte 1 · 1500 a 1822</span></div>
   <h2>Brasil Colônia</h2>
   <div class="note"><span class="label">Em uma frase</span><p>Por mais de 300 anos, o Brasil existiu para <strong>gerar riqueza para Portugal</strong>, com base na <strong>terra concentrada</strong> e no <strong>trabalho de pessoas escravizadas</strong>.</p></div>
 
-  <h3>A linha do tempo</h3>
+  <h3>1. Antes da colonização de verdade (1500 a 1530)</h3>
+  <p>Em 1494, Portugal e Espanha assinaram o <strong>Tratado de Tordesilhas</strong>, que dividia as terras "descobertas" entre os dois reinos por uma linha imaginária. Quando os portugueses chegaram em 1500, a região já era habitada por <strong>milhões de indígenas</strong>, de muitos povos e línguas diferentes.</p>
+  <p>Nos primeiros 30 anos, Portugal estava mais interessado no comércio com as Índias. Aqui, só explorava o <strong>pau-brasil</strong>, uma árvore que dava tinta vermelha. Os indígenas cortavam a madeira em troca de objetos, como facas e espelhos: era o <strong>escambo</strong>. A madeira ficava guardada em <strong>feitorias</strong> no litoral.</p>
+
+  <h3>2. Como Portugal organizou a colônia</h3>
   <div class="timeline">
-    <div class="step"><div class="time">1500</div><p><strong>Chegada dos portugueses.</strong> No começo, eles só exploram o <strong>pau-brasil</strong>, trocando objetos com os indígenas pelo trabalho de corte (o <em>escambo</em>).</p></div>
-    <div class="step"><div class="time">1534</div><p><strong>Capitanias hereditárias.</strong> O rei divide o território em grandes faixas de terra e entrega para nobres cuidarem. Quase todas fracassam.</p></div>
-    <div class="step"><div class="time">1549</div><p><strong>Governo-Geral.</strong> Portugal centraliza o poder. Tomé de Sousa funda <strong>Salvador</strong>, a primeira capital. Chegam os <strong>jesuítas</strong>, que catequizam os indígenas.</p></div>
-    <div class="step"><div class="time">Séc. XVI e XVII</div><p><strong>Ciclo do açúcar</strong> no Nordeste, nos <strong>engenhos</strong>. Começa o <strong>tráfico de africanos escravizados</strong> em grande escala.</p></div>
-    <div class="step"><div class="time">1630 a 1654</div><p><strong>Holandeses no Nordeste</strong> (Pernambuco), atrás do açúcar. Ficam conhecidos pelo governo de Maurício de Nassau.</p></div>
-    <div class="step"><div class="time">Séc. XVII</div><p><strong>Quilombo dos Palmares</strong> (Alagoas), o maior símbolo de resistência à escravidão. Seu líder, <strong>Zumbi</strong>, foi morto em 1695. Por isso, 20 de novembro é o Dia da Consciência Negra.</p></div>
-    <div class="step"><div class="time">Séc. XVIII</div><p><strong>Ciclo do ouro</strong> em Minas Gerais. Portugal cobra o <strong>quinto</strong> (20% do ouro) e, quando faltava, a <strong>derrama</strong> (cobrança à força). A capital vai para o <strong>Rio de Janeiro</strong> em 1763.</p></div>
-    <div class="step"><div class="time">1789 e 1798</div><p><strong>Inconfidência Mineira</strong> (elite de Minas, contra os impostos, inspirada no Iluminismo; Tiradentes foi executado) e <strong>Conjuração Baiana</strong> (popular, com alfaiates e soldados negros, queria também o fim da escravidão).</p></div>
-    <div class="step"><div class="time">1808</div><p><strong>A família real foge de Napoleão e vem para o Brasil.</strong> D. João abre os portos às nações amigas. O Brasil deixa de ser só colônia.</p></div>
+    <div class="step"><div class="time">1534</div><p><strong>Capitanias hereditárias.</strong> O rei dividiu o território em grandes faixas e entregou a nobres (os <em>donatários</em>), que deviam colonizar por conta própria. Quase todas fracassaram por falta de dinheiro e ataques indígenas. Só Pernambuco e São Vicente prosperaram.</p></div>
+    <div class="step"><div class="time">1549</div><p><strong>Governo-Geral.</strong> Para centralizar o poder, o rei enviou Tomé de Sousa, que fundou <strong>Salvador</strong>, a primeira capital. Com ele vieram os <strong>jesuítas</strong>, padres que catequizavam os indígenas.</p></div>
+    <div class="step"><div class="time">Câmaras municipais</div><p>Nas vilas, o poder local ficava com os "homens bons": os grandes proprietários de terra.</p></div>
   </div>
 
-  <h3>As 4 ideias que mais caem</h3>
+  <h3>3. O açúcar e o modelo de plantation</h3>
+  <p>A partir de meados do século XVI, o <strong>açúcar</strong> virou o principal produto da colônia, sobretudo em Pernambuco e na Bahia. Ele era produzido nos <strong>engenhos</strong> e vendido na Europa, com grande lucro.</p>
   <div class="grid">
-    <div class="card"><h3>Plantation</h3><p class="muted">O modelo de produção da colônia: <strong>latifúndio</strong> (terra enorme), <strong>monocultura</strong> (um só produto), <strong>trabalho escravizado</strong> e <strong>exportação</strong>.</p></div>
-    <div class="card"><h3>Pacto colonial</h3><p class="muted">A colônia só podia vender e comprar com Portugal. Toda a riqueza ia para a metrópole.</p></div>
-    <div class="card"><h3>Resistência</h3><p class="muted">Indígenas e africanos <strong>não aceitaram passivamente</strong>: fugas, quilombos, revoltas e preservação da cultura. O ENEM cobra muito isso.</p></div>
-    <div class="card"><h3>Povos indígenas</h3><p class="muted">Sofreram com escravização, doenças trazidas pelos europeus e a catequese, que tentava apagar a cultura deles.</p></div>
+    <div class="card"><h3>Latifúndio</h3><p class="muted">Propriedades enormes, nas mãos de poucas pessoas.</p></div>
+    <div class="card"><h3>Monocultura</h3><p class="muted">Um único produto plantado em grande escala.</p></div>
+    <div class="card"><h3>Trabalho escravizado</h3><p class="muted">Primeiro de indígenas, depois principalmente de africanos.</p></div>
+    <div class="card"><h3>Exportação</h3><p class="muted">Tudo voltado para o mercado europeu, não para o povo daqui.</p></div>
+  </div>
+  <p>Esse conjunto se chama <strong>plantation</strong>. Ele funcionava dentro do <strong>pacto colonial</strong> (ou <em>exclusivo metropolitano</em>): a colônia só podia vender e comprar de Portugal, e a riqueza ia toda para a metrópole.</p>
+  <p>A sociedade do açúcar era <strong>patriarcal</strong> (o senhor de engenho mandava na família, nos trabalhadores e na política local) e muito desigual. No topo ficava a <strong>casa-grande</strong>, e na base, a <strong>senzala</strong>.</p>
+
+  <h3>4. A escravidão africana</h3>
+  <p>O Brasil foi o território das Américas que <strong>mais recebeu africanos escravizados</strong>: mais de 4 milhões de pessoas, ao longo de mais de 300 anos. Elas eram trazidas à força nos <strong>navios negreiros</strong>, em condições terríveis, e muitas morriam na viagem. O tráfico era um negócio muito lucrativo para comerciantes portugueses e brasileiros.</p>
+  <p>Os escravizados <strong>resistiram de muitas formas</strong>:</p>
+  <ul class="clean">
+    <li><strong>Fugas e quilombos:</strong> comunidades de pessoas que fugiam. O maior foi <strong>Palmares</strong>, em Alagoas, que durou quase um século. Seu líder, <strong>Zumbi</strong>, foi morto em 1695. Por isso, 20 de novembro é o Dia da Consciência Negra.</li>
+    <li><strong>Resistência no dia a dia:</strong> trabalhar devagar, quebrar ferramentas, fingir doença.</li>
+    <li><strong>Preservação da cultura:</strong> religiões de matriz africana (como o candomblé), a capoeira, a música, a culinária e as irmandades religiosas negras.</li>
+  </ul>
+
+  <h3>5. Os povos indígenas</h3>
+  <p>A colonização foi devastadora para os indígenas. Muitos foram <strong>escravizados</strong>, e milhares morreram de <strong>doenças trazidas pelos europeus</strong>, como varíola e sarampo, contra as quais não tinham defesa. Os jesuítas os reuniam em <strong>aldeamentos (missões)</strong>, onde ensinavam o cristianismo e tentavam apagar sua cultura. Mesmo assim, os indígenas também resistiram, com guerras, fugas para o interior e alianças.</p>
+
+  <h3>6. Invasões, expansão e ouro</h3>
+  <div class="timeline">
+    <div class="step"><div class="time">1580 a 1640</div><p><strong>União Ibérica:</strong> Portugal ficou sob o rei da Espanha. Na prática, a linha de Tordesilhas perdeu sentido, o que facilitou a expansão para o interior.</p></div>
+    <div class="step"><div class="time">1630 a 1654</div><p><strong>Holandeses no Nordeste.</strong> Eles ocuparam Pernambuco, atrás do açúcar. O governo de <strong>Maurício de Nassau</strong> ficou conhecido por modernizar o Recife. Expulsos, os holandeses levaram a produção de açúcar para as Antilhas, e o açúcar brasileiro entrou em crise.</p></div>
+    <div class="step"><div class="time">Séc. XVII</div><p><strong>Bandeirantes</strong> paulistas entraram pelo interior para capturar indígenas e procurar metais preciosos. Ampliaram o território, mas com muita violência. A <strong>pecuária</strong> também levou a ocupação para o sertão, ao longo do rio São Francisco.</p></div>
+    <div class="step"><div class="time">Séc. XVIII</div><p><strong>Ciclo do ouro</strong> em Minas Gerais, Goiás e Mato Grosso. Portugal cobrava o <strong>quinto</strong> (20% do ouro) nas <strong>casas de fundição</strong> e, quando a meta não era atingida, a <strong>derrama</strong> (cobrança à força).</p></div>
+    <div class="step"><div class="time">1750</div><p><strong>Tratado de Madri:</strong> o território passou a ser de quem de fato o ocupava. O Brasil ficou com um formato parecido com o de hoje.</p></div>
+  </div>
+  <p><strong>Consequências da mineração:</strong> surgiram cidades como Vila Rica (hoje Ouro Preto), nasceu um mercado interno, o centro da economia foi para o Sudeste e a capital passou para o <strong>Rio de Janeiro</strong> em 1763. Floresceu o <strong>barroco mineiro</strong>, com o escultor Aleijadinho.</p>
+
+  <h3>7. As revoltas coloniais</h3>
+  <p>O ENEM gosta de separar dois tipos de revolta:</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Nativistas</h3>
+      <p class="muted">Queriam resolver <strong>problemas locais</strong>, sem romper com Portugal.</p>
+      <ul class="clean">
+        <li>Guerra dos Emboabas (1707–1709), pelo controle das minas.</li>
+        <li>Guerra dos Mascates (1710–1711), em Pernambuco.</li>
+        <li>Revolta de Filipe dos Santos (1720), contra as casas de fundição.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Emancipacionistas</h3>
+      <p class="muted">Queriam a <strong>independência</strong>, inspiradas no Iluminismo.</p>
+      <ul class="clean">
+        <li><strong>Inconfidência Mineira (1789):</strong> elite de Minas, contra os impostos. Inspirada na independência dos EUA. Tiradentes foi executado em 1792.</li>
+        <li><strong>Conjuração Baiana (1798):</strong> popular, com alfaiates e soldados negros. Queria também o <strong>fim da escravidão</strong>.</li>
+        <li><strong>Revolução Pernambucana (1817).</strong></li>
+      </ul>
+    </div>
   </div>
 
-  <h3>Teste rápido</h3>
-  <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>1.</b> No Brasil Colônia, a produção de açúcar seguia o modelo de <em>plantation</em>. Esse modelo se caracterizava por:</p>
-      <ol class="opts"><li>pequenas propriedades e trabalho livre.</li><li>latifúndio, monocultura, mão de obra escravizada e produção para exportação.</li><li>várias culturas voltadas ao mercado interno.</li><li>fábricas e trabalho assalariado.</li><li>terras divididas igualmente entre os colonos.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Grande terra, um só produto, trabalho escravizado e venda para fora. Decore essas 4 palavras: elas aparecem em muitas questões.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>2.</b> O Quilombo dos Palmares, liderado por Zumbi, é lembrado hoje principalmente como:</p>
-      <ol class="opts"><li>uma revolta de comerciantes contra impostos.</li><li>um acordo de paz entre senhores e escravizados.</li><li>um símbolo da resistência negra à escravidão.</li><li>uma cidade fundada pelos jesuítas.</li><li>um movimento pela independência do Brasil.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Palmares reuniu milhares de pessoas que fugiram da escravidão e resistiu por quase um século.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>3.</b> A Inconfidência Mineira (1789) teve como uma de suas principais causas:</p>
-      <ol class="opts"><li>a cobrança de impostos sobre o ouro, como a derrama, e a influência das ideias iluministas.</li><li>a chegada da família real ao Brasil.</li><li>a abolição da escravidão.</li><li>a invasão holandesa em Minas Gerais.</li><li>a proclamação da República.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> A elite mineira estava revoltada com os impostos de Portugal e inspirada pelo Iluminismo e pela independência dos Estados Unidos.</p></details>
-    </div>
-  </div>
+  <h3>8. A família real no Brasil (1808 a 1821)</h3>
+  <p>Fugindo das tropas de <strong>Napoleão</strong>, que dominava a Europa, a família real portuguesa veio para o Rio de Janeiro em 1808. Isso mudou tudo:</p>
+  <ul class="clean">
+    <li><strong>Abertura dos portos às nações amigas (1808):</strong> fim do pacto colonial. A Inglaterra foi a grande beneficiada.</li>
+    <li>Criação do Banco do Brasil, da Imprensa Régia, do Jardim Botânico e da Biblioteca Real.</li>
+    <li>Em 1815, o Brasil foi elevado a <strong>Reino Unido a Portugal e Algarves</strong>: deixou de ser colônia.</li>
+    <li>Em 1820, a <strong>Revolução do Porto</strong>, em Portugal, exigiu a volta do rei. D. João VI voltou em 1821 e deixou o filho, D. Pedro, no Brasil.</li>
+  </ul>
+
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Plantation</strong> (latifúndio + monocultura + escravidão + exportação), <strong>pacto colonial</strong>, <strong>resistência</strong> de indígenas e africanos (Palmares), <strong>ouro</strong> levando a capital para o Rio e as revoltas que queriam a <strong>independência</strong>.</p></div>
 </section>
 
-<!-- IMPÉRIO -->
+<!-- ======================= IMPÉRIO ======================= -->
 <section id="imperio">
   <div class="tabrow"><span class="tab">Parte 2 · 1822 a 1889</span></div>
   <h2>Brasil Império</h2>
   <div class="note"><span class="label">Em uma frase</span><p>O Brasil ficou <strong>independente</strong>, mas quase nada mudou para o povo: o poder continuou com os grandes fazendeiros, e a <strong>escravidão durou até 1888</strong>.</p></div>
 
-  <h3>A linha do tempo</h3>
+  <h3>1. A Independência (1822)</h3>
+  <p>Depois da volta de D. João VI, as Cortes portuguesas queriam que o Brasil voltasse a ser colônia. A elite brasileira não aceitou. Em 9 de janeiro de 1822, D. Pedro decidiu ficar no Brasil (o <strong>Dia do Fico</strong>) e, em <strong>7 de setembro de 1822</strong>, proclamou a Independência.</p>
+  <p>Foi uma independência feita <strong>"de cima para baixo"</strong>: pela elite, sem participação popular, mantendo a monarquia, o latifúndio e a escravidão. Também não foi pacífica: houve guerras contra tropas portuguesas, como na Bahia, onde a independência só foi conquistada em <strong>2 de julho de 1823</strong>. Portugal só reconheceu a independência em 1825, em troca de uma indenização paga pelo Brasil.</p>
+
+  <h3>2. Primeiro Reinado (1822 a 1831)</h3>
+  <ul class="clean">
+    <li><strong>Constituição de 1824:</strong> imposta pelo imperador (<em>outorgada</em>). Criou o <strong>Poder Moderador</strong>, que dava ao imperador a palavra final sobre os outros poderes, e o <strong>voto censitário</strong>: só votava quem tinha uma renda mínima. A religião oficial era a católica.</li>
+    <li><strong>Confederação do Equador (1824):</strong> revolta em Pernambuco contra o poder centralizado do imperador. Foi reprimida, e o líder Frei Caneca foi executado.</li>
+    <li><strong>Guerra da Cisplatina (1825–1828):</strong> o Brasil perdeu a província, que virou o <strong>Uruguai</strong>.</li>
+    <li>Com crise econômica e cada vez mais impopular, D. Pedro I <strong>abdicou em 1831</strong> e voltou a Portugal.</li>
+  </ul>
+
+  <h3>3. Período Regencial (1831 a 1840)</h3>
+  <p>O herdeiro, D. Pedro II, tinha só 5 anos. O país foi governado por <strong>regentes</strong>. O <strong>Ato Adicional de 1834</strong> deu mais autonomia às províncias, e a <strong>Guarda Nacional</strong>, criada em 1831, deu poder militar aos grandes fazendeiros (os futuros "coronéis"). Foi o período mais agitado do Império:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Revolta</th><th>Onde</th><th>Quem e por quê</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cabanagem</strong> (1835–1840)</td><td>Pará</td><td>População pobre (indígenas, negros e mestiços) contra a miséria. Chegou a tomar o poder. Muito violenta na repressão.</td></tr>
+        <tr><td><strong>Revolta dos Malês</strong> (1835)</td><td>Salvador</td><td>Africanos muçulmanos escravizados e libertos, contra a escravidão. Foi duramente reprimida.</td></tr>
+        <tr><td><strong>Farroupilha</strong> (1835–1845)</td><td>Rio Grande do Sul</td><td>Fazendeiros contra os impostos sobre o charque. Proclamaram uma república. A mais longa.</td></tr>
+        <tr><td><strong>Sabinada</strong> (1837–1838)</td><td>Bahia</td><td>Camadas médias urbanas, por autonomia.</td></tr>
+        <tr><td><strong>Balaiada</strong> (1838–1841)</td><td>Maranhão</td><td>Sertanejos pobres e escravizados, contra a miséria e os abusos dos fazendeiros.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Para acalmar o país, os políticos anteciparam a maioridade de D. Pedro II, que assumiu com 14 anos em 1840: foi o <strong>Golpe da Maioridade</strong>.</p>
+
+  <h3>4. Segundo Reinado (1840 a 1889)</h3>
+  <ul class="clean">
+    <li><strong>Política:</strong> dois partidos, o Liberal e o Conservador, que na prática pensavam parecido: os dois representavam os grandes proprietários. Funcionava um "parlamentarismo às avessas": o imperador escolhia o chefe do governo, e não o Parlamento.</li>
+    <li><strong>Café:</strong> virou a base da economia. Primeiro no <strong>Vale do Paraíba</strong> (RJ e SP), com trabalho escravizado. Depois no <strong>Oeste Paulista</strong>, com terra fértil, ferrovias e, aos poucos, trabalho de <strong>imigrantes</strong>.</li>
+    <li><strong>Modernização:</strong> o dinheiro do café financiou ferrovias, telégrafo e as primeiras indústrias. O Barão de Mauá foi o grande empresário da época.</li>
+    <li><strong>Imigração europeia:</strong> italianos, alemães e outros vieram trabalhar nas fazendas e nas cidades. Muitos ficavam presos a dívidas com os fazendeiros. A elite também apoiava a imigração por uma ideia racista de "branquear" a população.</li>
+  </ul>
+
+  <h3>5. A Guerra do Paraguai (1864 a 1870)</h3>
+  <p>Brasil, Argentina e Uruguai (a <strong>Tríplice Aliança</strong>) lutaram contra o Paraguai. Foi a maior guerra da América do Sul. O Paraguai ficou devastado e perdeu grande parte da população. O Brasil venceu, mas se endividou com bancos ingleses. Muitos soldados brasileiros eram negros, e escravizados foram enviados para lutar com a promessa de liberdade. O <strong>Exército saiu fortalecido</strong> e passou a querer participar da política.</p>
+
+  <h3>6. O caminho até a abolição</h3>
   <div class="timeline">
-    <div class="step"><div class="time">1822</div><p><strong>Independência</strong>, proclamada por D. Pedro I. Foi feita "de cima para baixo", pela elite, sem participação popular e mantendo a escravidão.</p></div>
-    <div class="step"><div class="time">1824</div><p><strong>Primeira Constituição</strong>, imposta pelo imperador (<em>outorgada</em>). Criou o <strong>Poder Moderador</strong>, que dava ao imperador a palavra final, e o <strong>voto censitário</strong>: só votava quem tinha certa renda.</p></div>
-    <div class="step"><div class="time">1831 a 1840</div><p><strong>Período Regencial.</strong> D. Pedro I abdica e o filho ainda é criança. O país é governado por regentes e explode em revoltas: <strong>Cabanagem</strong> (PA), <strong>Balaiada</strong> (MA), <strong>Sabinada</strong> (BA), <strong>Farroupilha</strong> (RS) e a <strong>Revolta dos Malês</strong> (Salvador, 1835, de africanos muçulmanos escravizados).</p></div>
-    <div class="step"><div class="time">1840</div><p><strong>Golpe da Maioridade.</strong> D. Pedro II assume com 14 anos para tentar acalmar o país. Começa o Segundo Reinado.</p></div>
-    <div class="step"><div class="time">Séc. XIX</div><p><strong>Café</strong> no Sudeste (Rio de Janeiro e depois São Paulo) vira a base da economia.</p></div>
-    <div class="step"><div class="time">1850</div><p><strong>Lei Eusébio de Queirós</strong> (proíbe o tráfico de africanos) e <strong>Lei de Terras</strong> (a terra só pode ser obtida por <strong>compra</strong>). A Lei de Terras impediu que pobres, ex-escravizados e imigrantes virassem donos de terra.</p></div>
-    <div class="step"><div class="time">1864 a 1870</div><p><strong>Guerra do Paraguai</strong>: Brasil, Argentina e Uruguai contra o Paraguai. O Exército sai fortalecido e começa a se envolver na política.</p></div>
-    <div class="step"><div class="time">1871 a 1888</div><p><strong>Abolição aos poucos:</strong> Lei do Ventre Livre (1871), Lei dos Sexagenários (1885) e <strong>Lei Áurea</strong> (13 de maio de 1888). A abolição veio <strong>sem nenhuma ajuda</strong> aos libertos: sem terra, sem escola, sem emprego.</p></div>
-    <div class="step"><div class="time">1889</div><p><strong>Proclamação da República</strong> por Marechal Deodoro, em 15 de novembro. O Império perdeu o apoio dos fazendeiros (irritados com a abolição), do Exército e da Igreja.</p></div>
+    <div class="step"><div class="time">1845</div><p>A Inglaterra aprova o <strong>Bill Aberdeen</strong> e passa a prender navios negreiros no oceano.</p></div>
+    <div class="step"><div class="time">1850</div><p><strong>Lei Eusébio de Queirós:</strong> proíbe o tráfico de africanos para o Brasil. No mesmo ano, a <strong>Lei de Terras</strong> diz que a terra só pode ser obtida por <strong>compra</strong>. Assim, quando a escravidão acabasse, os libertos não teriam como conseguir terra.</p></div>
+    <div class="step"><div class="time">1871</div><p><strong>Lei do Ventre Livre:</strong> filhos de escravizadas nascidos a partir dali seriam livres, mas na prática ficavam com os senhores até os 21 anos.</p></div>
+    <div class="step"><div class="time">1880s</div><p>O <strong>movimento abolicionista</strong> cresce, com Joaquim Nabuco, André Rebouças, José do Patrocínio e <strong>Luís Gama</strong>, ex-escravizado que virou advogado e libertou centenas de pessoas na Justiça. Há fugas em massa das fazendas. O <strong>Ceará</strong> aboliu a escravidão em 1884.</p></div>
+    <div class="step"><div class="time">1885</div><p><strong>Lei dos Sexagenários:</strong> libertava os escravizados com mais de 60 anos, que eram poucos.</p></div>
+    <div class="step"><div class="time">13/5/1888</div><p><strong>Lei Áurea</strong>, assinada pela princesa Isabel. O Brasil foi o <strong>último país das Américas</strong> a abolir a escravidão. A abolição veio <strong>sem nenhuma política de integração</strong>: sem terra, sem escola, sem emprego para os libertos.</p></div>
   </div>
 
-  <div class="note sun"><span class="label">A ideia mais importante desta parte</span><p>A abolição sem integração deixou a população negra à margem da sociedade, sem terra, educação ou trabalho digno. É daí que vem boa parte da <strong>desigualdade racial</strong> do Brasil de hoje. Você já usou essa ideia na sua redação sobre a mulher negra na mídia!</p></div>
+  <h3>7. O fim do Império (1889)</h3>
+  <p>O Império foi perdendo apoio:</p>
+  <ul class="clean">
+    <li><strong>Igreja:</strong> entrou em conflito com o imperador na Questão Religiosa (1872–1875).</li>
+    <li><strong>Exército:</strong> fortalecido pela guerra, queria mais voz na política (Questão Militar).</li>
+    <li><strong>Fazendeiros:</strong> irritados com a abolição sem indenização, muitos passaram a apoiar a República.</li>
+    <li><strong>Republicanos:</strong> o Partido Republicano Paulista, criado em 1873, ganhava força.</li>
+  </ul>
+  <p>Em <strong>15 de novembro de 1889</strong>, o Marechal Deodoro da Fonseca proclamou a República, num golpe militar. Um jornalista da época, Aristides Lobo, escreveu que o povo <strong>"assistiu àquilo bestializado"</strong>, sem entender o que estava acontecendo: mais uma mudança feita sem participação popular.</p>
 
-  <h3>Teste rápido</h3>
-  <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>4.</b> A Constituição de 1824 estabeleceu o voto censitário. Isso significa que:</p>
-      <ol class="opts"><li>todos os brasileiros podiam votar.</li><li>só as mulheres podiam votar.</li><li>só votava quem tinha uma renda mínima.</li><li>o voto era secreto e obrigatório.</li><li>os escravizados votavam nos seus senhores.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> "Censo" aqui quer dizer renda. Só os mais ricos participavam da política.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>5.</b> A Lei de Terras de 1850 determinou que as terras só poderiam ser adquiridas por compra. Uma consequência dessa lei foi:</p>
-      <ol class="opts"><li>a distribuição de terras para ex-escravizados.</li><li>a reforma agrária no Brasil.</li><li>a concentração de terras nas mãos de quem já era rico.</li><li>o fim dos latifúndios.</li><li>a doação de terras para os povos indígenas.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Quem não tinha dinheiro, como os libertos e os imigrantes pobres, ficou sem acesso à terra. Amanhã, em Geografia Agrária, você vai ver que isso ainda pesa hoje.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>6.</b> Sobre a Lei Áurea (1888), é correto afirmar que:</p>
-      <ol class="opts"><li>garantiu terras e escolas para os libertos.</li><li>aboliu a escravidão, mas não criou políticas de integração dos libertos à sociedade.</li><li>foi a primeira lei contra a escravidão no Brasil.</li><li>foi aprovada logo após a Independência.</li><li>indenizou as pessoas que foram escravizadas.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> A liberdade veio no papel, mas sem condições de vida. Lembra do "Cidadão de Papel" da redação coringa?</p></details>
-    </div>
-  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Independência <strong>sem mudança social</strong>, Constituição de 1824 (<strong>Poder Moderador e voto censitário</strong>), revoltas regenciais, <strong>café</strong> e imigração, <strong>Lei de Terras</strong> e <strong>abolição sem integração</strong>. Esta última é a origem de boa parte da desigualdade racial de hoje, a mesma ideia que você usou na sua redação sobre a mulher negra na mídia!</p></div>
 </section>
 
-<!-- CONTEMPORÂNEA -->
+<!-- ======================= CONTEMPORÂNEA ======================= -->
 <section id="contemporanea">
   <div class="tabrow"><span class="tab">Parte 3 · de 1789 até hoje</span></div>
-  <h2>História Contemporânea</h2>
+  <h2>História Contemporânea (mundo)</h2>
   <div class="note"><span class="label">Em uma frase</span><p>É a época das <strong>grandes revoluções</strong>, das <strong>duas guerras mundiais</strong> e da disputa entre <strong>capitalismo e socialismo</strong>, que formaram o mundo em que vivemos.</p></div>
 
-  <h3>No mundo</h3>
+  <h3>1. Iluminismo e Revolução Francesa</h3>
+  <p>No século XVIII, os pensadores do <strong>Iluminismo</strong> (como Locke, Montesquieu, Rousseau e Voltaire) defendiam a <strong>razão</strong>, a liberdade e a igualdade, e criticavam o poder absoluto dos reis e os privilégios da Igreja e da nobreza.</p>
+  <p>Essas ideias inspiraram a <strong>Revolução Francesa (1789)</strong>. Na França, o clero e a nobreza tinham privilégios e não pagavam impostos, enquanto a burguesia e o povo pobre sustentavam o país.</p>
   <div class="timeline">
-    <div class="step"><div class="time">1789</div><p><strong>Revolução Francesa.</strong> O povo derruba o rei. Lema: <em>Liberdade, Igualdade e Fraternidade</em>. Cria a <strong>Declaração dos Direitos do Homem e do Cidadão</strong>. É o marco do início da Idade Contemporânea.</p></div>
-    <div class="step"><div class="time">Séc. XVIII e XIX</div><p><strong>Revolução Industrial</strong>, começando na Inglaterra. Máquinas a vapor, fábricas, <strong>êxodo rural</strong> e jornadas de trabalho muito longas, inclusive de crianças. Nascem os sindicatos.</p></div>
-    <div class="step"><div class="time">Séc. XIX</div><p><strong>Imperialismo.</strong> Países europeus dividem a <strong>África</strong> e a Ásia entre si (Conferência de Berlim, 1884–1885), sem respeitar os povos que viviam lá.</p></div>
-    <div class="step"><div class="time">1914 a 1918</div><p><strong>Primeira Guerra Mundial.</strong> Disputa entre potências europeias por territórios e mercados.</p></div>
-    <div class="step"><div class="time">1917</div><p><strong>Revolução Russa.</strong> Surge o primeiro país socialista, que depois vira a <strong>União Soviética (URSS)</strong>.</p></div>
-    <div class="step"><div class="time">1929</div><p><strong>Crise de 1929.</strong> A Bolsa de Nova York quebra e o mundo entra em crise. Desemprego em massa.</p></div>
-    <div class="step"><div class="time">1920 a 1945</div><p><strong>Totalitarismos:</strong> fascismo na Itália (Mussolini) e nazismo na Alemanha (Hitler). Governos autoritários, com perseguição a opositores e minorias.</p></div>
-    <div class="step"><div class="time">1939 a 1945</div><p><strong>Segunda Guerra Mundial.</strong> O <strong>Holocausto</strong> matou milhões de judeus e outros grupos. Termina com as bombas atômicas em Hiroshima e Nagasaki. Em 1945 é criada a <strong>ONU</strong>.</p></div>
-    <div class="step"><div class="time">1947 a 1991</div><p><strong>Guerra Fria:</strong> disputa entre <strong>EUA</strong> (capitalismo) e <strong>URSS</strong> (socialismo), sem guerra direta entre os dois. Inclui corrida armamentista e espacial, e o <strong>Muro de Berlim</strong> (1961–1989). Acaba com o fim da URSS, em 1991.</p></div>
-    <div class="step"><div class="time">Depois de 1945</div><p><strong>Descolonização</strong> da África e da Ásia: as colônias conquistam a independência.</p></div>
+    <div class="step"><div class="time">14/7/1789</div><p>Tomada da <strong>Bastilha</strong>, prisão que simbolizava o poder do rei. É aprovada a <strong>Declaração dos Direitos do Homem e do Cidadão</strong>. Lema: <em>Liberdade, Igualdade e Fraternidade</em>.</p></div>
+    <div class="step"><div class="time">1792 a 1794</div><p>A França vira república. O rei é executado. Fase radical do <strong>Terror</strong>, com Robespierre e os jacobinos.</p></div>
+    <div class="step"><div class="time">1799 a 1815</div><p><strong>Napoleão Bonaparte</strong> toma o poder, cria um império e espalha leis inspiradas na Revolução pela Europa. Seu <strong>Bloqueio Continental</strong> contra a Inglaterra fez a família real portuguesa fugir para o Brasil!</p></div>
   </div>
+  <p>A Revolução Francesa marca o início da <strong>Idade Contemporânea</strong> e espalhou pelo mundo a ideia de direitos iguais para todos.</p>
 
-  <h3>No Brasil (século XX): o que mais cai</h3>
+  <h3>2. Revolução Industrial</h3>
   <div class="grid">
-    <div class="card"><h3>Era Vargas (1930–1945)</h3><p class="muted">Getúlio Vargas chega ao poder em 1930. Voto feminino (1932). Ditadura do <strong>Estado Novo</strong> (1937–1945). Criação da <strong>CLT</strong> (1943), as leis trabalhistas que existem até hoje.</p></div>
-    <div class="card"><h3>Ditadura Militar (1964–1985)</h3><p class="muted">Golpe em 1964. O <strong>AI-5</strong> (1968) fechou o Congresso e aumentou a censura e a repressão. A economia cresceu no "milagre econômico", mas a desigualdade também. Termina após as <strong>Diretas Já</strong> (1984).</p></div>
-    <div class="card"><h3>Constituição de 1988</h3><p class="muted">A "Constituição Cidadã", criada depois da ditadura. Garante direitos sociais (o art. 6º da redação coringa!), cria o <strong>SUS</strong> e transforma o racismo em crime.</p></div>
+    <div class="card"><h3>1ª fase (séc. XVIII e XIX)</h3><p class="muted">Começou na <strong>Inglaterra</strong>. Máquina a vapor, carvão, fábricas de tecido.</p></div>
+    <div class="card"><h3>2ª fase (fim do séc. XIX)</h3><p class="muted">Eletricidade, petróleo, aço, indústria química. EUA e Alemanha viram potências.</p></div>
+    <div class="card"><h3>3ª fase (depois de 1950)</h3><p class="muted">Informática, robótica, telecomunicações. É a base da globalização.</p></div>
   </div>
+  <p><strong>Consequências:</strong> <strong>êxodo rural</strong>, crescimento rápido das cidades, poluição e condições de trabalho terríveis: jornadas de 14 a 16 horas, inclusive para crianças. Os trabalhadores reagiram:</p>
+  <ul class="clean">
+    <li><strong>Ludismo:</strong> trabalhadores quebravam as máquinas, que viam como culpadas pelo desemprego.</li>
+    <li><strong>Sindicatos e greves</strong> por jornadas menores e salários melhores.</li>
+    <li><strong>Novas ideias:</strong> o <strong>socialismo</strong> de Karl Marx e Friedrich Engels (Manifesto Comunista, 1848) e o <strong>anarquismo</strong>.</li>
+  </ul>
 
-  <h3>Teste rápido</h3>
-  <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>7.</b> A Revolução Industrial, iniciada na Inglaterra, provocou:</p>
-      <ol class="opts"><li>o fim do trabalho nas cidades.</li><li>êxodo rural, crescimento das cidades e jornadas de trabalho exaustivas nas fábricas.</li><li>a volta do sistema feudal.</li><li>a diminuição da produção de mercadorias.</li><li>o fim imediato do trabalho infantil.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> As pessoas saíram do campo para trabalhar nas fábricas, em condições muito duras. Isso deu origem aos primeiros movimentos operários.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>8.</b> A Guerra Fria (1947–1991) recebeu esse nome porque:</p>
-      <ol class="opts"><li>aconteceu em países de clima frio.</li><li>EUA e URSS disputaram poder e influência sem entrar em guerra direta um contra o outro.</li><li>foi uma guerra curta e sem mortes.</li><li>envolveu apenas países da Europa.</li><li>terminou com a vitória da União Soviética.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Os dois lados competiam em armas, tecnologia, espaço e influência sobre outros países, mas nunca se enfrentaram diretamente.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>9.</b> A Consolidação das Leis do Trabalho (CLT), de 1943, foi criada durante:</p>
-      <ol class="opts"><li>o Império de D. Pedro II.</li><li>a Ditadura Militar.</li><li>a Era Vargas.</li><li>o governo de Tiradentes.</li><li>a Primeira República.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Vargas ficou conhecido como "pai dos pobres" por causa das leis trabalhistas, mesmo governando como ditador no Estado Novo.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>10.</b> O AI-5, de 1968, foi um marco da Ditadura Militar porque:</p>
-      <ol class="opts"><li>devolveu a democracia ao país.</li><li>aumentou a repressão, a censura e permitiu fechar o Congresso.</li><li>garantiu eleições diretas para presidente.</li><li>aboliu a escravidão.</li><li>criou o SUS.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Foi o ato mais duro da ditadura. Questões sobre censura costumam trazer letras de músicas da época.</p></details>
-    </div>
+  <h3>3. Imperialismo (séc. XIX)</h3>
+  <p>As potências industriais precisavam de matérias-primas e mercados. Então dividiram a <strong>África</strong> e a <strong>Ásia</strong> entre si. Na <strong>Conferência de Berlim (1884–1885)</strong>, os europeus traçaram as fronteiras africanas sem consultar os povos de lá. Para justificar a dominação, usavam ideias racistas, como o <strong>darwinismo social</strong>: a falsa ideia de que alguns povos seriam "superiores". As fronteiras artificiais causam conflitos até hoje.</p>
+
+  <h3>4. Primeira Guerra Mundial (1914 a 1918)</h3>
+  <ul class="clean">
+    <li><strong>Causas:</strong> disputa por colônias e mercados, nacionalismo exagerado, corrida armamentista e alianças militares (Tríplice Entente contra Tríplice Aliança).</li>
+    <li><strong>Estopim:</strong> o assassinato do herdeiro do trono austríaco, em Sarajevo, em 1914.</li>
+    <li><strong>Como foi:</strong> guerra de trincheiras, com novas armas (metralhadoras, gases tóxicos, tanques) e milhões de mortos.</li>
+    <li><strong>Fim:</strong> o <strong>Tratado de Versalhes (1919)</strong> puniu duramente a Alemanha, com perda de territórios e uma dívida enorme. Isso alimentou o ressentimento que levou à Segunda Guerra.</li>
+  </ul>
+
+  <h3>5. Revolução Russa (1917)</h3>
+  <p>A Rússia era pobre, rural e governada por um czar absoluto, e estava perdendo a guerra. Em 1917, os <strong>bolcheviques</strong>, liderados por <strong>Lênin</strong>, tomaram o poder e criaram o primeiro país socialista, que em 1922 virou a <strong>União Soviética (URSS)</strong>. Mais tarde, com <strong>Stálin</strong>, o regime virou uma ditadura muito repressiva.</p>
+
+  <h3>6. Crise de 1929</h3>
+  <p>Os EUA produziam mais do que conseguiam vender, e as pessoas especulavam na Bolsa. Em 1929, a <strong>Bolsa de Nova York quebrou</strong>, e a crise se espalhou pelo mundo: falências e desemprego em massa. A resposta dos EUA foi o <strong>New Deal</strong>, do presidente Roosevelt: o Estado passou a investir em obras e a criar empregos. No Brasil, o preço do <strong>café despencou</strong>, o que enfraqueceu os fazendeiros e ajudou a levar Vargas ao poder em 1930.</p>
+
+  <h3>7. Totalitarismos: nazismo e fascismo</h3>
+  <p>Na crise, surgiram governos autoritários: o <strong>fascismo</strong> na Itália (Mussolini, a partir de 1922) e o <strong>nazismo</strong> na Alemanha (Hitler, a partir de 1933). Características que caem na prova:</p>
+  <ul class="clean">
+    <li>Partido único e <strong>culto ao líder</strong>.</li>
+    <li><strong>Propaganda</strong> intensa e <strong>censura</strong>.</li>
+    <li><strong>Nacionalismo extremo</strong> e militarismo.</li>
+    <li>Perseguição a opositores e minorias. O nazismo era <strong>antissemita</strong> (contra os judeus) e racista.</li>
+  </ul>
+
+  <h3>8. Segunda Guerra Mundial (1939 a 1945)</h3>
+  <ul class="clean">
+    <li><strong>Lados:</strong> o <strong>Eixo</strong> (Alemanha, Itália e Japão) contra os <strong>Aliados</strong> (Reino Unido, URSS, EUA, França e outros). O Brasil lutou ao lado dos Aliados, enviando a <strong>FEB</strong> (Força Expedicionária Brasileira) para a Itália.</li>
+    <li><strong>Holocausto:</strong> o assassinato em massa de cerca de 6 milhões de judeus, além de ciganos, pessoas com deficiência, homossexuais e opositores, nos campos de concentração nazistas.</li>
+    <li><strong>Fim:</strong> a Alemanha se rende em maio de 1945. Os EUA jogam <strong>bombas atômicas</strong> em Hiroshima e Nagasaki, e o Japão se rende.</li>
+    <li><strong>Depois da guerra:</strong> criação da <strong>ONU (1945)</strong> e da <strong>Declaração Universal dos Direitos Humanos (1948)</strong>, para evitar que horrores assim se repetissem.</li>
+  </ul>
+
+  <h3>9. Guerra Fria (1947 a 1991)</h3>
+  <p>Depois da guerra, o mundo ficou dividido em dois blocos:</p>
+  <div class="grid">
+    <div class="card"><h3>EUA · capitalismo</h3><p class="muted">Propriedade privada, livre mercado, democracia liberal. Plano Marshall para reconstruir a Europa. Aliança militar: <strong>OTAN</strong>.</p></div>
+    <div class="card"><h3>URSS · socialismo</h3><p class="muted">Economia planejada pelo Estado, partido único. Aliança militar: <strong>Pacto de Varsóvia</strong>.</p></div>
   </div>
+  <p>Os dois nunca se enfrentaram diretamente, por medo de uma guerra nuclear. Mas disputaram tudo: armas, a <strong>corrida espacial</strong> e influência no mundo. Momentos importantes:</p>
+  <ul class="clean">
+    <li><strong>Muro de Berlim (1961):</strong> dividiu a cidade e virou símbolo da Guerra Fria.</li>
+    <li><strong>Revolução Cubana (1959)</strong> e <strong>Crise dos Mísseis (1962)</strong>, quando o mundo chegou perto de uma guerra nuclear.</li>
+    <li>Guerras "indiretas", como as da <strong>Coreia</strong> e do <strong>Vietnã</strong>.</li>
+    <li>Na América Latina, os EUA apoiaram <strong>ditaduras militares</strong> contra o "perigo comunista", inclusive no Brasil.</li>
+    <li><strong>Fim:</strong> as reformas de Gorbachev, a <strong>queda do Muro (1989)</strong> e o <strong>fim da URSS (1991)</strong>.</li>
+  </ul>
+
+  <h3>10. Descolonização e o mundo de hoje</h3>
+  <ul class="clean">
+    <li>Depois de 1945, as colônias da África e da Ásia conquistaram a independência. Na <strong>Índia (1947)</strong>, Gandhi liderou uma luta pela <strong>não violência</strong>. Angola e Moçambique, colônias portuguesas, ficaram independentes em 1975.</li>
+    <li>Na África do Sul, o <strong>apartheid</strong> (1948–1994) separava legalmente brancos e negros. <strong>Nelson Mandela</strong> passou 27 anos preso e depois foi eleito presidente.</li>
+    <li>Com o fim da Guerra Fria, veio a <strong>globalização</strong>: comércio, informação e empresas circulando pelo mundo todo, mas com aumento das desigualdades.</li>
+  </ul>
+
+  <div class="note sun"><span class="label">Guarde isto</span><p>Revolução Francesa (<strong>direitos iguais</strong>), Revolução Industrial (<strong>êxodo rural e exploração do trabalho</strong>), Imperialismo (<strong>divisão da África</strong>), duas guerras mundiais, totalitarismos (<strong>propaganda, censura, culto ao líder</strong>) e Guerra Fria (<strong>EUA x URSS sem guerra direta</strong>).</p></div>
+</section>
+
+<!-- ======================= BRASIL REPÚBLICA ======================= -->
+<section id="republica">
+  <div class="tabrow"><span class="tab">Parte 4 · 1889 até hoje</span></div>
+  <h2>Brasil República</h2>
+  <div class="note"><span class="label">Por que estudar isso hoje</span><p>A história do Brasil no século XX também é "contemporânea" e cai <strong>muito</strong> no ENEM, principalmente a <strong>Era Vargas</strong> e a <strong>Ditadura Militar</strong>.</p></div>
+
+  <h3>1. Primeira República ou República Velha (1889 a 1930)</h3>
+  <ul class="clean">
+    <li><strong>Política do café com leite:</strong> São Paulo (café) e Minas Gerais (leite) se revezavam na Presidência.</li>
+    <li><strong>Coronelismo:</strong> no interior, os grandes fazendeiros (os "coronéis") controlavam os votos. O voto era aberto, e o <strong>voto de cabresto</strong> obrigava as pessoas a votar no candidato do coronel.</li>
+    <li><strong>Revoltas:</strong> <strong>Canudos</strong> (1896–1897, na Bahia, comunidade de sertanejos pobres liderada por Antônio Conselheiro, destruída pelo Exército), <strong>Revolta da Vacina</strong> (1904, no Rio, contra a vacinação obrigatória e as demolições de cortiços), <strong>Revolta da Chibata</strong> (1910, marinheiros negros liderados por João Cândido, contra os castigos físicos) e <strong>Contestado</strong> (1912–1916, no Sul).</li>
+    <li><strong>Movimento operário:</strong> greves nas cidades, com muitos imigrantes anarquistas, como a Greve Geral de 1917.</li>
+  </ul>
+
+  <h3>2. Era Vargas (1930 a 1945)</h3>
+  <p>A <strong>Revolução de 1930</strong> acabou com a política do café com leite e levou <strong>Getúlio Vargas</strong> ao poder.</p>
+  <ul class="clean">
+    <li><strong>Direitos:</strong> voto secreto e <strong>voto feminino (1932)</strong>, salário mínimo (1940) e a <strong>CLT (1943)</strong>, as leis trabalhistas que existem até hoje: carteira assinada, férias e jornada de 8 horas.</li>
+    <li><strong>Estado Novo (1937–1945):</strong> Vargas deu um golpe e virou ditador. Fechou o Congresso, censurou a imprensa e perseguiu opositores, com muita propaganda do governo.</li>
+    <li><strong>Industrialização:</strong> criação da Companhia Siderúrgica Nacional e, no segundo governo (1951–1954), da <strong>Petrobras</strong>.</li>
+    <li>Vargas era chamado de "pai dos pobres", mas controlava os sindicatos, que ficavam ligados ao governo. Isso se chama <strong>trabalhismo</strong> ou <strong>populismo</strong>.</li>
+  </ul>
+
+  <h3>3. República democrática (1946 a 1964)</h3>
+  <p><strong>Juscelino Kubitschek</strong> (1956–1961) prometeu "50 anos em 5", trouxe indústrias de carros e construiu <strong>Brasília</strong>, inaugurada em 1960. <strong>João Goulart (Jango)</strong> propôs as <strong>reformas de base</strong>, incluindo a reforma agrária. Isso assustou as elites e os militares.</p>
+
+  <h3>4. Ditadura Militar (1964 a 1985)</h3>
+  <div class="timeline">
+    <div class="step"><div class="time">1964</div><p><strong>Golpe militar</strong> derruba Jango, com apoio de parte da elite, da classe média e dos EUA.</p></div>
+    <div class="step"><div class="time">1965</div><p>Só dois partidos são permitidos: <strong>ARENA</strong> (do governo) e <strong>MDB</strong> (oposição controlada).</p></div>
+    <div class="step"><div class="time">1968</div><p><strong>AI-5:</strong> o ato mais duro. Fechou o Congresso, aumentou a <strong>censura</strong> e permitiu prender sem direito à defesa. Muitos opositores foram <strong>torturados</strong>, mortos ou exilados.</p></div>
+    <div class="step"><div class="time">1968 a 1973</div><p><strong>"Milagre econômico":</strong> a economia cresceu muito, mas os salários foram contidos e a <strong>desigualdade aumentou</strong>.</p></div>
+    <div class="step"><div class="time">1979</div><p><strong>Lei da Anistia:</strong> exilados voltam ao país. A lei também perdoou os agentes do Estado que torturaram.</p></div>
+    <div class="step"><div class="time">1984</div><p><strong>Diretas Já:</strong> milhões de pessoas nas ruas pedindo eleição direta para presidente.</p></div>
+    <div class="step"><div class="time">1985</div><p>Fim da ditadura. Tancredo Neves é eleito de forma indireta, mas morre antes de assumir. José Sarney vira presidente.</p></div>
+  </div>
+  <p>Na cultura, a resistência apareceu nas <strong>músicas de protesto</strong>, como as de Chico Buarque e Geraldo Vandré, que usavam metáforas para driblar a censura. O ENEM usa muito essas letras.</p>
+
+  <h3>5. Nova República (de 1985 até hoje)</h3>
+  <ul class="clean">
+    <li><strong>Constituição de 1988</strong>, a "Constituição Cidadã": garante direitos sociais (o art. 6º da redação coringa!), cria o <strong>SUS</strong>, permite que analfabetos e jovens de 16 e 17 anos votem (de forma opcional) e transforma o <strong>racismo em crime</strong> inafiançável.</li>
+    <li>Em 1989, a primeira eleição direta para presidente desde 1960. Fernando Collor foi eleito e sofreu impeachment em 1992.</li>
+    <li>Em 1994, o <strong>Plano Real</strong> controlou a inflação, que estava altíssima.</li>
+  </ul>
+
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Coronelismo</strong> e voto de cabresto na República Velha, <strong>Vargas</strong> com CLT, voto feminino e ditadura do Estado Novo, <strong>Ditadura Militar</strong> com AI-5, censura e tortura, e <strong>Constituição de 1988</strong> com direitos sociais e SUS.</p></div>
 </section>
 
 <section id="simulado" class="sim">
@@ -654,12 +808,14 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 <section id="redacao-hist">
   <div class="tabrow"><span class="tab sun">Bônus</span></div>
   <h2>Use na redação</h2>
-  <p class="intro">Tudo o que você estudou hoje pode virar <strong>repertório</strong> na redação de domingo. Estes 4 combinam com muitos temas:</p>
+  <p class="intro">Tudo o que você estudou hoje pode virar <strong>repertório</strong> na redação de domingo. Estes combinam com muitos temas:</p>
   <div class="stack">
-    <div class="card rep"><div class="who">Lei Áurea (1888) sem integração</div><p>A abolição não deu terra, escola nem trabalho aos libertos.</p><p class="when">Use em temas sobre racismo, desigualdade, trabalho ou educação.</p></div>
+    <div class="card rep"><div class="who">Lei Áurea (1888) sem integração</div><p>A abolição não deu terra, escola nem trabalho aos libertos. O Brasil foi o último país das Américas a abolir a escravidão.</p><p class="when">Use em temas sobre racismo, desigualdade, trabalho ou educação.</p></div>
     <div class="card rep"><div class="who">Lei de Terras (1850)</div><p>A terra passou a ser só de quem podia comprar, o que concentrou a propriedade.</p><p class="when">Use em temas sobre moradia, campo, fome ou desigualdade.</p></div>
-    <div class="card rep"><div class="who">Constituição de 1988</div><p>Garantiu direitos sociais depois da ditadura e criou o SUS.</p><p class="when">Use em quase qualquer tema. É o repertório mais seguro.</p></div>
-    <div class="card rep"><div class="who">Declaração dos Direitos do Homem (1789)</div><p>Afirmou que todos nascem livres e iguais em direitos.</p><p class="when">Use em temas sobre igualdade e direitos humanos.</p></div>
+    <div class="card rep"><div class="who">Constituição de 1988</div><p>Garantiu direitos sociais depois da ditadura, criou o SUS e tornou o racismo crime.</p><p class="when">Use em quase qualquer tema. É o repertório mais seguro.</p></div>
+    <div class="card rep"><div class="who">Declaração Universal dos Direitos Humanos (1948)</div><p>Criada depois do Holocausto, afirma que todos os seres humanos nascem livres e iguais em dignidade e direitos.</p><p class="when">Use em temas sobre igualdade, preconceito e direitos humanos.</p></div>
+    <div class="card rep"><div class="who">Revolta da Vacina (1904)</div><p>A população se revoltou contra a vacinação obrigatória, imposta sem nenhuma explicação.</p><p class="when">Use em temas sobre saúde pública, vacinação ou desinformação: mostra que informar a população é essencial.</p></div>
+    <div class="card rep"><div class="who">CLT (1943)</div><p>Garantiu direitos como férias, carteira assinada e jornada de 8 horas.</p><p class="when">Use em temas sobre trabalho, como a uberização e o trabalho informal.</p></div>
   </div>
 </section>
 

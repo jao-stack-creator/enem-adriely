@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Filosofia da Adriely</title>
-<meta name="description" content="Hoje: Filosofia e Sociologia. Ética, política e trabalho, com teste rápido.">
+<meta name="description" content="Hoje: Filosofia e Sociologia. Ética, política, sociedade e trabalho, com simulado de 10 questões.">
 <meta property="og:title" content="Filosofia da Adriely">
-<meta property="og:description" content="Hoje: Filosofia e Sociologia. Ética, política e trabalho, com teste rápido.">
+<meta property="og:description" content="Hoje: Filosofia e Sociologia. Ética, política, sociedade e trabalho, com simulado de 10 questões.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -246,7 +246,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .eq-fb.is-empty { background: var(--sun-soft); }
 .sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
 
-/* Teste rápido */
+/* Tabelas */
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+/* Respostas abertas */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
 .quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
@@ -266,12 +269,13 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é dia de <span>Filosofia e Sociologia</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: ética, política e trabalho</div>
-  <p class="lede">Hoje o foco é <strong>Filosofia e Sociologia</strong>: ética, política e trabalho. Para cada pensador, só a ideia que o ENEM cobra, com teste rápido e um simulado de 10 questões.</p>
+  <p class="lede">Hoje o foco é <strong>Filosofia e Sociologia</strong>: ética, política, sociedade e trabalho. Para cada pensador, a ideia que o ENEM cobra e, no fim, um simulado de 10 questões.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-filo">Missão de hoje</a>
     <a href="#etica">Ética</a>
     <a href="#politica">Política</a>
-    <a href="#sociologia">Sociologia e trabalho</a>
+    <a href="#sociologia">Sociologia</a>
+    <a href="#trabalho">Trabalho</a>
     <a href="#resumo">Resumo de bolso</a>
     <a href="#simulado">Simulado</a>
   </nav>
@@ -281,10 +285,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="card stack">
     <h3>Como estudar esta página</h3>
     <div class="howto">
-      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa.</p></div>
-      <div><span class="n">2</span><p>Para cada pensador, guarde <strong>só a ideia principal</strong>. É isso que o ENEM cobra.</p></div>
-      <div><span class="n">3</span><p>No fim de cada parte, faça o <strong>teste rápido</strong>. Toque em "Ver resposta" só depois de escolher a sua.</p></div>
-      <div><span class="n">4</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa e quanto tempo cada parte leva.</p></div>
+      <div><span class="n">2</span><p>Para cada pensador, guarde <strong>a ideia principal</strong>. É isso que o ENEM cobra.</p></div>
+      <div><span class="n">3</span><p>O <strong>resumo de bolso</strong> no fim tem uma linha por autor. Leia em voz alta.</p></div>
+      <div><span class="n">4</span><p>No fim, faça o <strong>simulado</strong> de 10 questões para ver o que ficou.</p></div>
     </div>
   </div>
 </section>
@@ -293,10 +297,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="card mission stack">
     <span class="tab sun">Missão de hoje · sexta, 6/11</span>
     <h2>Dia de Filosofia e Sociologia</h2>
-    <label class="check"><input type="checkbox" id="f-1"><span class="bubble"></span><span class="txt">Ler <a href="#etica">Ética</a> e fazer o teste rápido (≈ 30 min).</span></label>
-    <label class="check"><input type="checkbox" id="f-2"><span class="bubble"></span><span class="txt">Ler <a href="#politica">Política</a> e fazer o teste rápido (≈ 30 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-1"><span class="bubble"></span><span class="txt">Estudar <a href="#etica">Ética</a> (≈ 45 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-2"><span class="bubble"></span><span class="txt">Estudar <a href="#politica">Política</a> (≈ 45 min).</span></label>
     <label class="check"><input type="checkbox" id="f-3"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
-    <label class="check"><input type="checkbox" id="f-4"><span class="bubble"></span><span class="txt">Ler <a href="#sociologia">Sociologia e trabalho</a> e fazer o teste rápido (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-4"><span class="bubble"></span><span class="txt">Estudar <a href="#sociologia">Sociologia</a> e <a href="#trabalho">Trabalho</a> (≈ 1 hora).</span></label>
     <label class="check"><input type="checkbox" id="f-5"><span class="bubble"></span><span class="txt">Ler o <a href="#resumo">resumo de bolso</a> em voz alta, 2 vezes.</span></label>
     <label class="check"><input type="checkbox" id="f-6"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
   </div>
@@ -307,136 +311,152 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <h2>Como Filosofia e Sociologia caem no ENEM</h2>
   <p class="intro">Quase sempre a questão traz um <strong>trecho de um pensador</strong> e pergunta o que ele quis dizer, ou pede para ligar a ideia dele a uma situação de hoje. Se você souber a <strong>ideia central</strong> de cada autor, já acerta muita coisa.</p>
   <div class="note sun"><span class="label">Dica de ouro</span><p>Leia o trecho do autor duas vezes. A resposta certa costuma <strong>repetir a ideia do texto com outras palavras</strong>. Desconfie da alternativa que traz uma opinião que não está no texto.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Ética x moral</h3><p class="muted"><strong>Moral</strong> é o conjunto de regras e costumes de um grupo ("não se deve mentir"). <strong>Ética</strong> é a reflexão sobre essas regras: "por que não devo mentir?".</p></div>
+    <div class="card"><h3>Filosofia x Sociologia</h3><p class="muted">A <strong>Filosofia</strong> pergunta "como deveria ser?". A <strong>Sociologia</strong> estuda "como a sociedade funciona de fato?".</p></div>
+  </div>
 </section>
 
-<!-- ÉTICA -->
+<!-- ======================= ÉTICA ======================= -->
 <section id="etica">
   <div class="tabrow"><span class="tab">Parte 1 · Filosofia</span></div>
   <h2>Ética: como devemos agir?</h2>
   <div class="note"><span class="label">Em uma frase</span><p>Ética é a parte da Filosofia que pensa sobre <strong>o que é certo e errado</strong> e sobre <strong>como viver bem</strong> com os outros.</p></div>
+
+  <h3>1. Grécia antiga</h3>
   <div class="stack">
-    <div class="card rep"><div class="who">Sócrates (Grécia antiga)</div><p><q>Só sei que nada sei.</q> Reconhecer a própria ignorância é o começo do conhecimento. Ensinava fazendo perguntas, para a pessoa chegar sozinha à verdade.</p></div>
-    <div class="card rep"><div class="who">Aristóteles (Grécia antiga)</div><p>A virtude está no <strong>meio-termo</strong>, a "justa medida": a coragem fica entre o medo e a imprudência. O objetivo da vida é a <strong>felicidade</strong>. E o ser humano é um <strong>"animal político"</strong>: só se realiza vivendo em sociedade.</p></div>
-    <div class="card rep"><div class="who">Immanuel Kant (século XVIII)</div><p>Age de um jeito que <strong>todo mundo pudesse agir igual</strong> (o <em>imperativo categórico</em>). E trate as pessoas sempre como um fim, <strong>nunca só como um meio</strong> para conseguir algo. Para ele, o certo é cumprir o <strong>dever</strong>, não buscar vantagem.</p></div>
-    <div class="card rep"><div class="who">Utilitarismo (Bentham e Stuart Mill)</div><p>A ação certa é a que traz <strong>a maior felicidade para o maior número de pessoas</strong>. O que importa são as consequências.</p></div>
-    <div class="card rep"><div class="who">Jean-Paul Sartre (século XX)</div><p><q>A existência precede a essência.</q> Não nascemos prontos: nós nos construímos pelas escolhas que fazemos. Por isso somos <strong>totalmente responsáveis</strong> por elas.</p></div>
+    <div class="card rep"><div class="who">Sofistas (como Protágoras)</div><p>Professores que ensinavam a arte de convencer (a <strong>retórica</strong>). Para eles, a verdade depende de cada pessoa: <q>O homem é a medida de todas as coisas.</q> Isso se chama <strong>relativismo</strong>.</p></div>
+    <div class="card rep"><div class="who">Sócrates</div><p><q>Só sei que nada sei.</q> Reconhecer a própria ignorância é o começo do conhecimento. Ele ensinava fazendo perguntas (o método da <strong>maiêutica</strong>), para a pessoa chegar sozinha à verdade. Criticava os sofistas e dizia: <q>Conhece-te a ti mesmo.</q> Foi condenado à morte em Atenas, acusado de corromper os jovens.</p></div>
+    <div class="card rep"><div class="who">Aristóteles</div><p>O objetivo da vida é a <strong>felicidade</strong>, que se alcança pela virtude. A virtude está no <strong>meio-termo</strong>, a "justa medida": a coragem fica entre o medo (falta) e a imprudência (excesso). A virtude se aprende pelo <strong>hábito</strong>, praticando.</p></div>
+    <div class="card rep"><div class="who">Epicurismo e estoicismo</div><p>Os <strong>epicuristas</strong> diziam que a felicidade é o <strong>prazer moderado</strong> e a ausência de dor e de medo. Os <strong>estoicos</strong> diziam que devemos aceitar com calma aquilo que <strong>não depende de nós</strong> e cuidar só do que depende.</p></div>
   </div>
 
-  <h3>Teste rápido</h3>
+  <h3>2. Idade Média</h3>
+  <div class="card rep"><div class="who">Santo Agostinho e São Tomás de Aquino</div><p>Juntaram a Filosofia grega com a fé cristã. Para <strong>Agostinho</strong>, Deus deu ao ser humano o <strong>livre-arbítrio</strong>, e o mal vem do mau uso dessa liberdade. <strong>Tomás de Aquino</strong> dizia que <strong>fé e razão</strong> não se opõem: as duas levam à verdade.</p></div>
+
+  <h3>3. Modernidade e século XX</h3>
   <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>1.</b> Para Aristóteles, a virtude da coragem está:</p>
-      <ol class="opts"><li>no medo total.</li><li>na imprudência.</li><li>no meio-termo entre o medo e a imprudência.</li><li>em obedecer sempre às leis.</li><li>em buscar o prazer.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Aristóteles = justa medida, meio-termo. Nem de mais, nem de menos.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>2.</b> "Age de tal modo que a tua ação possa se tornar uma lei universal." Essa ideia é de:</p>
-      <ol class="opts"><li>Kant.</li><li>Sócrates.</li><li>Maquiavel.</li><li>Marx.</li><li>Sartre.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> É o imperativo categórico de Kant. Pergunte-se: "e se todo mundo fizesse isso?".</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>3.</b> Um governo decide uma política pública escolhendo a opção que beneficia o maior número de pessoas. Essa decisão segue a lógica:</p>
-      <ol class="opts"><li>do existencialismo.</li><li>do utilitarismo.</li><li>da ética das virtudes.</li><li>do absolutismo.</li><li>do mito da caverna.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Utilitarismo: maior felicidade para o maior número.</p></details>
-    </div>
+    <div class="card rep"><div class="who">Immanuel Kant (século XVIII)</div><p>Age de um jeito que <strong>todo mundo pudesse agir igual</strong> (o <em>imperativo categórico</em>). E trate as pessoas sempre como um fim, <strong>nunca só como um meio</strong> para conseguir algo. Para ele, o certo é cumprir o <strong>dever</strong> por respeito à razão, não por medo de castigo nem por vantagem. Kant também definiu o Iluminismo como a saída da "menoridade": ter coragem de <strong>pensar por si mesmo</strong>.</p></div>
+    <div class="card rep"><div class="who">Utilitarismo (Bentham e Stuart Mill)</div><p>A ação certa é a que traz <strong>a maior felicidade para o maior número de pessoas</strong>. O que importa são as <strong>consequências</strong>, e não a intenção. É o contrário de Kant.</p></div>
+    <div class="card rep"><div class="who">Friedrich Nietzsche (século XIX)</div><p>Criticou a moral cristã, que chamava de <strong>"moral de rebanho"</strong>, porque ensinaria as pessoas a obedecer e a se conformar. Disse que <q>Deus está morto</q>: os valores tradicionais perderam força, e cada um precisa criar os próprios valores.</p></div>
+    <div class="card rep"><div class="who">Jean-Paul Sartre (século XX)</div><p><q>A existência precede a essência.</q> Não nascemos prontos: nós nos construímos pelas escolhas que fazemos. Por isso estamos <q>condenados a ser livres</q> e somos <strong>totalmente responsáveis</strong> pelo que fazemos.</p></div>
+    <div class="card rep"><div class="who">Hannah Arendt (século XX)</div><p>Ao acompanhar o julgamento do nazista Eichmann, percebeu que ele não era um monstro, mas um funcionário comum que "só cumpria ordens". Chamou isso de <strong>"banalidade do mal"</strong>: o mal pode vir de pessoas que <strong>param de pensar</strong> sobre o que fazem.</p></div>
   </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Sócrates</strong> = perguntar e reconhecer a ignorância. <strong>Aristóteles</strong> = meio-termo. <strong>Kant</strong> = dever e "e se todos fizessem isso?". <strong>Utilitarismo</strong> = consequências, maior bem para o maior número. <strong>Sartre</strong> = somos o que escolhemos. <strong>Arendt</strong> = banalidade do mal.</p></div>
 </section>
 
-<!-- POLÍTICA -->
+<!-- ======================= POLÍTICA ======================= -->
 <section id="politica">
   <div class="tabrow"><span class="tab">Parte 2 · Filosofia</span></div>
   <h2>Política: por que existe o Estado?</h2>
   <div class="note"><span class="label">Em uma frase</span><p>Esses pensadores tentaram explicar <strong>por que as pessoas aceitam ser governadas</strong> e como o poder deve funcionar.</p></div>
 
+  <h3>1. Os gregos</h3>
   <div class="stack">
-    <div class="card rep"><div class="who">Platão e o mito da caverna</div><p>Pessoas presas numa caverna acham que as sombras na parede são a realidade. Quem sai e vê a luz descobre a verdade. A ideia: <strong>o conhecimento nos liberta das aparências</strong>. Aparece em questões sobre mídia e fake news.</p></div>
-    <div class="card rep"><div class="who">Maquiavel, "O Príncipe" (1513)</div><p>Separou a <strong>política</strong> da <strong>moral religiosa</strong>. O governante precisa ser realista para manter o poder e, se não puder ser amado e temido ao mesmo tempo, é mais seguro ser temido.</p></div>
+    <div class="card rep"><div class="who">Democracia em Atenas</div><p>Os cidadãos votavam <strong>diretamente</strong> nas leis, em assembleia. Mas só eram cidadãos os homens adultos nascidos em Atenas: <strong>mulheres, escravizados e estrangeiros ficavam de fora</strong>. O ENEM gosta de lembrar essa contradição.</p></div>
+    <div class="card rep"><div class="who">Platão e o mito da caverna</div><p>Pessoas presas numa caverna acham que as sombras na parede são a realidade. Quem sai e vê a luz descobre a verdade, mas, ao voltar para contar, não é compreendido. A ideia: <strong>o conhecimento nos liberta das aparências</strong>. Aparece em questões sobre mídia, redes sociais e fake news. Para Platão, quem deveria governar eram os filósofos, os mais sábios.</p></div>
+    <div class="card rep"><div class="who">Aristóteles</div><p>O ser humano é um <strong>"animal político"</strong>: só se realiza vivendo em sociedade. Ele classificou as formas de governo. As boas visam o bem comum (monarquia, aristocracia e o governo constitucional). As ruins visam o interesse de quem governa (tirania, oligarquia e demagogia).</p></div>
   </div>
 
-  <h3>Os contratualistas</h3>
-  <p>Eles imaginam como seria a vida <strong>antes</strong> do Estado (o "estado de natureza") e explicam que as pessoas fazem um <strong>contrato social</strong> para viver em sociedade. Esta tabela cai muito:</p>
+  <h3>2. O realismo de Maquiavel</h3>
+  <div class="card rep"><div class="who">Maquiavel, "O Príncipe" (1513)</div><p>Separou a <strong>política</strong> da <strong>moral religiosa</strong>: mostrou como o poder funciona de verdade, e não como deveria funcionar. O governante precisa de <strong>virtù</strong> (habilidade, saber agir na hora certa) para lidar com a <strong>fortuna</strong> (o acaso). E, se não puder ser amado e temido ao mesmo tempo, é mais seguro ser temido. A frase "os fins justificam os meios" é atribuída a ele, mas não aparece assim no livro.</p></div>
+
+  <h3>3. Os contratualistas</h3>
+  <p>Eles imaginam como seria a vida <strong>antes</strong> do Estado (o <strong>"estado de natureza"</strong>) e explicam que as pessoas fazem um <strong>contrato social</strong> para viver em sociedade. Esta tabela cai muito:</p>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Pensador</th><th>Estado de natureza</th><th>Para que serve o Estado</th></tr></thead>
       <tbody>
-        <tr><td><strong>Hobbes</strong></td><td>Guerra de todos contra todos. <q>O homem é o lobo do homem.</q></td><td>Um Estado <strong>forte e absoluto</strong> (o "Leviatã") para garantir a paz e a segurança.</td></tr>
-        <tr><td><strong>Locke</strong></td><td>Pessoas já têm direitos naturais: <strong>vida, liberdade e propriedade</strong>.</td><td>Proteger esses direitos. Se o governo não cumprir, o povo pode derrubá-lo. Base do <strong>liberalismo</strong>.</td></tr>
-        <tr><td><strong>Rousseau</strong></td><td>O ser humano nasce bom. A <strong>propriedade privada</strong> gerou a desigualdade e corrompeu a sociedade.</td><td>Seguir a <strong>vontade geral</strong>, o bem comum do povo.</td></tr>
+        <tr><td><strong>Hobbes</strong><br>"Leviatã"</td><td>Guerra de todos contra todos. <q>O homem é o lobo do homem.</q> Vida com medo constante.</td><td>Um Estado <strong>forte e absoluto</strong> para garantir a paz e a segurança. As pessoas trocam liberdade por proteção.</td></tr>
+        <tr><td><strong>Locke</strong><br>"Segundo Tratado"</td><td>As pessoas já têm direitos naturais: <strong>vida, liberdade e propriedade</strong>.</td><td>Proteger esses direitos. Se o governo não cumprir, o povo pode <strong>resistir e derrubá-lo</strong>. Base do <strong>liberalismo</strong>.</td></tr>
+        <tr><td><strong>Rousseau</strong><br>"O Contrato Social"</td><td>O ser humano nasce <strong>bom</strong> (o "bom selvagem"). A <strong>propriedade privada</strong> gerou a desigualdade e corrompeu a sociedade.</td><td>Seguir a <strong>vontade geral</strong>, o bem comum do povo. O poder pertence ao povo (soberania popular).</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="card rep"><div class="who">Montesquieu (século XVIII)</div><p>Para evitar abusos, o poder deve ser dividido em <strong>três</strong>: <strong>Executivo</strong> (governa), <strong>Legislativo</strong> (faz as leis) e <strong>Judiciário</strong> (julga). É assim no Brasil até hoje.</p></div>
 
-  <h3>Teste rápido</h3>
+  <h3>4. Outros pensadores sobre o poder</h3>
   <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>4.</b> Para Thomas Hobbes, as pessoas aceitam um Estado forte porque:</p>
-      <ol class="opts"><li>o ser humano nasce bom e quer ajudar os outros.</li><li>sem o Estado haveria uma guerra de todos contra todos.</li><li>o Estado deve proteger apenas a propriedade.</li><li>a vontade geral exige um rei.</li><li>Deus escolhe os governantes.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Hobbes = medo da violência. Trocamos liberdade por segurança.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>5.</b> A divisão do poder em Executivo, Legislativo e Judiciário, adotada pelo Brasil, foi defendida por:</p>
-      <ol class="opts"><li>Rousseau.</li><li>Maquiavel.</li><li>Montesquieu.</li><li>Platão.</li><li>Sócrates.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Montesquieu, no livro "O Espírito das Leis".</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>6.</b> "O homem nasce livre, e por toda parte encontra-se a ferros." Esse pensamento de Rousseau critica:</p>
-      <ol class="opts"><li>a natureza violenta do ser humano.</li><li>a sociedade, que tira a liberdade natural do ser humano.</li><li>a democracia.</li><li>a divisão dos poderes.</li><li>o conhecimento científico.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Para Rousseau, o problema não é o ser humano, é a sociedade desigual.</p></details>
-    </div>
+    <div class="card rep"><div class="who">Montesquieu (século XVIII)</div><p>Para evitar abusos, o poder deve ser dividido em <strong>três</strong>: <strong>Executivo</strong> (governa), <strong>Legislativo</strong> (faz as leis) e <strong>Judiciário</strong> (julga). Um poder fiscaliza o outro. É assim no Brasil até hoje.</p></div>
+    <div class="card rep"><div class="who">Karl Marx</div><p>O Estado não é neutro: ele serve aos interesses da <strong>classe dominante</strong>, a burguesia.</p></div>
+    <div class="card rep"><div class="who">Max Weber</div><p>O Estado é quem tem o <strong>monopólio do uso legítimo da força</strong>: só ele pode usar a violência de forma aceita pela lei, por meio da polícia e do Exército.</p></div>
+    <div class="card rep"><div class="who">Michel Foucault (século XX)</div><p>O poder não está só no governo. Está espalhado em escolas, hospitais, fábricas e prisões, que <strong>vigiam e disciplinam</strong> os corpos. Usou a imagem do <strong>panóptico</strong>: uma prisão em que o preso pode ser visto o tempo todo sem saber se está sendo observado. Hoje, a ideia é usada para falar de câmeras e redes sociais.</p></div>
+  </div>
+
+  <h3>5. Cidadania</h3>
+  <p>O sociólogo inglês T. H. Marshall dividiu a cidadania em três tipos de direitos, conquistados em ordem na Inglaterra:</p>
+  <div class="grid">
+    <div class="card"><h3>Direitos civis</h3><p class="muted">Liberdade de ir e vir, de expressão, direito à propriedade e a um julgamento justo.</p></div>
+    <div class="card"><h3>Direitos políticos</h3><p class="muted">Votar e ser votado, participar das decisões.</p></div>
+    <div class="card"><h3>Direitos sociais</h3><p class="muted">Educação, saúde, trabalho, previdência.</p></div>
+  </div>
+  <p>O historiador <strong>José Murilo de Carvalho</strong> mostrou que no Brasil a ordem foi diferente: os direitos sociais vieram primeiro (com Vargas, inclusive durante uma ditadura), e os direitos civis e políticos ficaram frágeis por muito tempo.</p>
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Hobbes</strong> = medo e Estado forte. <strong>Locke</strong> = vida, liberdade e propriedade, e direito de resistir. <strong>Rousseau</strong> = nasce bom, propriedade gera desigualdade, vontade geral. <strong>Montesquieu</strong> = três poderes. <strong>Maquiavel</strong> = política separada da moral. <strong>Foucault</strong> = vigilância e disciplina.</p></div>
+</section>
+
+<!-- ======================= SOCIOLOGIA ======================= -->
+<section id="sociologia">
+  <div class="tabrow"><span class="tab">Parte 3 · Sociologia</span></div>
+  <h2>Sociologia</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>A Sociologia estuda <strong>como a sociedade funciona</strong>: como aprendemos as regras, por que existem desigualdades e como as coisas mudam.</p></div>
+
+  <h3>1. Conceitos básicos</h3>
+  <div class="grid">
+    <div class="card"><h3>Socialização</h3><p class="muted">O processo pelo qual aprendemos as regras, os valores e os costumes da sociedade, na família, na escola, na religião, com os amigos e nas mídias.</p></div>
+    <div class="card"><h3>Instituições sociais</h3><p class="muted">Estruturas que organizam a vida em sociedade: família, escola, Estado, Igreja.</p></div>
+    <div class="card"><h3>Etnocentrismo</h3><p class="muted">Julgar outras culturas usando a sua como modelo, como se ela fosse a "certa" ou "superior". Leva ao preconceito.</p></div>
+    <div class="card"><h3>Relativismo cultural</h3><p class="muted">Entender cada cultura a partir dos seus próprios valores, sem hierarquia. É o oposto do etnocentrismo, e o ENEM valoriza muito.</p></div>
+    <div class="card"><h3>Estratificação social</h3><p class="muted">A divisão da sociedade em camadas. Pode ser por <strong>castas</strong> (sem mudança, como na Índia tradicional), <strong>estamentos</strong> (pelo nascimento, como na Idade Média) ou <strong>classes</strong> (pela renda, com alguma mobilidade).</p></div>
+    <div class="card"><h3>Mobilidade social</h3><p class="muted">A possibilidade de mudar de camada social, subindo ou descendo, por meio de estudo, trabalho ou renda.</p></div>
+  </div>
+
+  <h3>2. Os três clássicos</h3>
+  <div class="stack">
+    <div class="card rep"><div class="who">Émile Durkheim</div><p>Criou o conceito de <strong>fato social</strong>: regras e costumes que existem fora de nós e nos pressionam a agir de certo jeito. O fato social é <strong>exterior</strong> (vem de fora), <strong>coercitivo</strong> (pressiona) e <strong>geral</strong> (vale para todos). Exemplos: a língua, a escola obrigatória, a moda.</p><p>Explicou dois tipos de <strong>solidariedade</strong>: a <strong>mecânica</strong>, nas sociedades simples, em que as pessoas são parecidas, e a <strong>orgânica</strong>, nas sociedades modernas, em que cada um tem uma função e todos dependem uns dos outros, como os órgãos do corpo. Quando as regras perdem força, surge a <strong>anomia</strong>: a sociedade fica desorientada.</p></div>
+    <div class="card rep"><div class="who">Max Weber</div><p>Estudou a <strong>ação social</strong>: o sentido que as pessoas dão ao que fazem. No livro <em>A ética protestante e o espírito do capitalismo</em>, mostrou que os valores religiosos de trabalho e poupança ajudaram o capitalismo a crescer.</p><p>Explicou três tipos de <strong>dominação</strong>, ou seja, por que obedecemos a alguém: <strong>tradicional</strong> (por costume, como um rei), <strong>carismática</strong> (pelo encanto de um líder) e <strong>racional-legal</strong> (pelas leis e regras, como num Estado moderno com sua burocracia).</p></div>
+    <div class="card rep"><div class="who">Karl Marx</div><p>A história é a <strong>luta de classes</strong>. No capitalismo, a <strong>burguesia</strong> é dona dos meios de produção (fábricas, máquinas, terras), e o <strong>proletariado</strong> só tem a sua força de trabalho para vender.</p><p>O lucro vem da <strong>mais-valia</strong>: o valor que o trabalhador produz e não recebe no salário. O trabalhador fica <strong>alienado</strong>: não se reconhece no que produz. E a <strong>ideologia</strong> da classe dominante faz a desigualdade parecer natural.</p></div>
+  </div>
+
+  <h3>3. Outros pensadores que caem</h3>
+  <div class="stack">
+    <div class="card rep"><div class="who">Indústria cultural (Adorno e Horkheimer)</div><p>Da Escola de Frankfurt. A cultura vira <strong>mercadoria</strong> produzida em massa, como filmes, músicas e programas feitos em série, que distrai e deixa as pessoas menos críticas.</p></div>
+    <div class="card rep"><div class="who">Pierre Bourdieu</div><p>O <strong>capital cultural</strong> (livros em casa, idas a museus, o jeito "culto" de falar) é herdado da família e ajuda os mais ricos na escola. Assim, a escola, que deveria igualar, acaba <strong>reproduzindo a desigualdade</strong>. Criou também o conceito de <strong>violência simbólica</strong>: uma dominação que parece natural e nem é percebida.</p></div>
+    <div class="card rep"><div class="who">Zygmunt Bauman</div><p><strong>Modernidade líquida</strong>: relações, empregos e laços ficaram frágeis e passageiros. Já está na sua redação coringa!</p></div>
+  </div>
+
+  <h3>4. Pensadores do Brasil</h3>
+  <div class="grid">
+    <div class="card"><h3>Gilberto Freyre</h3><p class="muted"><em>Casa-Grande &amp; Senzala</em> (1933) valorizou a mistura de povos, mas foi criticado por passar a ideia de uma convivência harmoniosa entre senhores e escravizados. Isso ajudou a criar o <strong>mito da democracia racial</strong>: a falsa ideia de que no Brasil não existe racismo.</p></div>
+    <div class="card"><h3>Florestan Fernandes</h3><p class="muted">Mostrou que a democracia racial era um mito e que a abolição deixou a população negra excluída.</p></div>
+    <div class="card"><h3>Sérgio Buarque de Holanda</h3><p class="muted"><em>Raízes do Brasil</em> (1936): o <strong>"homem cordial"</strong>. Não quer dizer gentil, e sim alguém que age pelo coração e mistura o <strong>público com o privado</strong>, como dar cargo para parentes e amigos.</p></div>
+    <div class="card"><h3>Darcy Ribeiro</h3><p class="muted"><em>O Povo Brasileiro</em>: o Brasil se formou da mistura de indígenas, africanos e europeus, mas de forma violenta e desigual.</p></div>
+    <div class="card"><h3>Silvio Almeida</h3><p class="muted"><strong>Racismo estrutural</strong>: o racismo não é só ofensa individual. Está nas instituições, na economia e na política, e por isso se mantém mesmo quando ninguém se diz racista.</p></div>
   </div>
 </section>
 
-<!-- SOCIOLOGIA -->
-<section id="sociologia">
-  <div class="tabrow"><span class="tab">Parte 3 · Sociologia</span></div>
-  <h2>Sociologia e trabalho</h2>
-  <div class="note"><span class="label">Em uma frase</span><p>A Sociologia estuda <strong>como a sociedade funciona</strong>. Os três autores clássicos são Durkheim, Weber e Marx, e o <strong>trabalho</strong> é um dos temas preferidos do ENEM.</p></div>
+<!-- ======================= TRABALHO ======================= -->
+<section id="trabalho">
+  <div class="tabrow"><span class="tab">Parte 4 · Sociologia</span></div>
+  <h2>O mundo do trabalho</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>O trabalho é um dos temas preferidos do ENEM: <strong>como ele mudou</strong> com as fábricas, as máquinas e a tecnologia, e <strong>o que isso fez com a vida dos trabalhadores</strong>.</p></div>
 
-  <h3>Os 3 clássicos</h3>
-  <div class="grid">
-    <div class="card"><h3>Émile Durkheim</h3><p class="muted">Criou o conceito de <strong>fato social</strong>: regras e costumes que existem fora de nós e nos pressionam a agir de certo jeito (como a escola obrigatória ou a moda). Quando as regras perdem força, surge a <strong>anomia</strong>.</p></div>
-    <div class="card"><h3>Max Weber</h3><p class="muted">Estudou a <strong>ação social</strong>: o sentido que as pessoas dão ao que fazem. Explicou os tipos de <strong>dominação</strong> (tradicional, carismática e legal) e a <strong>burocracia</strong>.</p></div>
-    <div class="card"><h3>Karl Marx</h3><p class="muted">A história é a <strong>luta de classes</strong>: burguesia (donos das fábricas) contra proletariado (trabalhadores). O lucro vem da <strong>mais-valia</strong>, o valor que o trabalhador produz e não recebe. O trabalhador fica <strong>alienado</strong>: não se reconhece no que produz.</p></div>
-  </div>
-
-  <h3>Como o trabalho mudou</h3>
+  <h3>1. Os modelos de produção</h3>
   <div class="timeline">
-    <div class="step"><div class="time">Início do séc. XX</div><p><strong>Taylorismo</strong>: cada trabalhador faz uma tarefa simples, com tempo cronometrado, para produzir mais.</p></div>
-    <div class="step"><div class="time">Década de 1910</div><p><strong>Fordismo</strong>: a <strong>linha de montagem</strong> de Henry Ford. Produção em massa e trabalho repetitivo. Lembra o filme "Tempos Modernos", de Chaplin, que cai muito.</p></div>
-    <div class="step"><div class="time">Depois de 1970</div><p><strong>Toyotismo</strong>: produção flexível, só o necessário (<em>just in time</em>), trabalhador que faz várias funções e <strong>terceirização</strong>.</p></div>
-    <div class="step"><div class="time">Hoje</div><p><strong>Uberização</strong>: trabalho por aplicativo, sem carteira assinada e sem direitos como férias e 13º. Junto com a automação, aumenta a <strong>precarização</strong> e a <strong>informalidade</strong>.</p></div>
+    <div class="step"><div class="time">Início do séc. XX</div><p><strong>Taylorismo:</strong> o engenheiro Frederick Taylor dividiu o trabalho em tarefas simples e cronometradas. Cada trabalhador faz sempre a mesma coisa, o mais rápido possível. Separa quem <strong>pensa</strong> (gerentes) de quem <strong>executa</strong> (operários).</p></div>
+    <div class="step"><div class="time">Década de 1910</div><p><strong>Fordismo:</strong> Henry Ford criou a <strong>linha de montagem</strong>, com uma esteira que leva o produto até o trabalhador. Produção em massa de produtos iguais e trabalho repetitivo. O filme <strong>"Tempos Modernos"</strong> (1936), de Chaplin, critica esse modelo e cai muito no ENEM.</p></div>
+    <div class="step"><div class="time">Depois de 1970</div><p><strong>Toyotismo:</strong> nasceu no Japão, na Toyota. Produção <strong>flexível</strong>, só o que foi vendido (<em>just in time</em>), estoque mínimo, trabalhador que faz várias funções e trabalho em equipe. Trouxe a <strong>terceirização</strong>.</p></div>
+    <div class="step"><div class="time">Hoje</div><p><strong>Uberização:</strong> trabalho por aplicativo, sem carteira assinada e sem direitos como férias, 13º e aposentadoria garantida. O trabalhador paga as próprias ferramentas, como a moto e o celular.</p></div>
   </div>
 
-  <h3>Mais dois conceitos que caem</h3>
+  <h3>2. Mudanças no mundo do trabalho</h3>
   <div class="grid">
-    <div class="card"><h3>Indústria cultural</h3><p class="muted">Adorno e Horkheimer (Escola de Frankfurt): a cultura vira <strong>mercadoria</strong> produzida em massa, que distrai e deixa as pessoas menos críticas.</p></div>
-    <div class="card"><h3>Modernidade líquida</h3><p class="muted">Bauman: relações, empregos e laços ficaram <strong>frágeis e passageiros</strong>. Já está na sua redação coringa!</p></div>
+    <div class="card"><h3>Estado de bem-estar social</h3><p class="muted">Depois da Segunda Guerra, países europeus garantiram saúde, educação, previdência e seguro-desemprego.</p></div>
+    <div class="card"><h3>Neoliberalismo</h3><p class="muted">A partir dos anos 1980: menos Estado, privatizações, menos regras para as empresas e corte de gastos sociais.</p></div>
+    <div class="card"><h3>Globalização</h3><p class="muted">Empresas levam fábricas para países onde a mão de obra é mais barata.</p></div>
+    <div class="card"><h3>Desemprego estrutural</h3><p class="muted">Quando a <strong>automação</strong> e a tecnologia eliminam postos de trabalho que não voltam mais.</p></div>
+    <div class="card"><h3>Informalidade</h3><p class="muted">Trabalhar sem carteira assinada. No Brasil, uma grande parte dos trabalhadores está nessa situação.</p></div>
+    <div class="card"><h3>Precarização</h3><p class="muted">Trabalho com menos direitos, menos segurança e salários menores. A <strong>reforma trabalhista de 2017</strong> mudou várias regras da CLT e é muito debatida.</p></div>
   </div>
-
-  <h3>Teste rápido</h3>
-  <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>7.</b> A linha de montagem, com produção em massa e trabalho repetitivo, é característica do:</p>
-      <ol class="opts"><li>toyotismo.</li><li>fordismo.</li><li>feudalismo.</li><li>trabalho por aplicativo.</li><li>artesanato.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> Ford criou a linha de montagem. Toyotismo é o oposto: produção flexível.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>8.</b> Para Karl Marx, a mais-valia é:</p>
-      <ol class="opts"><li>o salário justo do trabalhador.</li><li>o imposto pago ao governo.</li><li>o valor produzido pelo trabalhador que fica com o patrão como lucro.</li><li>a poupança dos trabalhadores.</li><li>o preço das matérias-primas.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> O trabalhador produz mais do que recebe. A diferença é o lucro do dono.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>9.</b> Entregadores de aplicativo que trabalham muitas horas, sem carteira assinada e sem direitos trabalhistas, são um exemplo de:</p>
-      <ol class="opts"><li>precarização do trabalho.</li><li>fordismo clássico.</li><li>aumento dos direitos trabalhistas.</li><li>trabalho escravo legalizado.</li><li>fim do capitalismo.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> O nome dado a esse processo é "uberização", e ele também serve como tema de redação.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>10.</b> Para Durkheim, um fato social é:</p>
-      <ol class="opts"><li>qualquer notícia de jornal.</li><li>uma regra ou costume que existe fora do indivíduo e o pressiona a agir de certa forma.</li><li>uma escolha totalmente livre de cada pessoa.</li><li>um conflito entre patrões e empregados.</li><li>um tipo de governo.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> É exterior (vem de fora), coercitivo (pressiona) e geral (vale para todos).</p></details>
-    </div>
-  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Durkheim</strong> = fato social. <strong>Weber</strong> = ação social e tipos de dominação. <strong>Marx</strong> = luta de classes, mais-valia e alienação. <strong>Fordismo</strong> = linha de montagem. <strong>Toyotismo</strong> = flexível e terceirização. <strong>Uberização</strong> = precarização.</p></div>
 </section>
 
 <section id="resumo">
@@ -446,6 +466,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="tbl-wrap">
     <table>
       <tbody>
+        <tr><td><strong>Sofistas</strong></td><td>O homem é a medida de todas as coisas</td></tr>
         <tr><td><strong>Sócrates</strong></td><td>Só sei que nada sei</td></tr>
         <tr><td><strong>Platão</strong></td><td>Mito da caverna: sair das aparências</td></tr>
         <tr><td><strong>Aristóteles</strong></td><td>Meio-termo; ser humano é animal político</td></tr>
@@ -456,11 +477,17 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
         <tr><td><strong>Montesquieu</strong></td><td>Três poderes</td></tr>
         <tr><td><strong>Kant</strong></td><td>Dever; "e se todos fizessem isso?"</td></tr>
         <tr><td><strong>Utilitarismo</strong></td><td>Maior felicidade para o maior número</td></tr>
+        <tr><td><strong>Nietzsche</strong></td><td>Crítica à moral de rebanho</td></tr>
         <tr><td><strong>Sartre</strong></td><td>Somos o que escolhemos</td></tr>
+        <tr><td><strong>Arendt</strong></td><td>Banalidade do mal</td></tr>
+        <tr><td><strong>Foucault</strong></td><td>Vigilância e disciplina</td></tr>
         <tr><td><strong>Durkheim</strong></td><td>Fato social</td></tr>
         <tr><td><strong>Weber</strong></td><td>Ação social; tipos de dominação</td></tr>
         <tr><td><strong>Marx</strong></td><td>Luta de classes; mais-valia</td></tr>
+        <tr><td><strong>Adorno</strong></td><td>Indústria cultural</td></tr>
+        <tr><td><strong>Bourdieu</strong></td><td>Capital cultural</td></tr>
         <tr><td><strong>Bauman</strong></td><td>Modernidade líquida</td></tr>
+        <tr><td><strong>Silvio Almeida</strong></td><td>Racismo estrutural</td></tr>
       </tbody>
     </table>
   </div>

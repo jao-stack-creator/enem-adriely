@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Geografia da Adriely</title>
-<meta name="description" content="Hoje: Geografia. Questão agrária e meio ambiente, com teste rápido.">
+<meta name="description" content="Hoje: Geografia. Questão agrária e meio ambiente, com simulado de 10 questões.">
 <meta property="og:title" content="Geografia da Adriely">
-<meta property="og:description" content="Hoje: Geografia. Questão agrária e meio ambiente, com teste rápido.">
+<meta property="og:description" content="Hoje: Geografia. Questão agrária e meio ambiente, com simulado de 10 questões.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -246,7 +246,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .eq-fb.is-empty { background: var(--sun-soft); }
 .sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
 
-/* Teste rápido */
+/* Tabelas */
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+/* Respostas abertas */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
 .quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
@@ -266,7 +269,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é dia de <span>Geografia</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: questão agrária e meio ambiente</div>
-  <p class="lede">Hoje o foco é <strong>Geografia</strong>: a questão agrária no Brasil e o meio ambiente. Tudo explicado do zero, com um teste rápido no fim de cada parte e um simulado de 10 questões.</p>
+  <p class="lede">Hoje o foco é <strong>Geografia</strong>: a questão agrária no Brasil e o meio ambiente. Tudo explicado do zero e, no fim, um simulado de 10 questões.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-geo">Missão de hoje</a>
     <a href="#agraria">Questão agrária</a>
@@ -280,10 +283,10 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="card stack">
     <h3>Como estudar esta página</h3>
     <div class="howto">
-      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa.</p></div>
-      <div><span class="n">2</span><p>Leia cada parte com calma. O ENEM cobra <strong>entender o problema</strong>, não decorar números.</p></div>
-      <div><span class="n">3</span><p>No fim de cada parte, faça o <strong>teste rápido</strong>. Toque em "Ver resposta" só depois de escolher a sua.</p></div>
-      <div><span class="n">4</span><p>Toque nas <strong>bolinhas</strong> para marcar o que já fez. Elas ficam salvas no seu celular.</p></div>
+      <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa e quanto tempo cada parte leva.</p></div>
+      <div><span class="n">2</span><p>Leia com calma. O ENEM cobra <strong>entender o problema</strong>, e não decorar números.</p></div>
+      <div><span class="n">3</span><p>Os quadros amarelos <strong>"Guarde isto"</strong> trazem o mais importante de cada parte. Releia antes de dormir.</p></div>
+      <div><span class="n">4</span><p>No fim, faça o <strong>simulado</strong> de 10 questões para ver o que ficou.</p></div>
     </div>
   </div>
 </section>
@@ -292,9 +295,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="card mission stack">
     <span class="tab sun">Missão de hoje · quinta, 5/11</span>
     <h2>Dia de Geografia</h2>
-    <label class="check"><input type="checkbox" id="g-1"><span class="bubble"></span><span class="txt">Ler <a href="#agraria">Questão agrária</a> e fazer o teste rápido (≈ 45 min).</span></label>
+    <label class="check"><input type="checkbox" id="g-1"><span class="bubble"></span><span class="txt">Estudar <a href="#agraria">Questão agrária</a> (≈ 1h10).</span></label>
     <label class="check"><input type="checkbox" id="g-2"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
-    <label class="check"><input type="checkbox" id="g-3"><span class="bubble"></span><span class="txt">Ler <a href="#ambiente">Meio ambiente</a> e fazer o teste rápido (≈ 45 min).</span></label>
+    <label class="check"><input type="checkbox" id="g-3"><span class="bubble"></span><span class="txt">Estudar <a href="#ambiente">Meio ambiente</a> (≈ 1h10).</span></label>
     <label class="check"><input type="checkbox" id="g-4"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
     <label class="check"><input type="checkbox" id="g-5"><span class="bubble"></span><span class="txt">Ler <a href="#redacao-geo">Use na redação</a>: temas de meio ambiente caem muito.</span></label>
   </div>
@@ -308,138 +311,161 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <div class="card"><h3>Olhe o gráfico com calma</h3><p class="muted">Veja o título, o que cada eixo mostra e se a linha sobe ou desce. Muitas respostas estão ali.</p></div>
     <div class="card"><h3>Pense no "por quê"</h3><p class="muted">Desmatamento, êxodo rural, conflitos no campo: quase tudo tem uma causa econômica.</p></div>
     <div class="card"><h3>Lembre de ontem</h3><p class="muted">A concentração de terras começou na Colônia e foi reforçada pela Lei de Terras de 1850.</p></div>
+    <div class="card"><h3>Quem sofre mais?</h3><p class="muted">O ENEM adora mostrar que os problemas ambientais e do campo atingem mais os <strong>pobres</strong>, os <strong>indígenas</strong> e os <strong>quilombolas</strong>.</p></div>
   </div>
 </section>
 
-<!-- AGRÁRIA -->
+<!-- ======================= AGRÁRIA ======================= -->
 <section id="agraria">
   <div class="tabrow"><span class="tab">Parte 1</span></div>
   <h2>Questão agrária no Brasil</h2>
   <div class="note"><span class="label">Em uma frase</span><p>No Brasil, <strong>pouca gente é dona de muita terra</strong>. Isso gera desigualdade, conflitos no campo e problemas ambientais.</p></div>
 
-  <h3>De onde vem a concentração de terras</h3>
+  <h3>1. Palavras que você precisa conhecer</h3>
+  <div class="grid">
+    <div class="card"><h3>Estrutura fundiária</h3><p class="muted">É o jeito como as terras de um país estão divididas entre os donos. A do Brasil é muito <strong>concentrada</strong>.</p></div>
+    <div class="card"><h3>Latifúndio</h3><p class="muted">Propriedade rural enorme. Pode ser produtiva ou improdutiva, quando fica parada só como reserva de valor.</p></div>
+    <div class="card"><h3>Minifúndio</h3><p class="muted">Propriedade tão pequena que mal sustenta a família que vive nela.</p></div>
+    <div class="card"><h3>Reforma agrária</h3><p class="muted">Redistribuir terras improdutivas para quem quer produzir, com apoio do governo.</p></div>
+  </div>
+
+  <h3>2. De onde vem a concentração de terras</h3>
   <div class="timeline">
     <div class="step"><div class="time">Colônia</div><p><strong>Sesmarias</strong>: Portugal doava terras enormes a poucas pessoas. Começa o <strong>latifúndio</strong>.</p></div>
     <div class="step"><div class="time">1850</div><p><strong>Lei de Terras</strong>: terra só por compra. Libertos, pobres e imigrantes ficaram sem acesso.</p></div>
-    <div class="step"><div class="time">1960 e 1970</div><p><strong>Modernização do campo</strong> (a "Revolução Verde"): máquinas, agrotóxicos e sementes selecionadas. A produção aumentou, mas a terra continuou concentrada e muitos trabalhadores perderam o emprego. Por isso os geógrafos chamam de <strong>modernização conservadora</strong>: modernizou a produção, mas manteve a desigualdade.</p></div>
-    <div class="step"><div class="time">Consequência</div><p><strong>Êxodo rural</strong>: milhões de pessoas saíram do campo para as cidades, que cresceram rápido e sem planejamento. Daí vêm as favelas e periferias.</p></div>
-    <div class="step"><div class="time">1984</div><p>Surge o <strong>MST</strong> (Movimento dos Trabalhadores Rurais Sem Terra), que luta pela <strong>reforma agrária</strong>, ou seja, a redistribuição de terras.</p></div>
-    <div class="step"><div class="time">1988</div><p>A <strong>Constituição</strong> diz que a terra deve cumprir uma <strong>função social</strong>: precisa produzir, respeitar o meio ambiente e as leis trabalhistas. Terra improdutiva pode ser desapropriada para reforma agrária.</p></div>
+    <div class="step"><div class="time">1964</div><p><strong>Estatuto da Terra</strong>, criado no começo da ditadura. Previa reforma agrária, mas quase nada saiu do papel.</p></div>
+    <div class="step"><div class="time">1960 e 1970</div><p><strong>Modernização do campo</strong>, a chamada "Revolução Verde": máquinas, adubos químicos, agrotóxicos e sementes selecionadas. A <strong>Embrapa</strong>, criada em 1973, desenvolveu técnicas para plantar soja no Cerrado, cujo solo é ácido e precisa ser corrigido com calcário.</p></div>
+    <div class="step"><div class="time">1984</div><p>Surge o <strong>MST</strong> (Movimento dos Trabalhadores Rurais Sem Terra), que ocupa terras improdutivas para pressionar pela reforma agrária.</p></div>
+    <div class="step"><div class="time">1988</div><p>A <strong>Constituição</strong> diz que a terra deve cumprir uma <strong>função social</strong>: precisa produzir, respeitar o meio ambiente e as leis trabalhistas. Terra improdutiva pode ser desapropriada para a reforma agrária.</p></div>
   </div>
 
-  <h3>Dois modelos no campo</h3>
+  <h3>3. Modernização conservadora e êxodo rural</h3>
+  <p>A modernização do campo <strong>aumentou muito a produção</strong>, mas os geógrafos a chamam de <strong>modernização conservadora</strong>, porque <strong>conservou a desigualdade</strong>:</p>
+  <ul class="clean">
+    <li>O crédito e a tecnologia foram para os grandes proprietários.</li>
+    <li>Pequenos agricultores, sem dinheiro para comprar máquinas, se endividaram e venderam suas terras.</li>
+    <li>Uma máquina passou a fazer o trabalho de dezenas de pessoas, e muitos trabalhadores perderam o emprego.</li>
+  </ul>
+  <p>O resultado foi o <strong>êxodo rural</strong>: entre as décadas de 1950 e 1980, milhões de pessoas saíram do campo para as cidades. Muitos nordestinos migraram para São Paulo e o Rio de Janeiro. As cidades cresceram rápido e sem planejamento, o que gerou <strong>favelas, periferias</strong> e falta de moradia, transporte e saneamento.</p>
+
+  <h3>4. Dois modelos no campo</h3>
   <div class="grid">
     <div class="card">
       <h3>Agronegócio</h3>
       <ul class="clean">
-        <li>Grandes propriedades e <strong>monocultura</strong> (soja, milho, cana, algodão) e pecuária.</li>
-        <li>Muita máquina, pouco trabalhador.</li>
-        <li>Produz <strong>commodities</strong> para <strong>exportação</strong>.</li>
-        <li>Tem peso grande na economia do país.</li>
+        <li>Grandes propriedades com <strong>monocultura</strong> (soja, milho, cana, algodão, café) e pecuária.</li>
+        <li>Muita máquina e tecnologia, pouco trabalhador.</li>
+        <li>Produz <strong>commodities</strong>, mercadorias vendidas em grande quantidade no mercado mundial, para <strong>exportação</strong>.</li>
+        <li>O Brasil é um dos maiores exportadores de alimentos do mundo, e o maior de soja.</li>
+        <li>Forma um <strong>complexo agroindustrial</strong>: indústrias de máquinas e adubos "antes da porteira" e indústrias de alimentos "depois da porteira".</li>
       </ul>
     </div>
     <div class="card">
       <h3>Agricultura familiar</h3>
       <ul class="clean">
-        <li>Pequenas propriedades, trabalho da própria família.</li>
+        <li>Pequenas propriedades, com trabalho da própria família.</li>
         <li><strong>Policultura</strong>: vários produtos ao mesmo tempo.</li>
-        <li>Produz grande parte dos alimentos que chegam à mesa: feijão, mandioca, leite, verduras.</li>
+        <li>Produz grande parte dos alimentos que chegam à mesa: feijão, mandioca, leite, frutas e verduras.</li>
+        <li>Emprega muita gente no campo.</li>
         <li>Recebe menos crédito e apoio do que o agronegócio.</li>
       </ul>
     </div>
   </div>
+  <div class="note"><span class="label">Uma contradição que cai muito</span><p>O Brasil produz comida suficiente para alimentar sua população e ainda exportar, mas muitas pessoas ainda passam fome. O país já saiu e voltou ao <strong>Mapa da Fome da ONU</strong>. O problema não é falta de comida: é a <strong>desigualdade de renda</strong> e de acesso aos alimentos.</p></div>
 
-  <h3>Outros temas que caem</h3>
+  <h3>5. Relações de trabalho no campo</h3>
   <div class="grid">
-    <div class="card"><h3>Fronteira agrícola</h3><p class="muted">A soja e o gado avançam sobre o <strong>Cerrado</strong> e a <strong>Amazônia</strong>, o que aumenta o desmatamento. A região do MATOPIBA (MA, TO, PI e BA) é a fronteira mais recente.</p></div>
-    <div class="card"><h3>Conflitos no campo</h3><p class="muted">Disputas entre fazendeiros, sem-terra, indígenas e quilombolas. A <strong>grilagem</strong> é a tomada ilegal de terras com documentos falsos.</p></div>
-    <div class="card"><h3>Povos tradicionais</h3><p class="muted">Indígenas e quilombolas lutam pela <strong>demarcação</strong> das terras onde vivem há gerações.</p></div>
-    <div class="card"><h3>Trabalho escravo hoje</h3><p class="muted">Ainda existem resgates de trabalhadores em condições <strong>análogas à escravidão</strong> em fazendas: jornadas exaustivas, dívidas e falta de liberdade.</p></div>
-    <div class="card"><h3>Agrotóxicos</h3><p class="muted">O Brasil é um dos países que mais usam agrotóxicos. Eles podem contaminar o solo, a água e a saúde de quem trabalha e de quem come.</p></div>
+    <div class="card"><h3>Boia-fria</h3><p class="muted">Trabalhador temporário, contratado por dia ou por safra, sem garantias. O nome vem da marmita que ele leva e come fria.</p></div>
+    <div class="card"><h3>Parceiro ou meeiro</h3><p class="muted">Trabalha na terra de outra pessoa e paga o dono com parte da colheita.</p></div>
+    <div class="card"><h3>Arrendatário</h3><p class="muted">Aluga a terra de outra pessoa e paga em dinheiro.</p></div>
+    <div class="card"><h3>Trabalho análogo à escravidão</h3><p class="muted">Ainda acontece: jornadas exaustivas, dívidas que não acabam, condições degradantes. O governo faz resgates e publica a "lista suja" das empresas flagradas.</p></div>
   </div>
 
-  <h3>Teste rápido</h3>
-  <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>1.</b> A modernização da agricultura brasileira a partir dos anos 1960 é chamada de "conservadora" porque:</p>
-      <ol class="opts"><li>preservou as florestas brasileiras.</li><li>aumentou a produção, mas manteve a concentração de terras e expulsou trabalhadores do campo.</li><li>distribuiu terras para os pequenos agricultores.</li><li>acabou com o uso de máquinas no campo.</li><li>diminuiu as exportações agrícolas.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> "Conservadora" porque conservou a estrutura desigual: a tecnologia chegou, mas a terra continuou nas mãos de poucos.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>2.</b> Uma consequência direta da mecanização do campo no Brasil foi:</p>
-      <ol class="opts"><li>o êxodo rural e o crescimento acelerado das cidades.</li><li>o aumento de empregos no campo.</li><li>o fim dos latifúndios.</li><li>a diminuição da população urbana.</li><li>a volta das pessoas das cidades para o campo.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> Uma máquina faz o trabalho de muitas pessoas. Sem emprego, os trabalhadores foram para as cidades.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>3.</b> Segundo a Constituição de 1988, a "função social da propriedade rural" significa que a terra deve:</p>
-      <ol class="opts"><li>pertencer sempre ao governo.</li><li>ser usada apenas para lazer.</li><li>ser produtiva e respeitar o meio ambiente e as leis trabalhistas.</li><li>ser vendida apenas para estrangeiros.</li><li>ficar sem uso para descansar o solo.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Se a terra não cumpre essa função, ela pode ser desapropriada para a reforma agrária.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>4.</b> Em relação à agricultura familiar no Brasil, é correto afirmar que ela:</p>
-      <ol class="opts"><li>produz principalmente soja para exportação.</li><li>ocupa a maior parte das terras do país.</li><li>é responsável por grande parte dos alimentos consumidos pelos brasileiros.</li><li>usa mais máquinas que o agronegócio.</li><li>não existe mais no Brasil.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Mesmo com menos terra e menos apoio, ela abastece o mercado interno com feijão, mandioca, leite, frutas e verduras.</p></details>
-    </div>
-  </div>
+  <h3>6. Fronteira agrícola e conflitos</h3>
+  <ul class="clean">
+    <li><strong>Expansão da fronteira agrícola:</strong> a soja e o gado avançam sobre o <strong>Cerrado</strong> e a <strong>Amazônia</strong>. A área de expansão mais recente é o <strong>MATOPIBA</strong> (Maranhão, Tocantins, Piauí e Bahia). Isso aumenta o desmatamento.</li>
+    <li><strong>Grilagem:</strong> tomada ilegal de terras públicas com documentos falsos. Antigamente, os papéis eram guardados em gavetas com grilos para parecerem velhos, daí o nome.</li>
+    <li><strong>Violência no campo:</strong> disputas entre fazendeiros, grileiros, sem-terra, indígenas e quilombolas. Exemplos marcantes: o <strong>massacre de Eldorado dos Carajás</strong> (Pará, 1996), em que 19 sem-terra foram mortos pela polícia, e o assassinato do seringueiro e ambientalista <strong>Chico Mendes</strong> (Acre, 1988).</li>
+  </ul>
+
+  <h3>7. Povos indígenas e quilombolas</h3>
+  <p>A Constituição de 1988 garante aos indígenas o direito às terras que tradicionalmente ocupam, e aos quilombolas, a propriedade das terras de seus antepassados. Mas a <strong>demarcação</strong> é lenta e cheia de conflitos. O debate sobre o <strong>"marco temporal"</strong> (a tese de que os indígenas só teriam direito às terras que ocupavam em 5 de outubro de 1988) foi julgado inconstitucional pelo STF em 2023, mas o tema continuou em disputa no Congresso. Para esses povos, a terra não é só um lugar de produção: é a base da sua <strong>cultura e identidade</strong>.</p>
+
+  <h3>8. Agrotóxicos e alternativas</h3>
+  <p>O Brasil é um dos países que mais usam <strong>agrotóxicos</strong> no mundo. Eles podem contaminar o solo, os rios e a saúde de quem trabalha no campo e de quem come os alimentos. Uma alternativa é a <strong>agroecologia</strong>: produção sem agrotóxicos, que respeita os ciclos da natureza e costuma ser praticada pela agricultura familiar.</p>
+
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Concentração fundiária</strong> desde a Colônia, <strong>modernização conservadora</strong> (mais produção, mesma desigualdade), <strong>êxodo rural</strong> e cidades sem planejamento, <strong>agronegócio</strong> para exportação e <strong>agricultura familiar</strong> para a mesa, <strong>fronteira agrícola</strong> sobre Cerrado e Amazônia, e a <strong>função social</strong> da terra.</p></div>
 </section>
 
-<!-- MEIO AMBIENTE -->
+<!-- ======================= MEIO AMBIENTE ======================= -->
 <section id="ambiente">
   <div class="tabrow"><span class="tab">Parte 2</span></div>
   <h2>Meio ambiente</h2>
   <div class="note"><span class="label">Em uma frase</span><p>O ENEM quer saber se você entende <strong>como a ação humana muda a natureza</strong> e quais são as <strong>consequências</strong> para as pessoas.</p></div>
 
-  <h3>Os 6 biomas do Brasil</h3>
+  <h3>1. Os 6 biomas do Brasil</h3>
   <div class="grid">
-    <div class="card"><h3>Amazônia</h3><p class="muted">Maior floresta tropical do mundo. Seus <strong>"rios voadores"</strong> (umidade levada pelo vento) ajudam a trazer chuva para outras regiões do país. Ameaças: desmatamento, garimpo ilegal, queimadas.</p></div>
-    <div class="card"><h3>Cerrado</h3><p class="muted">A "caixa-d'água do Brasil": nele nascem rios de grandes bacias. Vegetação de árvores tortas e raízes profundas. É muito desmatado para plantar soja.</p></div>
-    <div class="card"><h3>Mata Atlântica</h3><p class="muted">O bioma <strong>mais devastado</strong>: restou só uma pequena parte, porque fica onde estão as maiores cidades e começou a ser explorado ainda na Colônia (o pau-brasil!).</p></div>
-    <div class="card"><h3>Caatinga</h3><p class="muted">Só existe no Brasil. Clima semiárido, plantas adaptadas à seca. Ameaça: <strong>desertificação</strong>.</p></div>
-    <div class="card"><h3>Pantanal</h3><p class="muted">A maior planície alagável do mundo, com enorme biodiversidade. Ameaças: queimadas e secas mais fortes.</p></div>
-    <div class="card"><h3>Pampa</h3><p class="muted">Campos do Rio Grande do Sul, usados há séculos para a pecuária.</p></div>
+    <div class="card"><h3>Amazônia</h3><p class="muted">Maior floresta tropical do mundo, com enorme biodiversidade. Seus <strong>"rios voadores"</strong> (umidade levada pelo vento) ajudam a trazer chuva para o Centro-Oeste e o Sudeste. Ameaças: desmatamento para pasto e soja, garimpo ilegal (que contamina os rios com mercúrio) e queimadas.</p></div>
+    <div class="card"><h3>Cerrado</h3><p class="muted">A "caixa-d'água do Brasil": nele nascem rios de grandes bacias. Árvores tortas, casca grossa e raízes profundas. É uma das savanas mais ricas do mundo, mas já perdeu grande parte da vegetação para a soja e o gado.</p></div>
+    <div class="card"><h3>Mata Atlântica</h3><p class="muted">O bioma <strong>mais devastado</strong>: restou só uma pequena parte. Fica onde estão as maiores cidades e começou a ser explorado ainda na Colônia (o pau-brasil!), depois com cana e café.</p></div>
+    <div class="card"><h3>Caatinga</h3><p class="muted">Só existe no Brasil. Clima semiárido, com chuvas irregulares, e plantas adaptadas à seca, como os cactos. Ameaça: <strong>desertificação</strong>.</p></div>
+    <div class="card"><h3>Pantanal</h3><p class="muted">A maior planície alagável do mundo. Fica cheio na época das chuvas e seca depois. Ameaças: queimadas e secas mais fortes.</p></div>
+    <div class="card"><h3>Pampa</h3><p class="muted">Campos do Rio Grande do Sul, usados há séculos para a pecuária. Ameaça: a troca dos campos nativos por plantações.</p></div>
   </div>
 
-  <h3>Problemas ambientais que mais caem</h3>
+  <h3>2. Clima e mudanças climáticas</h3>
+  <ul class="clean">
+    <li><strong>Efeito estufa:</strong> é natural e necessário. Alguns gases da atmosfera seguram parte do calor do Sol, e sem eles a Terra seria gelada.</li>
+    <li><strong>O problema:</strong> a queima de combustíveis fósseis (petróleo, carvão, gás) e o desmatamento <strong>lançam mais gases</strong>, como o gás carbônico (CO₂) e o metano. O efeito estufa fica mais forte, e o planeta esquenta: é o <strong>aquecimento global</strong>.</li>
+    <li><strong>Consequências:</strong> derretimento das geleiras, aumento do nível do mar e <strong>eventos extremos</strong> mais frequentes, como secas, ondas de calor e chuvas fortes. As enchentes no Rio Grande do Sul, em 2024, são um exemplo.</li>
+    <li>No Brasil, a maior fonte de emissões é o <strong>desmatamento</strong> e a <strong>agropecuária</strong>. Em países industrializados, é a queima de combustíveis.</li>
+  </ul>
+  <div class="note"><span class="label">Justiça climática e racismo ambiental</span><p>Os mais pobres poluem menos, mas são os que <strong>mais sofrem</strong> com os desastres, porque vivem em áreas de risco, como encostas e beiras de rio, e têm menos recursos para se recuperar. Quando esses problemas atingem principalmente a população negra e indígena, fala-se em <strong>racismo ambiental</strong>.</p></div>
+
+  <h3>3. Problemas ambientais no campo e nas florestas</h3>
   <div class="grid">
-    <div class="card"><h3>Efeito estufa e aquecimento global</h3><p class="muted">O efeito estufa é natural e necessário: sem ele a Terra seria gelada. O problema é que a queima de combustíveis fósseis e o desmatamento <strong>aumentam</strong> esse efeito, e o planeta esquenta.</p></div>
-    <div class="card"><h3>Desmatamento e queimadas</h3><p class="muted">Perda de biodiversidade, solo exposto, menos chuva e mais gás carbônico no ar.</p></div>
-    <div class="card"><h3>Erosão e assoreamento</h3><p class="muted">Sem a vegetação, a chuva leva a terra para os rios. O rio fica raso e entupido de sedimentos: isso é o <strong>assoreamento</strong>.</p></div>
-    <div class="card"><h3>Problemas nas cidades</h3><p class="muted"><strong>Ilhas de calor</strong> (o centro, com asfalto e concreto, fica mais quente), <strong>enchentes</strong> (o chão impermeável não absorve a chuva), lixo e falta de saneamento.</p></div>
-    <div class="card"><h3>Inversão térmica</h3><p class="muted">No inverno, uma camada de ar frio fica presa embaixo de uma de ar quente e "segura" a poluição perto do chão. Piora as doenças respiratórias nas grandes cidades.</p></div>
+    <div class="card"><h3>Desmatamento e queimadas</h3><p class="muted">Perda de biodiversidade, solo exposto, menos chuva e mais gás carbônico no ar. O fogo costuma ser usado para "limpar" a área depois do corte.</p></div>
+    <div class="card"><h3>Erosão</h3><p class="muted">Sem vegetação, a chuva e o vento arrastam a camada fértil do solo.</p></div>
+    <div class="card"><h3>Assoreamento</h3><p class="muted">A terra arrastada vai parar nos rios, que ficam rasos e entupidos de sedimentos. A <strong>mata ciliar</strong>, na beira do rio, protege contra isso, como os cílios protegem os olhos.</p></div>
+    <div class="card"><h3>Desertificação</h3><p class="muted">Em regiões secas, como a Caatinga, o desmatamento e o uso excessivo do solo deixam a terra tão degradada que ela fica com aspecto de deserto.</p></div>
+    <div class="card"><h3>Desastres da mineração</h3><p class="muted">Rompimento de barragens de rejeitos em <strong>Mariana</strong> (2015), que destruiu o rio Doce, e em <strong>Brumadinho</strong> (2019), que matou mais de 270 pessoas, ambos em Minas Gerais.</p></div>
   </div>
 
-  <h3>Acordos e conceitos importantes</h3>
+  <h3>4. Problemas ambientais nas cidades</h3>
+  <div class="grid">
+    <div class="card"><h3>Ilhas de calor</h3><p class="muted">O centro, com asfalto, concreto e poucas árvores, fica vários graus mais quente que os bairros arborizados.</p></div>
+    <div class="card"><h3>Enchentes</h3><p class="muted">O chão impermeável (asfalto e concreto) não absorve a chuva. Rios canalizados e lixo nos bueiros pioram tudo.</p></div>
+    <div class="card"><h3>Inversão térmica</h3><p class="muted">No inverno, uma camada de ar frio fica presa embaixo de uma de ar quente e "segura" a poluição perto do chão. Aumenta as doenças respiratórias.</p></div>
+    <div class="card"><h3>Chuva ácida</h3><p class="muted">Gases das indústrias e dos carros se misturam à água da chuva e formam ácidos. Danifica plantas, rios, prédios e monumentos.</p></div>
+    <div class="card"><h3>Lixo</h3><p class="muted">Os <strong>lixões</strong> a céu aberto contaminam o solo e a água. O certo é o <strong>aterro sanitário</strong>, além de reciclagem e coleta seletiva. A <strong>Política Nacional de Resíduos Sólidos</strong> (2010) criou a <strong>logística reversa</strong>: quem fabrica é responsável pelo produto depois do uso, como pilhas e pneus.</p></div>
+    <div class="card"><h3>Água e saneamento</h3><p class="muted">Grande parte dos brasileiros ainda não tem coleta e tratamento de esgoto. O esgoto nos rios causa a <strong>eutrofização</strong>: excesso de nutrientes, explosão de algas, falta de oxigênio e morte dos peixes.</p></div>
+  </div>
+
+  <h3>5. Energia</h3>
+  <ul class="clean">
+    <li>A energia elétrica do Brasil é, em grande parte, <strong>renovável</strong>, principalmente das <strong>hidrelétricas</strong>. A energia <strong>eólica</strong> (vento) cresce no Nordeste, e a <strong>solar</strong> também está aumentando.</li>
+    <li>As hidrelétricas são renováveis, mas causam impactos: alagam grandes áreas, deslocam comunidades e afetam peixes e rios. A usina de <strong>Belo Monte</strong>, no rio Xingu (Pará), é um exemplo muito debatido.</li>
+    <li>O Brasil também se destaca pelo <strong>etanol</strong>, combustível feito da cana-de-açúcar, desde o Proálcool, nos anos 1970.</li>
+  </ul>
+
+  <h3>6. Proteção ambiental no Brasil</h3>
+  <div class="grid">
+    <div class="card"><h3>Código Florestal (2012)</h3><p class="muted">Obriga a manter <strong>Áreas de Preservação Permanente</strong> (APP), como beiras de rios e topos de morros, e uma <strong>Reserva Legal</strong>: parte de cada propriedade rural com vegetação nativa. Na Amazônia, é 80% da área.</p></div>
+    <div class="card"><h3>Unidades de Conservação</h3><p class="muted">Áreas protegidas por lei. Podem ser de <strong>proteção integral</strong> (como os parques nacionais) ou de <strong>uso sustentável</strong> (como as reservas extrativistas, onde comunidades vivem e usam os recursos com cuidado).</p></div>
+    <div class="card"><h3>Constituição, art. 225</h3><p class="muted">Todos têm direito ao meio ambiente equilibrado, e o dever de protegê-lo é do <strong>Poder Público e da coletividade</strong>, para as gerações presentes e futuras.</p></div>
+  </div>
+
+  <h3>7. Acordos e conceitos mundiais</h3>
   <div class="timeline">
-    <div class="step"><div class="time">1987</div><p><strong>Desenvolvimento sustentável</strong>, definido no Relatório Brundtland: atender às necessidades do presente <strong>sem comprometer as gerações futuras</strong>.</p></div>
-    <div class="step"><div class="time">1992</div><p><strong>Eco-92</strong>, no Rio de Janeiro: conferência da ONU sobre meio ambiente. Criou a Agenda 21.</p></div>
-    <div class="step"><div class="time">1997</div><p><strong>Protocolo de Kyoto</strong>: países ricos se comprometem a reduzir a emissão de gases do efeito estufa.</p></div>
-    <div class="step"><div class="time">2015</div><p><strong>Acordo de Paris</strong>: quase todos os países se comprometem a limitar o aquecimento global a bem menos de 2 °C, buscando 1,5 °C.</p></div>
-    <div class="step"><div class="time">2025</div><p>O Brasil sediou a <strong>COP30</strong>, conferência do clima da ONU, em <strong>Belém (PA)</strong>, na Amazônia.</p></div>
+    <div class="step"><div class="time">1972</div><p><strong>Conferência de Estocolmo</strong>: a primeira grande reunião da ONU sobre meio ambiente.</p></div>
+    <div class="step"><div class="time">1987</div><p><strong>Desenvolvimento sustentável</strong>, definido no Relatório Brundtland: atender às necessidades do presente <strong>sem comprometer as gerações futuras</strong>. No mesmo ano, o <strong>Protocolo de Montreal</strong> proibiu os gases CFC, que destruíam a camada de ozônio. É um exemplo de acordo que deu certo.</p></div>
+    <div class="step"><div class="time">1992</div><p><strong>Eco-92 (Rio-92)</strong>, no Rio de Janeiro: conferência da ONU sobre meio ambiente. Criou a Agenda 21.</p></div>
+    <div class="step"><div class="time">1997</div><p><strong>Protocolo de Kyoto</strong>: países ricos se comprometem a reduzir a emissão de gases do efeito estufa. Criou a ideia de <strong>créditos de carbono</strong>.</p></div>
+    <div class="step"><div class="time">2015</div><p><strong>Acordo de Paris</strong>: quase todos os países se comprometem a limitar o aquecimento global a bem menos de 2 °C, buscando 1,5 °C. No mesmo ano, a ONU lançou a <strong>Agenda 2030</strong>, com os 17 Objetivos de Desenvolvimento Sustentável (ODS).</p></div>
+    <div class="step"><div class="time">2025</div><p>O Brasil sediou a <strong>COP30</strong>, a conferência do clima da ONU, em <strong>Belém (PA)</strong>, na Amazônia.</p></div>
   </div>
 
-  <h3>Teste rápido</h3>
-  <div class="stack">
-    <div class="quiz card">
-      <p class="q"><b>5.</b> O assoreamento dos rios é causado principalmente:</p>
-      <ol class="opts"><li>pelo excesso de peixes.</li><li>pela retirada da mata ciliar, que deixa a terra ser levada pela chuva para dentro do rio.</li><li>pelo aumento da profundidade dos rios.</li><li>pelas chuvas ácidas.</li><li>pela construção de pontes.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra B.</strong> A mata ciliar, na beira do rio, funciona como os cílios dos olhos: protege. Sem ela, a terra entra no rio.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>6.</b> O bioma brasileiro mais devastado, por estar na região onde ficam as maiores cidades e por ter sido explorado desde a colonização, é:</p>
-      <ol class="opts"><li>a Amazônia.</li><li>a Caatinga.</li><li>a Mata Atlântica.</li><li>o Pantanal.</li><li>o Pampa.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> A exploração começou com o pau-brasil, continuou com a cana e o café e hoje sofre com as cidades.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>7.</b> As enchentes frequentes nas grandes cidades brasileiras estão ligadas principalmente:</p>
-      <ol class="opts"><li>à impermeabilização do solo pelo asfalto e concreto, que impede a água de ser absorvida.</li><li>ao excesso de árvores nas ruas.</li><li>à falta de chuvas.</li><li>ao aumento das áreas verdes.</li><li>à inversão térmica.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra A.</strong> Sem terra para absorver, a água da chuva escorre toda de uma vez e alaga as ruas. Lixo nos bueiros piora tudo.</p></details>
-    </div>
-    <div class="quiz card">
-      <p class="q"><b>8.</b> O conceito de desenvolvimento sustentável propõe:</p>
-      <ol class="opts"><li>parar todo o crescimento econômico.</li><li>explorar ao máximo os recursos naturais hoje.</li><li>atender às necessidades do presente sem comprometer as das gerações futuras.</li><li>proibir a agricultura.</li><li>transferir indústrias para outros países.</li></ol>
-      <details><summary>Ver resposta</summary><p><strong>Letra C.</strong> Decore essa frase: ela serve para questões de Geografia e também como repertório na redação.</p></details>
-    </div>
-  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Os <strong>6 biomas</strong> e suas ameaças, a diferença entre <strong>efeito estufa natural e aquecimento global</strong>, <strong>assoreamento</strong> e mata ciliar, <strong>ilha de calor</strong>, <strong>inversão térmica</strong> e enchentes nas cidades, <strong>desenvolvimento sustentável</strong>, e que os <strong>mais pobres sofrem mais</strong> com os problemas ambientais.</p></div>
 </section>
 
 <section id="simulado" class="sim">
@@ -648,7 +674,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <div class="card rep"><div class="who">Constituição de 1988, art. 225</div><p>"Todos têm direito ao meio ambiente ecologicamente equilibrado", e o dever de preservá-lo é do Poder Público e da coletividade, para as presentes e futuras gerações.</p><p class="when">Use em qualquer tema de meio ambiente.</p></div>
     <div class="card rep"><div class="who">Relatório Brundtland (1987)</div><p>Desenvolvimento sustentável: atender ao presente sem comprometer o futuro.</p><p class="when">Use em temas sobre consumo, lixo, clima ou recursos naturais.</p></div>
     <div class="card rep"><div class="who">Acordo de Paris (2015) e COP30 (2025)</div><p>Compromissos mundiais para frear o aquecimento global. A COP30 aconteceu em Belém.</p><p class="when">Use em temas sobre clima e Amazônia.</p></div>
+    <div class="card rep"><div class="who">Agenda 2030 da ONU</div><p>17 Objetivos de Desenvolvimento Sustentável, como acabar com a fome e garantir água e saneamento para todos.</p><p class="when">Use em temas sobre fome, água, saneamento e desigualdade.</p></div>
     <div class="card rep"><div class="who">Lei de Terras (1850)</div><p>A terra virou mercadoria e se concentrou nas mãos de poucos.</p><p class="when">Use em temas sobre fome, moradia, campo e desigualdade.</p></div>
+    <div class="card rep"><div class="who">Chico Mendes</div><p>Seringueiro do Acre que defendeu a floresta e os povos que vivem dela. Foi assassinado em 1988.</p><p class="when">Use em temas sobre Amazônia e conflitos ambientais.</p></div>
   </div>
 </section>
 
