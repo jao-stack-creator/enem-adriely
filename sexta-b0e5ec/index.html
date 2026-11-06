@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Filosofia da Adriely</title>
-<meta name="description" content="Hoje: Filosofia e Sociologia. Ética, política, sociedade e trabalho, com simulado de 10 questões.">
+<meta name="description" content="Hoje: Filosofia e Sociologia. O que mais cai, teoria do conhecimento e simulado com 14 questões reais do ENEM.">
 <meta property="og:title" content="Filosofia da Adriely">
-<meta property="og:description" content="Hoje: Filosofia e Sociologia. Ética, política, sociedade e trabalho, com simulado de 10 questões.">
+<meta property="og:description" content="Hoje: Filosofia e Sociologia. O que mais cai, teoria do conhecimento e simulado com 14 questões reais do ENEM.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -249,6 +249,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 /* Tabelas */
 .tbl-wrap table { font-size: 0.94rem; }
 .tbl-wrap td { vertical-align: top; }
+.tbl-wrap table.fit { table-layout: fixed; }
+.tbl-wrap table.fit th, .tbl-wrap table.fit td { overflow-wrap: anywhere; hyphens: auto; padding: 8px 6px; }
+.tbl-wrap table.fit th { letter-spacing: 0; font-size: 0.72rem; }
 /* Respostas abertas */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
@@ -268,15 +271,19 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 <header class="hero">
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é dia de <span>Filosofia e Sociologia</span></h1>
-  <div class="today-pill"><span class="dot"></span>Hoje: ética, política e trabalho</div>
-  <p class="lede">Hoje o foco é <strong>Filosofia e Sociologia</strong>: ética, política, sociedade e trabalho. Para cada pensador, a ideia que o ENEM cobra e, no fim, um simulado de 10 questões.</p>
+  <div class="today-pill"><span class="dot"></span>Hoje: ética, política, conhecimento e trabalho</div>
+  <p class="lede">Hoje o foco é <strong>Filosofia e Sociologia</strong>. Tem uma pesquisa do que mais cai, a teoria do conhecimento (o assunto mais cobrado), conceitos que já caíram, apostas e um simulado com <strong>14 questões reais do ENEM</strong>.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-filo">Missão de hoje</a>
+    <a href="#mais-cai">O que mais cai</a>
     <a href="#etica">Ética</a>
     <a href="#politica">Política</a>
+    <a href="#conhecimento">Conhecimento</a>
     <a href="#sociologia">Sociologia</a>
     <a href="#trabalho">Trabalho</a>
-    <a href="#resumo">Resumo de bolso</a>
+    <a href="#conceitos">Já caiu</a>
+    <a href="#apostas">Apostas</a>
+    <a href="#resumo">Resumo</a>
     <a href="#simulado">Simulado</a>
   </nav>
 </header>
@@ -288,7 +295,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
       <div><span class="n">1</span><p>Comece pela <strong>missão de hoje</strong>. Ela diz a ordem certa e quanto tempo cada parte leva.</p></div>
       <div><span class="n">2</span><p>Para cada pensador, guarde <strong>a ideia principal</strong>. É isso que o ENEM cobra.</p></div>
       <div><span class="n">3</span><p>O <strong>resumo de bolso</strong> no fim tem uma linha por autor. Leia em voz alta.</p></div>
-      <div><span class="n">4</span><p>No fim, faça o <strong>simulado</strong> de 10 questões para ver o que ficou.</p></div>
+      <div><span class="n">4</span><p>No fim, faça o <strong>simulado com 14 questões reais do ENEM</strong>.</p></div>
     </div>
   </div>
 </section>
@@ -297,12 +304,15 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="card mission stack">
     <span class="tab sun">Missão de hoje · sexta, 6/11</span>
     <h2>Dia de Filosofia e Sociologia</h2>
-    <label class="check"><input type="checkbox" id="f-1"><span class="bubble"></span><span class="txt">Estudar <a href="#etica">Ética</a> (≈ 45 min).</span></label>
-    <label class="check"><input type="checkbox" id="f-2"><span class="bubble"></span><span class="txt">Estudar <a href="#politica">Política</a> (≈ 45 min).</span></label>
-    <label class="check"><input type="checkbox" id="f-3"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
-    <label class="check"><input type="checkbox" id="f-4"><span class="bubble"></span><span class="txt">Estudar <a href="#sociologia">Sociologia</a> e <a href="#trabalho">Trabalho</a> (≈ 1 hora).</span></label>
-    <label class="check"><input type="checkbox" id="f-5"><span class="bubble"></span><span class="txt">Ler o <a href="#resumo">resumo de bolso</a> em voz alta, 2 vezes.</span></label>
-    <label class="check"><input type="checkbox" id="f-6"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-1"><span class="bubble"></span><span class="txt">Ler <a href="#mais-cai">O que mais cai</a> para saber onde focar (≈ 10 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-2"><span class="bubble"></span><span class="txt">Estudar <a href="#etica">Ética</a> (≈ 45 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-3"><span class="bubble"></span><span class="txt">Estudar <a href="#politica">Política</a> (≈ 45 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-4"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
+    <label class="check"><input type="checkbox" id="f-5"><span class="bubble"></span><span class="txt">Estudar <a href="#conhecimento">Teoria do conhecimento</a>, o que mais cai (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-6"><span class="bubble"></span><span class="txt">Estudar <a href="#sociologia">Sociologia</a> e <a href="#trabalho">Trabalho</a> (≈ 1 hora).</span></label>
+    <label class="check"><input type="checkbox" id="f-7"><span class="bubble"></span><span class="txt">Ler <a href="#conceitos">Conceitos que já caíram</a> e <a href="#apostas">Apostas para domingo</a> (≈ 20 min).</span></label>
+    <label class="check"><input type="checkbox" id="f-8"><span class="bubble"></span><span class="txt">Ler o <a href="#resumo">resumo de bolso</a> em voz alta, 2 vezes.</span></label>
+    <label class="check"><input type="checkbox" id="f-9"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
   </div>
 </section>
 
@@ -314,6 +324,47 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="grid">
     <div class="card"><h3>Ética x moral</h3><p class="muted"><strong>Moral</strong> é o conjunto de regras e costumes de um grupo ("não se deve mentir"). <strong>Ética</strong> é a reflexão sobre essas regras: "por que não devo mentir?".</p></div>
     <div class="card"><h3>Filosofia x Sociologia</h3><p class="muted">A <strong>Filosofia</strong> pergunta "como deveria ser?". A <strong>Sociologia</strong> estuda "como a sociedade funciona de fato?".</p></div>
+  </div>
+</section>
+
+<section id="mais-cai">
+  <div class="tabrow"><span class="tab sun">Pesquisa</span></div>
+  <h2>O que mais cai em Filosofia e Sociologia</h2>
+  <p class="intro">Analisei as <strong>569 questões de Ciências Humanas</strong> das provas do ENEM de 2009 a 2023, num banco público com as provas e o gabarito oficial, e separei as de Filosofia e Sociologia.</p>
+  <div class="grid">
+    <div class="card stat"><b>≈ 6</b><span>questões por prova</span><p class="muted">são de <strong>Filosofia</strong>: trazem um trecho de um filósofo ou falam de ética, razão, verdade, Estado.</p></div>
+    <div class="card stat"><b>1º</b><span>lugar</span><p class="muted"><strong>Teoria do conhecimento</strong> (de onde vem o saber, razão x experiência) é o assunto de Filosofia que mais aparece. Por isso ganhou uma parte só dele aqui.</p></div>
+    <div class="card stat"><b>Trabalho</b><span>em Sociologia</span><p class="muted">É o tema de Sociologia que mais se repete: fordismo, toyotismo, precarização, mulheres e trabalho escravo.</p></div>
+  </div>
+
+  <h3>Os assuntos de Filosofia mais cobrados</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Assunto</th><th>Questões (2009–2023)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Teoria do conhecimento</strong>: razão, método, verdade, ciência</td><td>42</td></tr>
+        <tr><td><strong>Ética</strong>: virtude, dever, moral, felicidade</td><td>23</td></tr>
+        <tr><td><strong>Política</strong>: Estado, poder, contrato social, democracia</td><td>16</td></tr>
+        <tr><td><strong>Filosofia grega</strong>: pré-socráticos, Sócrates, Platão, Aristóteles, sofistas</td><td>13</td></tr>
+        <tr><td><strong>Iluminismo e filosofia moderna</strong></td><td>8</td></tr>
+        <tr><td><strong>Filosofia medieval</strong>: fé e razão</td><td>6</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">Uma mesma questão pode tratar de mais de um assunto, então os números se somam.</p>
+
+  <h3>Os filósofos que mais aparecem pelo nome</h3>
+  <div class="chips">
+    <span><strong>Descartes</strong> · 7</span><span><strong>Aristóteles</strong> · 6</span><span><strong>Kant</strong> · 4</span><span><strong>Sofistas</strong> · 4</span><span><strong>Epicuro e estoicos</strong> · 4</span><span>Sócrates · 3</span><span>Platão · 3</span><span>Maquiavel · 3</span><span>Hume · 3</span><span>Arendt · 3</span><span>Foucault · 3</span><span>Habermas · 3</span><span>Merleau-Ponty · 3</span>
+  </div>
+  <p class="muted">A contagem é só de quando o nome aparece na questão. Muitas questões citam livros de professores que explicam o filósofo, então o número real é maior.</p>
+
+  <h3>Como a banca costuma cobrar</h3>
+  <div class="grid">
+    <div class="card"><h3>Trecho do próprio filósofo</h3><p class="muted">A maioria traz um pedaço do livro original (Kant, Hume, Descartes, Hobbes) e pergunta "segundo o autor...". A resposta está no trecho.</p></div>
+    <div class="card"><h3>Alternativas com palavras difíceis</h3><p class="muted">As alternativas usam termos como "racionalidade de caráter pragmático" ou "idealidade e efetividade da moral". <strong>Traduza para palavras simples</strong> antes de escolher.</p></div>
+    <div class="card"><h3>Pegadinha de autor errado</h3><p class="muted">As alternativas erradas costumam ser ideias de <strong>outros filósofos</strong>. Numa questão de Kant, aparece uma alternativa utilitarista e outra de Maquiavel, por exemplo.</p></div>
+    <div class="card"><h3>Sociologia ligada ao presente</h3><p class="muted">Trabalho por aplicativo, mulheres no mercado de trabalho, trabalho escravo hoje, SUS, movimentos sociais.</p></div>
   </div>
 </section>
 
@@ -341,6 +392,8 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <div class="card rep"><div class="who">Friedrich Nietzsche (século XIX)</div><p>Criticou a moral cristã, que chamava de <strong>"moral de rebanho"</strong>, porque ensinaria as pessoas a obedecer e a se conformar. Disse que <q>Deus está morto</q>: os valores tradicionais perderam força, e cada um precisa criar os próprios valores.</p></div>
     <div class="card rep"><div class="who">Jean-Paul Sartre (século XX)</div><p><q>A existência precede a essência.</q> Não nascemos prontos: nós nos construímos pelas escolhas que fazemos. Por isso estamos <q>condenados a ser livres</q> e somos <strong>totalmente responsáveis</strong> pelo que fazemos.</p></div>
     <div class="card rep"><div class="who">Hannah Arendt (século XX)</div><p>Ao acompanhar o julgamento do nazista Eichmann, percebeu que ele não era um monstro, mas um funcionário comum que "só cumpria ordens". Chamou isso de <strong>"banalidade do mal"</strong>: o mal pode vir de pessoas que <strong>param de pensar</strong> sobre o que fazem.</p></div>
+    <div class="card rep"><div class="who">Hans Jonas (século XX): ética e tecnologia</div><p>Com a tecnologia, o ser humano ganhou poder para destruir o planeta. Por isso propôs o <strong>princípio responsabilidade</strong>: agir de modo que as consequências das nossas ações <strong>não destruam a possibilidade de vida futura</strong> na Terra. Base do <strong>princípio da precaução</strong>: na dúvida sobre os riscos de uma tecnologia, ter cuidado. É a "ética ambiental", que esteve no ENEM 2025.</p></div>
+    <div class="card rep"><div class="who">John Rawls (século XX): justiça</div><p>Uma sociedade justa é um <strong>sistema de cooperação</strong> entre pessoas livres e iguais. Para criar regras justas, devemos imaginar que não sabemos que lugar ocuparemos na sociedade (o "véu da ignorância"). Assim escolheríamos regras que protegem também os mais pobres.</p></div>
   </div>
   <div class="note sun"><span class="label">Guarde isto</span><p><strong>Sócrates</strong> = perguntar e reconhecer a ignorância. <strong>Aristóteles</strong> = meio-termo. <strong>Kant</strong> = dever e "e se todos fizessem isso?". <strong>Utilitarismo</strong> = consequências, maior bem para o maior número. <strong>Sartre</strong> = somos o que escolhemos. <strong>Arendt</strong> = banalidade do mal.</p></div>
 </section>
@@ -393,9 +446,52 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="note sun"><span class="label">Guarde isto</span><p><strong>Hobbes</strong> = medo e Estado forte. <strong>Locke</strong> = vida, liberdade e propriedade, e direito de resistir. <strong>Rousseau</strong> = nasce bom, propriedade gera desigualdade, vontade geral. <strong>Montesquieu</strong> = três poderes. <strong>Maquiavel</strong> = política separada da moral. <strong>Foucault</strong> = vigilância e disciplina.</p></div>
 </section>
 
+<!-- ======================= CONHECIMENTO ======================= -->
+<section id="conhecimento">
+  <div class="tabrow"><span class="tab">Parte 3 · Filosofia · o que mais cai</span></div>
+  <h2>Teoria do conhecimento: como sabemos o que sabemos?</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>É a parte da Filosofia que pergunta <strong>de onde vem o conhecimento</strong>: da <strong>razão</strong> (pensar) ou da <strong>experiência</strong> (os sentidos)? E como saber se algo é <strong>verdade</strong>?</p></div>
+
+  <h3>1. Grécia: do mito à razão</h3>
+  <div class="stack">
+    <div class="card rep"><div class="who">Os pré-socráticos</div><p>Os primeiros filósofos trocaram as explicações dos <strong>mitos</strong> (os deuses) por explicações da <strong>razão</strong> (o <em>logos</em>). Eles buscavam a <strong>arché</strong>, o princípio de todas as coisas. Para <strong>Tales</strong>, era a água. <strong>Heráclito</strong> dizia que <strong>tudo muda</strong> (<q>ninguém se banha duas vezes no mesmo rio</q>). <strong>Parmênides</strong> dizia o contrário: o ser verdadeiro é imutável, e a mudança é ilusão dos sentidos.</p></div>
+    <div class="card rep"><div class="who">Sócrates e o método dialético</div><p>Conhecer por meio do <strong>diálogo</strong>: perguntas que fazem a pessoa perceber as próprias contradições (a <em>ironia</em>) e depois chegar sozinha a uma ideia melhor (a <em>maiêutica</em>, a "arte de fazer nascer as ideias"). É diferente dos <strong>sofistas</strong>, que ensinavam a vencer debates (retórica), e não a buscar a verdade.</p></div>
+    <div class="card rep"><div class="who">Platão: o mundo das ideias</div><p>Existem dois mundos. O <strong>mundo sensível</strong>, que vemos e que muda, é só uma cópia imperfeita. O <strong>mundo das ideias</strong>, eterno e perfeito, só é alcançado pela razão. O <strong>mito da caverna</strong> mostra isso: as sombras são o mundo sensível, e a luz lá fora é o mundo das ideias.</p></div>
+    <div class="card rep"><div class="who">Aristóteles</div><p>Discordou de Platão: o conhecimento <strong>começa pelos sentidos</strong>, observando as coisas deste mundo. Criou a <strong>lógica</strong>, o jeito correto de raciocinar.</p></div>
+  </div>
+
+  <h3>2. A grande disputa moderna: razão x experiência</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:28%"></th><th>Racionalismo</th><th>Empirismo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>De onde vem o conhecimento?</strong></td><td>Da <strong>razão</strong></td><td>Da <strong>experiência</strong> (os sentidos)</td></tr>
+        <tr><td><strong>Ideias inatas?</strong></td><td>Sim, nascemos com algumas ideias, como a de Deus e a de perfeição</td><td>Não: a mente nasce como uma <strong>"folha em branco"</strong> (tábula rasa)</td></tr>
+        <tr><td><strong>Método</strong></td><td><strong>Dedução</strong>: partir de verdades certas e deduzir as outras, como na matemática</td><td><strong>Indução</strong>: observar muitos casos e tirar uma regra geral</td></tr>
+        <tr><td><strong>Principais nomes</strong></td><td><strong>Descartes</strong>, Spinoza, Leibniz</td><td><strong>Francis Bacon</strong>, <strong>Locke</strong>, <strong>Hume</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="stack">
+    <div class="card rep"><div class="who">René Descartes (séc. XVII) · o mais cobrado</div><p>Para chegar a uma verdade segura, ele resolveu <strong>duvidar de tudo</strong>: dos sentidos, que nos enganam, e até de que estava acordado. É a <strong>dúvida metódica</strong>. A única coisa de que não conseguiu duvidar é que estava pensando: <q>Penso, logo existo</q> (o <em>cogito</em>). A partir daí, reconstruiu o conhecimento usando só a razão.</p><p>Ele também comparou a Filosofia a uma <strong>árvore</strong>: as raízes são a metafísica, o tronco é a física e os galhos são as outras ciências (medicina, mecânica e moral). A ideia é que <strong>todo o conhecimento está ligado</strong> e vem de uma mesma base. Isso caiu no ENEM 2021!</p></div>
+    <div class="card rep"><div class="who">Francis Bacon (séc. XVII)</div><p>Pai do <strong>método experimental</strong>: observar, fazer experimentos e chegar a conclusões. Disse que <q>saber é poder</q>: conhecer a natureza permite dominá-la. Alertou para os <strong>"ídolos"</strong>, preconceitos que atrapalham o conhecimento.</p></div>
+    <div class="card rep"><div class="who">John Locke (séc. XVII)</div><p>A mente nasce como uma <strong>tábula rasa</strong>, uma folha em branco. Tudo o que sabemos foi escrito nela pela experiência.</p></div>
+    <div class="card rep"><div class="who">David Hume (séc. XVIII)</div><p>Todo conhecimento vem das <strong>impressões</strong> dos sentidos. Nem a razão sozinha consegue saber que o fogo queima: só aprendemos isso vivendo. Para ele, a ideia de <strong>causa e efeito</strong> vem do <strong>hábito</strong> de ver uma coisa acontecer depois da outra. Caiu em 2015 e em 2020.</p></div>
+    <div class="card rep"><div class="who">Immanuel Kant (séc. XVIII): a síntese</div><p>Juntou os dois lados: o conhecimento <strong>começa com a experiência</strong>, mas é a <strong>razão que organiza</strong> o que os sentidos captam, com estruturas que já temos (como tempo, espaço e causa). Os dados vêm de fora, a forma vem de dentro.</p></div>
+  </div>
+
+  <h3>3. Ciência e conhecimento hoje</h3>
+  <div class="grid">
+    <div class="card"><h3>Revolução Científica</h3><p class="muted">Com Galileu e Newton (séc. XVI e XVII), a ciência passou a usar <strong>observação, experimento e matemática</strong>, e não mais a autoridade da Igreja ou dos antigos.</p></div>
+    <div class="card"><h3>Merleau-Ponty</h3><p class="muted">Filósofo da fenomenologia: conhecemos o mundo com o <strong>corpo inteiro</strong>, pela percepção, e não só com a mente. Já caiu ligado a poemas e à arte.</p></div>
+    <div class="card"><h3>Habermas</h3><p class="muted">Defende a <strong>razão comunicativa</strong>: as regras e verdades de uma sociedade devem nascer do <strong>diálogo livre</strong> entre as pessoas, em que vence o melhor argumento.</p></div>
+  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Racionalismo</strong> (Descartes) = razão, dúvida metódica, "penso, logo existo". <strong>Empirismo</strong> (Bacon, Locke, Hume) = experiência, tábula rasa, indução. <strong>Kant</strong> = junta os dois. <strong>Platão</strong> = mundo das ideias. <strong>Sócrates</strong> = diálogo e perguntas. <strong>Sofistas</strong> = retórica, vencer o debate.</p></div>
+</section>
+
 <!-- ======================= SOCIOLOGIA ======================= -->
 <section id="sociologia">
-  <div class="tabrow"><span class="tab">Parte 3 · Sociologia</span></div>
+  <div class="tabrow"><span class="tab">Parte 4 · Sociologia</span></div>
   <h2>Sociologia</h2>
   <div class="note"><span class="label">Em uma frase</span><p>A Sociologia estuda <strong>como a sociedade funciona</strong>: como aprendemos as regras, por que existem desigualdades e como as coisas mudam.</p></div>
 
@@ -435,7 +531,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <!-- ======================= TRABALHO ======================= -->
 <section id="trabalho">
-  <div class="tabrow"><span class="tab">Parte 4 · Sociologia</span></div>
+  <div class="tabrow"><span class="tab">Parte 5 · Sociologia</span></div>
   <h2>O mundo do trabalho</h2>
   <div class="note"><span class="label">Em uma frase</span><p>O trabalho é um dos temas preferidos do ENEM: <strong>como ele mudou</strong> com as fábricas, as máquinas e a tecnologia, e <strong>o que isso fez com a vida dos trabalhadores</strong>.</p></div>
 
@@ -459,6 +555,49 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="note sun"><span class="label">Guarde isto</span><p><strong>Durkheim</strong> = fato social. <strong>Weber</strong> = ação social e tipos de dominação. <strong>Marx</strong> = luta de classes, mais-valia e alienação. <strong>Fordismo</strong> = linha de montagem. <strong>Toyotismo</strong> = flexível e terceirização. <strong>Uberização</strong> = precarização.</p></div>
 </section>
 
+<section id="conceitos">
+  <div class="tabrow"><span class="tab sun">Já caiu no ENEM</span></div>
+  <h2>Conceitos que já caíram</h2>
+  <p class="intro">Estas ideias apareceram em questões reais do ENEM. Se você entender cada uma, já vai reconhecer muitas questões no domingo:</p>
+  <dl class="gloss">
+    <div><dt>Imperativo categórico (Kant)</dt><dd>Só é moral a ação que poderia virar <strong>regra para todos</strong>. Uma promessa falsa não passa no teste. <em>Caiu em 2017.</em></dd></div>
+    <div><dt>Utilitarismo (Bentham)</dt><dd>A moral como cálculo: a ação certa é a que gera <strong>mais felicidade</strong> para o maior número. <em>Caiu em 2017.</em></dd></div>
+    <div><dt>Sumo bem e política (Aristóteles)</dt><dd>O objetivo final da vida é o bem humano, e a <strong>política</strong> é a "ciência mestra", que organiza as outras na cidade. <em>Caiu em 2017 e 2020.</em></dd></div>
+    <div><dt>Temperança (Epicuro)</dt><dd>Moderação, saber se contentar com pouco: <q>A quem não basta pouco, nada basta</q>. <em>Caiu em 2018.</em></dd></div>
+    <div><dt>Método dialético (Sócrates)</dt><dd>Chegar à verdade pelo diálogo, com perguntas que levam a pessoa a pensar sobre si. <em>Caiu em 2017 e 2021.</em></dd></div>
+    <div><dt>Justiça para os sofistas</dt><dd>O sofista Trasímaco, no livro <em>A República</em>, de Platão, dizia que a justiça é só o <strong>interesse do mais forte</strong>. <em>Caiu em 2015.</em></dd></div>
+    <div><dt>Estado de natureza</dt><dd>Como seria a vida antes do Estado. Para Hobbes, guerra. Para Rousseau, paz. Os dois concordam que, nessa condição original, os homens eram <strong>iguais</strong>. <em>Caiu em 2018.</em></dd></div>
+    <div><dt>Moral x política (Maquiavel)</dt><dd>O governante não pode agir como uma pessoa comum: o que importa é o efeito para todos, e às vezes isso exige agir contra a moral pessoal. <em>Caiu em 2019.</em></dd></div>
+    <div><dt>Livre-arbítrio (Agostinho)</dt><dd>Deus deu ao ser humano a vontade livre para agir bem. O pecado vem do mau uso dela, e por isso há punição. <em>Caiu em 2019.</em></dd></div>
+    <div><dt>Ser político (Arendt)</dt><dd>É o <strong>discurso</strong>, a capacidade de conversar e se entender, que faz de nós seres políticos e que permite viver juntos. <em>Caiu em 2022.</em></dd></div>
+    <div><dt>Sociedade disciplinar (Foucault)</dt><dd>Poder que vigia, separa e controla cada pessoa, como em prisões, escolas e hospitais. <em>Caiu em 2022.</em></dd></div>
+    <div><dt>Unidade do conhecimento (Descartes)</dt><dd>A árvore da Filosofia: todas as ciências nascem da mesma raiz. <em>Caiu em 2021.</em></dd></div>
+    <div><dt>Empirismo (Hume)</dt><dd>O conhecimento vem da <strong>experiência</strong>, e não só da razão. <em>Caiu em 2015 e 2020.</em></dd></div>
+    <div><dt>Niilismo (Nietzsche)</dt><dd>A sensação de que nada tem sentido e de que os valores perderam força ("tudo é vazio, tudo é igual"). <em>Caiu em 2016.</em></dd></div>
+    <div><dt>Princípio da precaução</dt><dd>Diante de uma tecnologia com riscos desconhecidos, como alimentos transgênicos, ter cuidado antes de usar. <em>Caiu em 2015.</em></dd></div>
+    <div><dt>Justiça como cooperação (Rawls)</dt><dd>Uma sociedade justa é um sistema de cooperação entre pessoas livres e iguais. <em>Caiu em 2020.</em></dd></div>
+    <div><dt>Desencantamento do mundo (Weber)</dt><dd>Na modernidade, tudo passa a ser explicado pela <strong>razão e pelo cálculo</strong>, e não mais por forças mágicas ou religiosas. <em>Caiu em 2015.</em></dd></div>
+    <div><dt>Toyotismo</dt><dd>Produzir <strong>só o que foi vendido</strong> (<em>just in time</em>), com estoque mínimo. <em>Caiu em 2020.</em></dd></div>
+    <div><dt>Feminização do trabalho</dt><dd>As mulheres entraram em massa no mercado de trabalho, mas principalmente nos <strong>empregos mais precários</strong>, e continuam com a maior parte do trabalho em casa. <em>Caiu em 2020.</em></dd></div>
+    <div><dt>Trabalho análogo à escravidão</dt><dd>Ainda existe no Brasil, com resgates feitos pelo governo. A solução passa pela fiscalização e pela punição. <em>Caiu em 2019.</em></dd></div>
+  </dl>
+</section>
+
+<section id="apostas">
+  <div class="tabrow"><span class="tab">O que pode cair em 2026</span></div>
+  <h2>Apostas para domingo</h2>
+  <div class="note"><span class="label">Importante</span><p>Ninguém sabe o que vai cair. Estas apostas seguem o que <strong>tem caído nos últimos anos</strong> e os assuntos que estão em debate no mundo.</p></div>
+  <div class="stack">
+    <div class="card"><h3>1. Teoria do conhecimento (quase certo)</h3><p class="muted">É o que mais cai em Filosofia, praticamente todo ano. Descartes, Hume, empirismo x racionalismo, Platão e Sócrates.</p></div>
+    <div class="card"><h3>2. Ética e tecnologia</h3><p class="muted">Inteligência artificial, uso de dados pessoais, algoritmos das redes. Kant (tratar as pessoas como fim), Hans Jonas (responsabilidade) e o princípio da precaução.</p></div>
+    <div class="card"><h3>3. Ética ambiental</h3><p class="muted">Esteve no ENEM 2025. A responsabilidade com as próximas gerações (Hans Jonas) e a relação entre ser humano e natureza.</p></div>
+    <div class="card"><h3>4. Trabalho hoje</h3><p class="muted">Uberização, trabalho por aplicativo, automação, desigualdade entre homens e mulheres e trabalho escravo contemporâneo.</p></div>
+    <div class="card"><h3>5. Democracia, discurso e fake news</h3><p class="muted">Arendt (o discurso torna a vida política possível), Habermas (o diálogo livre), Platão (sair da caverna das aparências).</p></div>
+    <div class="card"><h3>6. Vigilância e controle</h3><p class="muted">Foucault e a sociedade disciplinar, aplicados a câmeras, celulares e redes sociais.</p></div>
+    <div class="card"><h3>7. Cidadania e desigualdade</h3><p class="muted">Direitos sociais, SUS, racismo estrutural, movimentos sociais e o "mito da democracia racial".</p></div>
+  </div>
+</section>
+
 <section id="resumo">
   <div class="tabrow"><span class="tab sun">Resumo de bolso</span></div>
   <h2>Uma linha para cada pensador</h2>
@@ -466,23 +605,32 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="tbl-wrap">
     <table>
       <tbody>
+        <tr><td><strong>Pré-socráticos</strong></td><td>Do mito à razão; Heráclito: tudo muda</td></tr>
         <tr><td><strong>Sofistas</strong></td><td>O homem é a medida de todas as coisas</td></tr>
         <tr><td><strong>Sócrates</strong></td><td>Só sei que nada sei</td></tr>
-        <tr><td><strong>Platão</strong></td><td>Mito da caverna: sair das aparências</td></tr>
+        <tr><td><strong>Platão</strong></td><td>Mundo das ideias; mito da caverna</td></tr>
+        <tr><td><strong>Epicuro</strong></td><td>Prazer moderado; contentar-se com pouco</td></tr>
         <tr><td><strong>Aristóteles</strong></td><td>Meio-termo; ser humano é animal político</td></tr>
         <tr><td><strong>Maquiavel</strong></td><td>Política separada da moral</td></tr>
         <tr><td><strong>Hobbes</strong></td><td>Homem lobo do homem; Estado forte</td></tr>
-        <tr><td><strong>Locke</strong></td><td>Vida, liberdade e propriedade</td></tr>
+        <tr><td><strong>Descartes</strong></td><td>Dúvida metódica; penso, logo existo</td></tr>
+        <tr><td><strong>Bacon</strong></td><td>Método experimental; saber é poder</td></tr>
+        <tr><td><strong>Locke</strong></td><td>Vida, liberdade e propriedade; tábula rasa</td></tr>
+        <tr><td><strong>Hume</strong></td><td>Conhecimento vem da experiência</td></tr>
         <tr><td><strong>Rousseau</strong></td><td>Nasce bom, a sociedade corrompe</td></tr>
         <tr><td><strong>Montesquieu</strong></td><td>Três poderes</td></tr>
         <tr><td><strong>Kant</strong></td><td>Dever; "e se todos fizessem isso?"</td></tr>
         <tr><td><strong>Utilitarismo</strong></td><td>Maior felicidade para o maior número</td></tr>
         <tr><td><strong>Nietzsche</strong></td><td>Crítica à moral de rebanho</td></tr>
         <tr><td><strong>Sartre</strong></td><td>Somos o que escolhemos</td></tr>
-        <tr><td><strong>Arendt</strong></td><td>Banalidade do mal</td></tr>
-        <tr><td><strong>Foucault</strong></td><td>Vigilância e disciplina</td></tr>
+        <tr><td><strong>Arendt</strong></td><td>Banalidade do mal; o discurso nos faz políticos</td></tr>
+        <tr><td><strong>Hans Jonas</strong></td><td>Responsabilidade com as gerações futuras</td></tr>
+        <tr><td><strong>Rawls</strong></td><td>Justiça como cooperação; véu da ignorância</td></tr>
+        <tr><td><strong>Habermas</strong></td><td>Razão comunicativa; diálogo livre</td></tr>
+        <tr><td><strong>Merleau-Ponty</strong></td><td>Conhecemos com o corpo</td></tr>
+        <tr><td><strong>Foucault</strong></td><td>Sociedade disciplinar; vigilância</td></tr>
         <tr><td><strong>Durkheim</strong></td><td>Fato social</td></tr>
-        <tr><td><strong>Weber</strong></td><td>Ação social; tipos de dominação</td></tr>
+        <tr><td><strong>Weber</strong></td><td>Ação social; dominação; desencantamento do mundo</td></tr>
         <tr><td><strong>Marx</strong></td><td>Luta de classes; mais-valia</td></tr>
         <tr><td><strong>Adorno</strong></td><td>Indústria cultural</td></tr>
         <tr><td><strong>Bourdieu</strong></td><td>Capital cultural</td></tr>
@@ -495,148 +643,204 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <section id="simulado" class="sim">
   <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
-  <h2>Simulado de Filosofia e Sociologia</h2>
-  <p class="intro">Dez questões no estilo do ENEM sobre ética, política, sociologia e trabalho.</p>
+  <h2>Simulado com questões reais do ENEM</h2>
+  <p class="intro">Catorze questões que <strong>caíram de verdade</strong> no ENEM, de 2015 a 2022: ética, política, teoria do conhecimento, sociologia e trabalho. O texto e o gabarito são os oficiais das provas. As explicações foram escritas para você e mostram as pegadinhas.</p>
   <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer em até 3 minutos por questão, como na prova.</p></div>
-  <article class="eq card" data-ans="B">
-    <div class="eq-head"><span>Questão 1</span><span class="eq-area">Filosofia · Ética</span></div>
-    <div class="eq-text"><p>Sócrates percorria as praças de Atenas fazendo perguntas aos cidadãos. Ao final das conversas, muitos percebiam que não sabiam aquilo que acreditavam saber.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">O método socrático tinha como objetivo</p>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">ENEM 2017 · Ética</span></div>
+    <div class="eq-text"><p>Uma pessoa vê-se forçada pela necessidade a pedir dinheiro emprestado. Sabe muito bem que não poderá pagar, mas vê também que não lhe emprestarão nada se não prometer firmemente pagar em prazo determinado. Sente a tentação de fazer a promessa; mas tem ainda consciência bastante para perguntar a si mesma: não é proibido e contrário ao dever livrar-se de apuros desta maneira? Admitindo que se decida a fazê-lo, a sua máxima de ação seria: quando julgo estar em apuros de dinheiro, vou pedi-lo emprestado e prometo pagá-lo, embora saiba que tal nunca sucederá.</p><cite>KANT, I. Fundamentação da metafísica dos costumes. São Paulo: Abril Cultural, 1980.</cite></div>
+    <p class="eq-cmd">De acordo com a moral kantiana, a “falsa promessa de pagamento” representada no texto</p>
     <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
-      <label class="alt"><input type="radio" name="filo-q1" value="A"><span class="letter">A</span><span class="alt-t">ensinar verdades prontas aos jovens.</span></label>
-      <label class="alt"><input type="radio" name="filo-q1" value="B"><span class="letter">B</span><span class="alt-t">levar o interlocutor a reconhecer a própria ignorância e buscar o conhecimento.</span></label>
-      <label class="alt"><input type="radio" name="filo-q1" value="C"><span class="letter">C</span><span class="alt-t">defender o poder dos tiranos.</span></label>
-      <label class="alt"><input type="radio" name="filo-q1" value="D"><span class="letter">D</span><span class="alt-t">vencer os debates a qualquer custo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q1" value="E"><span class="letter">E</span><span class="alt-t">negar a possibilidade de qualquer conhecimento.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="A"><span class="letter">A</span><span class="alt-t">Assegura que a ação seja aceita por todos a partir da livre discussão participativa.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="B"><span class="letter">B</span><span class="alt-t">Garante que os efeitos das ações não destruam a possibilidade da vida futura na terra.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="C"><span class="letter">C</span><span class="alt-t">Opõe-se ao princípio de que toda ação do homem possa valer como norma universal.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="D"><span class="letter">D</span><span class="alt-t">Materializa-se no entendimento de que os fins da ação humana podem justificar os meios.</span></label>
+      <label class="alt"><input type="radio" name="filo-q1" value="E"><span class="letter">E</span><span class="alt-t">Permite que a ação individual produza a mais ampla felicidade para as pessoas envolvidas.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"Só sei que nada sei": reconhecer que não sabe é o primeiro passo para aprender.</p></div>
-  </article>
-  <article class="eq card" data-ans="C">
-    <div class="eq-head"><span>Questão 2</span><span class="eq-area">Filosofia · Ética</span></div>
-    <div class="eq-text"><p>"A virtude é uma disposição de caráter relacionada com a escolha, e consiste numa mediania entre dois vícios, um por excesso e outro por falta."</p><cite>Adaptado de: ARISTÓTELES. Ética a Nicômaco.</cite></div>
-    <p class="eq-cmd">Segundo essa concepção, a generosidade seria</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
-      <label class="alt"><input type="radio" name="filo-q2" value="A"><span class="letter">A</span><span class="alt-t">dar tudo o que se tem, sem limite.</span></label>
-      <label class="alt"><input type="radio" name="filo-q2" value="B"><span class="letter">B</span><span class="alt-t">nunca ajudar ninguém.</span></label>
-      <label class="alt"><input type="radio" name="filo-q2" value="C"><span class="letter">C</span><span class="alt-t">o equilíbrio entre a avareza e o desperdício.</span></label>
-      <label class="alt"><input type="radio" name="filo-q2" value="D"><span class="letter">D</span><span class="alt-t">uma obrigação imposta pelo Estado.</span></label>
-      <label class="alt"><input type="radio" name="filo-q2" value="E"><span class="letter">E</span><span class="alt-t">um sentimento que nasce pronto em cada pessoa.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Virtude é o meio-termo: nem de menos (avareza), nem de mais (desperdício).</p></div>
-  </article>
-  <article class="eq card" data-ans="E">
-    <div class="eq-head"><span>Questão 3</span><span class="eq-area">Filosofia · Ética</span></div>
-    <div class="eq-text"><p>"Age de tal maneira que uses a humanidade, tanto na tua pessoa como na pessoa de qualquer outro, sempre e simultaneamente como fim e nunca simplesmente como meio."</p><cite>KANT, I. Fundamentação da Metafísica dos Costumes.</cite></div>
-    <p class="eq-cmd">De acordo com esse princípio, é eticamente condenável</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
-      <label class="alt"><input type="radio" name="filo-q3" value="A"><span class="letter">A</span><span class="alt-t">ajudar um colega a estudar.</span></label>
-      <label class="alt"><input type="radio" name="filo-q3" value="B"><span class="letter">B</span><span class="alt-t">cumprir uma promessa feita.</span></label>
-      <label class="alt"><input type="radio" name="filo-q3" value="C"><span class="letter">C</span><span class="alt-t">respeitar as leis do país.</span></label>
-      <label class="alt"><input type="radio" name="filo-q3" value="D"><span class="letter">D</span><span class="alt-t">dizer a verdade, mesmo quando é difícil.</span></label>
-      <label class="alt"><input type="radio" name="filo-q3" value="E"><span class="letter">E</span><span class="alt-t">enganar outra pessoa apenas para obter vantagem própria.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Enganar alguém para levar vantagem é usar a pessoa só como meio, e não como fim. Para Kant, isso é errado.</p></div>
-  </article>
-  <article class="eq card" data-ans="A">
-    <div class="eq-head"><span>Questão 4</span><span class="eq-area">Filosofia · Ética</span></div>
-    <div class="eq-text"><p>Durante uma epidemia, com poucas doses de vacina disponíveis, as autoridades de saúde decidiram vacinar primeiro os grupos com maior risco de morte, justificando que essa escolha salvaria o maior número de vidas possível.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">A justificativa apresentada pelas autoridades está de acordo com os princípios do</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
-      <label class="alt"><input type="radio" name="filo-q4" value="A"><span class="letter">A</span><span class="alt-t">utilitarismo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q4" value="B"><span class="letter">B</span><span class="alt-t">existencialismo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q4" value="C"><span class="letter">C</span><span class="alt-t">absolutismo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q4" value="D"><span class="letter">D</span><span class="alt-t">ceticismo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q4" value="E"><span class="letter">E</span><span class="alt-t">fordismo.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Utilitarismo: a melhor ação é a que traz o maior bem para o maior número de pessoas.</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Kant pergunta: e se todo mundo fizesse isso? Se todos fizessem promessas falsas, ninguém mais acreditaria em promessas. A máxima não pode virar regra universal, por isso é imoral. Pegadinhas: a letra D é Maquiavel, a E é o utilitarismo e a A é Habermas.</p></div>
   </article>
   <article class="eq card" data-ans="D">
-    <div class="eq-head"><span>Questão 5</span><span class="eq-area">Filosofia · Política</span></div>
-    <div class="eq-text"><p>"Durante o tempo em que os homens vivem sem um poder comum capaz de os manter a todos em respeito, eles se encontram naquela condição a que se chama guerra; e uma guerra que é de todos os homens contra todos os homens."</p><cite>HOBBES, T. Leviatã.</cite></div>
-    <p class="eq-cmd">Para o autor, a solução para essa condição é</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
-      <label class="alt"><input type="radio" name="filo-q5" value="A"><span class="letter">A</span><span class="alt-t">a ausência de qualquer governo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q5" value="B"><span class="letter">B</span><span class="alt-t">o retorno à vida simples no campo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q5" value="C"><span class="letter">C</span><span class="alt-t">a divisão do poder em três esferas independentes.</span></label>
-      <label class="alt"><input type="radio" name="filo-q5" value="D"><span class="letter">D</span><span class="alt-t">um pacto social que crie um Estado forte, capaz de garantir a paz.</span></label>
-      <label class="alt"><input type="radio" name="filo-q5" value="E"><span class="letter">E</span><span class="alt-t">a luta de classes entre burgueses e operários.</span></label>
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">ENEM 2017 · Ética</span></div>
+    <div class="eq-text"><p>A moralidade, Bentham exortava, não é uma questão de agradar a Deus, muito menos de fidelidade a regras abstratas. A moralidade é a tentativa de criar a maior quantidade de felicidade possível neste mundo. Ao decidir o que fazer, deveríamos, portanto, perguntar qual curso de conduta promoveria a maior quantidade de felicidade para todos aqueles que serão afetados.</p><cite>RACHELS, J. Os elementos da filosofia moral. Barueri-SP: Manole, 2006.</cite></div>
+    <p class="eq-cmd">Os parâmetros da ação indicados no texto estão em conformidade com uma</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="filo-q2" value="A"><span class="letter">A</span><span class="alt-t">Fundamentação científica de viés positivista.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="B"><span class="letter">B</span><span class="alt-t">Convenção social de orientação normativa.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="C"><span class="letter">C</span><span class="alt-t">Transgressão comportamental religiosa.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="D"><span class="letter">D</span><span class="alt-t">Racionalidade de caráter pragmático.</span></label>
+      <label class="alt"><input type="radio" name="filo-q2" value="E"><span class="letter">E</span><span class="alt-t">Inclinação de natureza passional.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Hobbes defende que as pessoas abrem mão de parte da liberdade em troca de segurança, criando um Estado forte, o "Leviatã".</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Bentham é o pai do utilitarismo: o certo é calcular qual ação traz mais felicidade. É uma razão prática, que olha as consequências: "racionalidade de caráter pragmático".</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">ENEM 2017 · Ética e política</span></div>
+    <div class="eq-text"><p>Se, pois, para as coisas que fazemos existe um fim que desejamos por ele mesmo e tudo o mais é desejado no interesse desse fim; evidentemente tal fim será o bem, ou antes, o sumo bem. Mas não terá o conhecimento, porventura, grande influência sobre essa vida? Se assim é, esforcemo-nos por determinar, ainda que em linhas gerais apenas, o que seja ele e de qual das ciências ou faculdades constitui o objeto. Ninguém duvidará de que o seu estudo pertença à arte mais prestigiosa e que mais verdadeiramente se pode chamar a arte mestra. Ora, a política mostra ser dessa natureza, pois é ela que determina quais as ciências que devem ser estudadas num Estado, quais são as que cada cidadão deve aprender, e até que ponto; e vemos que até as faculdades tidas em maior apreço, como a estratégia, a economia e a retórica, estão sujeitas a ela. Ora, como a política utiliza as demais ciências e, por outro lado, legisla sobre o que devemos e o que não devemos fazer, a finalidade dessa ciência deve abranger as das outras, de modo que essa finalidade será o bem humano.</p><cite>ARISTÓTELES. Ética a Nicômaco. In: Pensadores. São Paulo: Nova Cultural, 1991 (adaptado).</cite></div>
+    <p class="eq-cmd">Para Aristóteles, a relação entre o sumo bem e a organização da pólis pressupõe que</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="filo-q3" value="A"><span class="letter">A</span><span class="alt-t">O bem dos indivíduos consiste em cada um perseguir seus interesses.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="B"><span class="letter">B</span><span class="alt-t">O sumo bem é dado pela fé de que os deuses são os portadores da verdade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="C"><span class="letter">C</span><span class="alt-t">A política é a ciência que precede todas as demais na organização da cidade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="D"><span class="letter">D</span><span class="alt-t">A educação visa formar a consciência de cada pessoa para agir corretamente.</span></label>
+      <label class="alt"><input type="radio" name="filo-q3" value="E"><span class="letter">E</span><span class="alt-t">A democracia protege as atividades políticas necessárias para o bem comum.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Aristóteles chama a política de "arte mestra": é ela que decide quais ciências se estudam na cidade e legisla sobre o que fazer. Ou seja, vem antes de todas as outras na organização da pólis.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">ENEM 2018 · Ética</span></div>
+    <div class="eq-text"><p>A quem não basta pouco, nada basta.</p><cite>EPICURO. Os pensadores. São Paulo: Abril Cultural, 1985.</cite></div>
+    <p class="eq-cmd">Remanescente do período helenístico, a máxima apresentada valoriza a seguinte virtude:</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="filo-q4" value="A"><span class="letter">A</span><span class="alt-t">Esperança, tida como confiança no porvir.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="B"><span class="letter">B</span><span class="alt-t">Justiça, interpretada como retidão de caráter.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="C"><span class="letter">C</span><span class="alt-t">Temperança, marcada pelo domínio da vontade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="D"><span class="letter">D</span><span class="alt-t">Coragem, definida como fortitude na dificuldade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q4" value="E"><span class="letter">E</span><span class="alt-t">Prudência, caracterizada pelo correto uso da razão.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"A quem não basta pouco, nada basta": saber se contentar com pouco é moderação, controle dos desejos. Essa virtude se chama temperança, e é central para Epicuro.</p></div>
   </article>
   <article class="eq card" data-ans="B">
-    <div class="eq-head"><span>Questão 6</span><span class="eq-area">Filosofia · Política</span></div>
-    <div class="eq-text"><p>"O fim maior e principal para os homens unirem-se em sociedades políticas e submeterem-se a um governo é a conservação de sua propriedade." Para o autor, "propriedade" inclui a vida, a liberdade e os bens de cada pessoa.</p><cite>Adaptado de: LOCKE, J. Segundo Tratado sobre o Governo.</cite></div>
-    <p class="eq-cmd">Na teoria desse autor, se o governo violar esses direitos, o povo</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
-      <label class="alt"><input type="radio" name="filo-q6" value="A"><span class="letter">A</span><span class="alt-t">deve obedecer sempre, sem questionar.</span></label>
-      <label class="alt"><input type="radio" name="filo-q6" value="B"><span class="letter">B</span><span class="alt-t">tem o direito de resistir e substituir o governo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q6" value="C"><span class="letter">C</span><span class="alt-t">perde automaticamente todos os seus direitos.</span></label>
-      <label class="alt"><input type="radio" name="filo-q6" value="D"><span class="letter">D</span><span class="alt-t">deve voltar à guerra de todos contra todos.</span></label>
-      <label class="alt"><input type="radio" name="filo-q6" value="E"><span class="letter">E</span><span class="alt-t">precisa entregar seus bens ao rei.</span></label>
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">ENEM 2017 · Conhecimento</span></div>
+    <div class="eq-text"><p>Uma conversação de tal natureza transforma o ouvinte; o contato de Sócrates paralisa e embaraça; leva a refletir sobre si mesmo, a imprimir à atenção uma direção incomum: os temperamentais, como Alcibíades, sabem que encontrarão junto dele todo o bem de que são capazes, mas fogem porque receiam essa influência poderosa, que os leva a se censurarem. É sobretudo a esses jovens, muitos quase crianças, que ele tenta imprimir sua orientação.</p><cite>BRÉHIER,E. História da filosofia. São Paulo: Mestre Jou, 1977.</cite></div>
+    <p class="eq-cmd">O texto evidencia características do modo de vida socrático, que se baseava na</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="filo-q5" value="A"><span class="letter">A</span><span class="alt-t">Contemplação da tradição mítica.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="B"><span class="letter">B</span><span class="alt-t">Sustentação do método dialético.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="C"><span class="letter">C</span><span class="alt-t">Relativização do saber verdadeiro.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="D"><span class="letter">D</span><span class="alt-t">Valorização da argumentação retórica.</span></label>
+      <label class="alt"><input type="radio" name="filo-q5" value="E"><span class="letter">E</span><span class="alt-t">Investigação dos fundamentos da natureza.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Para Locke, o governo existe para proteger direitos naturais. Se não cumpre esse papel, perde a legitimidade, e o povo pode substituí-lo.</p></div>
-  </article>
-  <article class="eq card" data-ans="E">
-    <div class="eq-head"><span>Questão 7</span><span class="eq-area">Sociologia</span></div>
-    <div class="eq-text"><p>"Quando desempenho meus deveres de irmão, de esposo ou de cidadão, realizo deveres que estão definidos, fora de mim e de meus atos, no direito e nos costumes."</p><cite>Adaptado de: DURKHEIM, É. As regras do método sociológico.</cite></div>
-    <p class="eq-cmd">O trecho apresenta uma característica do conceito sociológico de</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
-      <label class="alt"><input type="radio" name="filo-q7" value="A"><span class="letter">A</span><span class="alt-t">mais-valia.</span></label>
-      <label class="alt"><input type="radio" name="filo-q7" value="B"><span class="letter">B</span><span class="alt-t">ação social.</span></label>
-      <label class="alt"><input type="radio" name="filo-q7" value="C"><span class="letter">C</span><span class="alt-t">luta de classes.</span></label>
-      <label class="alt"><input type="radio" name="filo-q7" value="D"><span class="letter">D</span><span class="alt-t">indústria cultural.</span></label>
-      <label class="alt"><input type="radio" name="filo-q7" value="E"><span class="letter">E</span><span class="alt-t">fato social.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O fato social é exterior ao indivíduo (está "fora de mim"), coercitivo e geral. É o conceito central de Durkheim.</p></div>
-  </article>
-  <article class="eq card" data-ans="C">
-    <div class="eq-head"><span>Questão 8</span><span class="eq-area">Sociologia</span></div>
-    <div class="eq-text"><p>"O trabalhador torna-se tanto mais pobre quanto mais riqueza produz. [...] O trabalhador torna-se uma mercadoria tanto mais barata quanto mais mercadorias cria."</p><cite>Adaptado de: MARX, K. Manuscritos econômico-filosóficos, 1844.</cite></div>
-    <p class="eq-cmd">O texto descreve a</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
-      <label class="alt"><input type="radio" name="filo-q8" value="A"><span class="letter">A</span><span class="alt-t">valorização crescente do trabalho operário.</span></label>
-      <label class="alt"><input type="radio" name="filo-q8" value="B"><span class="letter">B</span><span class="alt-t">ética protestante como origem do capitalismo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q8" value="C"><span class="letter">C</span><span class="alt-t">alienação e a exploração do trabalhador no capitalismo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q8" value="D"><span class="letter">D</span><span class="alt-t">solidariedade orgânica das sociedades modernas.</span></label>
-      <label class="alt"><input type="radio" name="filo-q8" value="E"><span class="letter">E</span><span class="alt-t">dominação carismática dos líderes políticos.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O trabalhador produz riqueza que não fica com ele: é a exploração (mais-valia). E ele não se reconhece no que produz: é a alienação.</p></div>
-  </article>
-  <article class="eq card" data-ans="A">
-    <div class="eq-head"><span>Questão 9</span><span class="eq-area">Sociologia · Trabalho</span></div>
-    <div class="eq-text"><p>No filme "Tempos Modernos" (1936), o personagem de Charles Chaplin passa o dia apertando parafusos numa esteira que se move cada vez mais rápido, até sofrer um colapso nervoso.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">A cena critica o modelo de produção</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
-      <label class="alt"><input type="radio" name="filo-q9" value="A"><span class="letter">A</span><span class="alt-t">fordista, baseado na linha de montagem e no trabalho repetitivo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q9" value="B"><span class="letter">B</span><span class="alt-t">toyotista, baseado na produção flexível.</span></label>
-      <label class="alt"><input type="radio" name="filo-q9" value="C"><span class="letter">C</span><span class="alt-t">artesanal, em que o trabalhador domina todo o processo.</span></label>
-      <label class="alt"><input type="radio" name="filo-q9" value="D"><span class="letter">D</span><span class="alt-t">feudal, baseado na servidão.</span></label>
-      <label class="alt"><input type="radio" name="filo-q9" value="E"><span class="letter">E</span><span class="alt-t">digital, baseado em aplicativos.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A esteira e o movimento repetido são marcas do fordismo. O filme mostra o trabalhador tratado como peça da máquina.</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Sócrates conversava fazendo perguntas que deixavam o outro "embaraçado" e o levavam a refletir sobre si mesmo. Esse é o método dialético. As letras C e D descrevem os sofistas, que ele criticava.</p></div>
   </article>
   <article class="eq card" data-ans="D">
-    <div class="eq-head"><span>Questão 10</span><span class="eq-area">Sociologia · Trabalho</span></div>
-    <div class="eq-text"><p>Uma pesquisa com entregadores por aplicativo mostrou jornadas longas, ausência de carteira assinada, de férias e de 13º salário, além de gastos com a própria moto, o combustível e o celular, que ficam por conta do trabalhador.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">A situação descrita é um exemplo de</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
-      <label class="alt"><input type="radio" name="filo-q10" value="A"><span class="letter">A</span><span class="alt-t">ampliação dos direitos trabalhistas.</span></label>
-      <label class="alt"><input type="radio" name="filo-q10" value="B"><span class="letter">B</span><span class="alt-t">fortalecimento dos sindicatos.</span></label>
-      <label class="alt"><input type="radio" name="filo-q10" value="C"><span class="letter">C</span><span class="alt-t">retorno ao modelo fordista clássico.</span></label>
-      <label class="alt"><input type="radio" name="filo-q10" value="D"><span class="letter">D</span><span class="alt-t">precarização das relações de trabalho.</span></label>
-      <label class="alt"><input type="radio" name="filo-q10" value="E"><span class="letter">E</span><span class="alt-t">redução da informalidade.</span></label>
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">ENEM 2018 · Política</span></div>
+    <div class="eq-text"><p>Tudo aquilo que é válido para um tempo de guerra, em que todo homem é inimigo de todo homem, é válido também para o tempo durante o qual os homens vivem sem outra segurança senão a que lhes pode ser oferecida por sua própria força e invenção.<br>HOBBES, T. Leviatã. São Paulo: Abril Cultural, 1983<br>Não vamos concluir, com Hobbes que, por não ter nenhuma ideia de bondade, o homem seja naturalmente mau. Esse autor deveria dizer que, sendo o estado de natureza aquele em que o cuidado de nossa conservação é menos prejudicial à dos outros, esse estado era, por conseguinte, o mais próprio à paz e o mais conveniente ao gênero humano.</p><cite>ROUSSEAU, J.-J. Discurso sobre a origem e o fundamento da desigualdade entre os homens. São Paulo: Martins Fontes, 1993 (adaptado).</cite></div>
+    <p class="eq-cmd">Os trechos apresentam divergências conceituais entre autores que sustentam um entendimento segundo o qual a igualdade entre os homens se dá em razão de uma</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="filo-q6" value="A"><span class="letter">A</span><span class="alt-t">Predisposição ao conhecimento.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="B"><span class="letter">B</span><span class="alt-t">Submissão ao transcendente.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="C"><span class="letter">C</span><span class="alt-t">Tradição epistemológica.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="D"><span class="letter">D</span><span class="alt-t">Condição original.</span></label>
+      <label class="alt"><input type="radio" name="filo-q6" value="E"><span class="letter">E</span><span class="alt-t">Vocação política.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Menos direitos, mais riscos para o trabalhador: precarização. Esse processo também é chamado de uberização.</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Hobbes acha o estado de natureza uma guerra, e Rousseau acha que é pacífico: eles divergem. Mas os dois partem da ideia de que, nessa situação original, antes do Estado, os homens eram iguais: a "condição original".</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">ENEM 2019 · Política</span></div>
+    <div class="eq-text"><p>Para Maquiavel, quando um homem decide dizer a verdade pondo em risco a própria integridade física, tal resolução diz respeito apenas a sua pessoa. Mas se esse mesmo homem é um chefe de Estado, os critérios pessoais não são mais adequados para decidir sobre ações cujas consequências se tornam tão amplas, já que o prejuízo não será apenas individual, mas coletivo. Nesse caso, conforme as circunstâncias e os fins a serem atingidos, pode-se decidir que o melhor para o bem comum seja mentir.</p><cite>ARANHA, M. L. Maquiavel: a lógica da força. São Paulo: Moderna, 2006 (adaptado).</cite></div>
+    <p class="eq-cmd">O texto aponta uma inovação na teoria política na época moderna expressa na distinção entre:</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="filo-q7" value="A"><span class="letter">A</span><span class="alt-t">Idealidade e efetividade da moral.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="B"><span class="letter">B</span><span class="alt-t">Nulidade e preservabilidade da liberdade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="C"><span class="letter">C</span><span class="alt-t">Ilegalidade e legitimidade do governante.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="D"><span class="letter">D</span><span class="alt-t">Verificabilidade e possibilidade da verdade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q7" value="E"><span class="letter">E</span><span class="alt-t">Objetividade e subjetividade do conhecimento.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Para Maquiavel, a moral pessoal (o ideal) não serve para o governante, que precisa olhar o efeito real (a efetividade) das ações para todos. É a separação entre moral e política.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">ENEM 2022 · Política</span></div>
+    <div class="eq-text"><p>Sempre que a relevância do discurso entra em jogo, a questão torna-se política por definição, pois é o discurso que faz do homem um ser político. E tudo que os homens fazem, sabem ou experimentam só tem sentido na medida em que pode ser discutido. Haverá, talvez, verdades que ficam além da linguagem e que podem ser de grande relevância para o homem no singular, isto é, para o homem que, seja o que for, não é um ser político. Mas homens no plural, isto é, os homens que vivem e se movem e agem neste mundo, só podem experimentar o significado das coisas por poderem falar e ser inteligíveis entre si e consigo mesmos.</p><cite>ARENDT, H. A condição humana. Rio de Janeiro: Forense Universitária, 2004.</cite></div>
+    <p class="eq-cmd">No trecho, a filósofa Hannah Arendt mostra a importância da linguagem no processo de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="filo-q8" value="A"><span class="letter">A</span><span class="alt-t">Entendimento da cultura.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="B"><span class="letter">B</span><span class="alt-t">Aumento da criatividade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="C"><span class="letter">C</span><span class="alt-t">Percepção da individualidade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="D"><span class="letter">D</span><span class="alt-t">Melhoria da técnica.</span></label>
+      <label class="alt"><input type="radio" name="filo-q8" value="E"><span class="letter">E</span><span class="alt-t">Construção da sociabilidade.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Para Arendt, é o discurso, a capacidade de falar e se entender, que faz de nós seres políticos e permite que os homens "no plural" vivam juntos. Isso é a construção da sociabilidade.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">ENEM 2022 · Política e poder</span></div>
+    <div class="eq-text"><p>O leproso é visto dentro de uma prática de rejeição, ao exílio-cerca; deixa-se que se perca lá dentro como numa massa que não têm muita importância diferenciar; os pestilentos são considerados num policiamento tático meticuloso onde as diferenciações individuais são os efeitos limitantes de um poder que se multiplica, se articula e se subdivide. O grande fechamento por um lado; o bom treinamento por outro. A lepra e a sua divisão; a peste e seus recortes. Uma é marcada; a outra, analisada e repartida. O exílio do leproso e a prisão da peste não trazem consigo o mesmo sonho político.</p><cite>FOUCAULT, M. Vigiar e punir: nascimento da prisão. Petrópolis: Vozes, 1987.</cite></div>
+    <p class="eq-cmd">Os modelos autoritários descritos no texto apontam para um sistema de controle que se baseia no(a):</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="filo-q9" value="A"><span class="letter">A</span><span class="alt-t">Formação de sociedade disciplinar.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="B"><span class="letter">B</span><span class="alt-t">Flexibilização do regramento social.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="C"><span class="letter">C</span><span class="alt-t">Banimento da autoridade repressora.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="D"><span class="letter">D</span><span class="alt-t">Condenação da degradação humana.</span></label>
+      <label class="alt"><input type="radio" name="filo-q9" value="E"><span class="letter">E</span><span class="alt-t">Hierarquização da burocracia estatal.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">No modelo da peste, cada pessoa é vigiada, separada e controlada por um poder que se espalha. É a sociedade disciplinar que Foucault descreve no livro "Vigiar e punir".</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">ENEM 2021 · Conhecimento</span></div>
+    <div class="eq-text"><p>A filosofia é como uma árvore, cujas raízes são a metafísica; o tronco, a física, e os ramos que saem do tronco são todas as outras ciências, que se reduzem a três principais: a medicina, a mecânica e a moral, entendendo por moral a mais elevada e a mais perfeita porque pressupõe um saber integral das outras ciências, e é o último grau da sabedoria.</p><cite>DESCARTES, R. Princípios da filosofia. Lisboa: Edições 70, 1997 (adaptado).</cite></div>
+    <p class="eq-cmd">Essa construção alegórica de Descartes, acerca da condição epistemológica da filosofia, tem como objetivo</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="filo-q10" value="A"><span class="letter">A</span><span class="alt-t">Sustentar a unidade essencial do conhecimento.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="B"><span class="letter">B</span><span class="alt-t">Refutar o elemento fundamental das crenças.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="C"><span class="letter">C</span><span class="alt-t">Impulsionar o pensamento especulativo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="D"><span class="letter">D</span><span class="alt-t">Recepcionar o método experimental.</span></label>
+      <label class="alt"><input type="radio" name="filo-q10" value="E"><span class="letter">E</span><span class="alt-t">Incentivar a suspensão dos juízos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Na árvore de Descartes, todas as ciências (medicina, mecânica, moral) saem do mesmo tronco e da mesma raiz. A ideia é mostrar que o conhecimento é um todo único e ligado.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 11</span><span class="eq-area">ENEM 2020 · Conhecimento</span></div>
+    <div class="eq-text"><p>Adão, ainda que supuséssemos que suas faculdades racionais fossem inteiramente perfeitas desde o início, não poderia ter inferido da fluidez e transparência da água que ela o sufocaria, nem da luminosidade e calor do fogo que este poderia consumi-lo. Nenhum objeto jamais revela, pelas qualidades que aparecem aos sentidos, nem as causas que o produziram, nem os efeitos que dele provirão; e tampouco nossa razão é capaz de extrair, sem auxílio da experiência, qualquer conclusão referente à existência efetiva de coisas ou questões de fato.</p><cite>HUME, D. Uma investigação sobre o entendimento humano. São Paulo: Unesp, 2003.</cite></div>
+    <p class="eq-cmd">Segundo o autor, qual é a origem do conhecimento humano?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 11</legend>
+      <label class="alt"><input type="radio" name="filo-q11" value="A"><span class="letter">A</span><span class="alt-t">A potência inata da mente.</span></label>
+      <label class="alt"><input type="radio" name="filo-q11" value="B"><span class="letter">B</span><span class="alt-t">A revelação da inspiração divina.</span></label>
+      <label class="alt"><input type="radio" name="filo-q11" value="C"><span class="letter">C</span><span class="alt-t">O estudo das tradições filosóficas.</span></label>
+      <label class="alt"><input type="radio" name="filo-q11" value="D"><span class="letter">D</span><span class="alt-t">A vivência dos fenômenos do mundo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q11" value="E"><span class="letter">E</span><span class="alt-t">O desenvolvimento do raciocínio abstrato.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Hume é empirista: nem um Adão com a razão perfeita saberia que a água afoga sem experimentar. O conhecimento vem da experiência, da "vivência dos fenômenos do mundo". A letra A seria a visão racionalista.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 12</span><span class="eq-area">ENEM 2015 · Sociologia</span></div>
+    <div class="eq-text"><p>A crescente intelectualização e racionalização não indicam um conhecimento maior e geral das condições sob as quais vivemos. Significa a crença em que, se quiséssemos, poderíamos ter esse conhecimento a qualquer momento. Não há forças misteriosas incalculáveis; podemos dominar todas as coisas pelo cálculo.</p><cite>WEBER, M. A ciência como vocação. In: GERTH, H.; MILLS, W. (Org.). Max Weber: ensaios de sociologia. Rio de Janeiro: Zahar, 1979 (adaptado).</cite></div>
+    <p class="eq-cmd">Tal como apresentada no texto, a proposição de Max Weber a respeito do processo de desencantamento do mundo evidencia o(a)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 12</legend>
+      <label class="alt"><input type="radio" name="filo-q12" value="A"><span class="letter">A</span><span class="alt-t">Progresso civilizatório como decorrência da expansão do industrialismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q12" value="B"><span class="letter">B</span><span class="alt-t">Extinção do pensamento mítico como um desdobramento do capitalismo.</span></label>
+      <label class="alt"><input type="radio" name="filo-q12" value="C"><span class="letter">C</span><span class="alt-t">Emancipação como consequência do processo de racionalização da vida.</span></label>
+      <label class="alt"><input type="radio" name="filo-q12" value="D"><span class="letter">D</span><span class="alt-t">Afastamento de crenças tradicionais como uma característica da modernidade.</span></label>
+      <label class="alt"><input type="radio" name="filo-q12" value="E"><span class="letter">E</span><span class="alt-t">Fim do monoteísmo como condição para a consolidação da ciência.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O desencantamento do mundo, para Weber, é quando a sociedade passa a explicar tudo pela razão e pelo cálculo, deixando de lado as explicações mágicas e religiosas. É uma marca da modernidade. Cuidado com a letra C: Weber não via isso como libertação.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 13</span><span class="eq-area">ENEM 2020 · Trabalho</span></div>
+    <div class="eq-text"><p>“O toyotismo, a partir dos anos 1970, teve grande impacto no mundo ocidental, quando se mostrou para os países avançados como uma opção possível para a superação de uma crise de acumulação.”</p><cite>ANTUNES, R. Os sentidos do trabalho: ensaio sobre a afirmação e a negação do trabalho. São Paulo: Boitempo. 2009. Adaptado.</cite></div>
+    <p class="eq-cmd">A característica organizacional do modelo em questão, requerida no contexto de crise, foi o(a)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 13</legend>
+      <label class="alt"><input type="radio" name="filo-q13" value="A"><span class="letter">A</span><span class="alt-t">Expansão dos grandes estoques.</span></label>
+      <label class="alt"><input type="radio" name="filo-q13" value="B"><span class="letter">B</span><span class="alt-t">Incremento da fabricação em massa.</span></label>
+      <label class="alt"><input type="radio" name="filo-q13" value="C"><span class="letter">C</span><span class="alt-t">Adequação da produção à demanda.</span></label>
+      <label class="alt"><input type="radio" name="filo-q13" value="D"><span class="letter">D</span><span class="alt-t">Aumento da mecanização do trabalho.</span></label>
+      <label class="alt"><input type="radio" name="filo-q13" value="E"><span class="letter">E</span><span class="alt-t">Centralização das etapas de planejamento.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O toyotismo produz só o que foi vendido (just in time), com estoque mínimo: adequa a produção à demanda. As letras A e B (grandes estoques e produção em massa) descrevem o fordismo.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 14</span><span class="eq-area">ENEM 2020 · Trabalho</span></div>
+    <div class="eq-text"><p>Nas últimas décadas, uma acentuada feminização no mundo do trabalho vem ocorrendo. Se a participação masculina pouco cresceu no período pós-1970, a intensificação da inserção das mulheres foi o traço marcante. Entretanto, essa presença feminina se dá mais no espaço dos empregos precários, onde a exploração, em grande medida, se encontra mais acentuada.</p><cite>NOGUEIRA, C. M. As trabalhadoras do telemarketing: uma nova divisão sexual do trabalho? In: ANTUNES, R. et al. Infoproletários: degradação real do trabalho virtual. São Paulo: Boitempo, 2009.</cite></div>
+    <p class="eq-cmd">A transformação descrita no texto tem sido insuficiente para o estabelecimento de uma condição de igualdade de oportunidade em virtude da(s)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 14</legend>
+      <label class="alt"><input type="radio" name="filo-q14" value="A"><span class="letter">A</span><span class="alt-t">Estagnação de direitos adquiridos e do anacronismo da legislação vigente.</span></label>
+      <label class="alt"><input type="radio" name="filo-q14" value="B"><span class="letter">B</span><span class="alt-t">Manutenção do status quo gerencial e dos padrões de socialização familiar.</span></label>
+      <label class="alt"><input type="radio" name="filo-q14" value="C"><span class="letter">C</span><span class="alt-t">Desestruturação da herança patriarcal e das mudanças do perfil ocupacional.</span></label>
+      <label class="alt"><input type="radio" name="filo-q14" value="D"><span class="letter">D</span><span class="alt-t">Disputas na composição sindical e da presença na esfera político-partidária.</span></label>
+      <label class="alt"><input type="radio" name="filo-q14" value="E"><span class="letter">E</span><span class="alt-t">Exigências de aperfeiçoamento profissional e de habilidades na competência diretiva.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">As mulheres entraram no mercado de trabalho, mas em empregos mais precários, e ainda carregam o trabalho de casa. Os padrões de gestão nas empresas e a criação dentro das famílias continuam os mesmos.</p></div>
   </article>
   <div class="sim-end card">
     <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
