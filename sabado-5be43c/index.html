@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sábado da Adriely</title>
-<meta name="description" content="Hoje: Linguagens de manhã e redação à tarde. À noite, separar tudo para domingo.">
+<meta name="description" content="Hoje: Linguagens com 12 questões reais do ENEM e linguagem formal para a redação. À noite, separar tudo para domingo.">
 <meta property="og:title" content="Sábado da Adriely">
-<meta property="og:description" content="Hoje: Linguagens de manhã e redação à tarde. À noite, separar tudo para domingo.">
+<meta property="og:description" content="Hoje: Linguagens com 12 questões reais do ENEM e linguagem formal para a redação. À noite, separar tudo para domingo.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -249,6 +249,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 /* Tabelas */
 .tbl-wrap table { font-size: 0.94rem; }
 .tbl-wrap td { vertical-align: top; }
+.tbl-wrap table.fit { table-layout: fixed; }
+.tbl-wrap table.fit th, .tbl-wrap table.fit td { overflow-wrap: anywhere; hyphens: auto; padding: 8px 6px; }
+.tbl-wrap table.fit th { letter-spacing: 0; font-size: 0.72rem; }
 /* Respostas abertas */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
@@ -269,12 +272,14 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
   <h1>Adriely, hoje é <span>Linguagens e redação</span></h1>
   <div class="today-pill"><span class="dot"></span>Hoje: Linguagens e redação</div>
-  <p class="lede">Último dia de estudo! De manhã, <strong>Linguagens</strong> e um simulado de 10 questões. À tarde, uma <strong>redação de treino</strong> com o coringa. À noite, descanso.</p>
+  <p class="lede">Último dia de estudo! De manhã, <strong>Linguagens</strong> com um simulado de <strong>12 questões reais do ENEM</strong>. À tarde, <strong>linguagem formal para a redação</strong> e uma redação de treino com o coringa. À noite, descanso.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-sab">Missão de hoje</a>
+    <a href="#mais-cai">O que mais cai</a>
     <a href="#linguagens">Linguagens</a>
     <a href="#simulado">Simulado</a>
     <a href="#lembretes">Lembretes</a>
+    <a href="#formal">Linguagem formal</a>
     <a href="#treino2">Tema de treino</a>
     <a href="#coringa">Redação coringa</a>
     <a href="#checklist">Checklist</a>
@@ -287,7 +292,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <div class="howto">
       <div><span class="n">1</span><p>Hoje tem duas partes: <strong>Linguagens de manhã</strong> e <strong>redação à tarde</strong>. Siga a missão.</p></div>
       <div><span class="n">2</span><p>Em Linguagens, o mais importante é <strong>ler com atenção</strong>. Os conceitos daqui ajudam a entender o que as perguntas pedem.</p></div>
-      <div><span class="n">3</span><p>Depois de estudar, faça o <strong>simulado</strong> de 10 questões.</p></div>
+      <div><span class="n">3</span><p>Depois de estudar, faça o <strong>simulado com 12 questões reais do ENEM</strong>.</p></div>
       <div><span class="n">4</span><p>À noite, <strong>pare de estudar</strong>. Separe as coisas de domingo e durma cedo.</p></div>
     </div>
   </div>
@@ -298,15 +303,45 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <span class="tab sun">Missão de hoje · sábado, 7/11</span>
     <h2>Linguagens e redação</h2>
     <p class="muted"><strong>Manhã</strong></p>
+    <label class="check"><input type="checkbox" id="s-0"><span class="bubble"></span><span class="txt">Ler <a href="#mais-cai">O que mais cai</a> para saber onde focar (≈ 10 min).</span></label>
     <label class="check"><input type="checkbox" id="s-1"><span class="bubble"></span><span class="txt">Estudar <a href="#linguagens">Linguagens</a> (≈ 1h30).</span></label>
     <label class="check"><input type="checkbox" id="s-2"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado do dia</a>: 10 questões no estilo ENEM (≈ 30 min).</span></label>
     <p class="muted"><strong>Tarde</strong></p>
-    <label class="check"><input type="checkbox" id="s-3"><span class="bubble"></span><span class="txt">Reler os <a href="#lembretes">lembretes da sua redação</a>.</span></label>
+    <label class="check"><input type="checkbox" id="s-3"><span class="bubble"></span><span class="txt">Reler os <a href="#lembretes">lembretes da sua redação</a> e estudar a <a href="#formal">linguagem formal para a redação</a> (≈ 30 min).</span></label>
     <label class="check"><input type="checkbox" id="s-4"><span class="bubble"></span><span class="txt">Fazer o <a href="#treino2">tema de treino</a> com cronômetro de 1h10, usando o <a href="#coringa">esqueleto coringa</a>.</span></label>
     <label class="check"><input type="checkbox" id="s-5"><span class="bubble"></span><span class="txt">Tirar foto da folha definitiva e mandar para correção.</span></label>
     <p class="muted"><strong>Noite</strong></p>
     <label class="check"><input type="checkbox" id="s-6"><span class="bubble"></span><span class="txt">Separar tudo do <a href="#checklist">checklist do domingo</a> numa bolsa e ver o trajeto até o local de prova.</span></label>
     <label class="check"><input type="checkbox" id="s-7"><span class="bubble"></span><span class="txt">Fazer algo que relaxe e dormir cedo. Nada de virar a noite estudando.</span></label>
+  </div>
+</section>
+
+<section id="mais-cai">
+  <div class="tabrow"><span class="tab sun">Pesquisa</span></div>
+  <h2>O que mais cai em Linguagens</h2>
+  <p class="intro">Analisei as questões de Linguagens das provas do ENEM de <strong>2009 a 2023</strong>: 391 de Português, Literatura, Artes e Educação Física, mais as de Inglês e Espanhol. Os dados vêm de um banco público com as provas e o gabarito oficial.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Assunto</th><th>Questões</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Gêneros textuais e objetivo do texto</strong> (para que o texto serve)</td><td>118</td></tr>
+        <tr><td><strong>Literatura</strong> (poemas, romances, movimentos)</td><td>99</td></tr>
+        <tr><td><strong>Artes</strong> (pintura, música, teatro, dança, cinema)</td><td>96</td></tr>
+        <tr><td><strong>Tecnologia, internet e mídias</strong></td><td>64</td></tr>
+        <tr><td><strong>Educação Física e práticas corporais</strong></td><td>37</td></tr>
+        <tr><td><strong>Variação linguística</strong> e norma-padrão</td><td>36</td></tr>
+        <tr><td><strong>Figuras de linguagem</strong>, ironia e humor</td><td>30</td></tr>
+        <tr><td><strong>Coesão</strong> e gramática dentro do texto</td><td>21</td></tr>
+        <tr><td><strong>Intertextualidade</strong> e paródia</td><td>14</td></tr>
+        <tr><td><strong>Funções da linguagem</strong> (quando citadas pelo nome)</td><td>11</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">Uma questão pode tratar de mais de um assunto. Os números servem para mostrar o que pesa mais.</p>
+  <div class="grid">
+    <div class="card"><h3>Quase tudo é leitura</h3><p class="muted">O assunto número 1 é entender <strong>para que o texto foi escrito</strong> e para quem. Pergunte sempre: "qual é o objetivo deste texto?".</p></div>
+    <div class="card"><h3>Gramática dentro do texto</h3><p class="muted">O ENEM quase não pede regra solta. Pede o <strong>efeito</strong> que uma palavra, um pronome ou um conectivo causa no texto.</p></div>
+    <div class="card"><h3>Formal x informal</h3><p class="muted">Várias questões perguntam <strong>por que um texto usa a norma-padrão</strong> (um hino, uma petição) ou por que usa linguagem informal (uma crônica). É a mesma lógica da sua redação.</p></div>
   </div>
 </section>
 
@@ -476,148 +511,176 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 
 <section id="simulado" class="sim">
   <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
-  <h2>Simulado de Linguagens</h2>
-  <p class="intro">Dez questões no estilo do ENEM. As duas últimas são de língua estrangeira: faça só a da língua que você escolheu na inscrição (Inglês ou Espanhol). A outra é bônus.</p>
+  <h2>Simulado com questões reais do ENEM</h2>
+  <p class="intro">Doze questões que <strong>caíram de verdade</strong> no ENEM, de 2017 a 2022: variação linguística, funções da linguagem, gêneros, literatura, Educação Física e língua estrangeira. O texto e o gabarito são os oficiais. As duas últimas são de Inglês e de Espanhol: faça a da língua que você escolheu, e a outra é bônus.</p>
   <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer em até 3 minutos por questão, como na prova.</p></div>
   <article class="eq card" data-ans="B">
-    <div class="eq-head"><span>Questão 1</span><span class="eq-area">Linguagens · Funções da linguagem</span></div>
-    <div class="eq-text"><p>Doe sangue. Uma única doação pode salvar até quatro vidas. Procure o hemocentro mais perto de você.</p><cite>Campanha de doação de sangue (texto elaborado para este simulado).</cite></div>
-    <p class="eq-cmd">Nesse texto de campanha, predomina a função da linguagem</p>
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">ENEM 2018 · Variação linguística</span></div>
+    <div class="eq-text"><p>Ó Pátria amada,<br>Idolatrada,<br>Salve! Salve!<br>Brasil, de amor eterno seja símbolo<br>O lábaro que ostentas estrelado,<br>E diga o verde-louro dessa flâmula<br>— “Paz no futuro e glória no passado.”<br>Mas, se ergues da justiça a clava forte,<br>Verás que um filho teu não foge à luta,<br>Nem teme, quem te adora, a própria morte.<br>Terra adorada,<br>Entre outras mil,<br>És tu, Brasil,<br>Ó Pátria amada!<br>Dos filhos deste solo és mãe gentil,<br>Pátria amada, Brasil!</p><cite>Hino Nacional do Brasil. Letra: Joaquim Osório Duque Estrada. Música: Francisco Manuel da Silva (fragmento).</cite></div>
+    <p class="eq-cmd">O uso da norma-padrão na letra do Hino Nacional do Brasil é justificado por tratar-se de um(a)</p>
     <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
-      <label class="alt"><input type="radio" name="ling-q1" value="A"><span class="letter">A</span><span class="alt-t">referencial, pois apenas informa dados científicos.</span></label>
-      <label class="alt"><input type="radio" name="ling-q1" value="B"><span class="letter">B</span><span class="alt-t">apelativa, pois busca convencer o leitor a agir.</span></label>
-      <label class="alt"><input type="radio" name="ling-q1" value="C"><span class="letter">C</span><span class="alt-t">fática, pois testa o canal de comunicação.</span></label>
-      <label class="alt"><input type="radio" name="ling-q1" value="D"><span class="letter">D</span><span class="alt-t">metalinguística, pois explica o próprio código.</span></label>
-      <label class="alt"><input type="radio" name="ling-q1" value="E"><span class="letter">E</span><span class="alt-t">emotiva, pois expressa os sentimentos do autor.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="A"><span class="letter">A</span><span class="alt-t">Reverência de um povo a seu país.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="B"><span class="letter">B</span><span class="alt-t">Gênero solene de característica protocolar.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="C"><span class="letter">C</span><span class="alt-t">Canção concebida sem interferência da oralidade.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="D"><span class="letter">D</span><span class="alt-t">Escrita de uma fase mais antiga da língua portuguesa.</span></label>
+      <label class="alt"><input type="radio" name="ling-q1" value="E"><span class="letter">E</span><span class="alt-t">Artefato cultural respeitado por todo o povo brasileiro.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Verbos no imperativo ("doe", "procure") chamam o leitor para agir. Isso é a função apelativa (ou conativa).</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O hino é um gênero solene, cantado em cerimônias oficiais, e por isso segue o protocolo da linguagem formal. É a mesma lógica da sua redação: situação formal pede norma-padrão.</p></div>
   </article>
   <article class="eq card" data-ans="A">
-    <div class="eq-head"><span>Questão 2</span><span class="eq-area">Linguagens · Variação linguística</span></div>
-    <div class="eq-text"><p>— Ocê vai na festa de São João amanhã?<br>— Vô sim, sô! Num perco por nada.</p><cite>Diálogo entre dois amigos do interior de Minas Gerais (texto elaborado para este simulado).</cite></div>
-    <p class="eq-cmd">O modo de falar dos personagens deve ser entendido como</p>
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">ENEM 2020 · Variação e Literatura</span></div>
+    <div class="eq-text"><p>Policarpo Quaresma, cidadão brasileiro, funcionário público, certo de que a língua portuguesa é emprestada ao Brasil; certo também de que, por esse fato, o falar e o escrever em geral, sobretudo no campo das letras, se veem na humilhante contingência de sofrer continuamente censuras ásperas dos proprietários da língua; sabendo, além, que, dentro do nosso país, os autores e os escritores, com especialidade os gramáticos, não se entendem no tocante à correção gramatical, vendo-se, diariamente, surgir azedas polêmicas entre os mais profundos estudiosos do nosso idioma — usando do direito que lhe confere a Constituição, vem pedir que o Congresso Nacional decrete o tupi-guarani como língua oficial e nacional do povo brasileiro.</p><cite>BARRETO. L. Triste fim de Policarpo Quaresma. Disponível em: www.dominiopublico.gov.br. Acesso em: 26 jun. 2012</cite></div>
+    <p class="eq-cmd">Nessa petição da pitoresca personagem do romance de Lima Barreto, o uso da norma-padrão justifica-se pela</p>
     <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
-      <label class="alt"><input type="radio" name="ling-q2" value="A"><span class="letter">A</span><span class="alt-t">uma variação regional da língua, adequada à conversa informal.</span></label>
-      <label class="alt"><input type="radio" name="ling-q2" value="B"><span class="letter">B</span><span class="alt-t">um erro de português que deve ser corrigido.</span></label>
-      <label class="alt"><input type="radio" name="ling-q2" value="C"><span class="letter">C</span><span class="alt-t">prova de que os personagens não foram à escola.</span></label>
-      <label class="alt"><input type="radio" name="ling-q2" value="D"><span class="letter">D</span><span class="alt-t">uma linguagem própria de textos científicos.</span></label>
-      <label class="alt"><input type="radio" name="ling-q2" value="E"><span class="letter">E</span><span class="alt-t">uma forma de falar que não pertence ao português.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="A"><span class="letter">A</span><span class="alt-t">Situação social de enunciação representada.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="B"><span class="letter">B</span><span class="alt-t">Divergência teórica entre gramáticos e literatos.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="C"><span class="letter">C</span><span class="alt-t">Pouca representatividade das línguas indígenas.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="D"><span class="letter">D</span><span class="alt-t">Atitude irônica diante da língua dos colonizadores.</span></label>
+      <label class="alt"><input type="radio" name="ling-q2" value="E"><span class="letter">E</span><span class="alt-t">Tentativa de solicitação do documento demandado.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Para o ENEM, não existe fala errada, mas sim fala adequada à situação. Tratar esse jeito de falar como erro é preconceito linguístico.</p></div>
-  </article>
-  <article class="eq card" data-ans="D">
-    <div class="eq-head"><span>Questão 3</span><span class="eq-area">Linguagens · Literatura</span></div>
-    <div class="eq-text"><p>TEXTO I<br>"Minha terra tem palmeiras,<br>Onde canta o Sabiá"<br>(Gonçalves Dias, "Canção do exílio", 1843)<br><br>TEXTO II<br>"Minha terra tem palmares<br>Onde gorjeia o mar"<br>(Oswald de Andrade, "Canto de regresso à pátria", 1925)</p></div>
-    <p class="eq-cmd">Ao retomar o poema de Gonçalves Dias, o texto de Oswald de Andrade</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
-      <label class="alt"><input type="radio" name="ling-q3" value="A"><span class="letter">A</span><span class="alt-t">copia o poema romântico sem nenhuma alteração de sentido.</span></label>
-      <label class="alt"><input type="radio" name="ling-q3" value="B"><span class="letter">B</span><span class="alt-t">critica o uso de rimas na poesia brasileira.</span></label>
-      <label class="alt"><input type="radio" name="ling-q3" value="C"><span class="letter">C</span><span class="alt-t">rejeita qualquer referência à natureza do Brasil.</span></label>
-      <label class="alt"><input type="radio" name="ling-q3" value="D"><span class="letter">D</span><span class="alt-t">faz uma paródia, trocando "palmeiras" por "palmares" e trazendo uma referência à resistência negra.</span></label>
-      <label class="alt"><input type="radio" name="ling-q3" value="E"><span class="letter">E</span><span class="alt-t">imita o Barroco, com seus conflitos religiosos.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">É uma paródia (intertextualidade com mudança de sentido). "Palmares" lembra o quilombo e dá um tom crítico à visão romântica e idealizada do Brasil.</p></div>
-  </article>
-  <article class="eq card" data-ans="E">
-    <div class="eq-head"><span>Questão 4</span><span class="eq-area">Linguagens · Funções da linguagem</span></div>
-    <div class="eq-text"><p>"Lutar com palavras<br>é a luta mais vã.<br>Entanto lutamos<br>mal rompe a manhã."</p><cite>ANDRADE, C. D. O lutador.</cite></div>
-    <p class="eq-cmd">Nesses versos, o poeta fala sobre a dificuldade de escrever usando a própria escrita. Isso caracteriza a função</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
-      <label class="alt"><input type="radio" name="ling-q4" value="A"><span class="letter">A</span><span class="alt-t">fática.</span></label>
-      <label class="alt"><input type="radio" name="ling-q4" value="B"><span class="letter">B</span><span class="alt-t">referencial.</span></label>
-      <label class="alt"><input type="radio" name="ling-q4" value="C"><span class="letter">C</span><span class="alt-t">apelativa.</span></label>
-      <label class="alt"><input type="radio" name="ling-q4" value="D"><span class="letter">D</span><span class="alt-t">emotiva.</span></label>
-      <label class="alt"><input type="radio" name="ling-q4" value="E"><span class="letter">E</span><span class="alt-t">metalinguística.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Quando a linguagem fala de si mesma (um poema sobre escrever poemas), a função é metalinguística.</p></div>
-  </article>
-  <article class="eq card" data-ans="C">
-    <div class="eq-head"><span>Questão 5</span><span class="eq-area">Linguagens · Figuras de linguagem</span></div>
-    <div class="eq-text"><p>"Que maravilha: o ônibus atrasou quarenta minutos, começou a chover e, quando finalmente cheguei, a loja tinha acabado de fechar."</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">O efeito de humor da frase é construído principalmente por meio da</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
-      <label class="alt"><input type="radio" name="ling-q5" value="A"><span class="letter">A</span><span class="alt-t">metáfora, pois compara o ônibus à chuva.</span></label>
-      <label class="alt"><input type="radio" name="ling-q5" value="B"><span class="letter">B</span><span class="alt-t">personificação, pois dá vida à loja.</span></label>
-      <label class="alt"><input type="radio" name="ling-q5" value="C"><span class="letter">C</span><span class="alt-t">ironia, pois "maravilha" expressa o contrário do que o falante sente.</span></label>
-      <label class="alt"><input type="radio" name="ling-q5" value="D"><span class="letter">D</span><span class="alt-t">hipérbole, pois exagera o tamanho da loja.</span></label>
-      <label class="alt"><input type="radio" name="ling-q5" value="E"><span class="letter">E</span><span class="alt-t">antítese, pois opõe dia e noite.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Chamar uma situação ruim de "maravilha" é dizer o contrário do que se pensa: ironia.</p></div>
-  </article>
-  <article class="eq card" data-ans="A">
-    <div class="eq-head"><span>Questão 6</span><span class="eq-area">Linguagens · Literatura</span></div>
-    <div class="eq-text"><p>"Tupi, or not tupi that is the question."</p><cite>ANDRADE, O. Manifesto Antropófago, 1928.</cite></div>
-    <p class="eq-cmd">Ao brincar com a famosa frase de Shakespeare, o Manifesto Antropófago propõe que a cultura brasileira</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
-      <label class="alt"><input type="radio" name="ling-q6" value="A"><span class="letter">A</span><span class="alt-t">"devore" as influências estrangeiras e as transforme em algo novo e brasileiro.</span></label>
-      <label class="alt"><input type="radio" name="ling-q6" value="B"><span class="letter">B</span><span class="alt-t">copie fielmente os modelos culturais europeus.</span></label>
-      <label class="alt"><input type="radio" name="ling-q6" value="C"><span class="letter">C</span><span class="alt-t">rejeite qualquer contato com outras culturas.</span></label>
-      <label class="alt"><input type="radio" name="ling-q6" value="D"><span class="letter">D</span><span class="alt-t">volte às regras do Parnasianismo.</span></label>
-      <label class="alt"><input type="radio" name="ling-q6" value="E"><span class="letter">E</span><span class="alt-t">abandone as tradições indígenas.</span></label>
-    </fieldset>
-    <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Antropofagia é "comer" a cultura de fora e misturá-la com a nossa, criando algo original. É uma das ideias centrais do Modernismo.</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Policarpo escreve uma petição ao Congresso, uma situação oficial, e por isso usa a norma-padrão. A ironia do romance de Lima Barreto é que ele pede o tupi como língua oficial usando um português formal e perfeito.</p></div>
   </article>
   <article class="eq card" data-ans="B">
-    <div class="eq-head"><span>Questão 7</span><span class="eq-area">Linguagens · Gêneros textuais</span></div>
-    <div class="eq-text"><p>É inaceitável que, em pleno século XXI, tantas escolas públicas ainda não tenham biblioteca. Precisamos tratar a leitura como prioridade, porque um país que não lê não consegue se desenvolver.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">As expressões "é inaceitável" e "precisamos", junto com a defesa de um ponto de vista, indicam que o trecho pertence a um(a)</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
-      <label class="alt"><input type="radio" name="ling-q7" value="A"><span class="letter">A</span><span class="alt-t">notícia.</span></label>
-      <label class="alt"><input type="radio" name="ling-q7" value="B"><span class="letter">B</span><span class="alt-t">artigo de opinião.</span></label>
-      <label class="alt"><input type="radio" name="ling-q7" value="C"><span class="letter">C</span><span class="alt-t">verbete de dicionário.</span></label>
-      <label class="alt"><input type="radio" name="ling-q7" value="D"><span class="letter">D</span><span class="alt-t">receita.</span></label>
-      <label class="alt"><input type="radio" name="ling-q7" value="E"><span class="letter">E</span><span class="alt-t">bula de remédio.</span></label>
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">ENEM 2021 · Variação linguística</span></div>
+    <div class="eq-text"><p>Os linguistas têm notado a expansão do tratamento informal. “Tenho 78 anos e devia ser tratado por senhor, mas meus alunos mais jovens me tratam por você“, diz o professor Ataliba Castilho, aparentemente sem se incomodar com a informalidade, inconcebível em seus tempos de estudante. O você, porém, não reinará sozinho. O tu predomina em Porto Alegre e convive com o você no Rio de Janeiro e em Recife, enquanto você é o tratamento predominante em São Paulo, Curitiba, Belo Horizonte e Salvador. O tu já era mais próximo e menos formal que você nas quase 500 cartas do acervo on-line de uma instituição universitária, quase todas de poetas, políticos e outras personalidades do final do século XIX e início do XX.</p><cite>Disponível em: http://revistapesquisa.fapesp.br. Acesso em: 21 abr. 2015 (adaptado).</cite></div>
+    <p class="eq-cmd">No texto, constata-se que os usos de pronomes variaram ao longo do tempo e que atualmente têm empregos diversos pelas regiões do Brasil. Esse processo revela que</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="ling-q3" value="A"><span class="letter">A</span><span class="alt-t">A escolha de "você" ou de "tu" está condicionada à idade da pessoa que usa o pronome.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="B"><span class="letter">B</span><span class="alt-t">A possibilidade de se usar tanto "tu" quanto "você" caracteriza a diversidade da língua.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="C"><span class="letter">C</span><span class="alt-t">O pronome "tu" tem sido empregado em situações informais por todo o país.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="D"><span class="letter">D</span><span class="alt-t">A ocorrência simultânea de "tu" e de "você" evidencia a inexistência da distinção entre níveis de formalidade.</span></label>
+      <label class="alt"><input type="radio" name="ling-q3" value="E"><span class="letter">E</span><span class="alt-t">O emprego de "você" em documentos escritos demonstra que a língua tende a se manter inalterada.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O autor defende uma opinião com argumentos. Notícia só informa, sem opinar.</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"Tu" e "você" variam com a região e com o tempo, e os dois são corretos. Isso mostra a diversidade da língua, e não um erro. Para o ENEM, não existe forma "errada", existe forma adequada à situação.</p></div>
   </article>
   <article class="eq card" data-ans="E">
-    <div class="eq-head"><span>Questão 8</span><span class="eq-area">Linguagens · Educação Física</span></div>
-    <div class="eq-text"><p>Nas redes sociais, corpos editados por filtros e aplicativos se tornam referência. Muitos jovens passam a se sentir insatisfeitos com a própria aparência e recorrem a dietas radicais e até ao uso de anabolizantes.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">O texto faz uma crítica</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
-      <label class="alt"><input type="radio" name="ling-q8" value="A"><span class="letter">A</span><span class="alt-t">à prática regular de atividades físicas.</span></label>
-      <label class="alt"><input type="radio" name="ling-q8" value="B"><span class="letter">B</span><span class="alt-t">ao uso das redes sociais para estudar.</span></label>
-      <label class="alt"><input type="radio" name="ling-q8" value="C"><span class="letter">C</span><span class="alt-t">à alimentação equilibrada.</span></label>
-      <label class="alt"><input type="radio" name="ling-q8" value="D"><span class="letter">D</span><span class="alt-t">aos esportes coletivos nas escolas.</span></label>
-      <label class="alt"><input type="radio" name="ling-q8" value="E"><span class="letter">E</span><span class="alt-t">à imposição de padrões de beleza que podem prejudicar a saúde.</span></label>
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">ENEM 2017 · Variação linguística</span></div>
+    <div class="eq-text"><p>Sítio Gerimum<br>Este é o meu lugar (…)<br>Meu Gerimum é com g<br>Você pode ter estranhado<br>Gerimum em abundância<br>Aqui era plantado<br>E com a letra g<br>Meu lugar foi registrado.</p><cite>OLIVEIRA, H. D. Língua Portuguesa, n. 88, fev. 2013 (fragmento)</cite></div>
+    <p class="eq-cmd">Nos versos de um menino de 12 anos, o emprego da palavra “Gerimum”grafada com a letra “g” tem por objetivo</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="ling-q4" value="A"><span class="letter">A</span><span class="alt-t">Valorizar usos informais caracterizadores da norma nacional.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="B"><span class="letter">B</span><span class="alt-t">Confirmar o uso da norma-padrão em contexto da linguagem poética.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="C"><span class="letter">C</span><span class="alt-t">Enfatizar um processo recorrente na transformação da língua portuguesa.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="D"><span class="letter">D</span><span class="alt-t">Registrar a diversidade étnica e linguística presente no território brasileiro.</span></label>
+      <label class="alt"><input type="radio" name="ling-q4" value="E"><span class="letter">E</span><span class="alt-t">Reafirmar discursivamente a forte relação do falante com seu lugar de origem.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A Educação Física no ENEM valoriza o corpo saudável e critica a busca por um padrão de beleza irreal.</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O menino escreve "Gerimum" com g porque é assim que o nome do seu sítio foi registrado. A grafia mostra o carinho e a ligação dele com o lugar de onde vem, e não um erro.</p></div>
   </article>
   <article class="eq card" data-ans="C">
-    <div class="eq-head"><span>Questão 9</span><span class="eq-area">Inglês</span></div>
-    <div class="eq-text"><p>Recycling is important, but reducing consumption is even more important. The best waste is the waste we never produce.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">Segundo o texto, a atitude mais importante em relação ao lixo é</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
-      <label class="alt"><input type="radio" name="ling-q9" value="A"><span class="letter">A</span><span class="alt-t">reciclar tudo o que for possível.</span></label>
-      <label class="alt"><input type="radio" name="ling-q9" value="B"><span class="letter">B</span><span class="alt-t">queimar os resíduos.</span></label>
-      <label class="alt"><input type="radio" name="ling-q9" value="C"><span class="letter">C</span><span class="alt-t">reduzir o consumo.</span></label>
-      <label class="alt"><input type="radio" name="ling-q9" value="D"><span class="letter">D</span><span class="alt-t">produzir mais embalagens.</span></label>
-      <label class="alt"><input type="radio" name="ling-q9" value="E"><span class="letter">E</span><span class="alt-t">enterrar o lixo em aterros.</span></label>
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">ENEM 2022 · Funções da linguagem</span></div>
+    <div class="eq-text"><p>Assentamento<br>Assentamento<br>Zanza daqui<br>Zanza pra acolá<br>Fim de feira, periferia afora<br>A cidade não mora mais em mim<br>Francisco, Serafim<br>Vamos embora<br>Ver o capim<br>Ver o baobá<br>Vamos ver a campina quando flora<br>A piracema, rios contravim<br>Binho, Bel, Bia, Quim<br>Vamos embora<br>Quando eu morrer<br>Cansado de guerra<br>Morro de bem<br>Com a minha terra:<br>Cana, caqui<br>Inhame, abóbora<br>Onde só vento se semeava outrora<br>Amplidão, nação, sertão sem fim<br>Ó Manuel, Miguilim<br>Vamos embora</p><cite>BUARQUE, C. As cidades. Rio de Janeiro: RCA, 1998 (fragmento).</cite></div>
+    <p class="eq-cmd">Nesse texto, predomina a função poética da linguagem. Entretanto, a função emotiva pode ser identificada no verso:</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="ling-q5" value="A"><span class="letter">A</span><span class="alt-t">“Zanza pra acolá”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="B"><span class="letter">B</span><span class="alt-t">“Fim de feira, periferia afora”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="C"><span class="letter">C</span><span class="alt-t">“A cidade não mora mais em mim”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="D"><span class="letter">D</span><span class="alt-t">"Onde só vento se semeava outrora”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q5" value="E"><span class="letter">E</span><span class="alt-t">“Ó Manuel, Miguilim”.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"Reducing consumption is even more important" quer dizer que reduzir o consumo é ainda mais importante. Dica: "waste" é "lixo" ou "resíduo".</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A função emotiva mostra os sentimentos de quem fala, geralmente em 1ª pessoa. Em "A cidade não mora mais em mim", o eu lírico revela o que sente: não se sente mais parte da cidade.</p></div>
   </article>
   <article class="eq card" data-ans="D">
-    <div class="eq-head"><span>Questão 10</span><span class="eq-area">Espanhol</span></div>
-    <div class="eq-text"><p>En muchas ciudades latinoamericanas, el uso de la bicicleta crece porque es barata, no contamina y ayuda a evitar los atascos en el tráfico.</p><cite>Texto elaborado para este simulado.</cite></div>
-    <p class="eq-cmd">De acordo com o texto, duas vantagens da bicicleta são</p>
-    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
-      <label class="alt"><input type="radio" name="ling-q10" value="A"><span class="letter">A</span><span class="alt-t">ser rápida e evitar acidentes.</span></label>
-      <label class="alt"><input type="radio" name="ling-q10" value="B"><span class="letter">B</span><span class="alt-t">ser cara e confortável.</span></label>
-      <label class="alt"><input type="radio" name="ling-q10" value="C"><span class="letter">C</span><span class="alt-t">substituir o ônibus e o metrô.</span></label>
-      <label class="alt"><input type="radio" name="ling-q10" value="D"><span class="letter">D</span><span class="alt-t">não poluir e ajudar a evitar congestionamentos.</span></label>
-      <label class="alt"><input type="radio" name="ling-q10" value="E"><span class="letter">E</span><span class="alt-t">não precisar de manutenção e ser silenciosa.</span></label>
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">ENEM 2021 · Funções da linguagem</span></div>
+    <div class="eq-text"><p>Estojo escolar<br>Rio de Janeiro – Noite dessas, ciscando num desses canais a cabo, vi uns caras oferecendo maravilhas eletrônicas, bastava telefonar e eu receberia um notebook capaz de me ajudar a fabricar um navio, uma estação espacial.<br>[…] Como pretendo viajar esses dias, habilitei-me a comprar aquilo que os caras anunciavam como um top do top em matéria de computador portátil.<br>No sábado, recebi um embrulho complicado que necessitava de um manual de instruções para ser aberto.<br>[…] De repente, como vem acontecendo nos últimos tempos, houve um corte na memória e vi diante de mim meu primeiro estojo escolar. Tinha 5 anos e ia para para o jardim de infância.<br>Era uma caixinha comprida, envernizada, com uma tampa que corria nas bordas do corpo principal. Dentro, arrumados em divisões, havia lápis coloridos, um apontador, uma lapiseira cromada, uma régua de 20cm e uma borracha para apagar meus erros.<br>[…] Da caixinha vinha um cheiro gostoso, cheiro que nunca esqueci e que me tonteava de prazer. […]<br>O notebook que agora abro é negro e, em matéria de cheiro, é abominável. Cheira vilmente a telefone celular, a cabine de avião, a aparelho de ultrassonografia onde outro dia uma moça veio ver como sou por dentro. Acho que piorei de estojo e de vida.</p><cite>CONY, C. H. Crônicas para ler na escola. São Paulo. Objetiva, 2009 (adaptado)</cite></div>
+    <p class="eq-cmd">No texto, há marcas da função da linguagem que nele predomina. Essas marcas são responsáveis por colocar em foco o(a)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="ling-q6" value="A"><span class="letter">A</span><span class="alt-t">Mensagem, elevando-a à categoria de objeto estético do mundo das artes.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="B"><span class="letter">B</span><span class="alt-t">Código, transformando a linguagem utilizada no texto na própria temática abordada.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="C"><span class="letter">C</span><span class="alt-t">Contexto, fazendo das informações presentes no texto seu aspecto essencial.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="D"><span class="letter">D</span><span class="alt-t">Enunciador, buscando expressar sua atitude em relação ao conteúdo do enunciado.</span></label>
+      <label class="alt"><input type="radio" name="ling-q6" value="E"><span class="letter">E</span><span class="alt-t">Interlocutor, considerando-o responsável pelo direcionamemento dado à narrativa pelo enunciador.</span></label>
     </fieldset>
     <button type="button" class="eq-check">Confirmar</button>
-    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"No contamina" é "não polui", e "atascos" quer dizer "congestionamentos". Cuidado: "barata", em espanhol, também significa "barata" (preço baixo).</p></div>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A crônica é em 1ª pessoa e cheia de opiniões e sentimentos ("abominável", "acho que piorei de estojo e de vida"). O foco está em quem escreve, o enunciador: é a função emotiva.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">ENEM 2022 · Gêneros e registro</span></div>
+    <div class="eq-text"><p>Urgência emocional<br>Se tudo é para ontem, se a vida engata uma primeira e sai em disparada, se não há mais tempo para paradas estratégicas, caímos fatalmente no vício de querer que os amores sejam igualmente resolvidos num átimo de segundo. Temos pressa para ouvir “eu te amo”. Não vemos a hora de que fiquem estabelecidas as regras de convívio: somos namorados, ficantes, casados, amantes? Urgência emocional. Uma cilada. Associamos diversas palavras ao AMOR: paixão, romance, sexo, adrenalina, palpitação. Esquecemos, no entanto, da palavra que viabiliza esse sentimento: “paciência”. Amor sem paciência não vinga. Amor não pode ser mastigado e engolido com emergência, com fome desesperada. É uma refeição que pode durar uma vida.</p><cite>MEDEIROS, M. Disponível em: http:/porumavidasimples.blogspot.com.br. Acesso em: 20 ago. 2017 (adaptado).</cite></div>
+    <p class="eq-cmd">Nesse texto de opinião, as marcas linguísticas revelam uma situação distensa e de pouca formalidade, o que se evidencia pelo(a)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="ling-q7" value="A"><span class="letter">A</span><span class="alt-t">Impessoalização ao longo do texto, como em: “se não há mais tempo”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="B"><span class="letter">B</span><span class="alt-t">Construção de uma atmosfera de urgência, em palavras como: “pressa”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="C"><span class="letter">C</span><span class="alt-t">Repetição de uma determinada estrutura sintática, como em: “Se tudo é para ontem”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="D"><span class="letter">D</span><span class="alt-t">Ênfase no emprego da hipérbole, como em: “uma refeição que pode durar uma vida”.</span></label>
+      <label class="alt"><input type="radio" name="ling-q7" value="E"><span class="letter">E</span><span class="alt-t">Emprego de metáforas, como em: “a vida engata uma primeira e sai em disparada”.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Expressões do dia a dia, como "a vida engata uma primeira e sai em disparada", são metáforas que deixam o texto leve e informal. Ótimo para uma crônica, mas evite esse tipo de expressão coloquial na redação do ENEM.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">ENEM 2020 · Intertextualidade</span></div>
+    <div class="eq-text"><p>Senhor Juiz<br>O instrumento do “crime” que se arrola<br>Nesse processo de contravenção<br>Não é faca, revólver ou pistola,<br>Simplesmente, doutor, é um violão.<br>Será crime, afinal, será pecado,<br>Será delito de tão vis horrores,<br>Perambular na rua um desgraçado<br>Derramando nas praças suas dores?<br>Mande, pois, libertá-lo da agonia<br>(a consciência assim nos insinua)<br>Não sufoque o cantar que vem da rua,<br>Que vem da noite para saudar o dia.<br>É o apelo que aqui lhe dirigimos,<br>Na certeza do seu acolhimento<br>Juntada desta aos autos nós pedimos<br>E pedimos, enfim, deferimento</p><cite>Disponível em: www.migalhas.com.br. Acesso em: 23 set. 2020 (adaptado).</cite></div>
+    <p class="eq-cmd">Essa petição de habeas corpus, ao transgredir o rigor da linguagem jurídica,</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="ling-q8" value="A"><span class="letter">A</span><span class="alt-t">Permite que a narrativa seja objetiva e repleta de sentidos denotativos.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="B"><span class="letter">B</span><span class="alt-t">Mostra que o cordel explora termos próprios da esfera do direito.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="C"><span class="letter">C</span><span class="alt-t">Demonstra que o jogo de linguagem proposto atenua a gravidade do delito.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="D"><span class="letter">D</span><span class="alt-t">Exemplifica como o texto em forma de cordel compromete a solicitação pretendida.</span></label>
+      <label class="alt"><input type="radio" name="ling-q8" value="E"><span class="letter">E</span><span class="alt-t">Esclarece que os termos “crime” e “processo de contravenção” são sinônimos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Um pedido jurídico (habeas corpus) foi escrito em forma de poema, com rimas. Esse jogo de linguagem traz leveza e humor, e faz o "crime" (tocar violão na rua) parecer ainda menos grave.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">ENEM 2019 · Educação Física</span></div>
+    <div class="eq-text"><p>No Brasil, a disseminação de uma expectativa de corpo com base na estética da magreza é bastante grande e apresenta uma enorme repercussão, especialmente, se considerada do ponto de vista da realização pessoal. Em pesquisa feita na cidade de São Paulo, aparecem os percentuais de 90% entre as mulheres pesquisadas que se dizem preocupadas com seu peso corporal, sendo que 95% se sentem insatisfeitas com “seu próprio corpo”.</p><cite>SILVA, A. M. Corpo, ciência e mercado: reflexões acerca da gestação de um novo arquétipo da felicidade. Campinas: Autores Associados; Florianópolis: UFSC, 2001</cite></div>
+    <p class="eq-cmd">A preocupação excessiva com o “peso” corporal pode provocar o desenvolvimento de distúrbios associados diretamente à imagem do corpo, tais como</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="ling-q9" value="A"><span class="letter">A</span><span class="alt-t">Anorexia e bulimia.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="B"><span class="letter">B</span><span class="alt-t">Ortorexia e vigorexia.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="C"><span class="letter">C</span><span class="alt-t">Ansiedade e depressão.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="D"><span class="letter">D</span><span class="alt-t">Sobrepeso e fobia social.</span></label>
+      <label class="alt"><input type="radio" name="ling-q9" value="E"><span class="letter">E</span><span class="alt-t">Sedentarismo e obesidade.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A obsessão pela magreza está ligada à anorexia (deixar de comer) e à bulimia (comer e depois provocar vômito), dois distúrbios da imagem corporal. Cuidado com a B: a vigorexia é a obsessão por músculos.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">ENEM 2021 · Educação Física</span></div>
+    <div class="eq-text"><p>A história do futebol brasileiro contém, ao longo de um século, registros de episódios racistas. Eis o paradoxo: se, de um lado, a atividade futebolística era depreciada aos olhos da “boa sociedade” como profissão destinada aos pobres, negros e marginais, de outro, achava-se investida do poder de representar e projetar a nação em escala mundial. A Copa do Mundo no Brasil, em 1950, viria a se constituir, nesse sentido, em uma rara oportunidade. Contudo, na decisão contra o Uruguai sobreveio o inesperado revés. As crônicas esportivas elegiam o goleiro Barbosa e o defensor Bigode como bodes expiatórios, “descarregando nas costas” dos jogadores os “prejuízos” da derrota. Uma chibata moral, eis a a sentença proferida no tribunal do brancos. Nos anos 1970, por não atender às expectativas normativas suscitadas pelo estereótipo do “bom negro”, Paulo César Lima foi classificado como “jogador – problema”. Ele esboçava a revolta da chibata no futebol brasileiro. Enquanto Barbosa e Bigode, sem alternativa suportaram o linchamento moral na derrota 1950, Paulo César contra-atacava os que pretendiam condená-lo pelo insucesso de 1974. O jogador assumia as cores e as causas defendidas pela esquadra dos pretos em todas as esferas da vida social. “Sinto na pele esse racismo subjacente” revelou a imprensa francesa: “Isto é, ninguém ousa pronunciar a palavra ‘racismo’. Mas posso garantir que ele existe, mesmo na seleção Brasileira”. Sua ousadia constituiu em pronunciar a palavra interdita no espaço simbólico do discurso oficial para reafirmar o mito da democracia racial.</p><cite>Disponível em: https://observatorioracialfutebol.com.br. Acesso em: 22 jun. 2019 (adaptado)</cite></div>
+    <p class="eq-cmd">O texto atribui o enfraquecimento do mito da democracia racial no futebol à</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="ling-q10" value="A"><span class="letter">A</span><span class="alt-t">Responsabilização dos jogadores negros pela derrota na final da Copa de 1950.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="B"><span class="letter">B</span><span class="alt-t">Projeção mundial da nação por um esporte antes destinados aos pobres.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="C"><span class="letter">C</span><span class="alt-t">Depreciação de um esporte associado a marginalidade.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="D"><span class="letter">D</span><span class="alt-t">Interdição da palavra "racismo" no contexto esportivo.</span></label>
+      <label class="alt"><input type="radio" name="ling-q10" value="E"><span class="letter">E</span><span class="alt-t">Atitude contestadora de um "jogador-problema".</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O texto mostra que Paulo César, chamado de "jogador-problema", teve a coragem de dizer a palavra "racismo" em público. Essa atitude contestadora enfraqueceu o mito da democracia racial no futebol.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 11</span><span class="eq-area">ENEM 2022 · Inglês</span></div>
+    <div class="eq-text"><p>A Teen’s View of Social Media<br>Instagram is by far my favorite. It is made up of all photos and videos, which is perfect for visual people like me. There is the home page that showcases the posts from people you follow, an explore tab which offers posts from accounts all over the world, and your own page, with a notification tab to show who likes and comments on your posts.<br>It has some downsides though.  It is known to make many people feel insecure or down about themselves because the platform showcases the highlights of everyone’s lives, while rarely showing the negatives. This can make one feel like their life is not going as well as others, contributing to the growing rates of anxiety or depression in many teens today. There is an underlying desire for acceptance through the number of likes or followers one has.</p><cite>Disponível em: https://cyberbullying.org/. Acesso em: 29 out. 2021.</cite></div>
+    <p class="eq-cmd">O termo “downsides” introduz a ideia de que o Instagram é responsável por</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 11</legend>
+      <label class="alt"><input type="radio" name="ling-q11" value="A"><span class="letter">A</span><span class="alt-t">Oferecer recursos de fotografia.</span></label>
+      <label class="alt"><input type="radio" name="ling-q11" value="B"><span class="letter">B</span><span class="alt-t">Divulgar problemas dos usuários.</span></label>
+      <label class="alt"><input type="radio" name="ling-q11" value="C"><span class="letter">C</span><span class="alt-t">Estimular aceitação dos seguidores.</span></label>
+      <label class="alt"><input type="radio" name="ling-q11" value="D"><span class="letter">D</span><span class="alt-t">Provocar ansiedade nos adolescentes.</span></label>
+      <label class="alt"><input type="radio" name="ling-q11" value="E"><span class="letter">E</span><span class="alt-t">Aproximar pessoas ao redor do mundo.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">"Downsides" quer dizer desvantagens, pontos negativos. Logo depois, o texto diz que o Instagram pode deixar as pessoas inseguras e contribuir para a ansiedade e a depressão entre os adolescentes.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 12</span><span class="eq-area">ENEM 2022 · Espanhol</span></div>
+    <div class="eq-text"><p>Pequeño hermano<br>Es, no cabe duda, el instrumento más presente y más poderoso de todos los que entraron en nuestras vidas. Ni la televisión ni el ordenador, no hablemos ya del obsoleto fax o de las agendas o los libros electrónicos, ha tenido tal influencia, tal predicamento sobre nosotros. El móvil somos nosotros mismos. Todo desactivado e inerte, inocuo, ya les digo. Y de repente, tras un viaje y tres o cuatro imprudentes fotos, salta un aviso en la pantalla. Con sonido, además, pese a que tengo también todas las alertas desactivadas. Y mi monstruo doméstico me dice: Tienes un recuerdo nuevo. Lo repetiré: tienes un recuerdo nuevo. ¿Y tú qué sabes? ¿Y a ti, máquina demoníaca, qué te importa? ¿Cómo te atreves a decirme qué son o no son mis recuerdos? ¿Qué es esta intromisión, este descaro? El pequeño hermano lo sabe casi todo. Sólo hay una esperanza: que la obsolescencia programada mate antes al pequeño hermano y que nosotros sigamos vivos, con los recuerdos que nos dé la gana.</p><cite>FERNANDEZ, D, Disponível em: www.lavanguardia.com. Acesso em:  5 dez. 2018 (adaptado).</cite></div>
+    <p class="eq-cmd">No texto, autor faz uma crítica ao(à)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 12</legend>
+      <label class="alt"><input type="radio" name="ling-q12" value="A"><span class="letter">A</span><span class="alt-t">Conhecimento das pessoas sobre as tecnologias.</span></label>
+      <label class="alt"><input type="radio" name="ling-q12" value="B"><span class="letter">B</span><span class="alt-t">Uso do celular alheio por pessoas desautorizadas.</span></label>
+      <label class="alt"><input type="radio" name="ling-q12" value="C"><span class="letter">C</span><span class="alt-t">Funcionamento de recursos tecnológicos obsoletos.</span></label>
+      <label class="alt"><input type="radio" name="ling-q12" value="D"><span class="letter">D</span><span class="alt-t">Ingerência do celular sobre as escolhas dos usuários</span></label>
+      <label class="alt"><input type="radio" name="ling-q12" value="E"><span class="letter">E</span><span class="alt-t">Falta de informação sobre a configuração de alertas no celular</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O autor se irrita porque o celular ("móvil") decide sozinho o que é uma lembrança dele: "¿Cómo te atreves...?", "intromisión". A crítica é à interferência do celular nas escolhas do usuário.</p></div>
   </article>
   <div class="sim-end card">
     <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
@@ -683,6 +746,130 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <div class="card"><h3>4. Nada de "pra"</h3><p class="muted">Na redação, sempre "para". E confira a concordância: "eles tiveram", não "eles teve".</p></div>
     <div class="card"><h3>5. Sem nome na folha</h3><p class="muted">Na escola você escreveu o nome no topo. <strong>No ENEM, isso zera a redação.</strong></p></div>
   </div>
+</section>
+
+<section id="formal">
+  <div class="tabrow"><span class="tab sun">Tarde · redação</span></div>
+  <h2>Linguagem formal para a redação</h2>
+  <p class="intro">A redação do ENEM exige a <strong>norma-padrão</strong> (a Competência 1) e um texto <strong>impessoal</strong>. Aqui estão as trocas e as expressões que deixam o texto com cara de redação nota alta. Use com naturalidade: uma palavra difícil no lugar errado tira pontos.</p>
+
+  <h3>1. Troque o informal pelo formal</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th>Em vez de…</th><th>Escreva…</th></tr></thead>
+      <tbody>
+        <tr><td>a gente</td><td>nós, a sociedade, os cidadãos</td></tr>
+        <tr><td>pra</td><td>para</td></tr>
+        <tr><td>tá, tô, tava</td><td>está, estou, estava</td></tr>
+        <tr><td>tem (no sentido de existir): "tem muitas pessoas"</td><td><strong>há</strong> muitas pessoas, <strong>existem</strong> muitas pessoas</td></tr>
+        <tr><td>muita gente</td><td>parcela significativa da população</td></tr>
+        <tr><td>coisa</td><td>fator, aspecto, questão, elemento</td></tr>
+        <tr><td>muito, bem (intensidade)</td><td>significativamente, de modo expressivo</td></tr>
+        <tr><td>hoje em dia</td><td>atualmente, na contemporaneidade, no cenário atual</td></tr>
+        <tr><td>acabar com</td><td>combater, erradicar, mitigar (diminuir)</td></tr>
+        <tr><td>ajudar</td><td>contribuir para, auxiliar, favorecer</td></tr>
+        <tr><td>piorar</td><td>agravar, intensificar</td></tr>
+        <tr><td>por causa de</td><td>em virtude de, devido a, em razão de</td></tr>
+        <tr><td>fazer (uma ação)</td><td>realizar, promover, implementar</td></tr>
+        <tr><td>mostrar</td><td>evidenciar, demonstrar, revelar</td></tr>
+        <tr><td>falar (o autor fala)</td><td>afirmar, defender, ressaltar, apontar</td></tr>
+        <tr><td>o governo tem que</td><td>cabe ao Estado, é dever do Poder Público</td></tr>
+        <tr><td>continuar acontecendo</td><td>perpetuar-se, persistir</td></tr>
+        <tr><td>tipo, por exemplo assim</td><td>a exemplo de, como</td></tr>
+        <tr><td>né, aí, então (na fala)</td><td>apague: não se usa no texto escrito</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2. Seja impessoal</h3>
+  <div class="grid">
+    <div class="card"><h3>Não use "eu" nem "você"</h3><p class="muted">Em vez de "<strong>eu acho que</strong> a educação é importante", escreva "<strong>é fundamental</strong> que a educação..." ou "<strong>nota-se</strong> que...".</p></div>
+    <div class="card"><h3>Expressões impessoais</h3><p class="muted">Nota-se que · percebe-se que · observa-se que · é necessário · é imprescindível · torna-se evidente que.</p></div>
+    <div class="card"><h3>Nada de perguntas e exclamações</h3><p class="muted">Evite "Será que isso é justo?" e "Isso é um absurdo!". Afirme: "Essa realidade é injusta, pois...".</p></div>
+    <div class="card"><h3>Sem abreviações e gírias</h3><p class="muted">Nada de "vc", "pq", "td", "etc." em excesso, "mó", "zoar". Escreva tudo por extenso.</p></div>
+  </div>
+
+  <h3>3. Expressões prontas para cada parte</h3>
+  <div class="stack">
+    <div class="card bone">
+      <div class="part"><h3>Introdução</h3></div>
+      <ul class="clean">
+        <li><strong>Para trazer o repertório:</strong> "Segundo o filósofo X, ...", "De acordo com a Constituição Federal de 1988, ...", "Na obra <em>Y</em>, o autor X defende que..."</li>
+        <li><strong>Para ligar ao tema:</strong> "Sob essa ótica, ...", "Nesse contexto, ...", "Essa reflexão se aplica ao Brasil atual, visto que..."</li>
+        <li><strong>Para apresentar as causas:</strong> "Diante desse cenário, é fundamental analisar a negligência estatal e a falta de conscientização social, que agravam o problema."</li>
+      </ul>
+    </div>
+    <div class="card bone">
+      <div class="part"><h3>Desenvolvimento</h3></div>
+      <ul class="clean">
+        <li><strong>Para começar:</strong> "Em primeira análise, ...", "Sob esse viés, ...", "Inicialmente, ..."</li>
+        <li><strong>Para explicar:</strong> "Isso ocorre porque...", "Tal fato se deve a...", "Nesse sentido, ..."</li>
+        <li><strong>Para dar exemplo:</strong> "Prova disso é...", "A exemplo disso, ...", "Tal realidade evidencia que..."</li>
+        <li><strong>Para o segundo argumento:</strong> "Além disso, ...", "Ademais, ...", "Somado a isso, ...", "Em segunda análise, ..."</li>
+        <li><strong>Para fechar o parágrafo:</strong> "Desse modo, ...", "Por conseguinte, ...", "Consequentemente, ..."</li>
+      </ul>
+    </div>
+    <div class="card bone">
+      <div class="part"><h3>Conclusão</h3></div>
+      <ul class="clean">
+        <li><strong>Para retomar:</strong> "Portanto, é imprescindível combater...", "Em suma, ...", "Diante do exposto, ..."</li>
+        <li><strong>Para a proposta:</strong> "Cabe ao Ministério da Educação, em parceria com..., promover..., por meio de..., a fim de..."</li>
+        <li><strong>Para o detalhamento:</strong> "Essa ação deve ser realizada...", "Tais campanhas devem ser veiculadas..."</li>
+        <li><strong>Para fechar:</strong> "Assim, será possível...", "Dessa forma, o direito a... deixará de ser apenas uma promessa."</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>4. Verbos para citar o repertório</h3>
+  <div class="chips">
+    <span>afirma</span><span>defende</span><span>ressalta</span><span>evidencia</span><span>aponta</span><span>argumenta</span><span>assegura (para leis)</span><span>garante (para a Constituição)</span><span>alerta</span><span>denuncia</span>
+  </div>
+
+  <h3>5. Para não repetir as palavras do tema</h3>
+  <p>Este foi um dos pontos da correção da sua redação. Em vez de repetir a mesma palavra, retome com:</p>
+  <div class="chips">
+    <span>esse cenário</span><span>tal problemática</span><span>essa conjuntura</span><span>o referido grupo</span><span>tais indivíduos</span><span>essa parcela da população</span><span>essa questão</span><span>elas / eles</span>
+  </div>
+
+  <h3>6. Palavras formais que causam boa impressão</h3>
+  <p>Use quando souber o sentido. Uma ou duas por parágrafo bastam:</p>
+  <dl class="gloss">
+    <div><dt>Imprescindível</dt><dd>Indispensável, que não pode faltar.</dd></div>
+    <div><dt>Mitigar</dt><dd>Diminuir, suavizar. "Mitigar os efeitos da desigualdade."</dd></div>
+    <div><dt>Perpetuar</dt><dd>Fazer continuar por muito tempo. "Isso perpetua o preconceito."</dd></div>
+    <div><dt>Fomentar</dt><dd>Estimular, incentivar. "Fomentar o debate nas escolas."</dd></div>
+    <div><dt>Corroborar</dt><dd>Confirmar, reforçar. "Os dados corroboram essa ideia."</dd></div>
+    <div><dt>Negligência</dt><dd>Descuido, falta de atenção. "A negligência estatal."</dd></div>
+    <div><dt>Conjuntura</dt><dd>Situação, cenário. "Na conjuntura atual."</dd></div>
+    <div><dt>Premente</dt><dd>Urgente. "Uma necessidade premente."</dd></div>
+    <div><dt>Mazela</dt><dd>Problema, mal social. "As mazelas da desigualdade."</dd></div>
+    <div><dt>Inércia</dt><dd>Falta de ação. "A inércia do Poder Público."</dd></div>
+  </dl>
+
+  <h3>7. Erros comuns que tiram pontos</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th>Errado</th><th>Certo</th></tr></thead>
+      <tbody>
+        <tr><td>"afim de combater"</td><td>"<strong>a fim de</strong> combater" (é o da finalidade, na proposta!)</td></tr>
+        <tr><td>"a situação onde as pessoas vivem"</td><td>"a situação <strong>em que</strong> as pessoas vivem" ("onde" só para lugar)</td></tr>
+        <tr><td>"fazem dez anos"</td><td>"<strong>faz</strong> dez anos" (tempo: verbo no singular)</td></tr>
+        <tr><td>"haviam muitos problemas"</td><td>"<strong>havia</strong> muitos problemas" (haver = existir fica no singular)</td></tr>
+        <tr><td>"mais" no sentido de oposição</td><td>"<strong>mas</strong>" (oposição) · "mais" (quantidade)</td></tr>
+        <tr><td>"a muitos anos"</td><td>"<strong>há</strong> muitos anos" (tempo passado)</td></tr>
+        <tr><td>"devido a negligência"</td><td>"devido <strong>à</strong> negligência" (crase antes de palavra feminina)</td></tr>
+        <tr><td>"a nível de Brasil"</td><td>"no Brasil" ou "em nível nacional"</td></tr>
+        <tr><td>"seje", "esteje"</td><td>"<strong>seja</strong>", "<strong>esteja</strong>"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>8. Antes e depois: um trecho da sua redação</h3>
+  <div class="grid">
+    <div class="card"><h3>Antes</h3><p class="muted">"Em 1888 foi o fim da escravidão no Brasil, mas os negros não tinham <strong>pra</strong> onde ir e <strong>teve</strong> que continuar trabalhando para os brancos."</p></div>
+    <div class="card"><h3>Depois</h3><p>"Embora a escravidão tenha sido abolida em 1888, a população negra, sem acesso a terras ou a empregos dignos, permaneceu submetida a condições precárias de trabalho, o que perpetuou a desigualdade racial no país."</p></div>
+  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Sem "eu", sem "você", sem "pra" e sem gírias. Use <strong>"há"</strong> no lugar de "tem", <strong>"cabe ao Estado"</strong> no lugar de "o governo tem que" e <strong>"a fim de"</strong> (separado) na proposta. Retome as ideias com "esse cenário" e "tal problemática" para não repetir palavras.</p></div>
 </section>
 
 
