@@ -213,6 +213,11 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 .gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+.tbl-wrap table.fit { table-layout: fixed; }
+.tbl-wrap table.fit th, .tbl-wrap table.fit td { overflow-wrap: anywhere; hyphens: auto; padding: 8px 6px; }
+.tbl-wrap table.fit th { letter-spacing: 0; font-size: 0.72rem; }
 </style>
 
 </head>
@@ -226,6 +231,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <p class="lede"><strong>Hoje é o dia.</strong> Respire fundo: você se preparou. Aqui está o que você precisa lembrar.</p>
   <nav class="nav" aria-label="Partes do guia">
     <a href="#hoje-8">Missão de hoje</a>
+    <a href="#cola">Cola da redação</a>
     <a href="#checklist">Checklist</a>
     <a href="#prova">Na hora da prova</a>
   </nav>
@@ -247,10 +253,85 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
     <span class="tab sun">Missão de hoje · domingo, 8/11</span>
     <h2>Dia da prova</h2>
     <label class="check"><input type="checkbox" id="m8-1"><span class="bubble"></span><span class="txt">Tomar um bom café da manhã e almoçar comida leve, que você já conhece.</span></label>
+    <label class="check"><input type="checkbox" id="m8-0"><span class="bubble"></span><span class="txt">Reler a <a href="#cola">cola da redação</a> no café da manhã (≈ 10 min).</span></label>
     <label class="check"><input type="checkbox" id="m8-2"><span class="bubble"></span><span class="txt">Conferir o <a href="#checklist">checklist</a> antes de sair de casa.</span></label>
     <label class="check"><input type="checkbox" id="m8-3"><span class="bubble"></span><span class="txt">Chegar pelo menos 1 hora antes de os portões fecharem.</span></label>
     <label class="check"><input type="checkbox" id="m8-4"><span class="bubble"></span><span class="txt">Lembrar: garantir as fáceis, nada em branco, redação no esqueleto.</span></label>
   </div>
+</section>
+
+<section id="cola">
+  <div class="tabrow"><span class="tab sun">Cola de revisão · leia de manhã</span></div>
+  <h2>Palavras e conectivos para a redação</h2>
+  <p class="intro">Uma revisão rápida antes de sair de casa. Não precisa decorar tudo: escolha <strong>2 ou 3 de cada grupo</strong> e use na prova.</p>
+
+  <h3>1. Conectivos por função</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:34%">Para…</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Introduzir o repertório</strong></td><td>Segundo · De acordo com · Conforme · Como afirma · Na visão de</td></tr>
+        <tr><td><strong>Começar o 1º desenvolvimento</strong></td><td>Em primeira análise · Inicialmente · A princípio · Sob essa ótica</td></tr>
+        <tr><td><strong>Começar o 2º desenvolvimento</strong></td><td>Além disso · Ademais · Somado a isso · Em segunda análise</td></tr>
+        <tr><td><strong>Explicar a causa</strong></td><td>Isso ocorre porque · Visto que · Uma vez que · Já que · Tal fato se deve a</td></tr>
+        <tr><td><strong>Dar exemplo</strong></td><td>Prova disso é · A exemplo de · Como se observa em</td></tr>
+        <tr><td><strong>Opor ideias</strong></td><td>Entretanto · Contudo · No entanto · Todavia · Embora</td></tr>
+        <tr><td><strong>Mostrar consequência</strong></td><td>Consequentemente · Dessa forma · Por conseguinte · Com isso</td></tr>
+        <tr><td><strong>Ligar com o anterior</strong></td><td>Nesse sentido · Sob esse viés · Nesse contexto · Diante disso</td></tr>
+        <tr><td><strong>Concluir</strong></td><td>Portanto · Diante do exposto · Em suma · Logo</td></tr>
+        <tr><td><strong>Fazer a proposta</strong></td><td>Cabe ao · Para isso · Por meio de · A fim de · Paralelamente</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2. Palavras-chave da proposta (os 5 elementos)</h3>
+  <div class="grid">
+    <div class="card"><h3>Agente</h3><p class="muted"><strong>Cabe ao</strong> Ministério da Educação · <strong>É dever do</strong> Estado · O Congresso Nacional <strong>deve</strong></p></div>
+    <div class="card"><h3>Ação</h3><p class="muted">criar · promover · implementar · ampliar · fiscalizar · garantir · incluir no currículo</p></div>
+    <div class="card"><h3>Meio</h3><p class="muted"><strong>por meio de</strong> · <strong>mediante</strong> · <strong>através de</strong> campanhas, palestras, leis, investimentos</p></div>
+    <div class="card"><h3>Finalidade</h3><p class="muted"><strong>a fim de</strong> · <strong>com o objetivo de</strong> · <strong>para que</strong> · <strong>de modo a</strong></p></div>
+    <div class="card"><h3>Detalhamento</h3><p class="muted">"Essas ações devem ser…" · "contínuas" · "conduzidas por profissionais capacitados" · "veiculadas na TV e nas redes sociais"</p></div>
+  </div>
+
+  <h3>3. Palavras que deixam o texto formal</h3>
+  <dl class="gloss">
+    <div><dt>Imprescindível</dt><dd>Indispensável. "É imprescindível que o Estado..."</dd></div>
+    <div><dt>Mitigar</dt><dd>Diminuir. "Mitigar os impactos do problema."</dd></div>
+    <div><dt>Perpetuar</dt><dd>Fazer continuar. "Isso perpetua a desigualdade."</dd></div>
+    <div><dt>Fomentar</dt><dd>Estimular. "Fomentar o debate nas escolas."</dd></div>
+    <div><dt>Negligência</dt><dd>Descuido. "A negligência estatal."</dd></div>
+    <div><dt>Omissão</dt><dd>Não agir quando deveria. "A omissão do Poder Público."</dd></div>
+    <div><dt>Conjuntura</dt><dd>Cenário. "Na conjuntura atual."</dd></div>
+    <div><dt>Problemática</dt><dd>O problema. "Essa problemática exige..."</dd></div>
+    <div><dt>Mazela</dt><dd>Mal social. "As mazelas da sociedade."</dd></div>
+    <div><dt>Naturalização</dt><dd>Tratar como normal. "A naturalização da violência."</dd></div>
+    <div><dt>Corroborar</dt><dd>Confirmar. "Os dados corroboram essa ideia."</dd></div>
+    <div><dt>Premente</dt><dd>Urgente. "Uma necessidade premente."</dd></div>
+  </dl>
+
+  <h3>4. Para retomar ideias sem repetir</h3>
+  <div class="chips"><span>esse cenário</span><span>tal problemática</span><span>essa conjuntura</span><span>essa realidade</span><span>o referido grupo</span><span>tais indivíduos</span><span>essa parcela da população</span><span>esse impasse</span></div>
+
+  <h3>5. Expressões impessoais (no lugar de "eu acho")</h3>
+  <div class="chips"><span>Nota-se que</span><span>Percebe-se que</span><span>Observa-se que</span><span>É fundamental</span><span>É necessário</span><span>Torna-se evidente que</span><span>Convém ressaltar que</span></div>
+
+  <h3>6. Agentes e palavras-chave por tipo de tema</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:30%">Tema</th><th>Palavras-chave e agente</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Educação</strong></td><td>acesso, evasão escolar, qualidade do ensino · <strong>Ministério da Educação</strong></td></tr>
+        <tr><td><strong>Saúde</strong></td><td>SUS, prevenção, saúde mental, acesso a tratamento · <strong>Ministério da Saúde</strong></td></tr>
+        <tr><td><strong>Tecnologia e internet</strong></td><td>desinformação, dados pessoais, inclusão digital, inteligência artificial · <strong>Congresso Nacional e MEC</strong></td></tr>
+        <tr><td><strong>Meio ambiente</strong></td><td>sustentabilidade, desmatamento, eventos climáticos · <strong>Ministério do Meio Ambiente</strong></td></tr>
+        <tr><td><strong>Preconceito e grupos vulneráveis</strong></td><td>invisibilidade, estigma, inclusão, racismo estrutural · <strong>Ministério dos Direitos Humanos / da Igualdade Racial / das Mulheres</strong></td></tr>
+        <tr><td><strong>Trabalho</strong></td><td>precarização, informalidade, qualificação · <strong>Ministério do Trabalho</strong></td></tr>
+        <tr><td><strong>Cultura</strong></td><td>valorização, patrimônio, identidade · <strong>Ministério da Cultura</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note sun"><span class="label">Os 5 lembretes de ouro</span><p><strong>1.</strong> Palavras do tema em todos os parágrafos. <strong>2.</strong> "A fim de" separado. <strong>3.</strong> "Há" no lugar de "tem" (existir). <strong>4.</strong> Nada de "eu", "você", "a gente" e "pra". <strong>5.</strong> Nada de nome na folha.</p></div>
 </section>
 
 <section id="checklist">
