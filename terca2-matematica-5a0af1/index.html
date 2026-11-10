@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matemática da Adriely</title>
+<meta name="description" content="Hoje: Matemática. Porcentagem, proporção, regra de três e média, com 12 questões reais do ENEM.">
+<meta property="og:title" content="Matemática da Adriely">
+<meta property="og:description" content="Hoje: Matemática. Porcentagem, proporção, regra de três e média, com 12 questões reais do ENEM.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Lexend:wght@400;700&display=swap">
+<style>
+/* Paleta: azul de caneta + amarelo de marca-texto. Layout: uma coluna pensada para celular; cada seção é um "caderno" com etiqueta colorida; checklists em bolinhas de cartão-resposta; a redação-modelo numa folha pautada. */
+:root {
+  --bg: #F5F7FC;
+  --surface: #FFFFFF;
+  --ink: #18203A;
+  --muted: #4E5874;
+  --line: #D8DEEE;
+  --accent: #2445B5;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E4EAFB;
+  --sun: #F5C518;
+  --sun-soft: #FFF5C2;
+  --warn: #C0392B;
+  --warn-soft: #FCE6E3;
+  --rule: #C9D6EE;
+  --margin: #E8A0A0;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Lexend", "Segoe UI", system-ui, sans-serif;
+  --lh-sheet: 30px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+    --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+    --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+    --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+  --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+  --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+  --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h2 { font-size: 1.75rem; font-weight: 750; letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, input:focus-visible + .bubble, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+strong { font-weight: 700; }
+.muted { color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.stack-lg { display: flex; flex-direction: column; gap: 22px; }
+
+/* Hero */
+.hero { padding-block: 40px 8px; display: flex; flex-direction: column; gap: 16px; }
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.hero h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 1.12rem; max-width: 60ch; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.nav a { text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: 0.92rem; }
+.nav a:hover { border-color: var(--accent); }
+
+/* Seção como caderno */
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 16px; }
+.tab { align-self: flex-start; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.tab.sun { background: var(--sun-soft); color: var(--ink); }
+.intro { font-size: 1.05rem; max-width: 62ch; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.stat b { font-family: var(--font-display); font-size: 2.3rem; font-weight: 800; line-height: 1; color: var(--accent); display: block; font-variant-numeric: tabular-nums; }
+.stat span { font-weight: 700; }
+
+.note { border-radius: 12px; padding: 14px 16px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 6px; }
+.note.sun { background: var(--sun-soft); }
+.note.warn { background: var(--warn-soft); }
+.note .label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+.note.warn .label { color: var(--warn); }
+
+ul.clean { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+ul.clean li { padding-left: 22px; position: relative; }
+ul.clean li::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+ul.clean.x li::before { background: var(--warn); border-radius: 2px; transform: rotate(45deg); }
+
+/* Fórmula da média */
+.calc { font-family: var(--font-display); font-size: 1.05rem; background: var(--surface); border: 1px dashed var(--accent); border-radius: 12px; padding: 14px 16px; }
+
+/* Bolinhas de cartão-resposta */
+.check { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; padding: 6px 0; }
+.check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.bubble { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--ink); margin-top: 1px; display: grid; place-items: center; transition: background .15s; }
+.check input:checked + .bubble { background: var(--ink); }
+.check input:checked + .bubble + .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+.day { display: grid; grid-template-columns: 64px 1fr; gap: 14px; }
+.day .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 12px; background: var(--accent); color: var(--accent-ink); padding: 8px 4px; align-self: start; line-height: 1.1; }
+.day .date small { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.day .date b { font-size: 1.7rem; }
+.day.light .date { background: var(--sun); color: #2A2200; }
+.day h3 { margin-bottom: 4px; }
+
+/* Competências */
+.comp { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: start; }
+.comp .n { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; background: var(--accent-soft); color: var(--accent); border-radius: 10px; text-align: center; padding: 8px 0; }
+
+/* Proposta estilo ENEM */
+.proposta { background: var(--surface); border: 2px solid var(--ink); border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.proposta .head { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+.tema { font-weight: 700; background: var(--sun-soft); padding: 1px 4px; border-radius: 3px; }
+.texto { border-left: 3px solid var(--line); padding-left: 14px; display: flex; flex-direction: column; gap: 6px; }
+.texto .t { font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.08em; }
+.texto cite { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+
+/* Esqueleto */
+.bone { display: flex; flex-direction: column; gap: 8px; }
+.bone .part { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.bone .lines { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.slot { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 4px; font-weight: 700; }
+
+/* Repertórios */
+.rep .who { font-family: var(--font-display); font-weight: 750; font-size: 1.1rem; }
+.rep .when { font-size: 0.92rem; color: var(--muted); }
+.rep q { font-style: italic; }
+
+/* Folha pautada */
+.sheet { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 16px 56px; overflow: hidden; }
+.sheet .nums { position: absolute; left: 0; top: 16px; width: 40px; text-align: right; font-size: 0.75rem; color: var(--muted); line-height: var(--lh-sheet); font-variant-numeric: tabular-nums; user-select: none; }
+.sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 46px; width: 1px; background: var(--margin); }
+.sheet .body {
+  line-height: var(--lh-sheet); font-size: 16px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--lh-sheet) - 1px), var(--rule) calc(var(--lh-sheet) - 1px), var(--rule) var(--lh-sheet));
+}
+.sheet .body p { text-indent: 2em; }
+.sheet .title-line { text-align: center; font-weight: 700; }
+mark.fix { background: var(--sun-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+.legend { display: flex; gap: 10px; align-items: center; font-size: 0.92rem; }
+.legend i { width: 28px; height: 14px; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 3px; display: inline-block; flex: none; }
+
+.five { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.five .card { padding: 14px; gap: 4px; }
+.five .k { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: 0.95rem; }
+
+/* Linha do tempo da prova */
+.timeline { display: flex; flex-direction: column; gap: 0; border-left: 3px solid var(--accent-soft); margin-left: 8px; }
+.timeline .step { position: relative; padding: 0 0 18px 20px; }
+.timeline .step::before { content: ""; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.timeline .step .time { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+.final { background: var(--accent); color: var(--accent-ink); border-radius: 18px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+.final h2 { font-size: 1.9rem; }
+.final p { font-size: 1.06rem; }
+footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+
+/* Liberação por dia */
+.today-pill { align-self: flex-start; display: inline-flex; gap: 8px; align-items: center; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 0.95rem; }
+.today-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); }
+.new-badge { align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sun); color: #2A2200; border-radius: 6px; padding: 3px 8px; }
+.tabrow { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.mission { border: 2px solid var(--accent); }
+.mission .tab { margin-bottom: 2px; }
+.road { display: flex; flex-direction: column; gap: 10px; }
+.road .item { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.road .item .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 10px; padding: 6px 4px; line-height: 1.1; background: var(--accent-soft); color: var(--accent); }
+.road .item .date small { display: block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.road .item .date b { font-size: 1.4rem; }
+.road .item.is-today { border: 2px solid var(--sun); }
+.road .item.is-today .date { background: var(--sun); color: #2A2200; }
+.road .item.is-locked { opacity: 0.78; }
+.road .item.is-locked .date { background: var(--line); color: var(--muted); }
+.road .state { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; gap: 6px; align-items: center; color: var(--accent); }
+.road .is-locked .state { color: var(--muted); }
+.road .is-today .state { color: var(--ink); }
+.road .state svg { width: 13px; height: 13px; }
+.road h3 { font-size: 1.08rem; margin-top: 2px; }
+.road p { font-size: 0.95rem; color: var(--muted); }
+
+/* Para quem nunca viu */
+.howto { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.howto div { display: flex; gap: 10px; align-items: flex-start; }
+.howto .n, .parts .n { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-family: var(--font-display); font-weight: 800; display: grid; place-items: center; }
+.parts { display: grid; gap: 10px; }
+.parts .card { flex-direction: row; gap: 12px; align-items: flex-start; padding: 14px; }
+.parts .lines { font-size: 0.85rem; color: var(--muted); }
+.gloss { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 0; }
+.gloss div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.gloss dt { font-family: var(--font-display); font-weight: 750; font-size: 1.05rem; }
+.gloss dd { margin: 4px 0 0; color: var(--muted); }
+.gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Simulado estilo ENEM */
+:root { --ok: #1E7A46; --ok-soft: #E1F4E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #6FD39A; --ok-soft: #163A26; } }
+:root[data-theme="dark"] { --ok: #6FD39A; --ok-soft: #163A26; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eq { gap: 12px; }
+.eq-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-family: var(--font-display); font-weight: 800; }
+.eq-area { font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; }
+.eq-text { background: var(--bg); border-left: 3px solid var(--line); border-radius: 0 10px 10px 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-text cite { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.eq-cmd { font-weight: 700; }
+.alts { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.alt { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.alt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.alt .letter { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.alt .alt-t { min-width: 0; }
+.alt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.alt:has(input:checked) .letter { background: var(--ink); color: var(--bg); }
+.alt:has(input:focus-visible) { outline: 3px solid var(--sun); outline-offset: 2px; }
+.alts .alt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.alts .alt.is-right .letter { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.alts .alt.is-wrong { border-color: var(--warn); background: var(--warn-soft); }
+.alts .alt.is-wrong .letter { background: var(--warn); border-color: var(--warn); color: var(--surface); }
+.alt:has(input:disabled) { cursor: default; }
+.eq-check, .sim-reset { align-self: flex-start; font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.sim-reset { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.eq-fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-fb.is-ok { background: var(--ok-soft); } .eq-fb.is-ok .eq-res { color: var(--ok); font-weight: 700; }
+.eq-fb.is-no { background: var(--warn-soft); } .eq-fb.is-no .eq-res { color: var(--warn); font-weight: 700; }
+.eq-fb.is-empty { background: var(--sun-soft); }
+.sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
+
+/* Tabelas */
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+.tbl-wrap table.fit { table-layout: fixed; }
+.tbl-wrap table.fit th, .tbl-wrap table.fit td { overflow-wrap: anywhere; hyphens: auto; padding: 8px 6px; }
+.tbl-wrap table.fit th { letter-spacing: 0; font-size: 0.72rem; }
+/* Respostas abertas */
+.quiz { gap: 8px; }
+.quiz .q { font-weight: 400; }
+.quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
+.quiz ol.opts li::marker { font-weight: 700; color: var(--accent); }
+.quiz details { border-top: 1px dashed var(--line); padding-top: 8px; }
+.quiz summary { cursor: pointer; font-weight: 700; color: var(--accent); list-style: none; display: inline-flex; gap: 6px; align-items: center; padding: 4px 12px; border: 1.5px solid var(--accent); border-radius: 999px; }
+.quiz summary::-webkit-details-marker { display: none; }
+.quiz details[open] summary { background: var(--accent); color: var(--accent-ink); }
+.quiz details p { margin-top: 8px; background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
+  <h1>Adriely, hoje é dia de <span>Matemática</span></h1>
+  <div class="today-pill"><span class="dot"></span>Hoje: porcentagem, proporção, regra de três e média</div>
+  <p class="lede">Começa a semana do <strong>2º dia</strong>! Hoje é a matemática que mais aparece no ENEM: <strong>porcentagem, razão e proporção, regra de três, média e gráficos</strong>. Tudo explicado do zero, com exemplos e um simulado com <strong>12 questões reais do ENEM</strong>.</p>
+  <nav class="nav" aria-label="Partes do guia">
+    <a href="#hoje-mat1">Missão de hoje</a>
+    <a href="#mais-cai">O que mais cai</a>
+    <a href="#porcentagem">Porcentagem</a>
+    <a href="#razao">Razão e proporção</a>
+    <a href="#regra3">Regra de três</a>
+    <a href="#estatistica">Média, moda e mediana</a>
+    <a href="#graficos">Gráficos</a>
+    <a href="#simulado">Simulado</a>
+    <a href="#formulario">Formulário</a>
+  </nav>
+</header>
+
+<section id="hoje-mat1" class="mission-sec">
+  <div class="card mission stack">
+    <span class="tab sun">Missão de hoje · terça, 10/11</span>
+    <h2>Dia de Matemática 1</h2>
+    <label class="check"><input type="checkbox" id="m1-1"><span class="bubble"></span><span class="txt">Ler <a href="#mais-cai">O que mais cai</a> e <a href="#como-cobra">como a Matemática é cobrada</a> (≈ 10 min).</span></label>
+    <label class="check"><input type="checkbox" id="m1-2"><span class="bubble"></span><span class="txt">Estudar <a href="#porcentagem">Porcentagem</a> (≈ 50 min).</span></label>
+    <label class="check"><input type="checkbox" id="m1-3"><span class="bubble"></span><span class="txt">Estudar <a href="#razao">Razão e proporção</a> e <a href="#regra3">Regra de três</a> (≈ 50 min).</span></label>
+    <label class="check"><input type="checkbox" id="m1-4"><span class="bubble"></span><span class="txt">Fazer uma pausa de 15 minutos.</span></label>
+    <label class="check"><input type="checkbox" id="m1-5"><span class="bubble"></span><span class="txt">Estudar <a href="#estatistica">Média, moda e mediana</a> e <a href="#graficos">Gráficos e tabelas</a> (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="m1-6"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado</a>: 12 questões reais do ENEM (≈ 40 min). Use papel para as contas.</span></label>
+    <label class="check"><input type="checkbox" id="m1-7"><span class="bubble"></span><span class="txt">Copiar o <a href="#formulario">formulário de bolso</a> num papel e reler antes de dormir.</span></label>
+  </div>
+</section>
+
+<section id="mais-cai">
+  <div class="tabrow"><span class="tab sun">Pesquisa</span></div>
+  <h2>O que mais cai em Matemática</h2>
+  <p class="intro">Analisei <strong>416 questões de Matemática</strong> das provas do ENEM de 2009 a 2023, de um banco público com as provas e o gabarito oficial, e contei os assuntos de cada uma.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Assunto</th><th>Questões</th><th>Quando estudar</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Unidades de medida e conversões</strong></td><td>64</td><td>Sábado</td></tr>
+        <tr><td><strong>Geometria plana</strong> (áreas, perímetros)</td><td>62</td><td>Sábado</td></tr>
+        <tr><td><strong>Gráficos e tabelas</strong></td><td>61</td><td><strong>Hoje</strong></td></tr>
+        <tr><td><strong>Geometria espacial</strong> (volumes)</td><td>57</td><td>Sábado</td></tr>
+        <tr><td><strong>Porcentagem e juros</strong></td><td>52</td><td><strong>Hoje</strong></td></tr>
+        <tr><td><strong>Média, moda e mediana</strong></td><td>34</td><td><strong>Hoje</strong></td></tr>
+        <tr><td><strong>Probabilidade</strong></td><td>25</td><td>Sábado</td></tr>
+        <tr><td><strong>Funções</strong></td><td>24</td><td>Sábado</td></tr>
+        <tr><td><strong>Razão, proporção e regra de três</strong></td><td>21 <span class="muted">(*)</span></td><td><strong>Hoje</strong></td></tr>
+        <tr><td><strong>Escala</strong></td><td>10</td><td>Sábado</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">(*) A contagem é feita pelas palavras do enunciado. Muitas questões usam proporção e regra de três sem falar esses nomes, então esse assunto aparece bem mais do que o número indica: ele está escondido em quase todas as contas da prova.</p>
+  <div class="note sun"><span class="label">A conclusão</span><p>O ENEM cobra muito mais <strong>matemática do dia a dia</strong> (porcentagem, proporção, medidas, gráficos, média) do que fórmulas difíceis. Quem domina o básico já garante boa parte da prova.</p></div>
+</section>
+
+<section id="como-cobra">
+  <div class="tabrow"><span class="tab">Antes de começar</span></div>
+  <h2>Como a Matemática do ENEM é cobrada</h2>
+  <div class="grid">
+    <div class="card"><h3>Leitura primeiro</h3><p class="muted">As questões são histórias do cotidiano: uma loja, uma receita, uma viagem. <strong>Sublinhe os números e o que a pergunta pede</strong> antes de fazer qualquer conta.</p></div>
+    <div class="card"><h3>As alternativas ajudam</h3><p class="muted">Muitas vezes dá para <strong>testar as alternativas</strong> ou <strong>estimar</strong> o resultado e eliminar as absurdas.</p></div>
+    <div class="card"><h3>Faça as fáceis primeiro</h3><p class="muted">Pela TRI, errar as fáceis pesa muito. Se uma conta ficou enorme, marque, pule e volte depois.</p></div>
+    <div class="card"><h3>Use o caderno de questões</h3><p class="muted">Faça as contas, desenhe e risque à vontade no caderno da prova. Só o cartão-resposta é corrigido.</p></div>
+  </div>
+</section>
+
+<!-- ======================= PORCENTAGEM ======================= -->
+<section id="porcentagem">
+  <div class="tabrow"><span class="tab">Parte 1</span></div>
+  <h2>Porcentagem</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>"Por cento" quer dizer <strong>"a cada 100"</strong>. Então 20% é o mesmo que 20 de cada 100, ou seja, <strong>20 ÷ 100 = 0,20</strong>.</p></div>
+
+  <h3>1. Como calcular "x% de um valor"</h3>
+  <p>Transforme a porcentagem em número decimal e multiplique:</p>
+  <div class="calc">30% de 250 = 0,30 × 250 = <strong>75</strong></div>
+  <h3>2. Truques para fazer de cabeça</h3>
+  <div class="grid">
+    <div class="card"><h3>10%</h3><p class="muted">Ande uma casa com a vírgula: 10% de 340 = <strong>34</strong>.</p></div>
+    <div class="card"><h3>1%</h3><p class="muted">Ande duas casas: 1% de 340 = <strong>3,4</strong>.</p></div>
+    <div class="card"><h3>50% e 25%</h3><p class="muted">50% é a <strong>metade</strong>. 25% é a <strong>metade da metade</strong> (dividir por 4).</p></div>
+    <div class="card"><h3>Monte com pedaços</h3><p class="muted">15% = 10% + 5%. Exemplo: 15% de 200 = 20 + 10 = <strong>30</strong>.</p></div>
+  </div>
+
+  <h3>3. Aumento e desconto: o fator multiplicativo</h3>
+  <p>Esse é o truque mais útil da prova. Em vez de calcular a porcentagem e depois somar ou subtrair, multiplique direto:</p>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th>Situação</th><th>Multiplique por</th><th>Exemplo com R$ 200</th></tr></thead>
+      <tbody>
+        <tr><td>Aumento de 10%</td><td><strong>1,10</strong></td><td>200 × 1,10 = R$ 220</td></tr>
+        <tr><td>Aumento de 25%</td><td><strong>1,25</strong></td><td>200 × 1,25 = R$ 250</td></tr>
+        <tr><td>Desconto de 10%</td><td><strong>0,90</strong></td><td>200 × 0,90 = R$ 180</td></tr>
+        <tr><td>Desconto de 30%</td><td><strong>0,70</strong></td><td>200 × 0,70 = R$ 140</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Aumento:</strong> 1 + taxa. <strong>Desconto:</strong> 1 − taxa.</p>
+
+  <h3>4. Aumentos e descontos seguidos (pegadinha clássica!)</h3>
+  <p>Não se somam porcentagens seguidas: <strong>multiplicam-se os fatores</strong>.</p>
+  <div class="calc">Aumento de 10% e depois desconto de 10%: 1,10 × 0,90 = 0,99 → o preço final é <strong>1% menor</strong> que o original, e não igual!</div>
+
+  <h3>5. Descobrir o valor original</h3>
+  <p>Se você sabe o valor <strong>depois</strong> do aumento ou do desconto, <strong>divida pelo fator</strong>:</p>
+  <div class="calc">Depois de um aumento de 20%, um produto custa R$ 360. Antes custava 360 ÷ 1,20 = <strong>R$ 300</strong>.</div>
+  <p>E se um número <strong>caiu 75%</strong>, o que sobrou é <strong>25%</strong> do original. Isso caiu no ENEM 2022 (está no simulado)!</p>
+
+  <h3>6. Quanto foi o aumento, em porcentagem?</h3>
+  <div class="calc">Variação % = (valor novo − valor antigo) ÷ valor antigo × 100</div>
+  <p>Exemplo: de 80 para 100, a variação é (100 − 80) ÷ 80 = 0,25 = <strong>25% de aumento</strong>.</p>
+
+  <h3>7. Juros simples e compostos</h3>
+  <div class="grid">
+    <div class="card"><h3>Juros simples</h3><p class="muted">Os juros são sempre calculados sobre o valor inicial. <strong>J = C × i × t</strong> (capital × taxa × tempo). R$ 1 000 a 2% ao mês por 3 meses: 1 000 × 0,02 × 3 = <strong>R$ 60</strong> de juros.</p></div>
+    <div class="card"><h3>Juros compostos</h3><p class="muted">"Juros sobre juros": a cada mês, aplica-se o fator. <strong>M = C × (1 + i)<sup>t</sup></strong>. R$ 1 000 a 10% por 2 meses: 1 000 × 1,1 × 1,1 = <strong>R$ 1 210</strong>.</p></div>
+  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>x% = x ÷ 100.</strong> Aumento: multiplique por <strong>1 + taxa</strong>. Desconto: por <strong>1 − taxa</strong>. Porcentagens seguidas: <strong>multiplique os fatores</strong>. Valor original: <strong>divida pelo fator</strong>.</p></div>
+</section>
+
+<!-- ======================= RAZÃO E PROPORÇÃO ======================= -->
+<section id="razao">
+  <div class="tabrow"><span class="tab">Parte 2</span></div>
+  <h2>Razão e proporção</h2>
+  <div class="note"><span class="label">Em uma frase</span><p><strong>Razão</strong> é uma comparação por divisão. <strong>Proporção</strong> é quando duas razões são iguais.</p></div>
+
+  <h3>1. Razão</h3>
+  <p>Numa sala com 12 meninas e 18 meninos, a razão entre meninas e meninos é 12/18 = <strong>2/3</strong>: para cada 2 meninas, há 3 meninos. A ordem importa: "a razão entre A e B" é <strong>A ÷ B</strong>.</p>
+  <div class="grid">
+    <div class="card"><h3>Velocidade média</h3><p class="muted">distância ÷ tempo. 300 km em 4 h = <strong>75 km/h</strong>.</p></div>
+    <div class="card"><h3>Densidade demográfica</h3><p class="muted">habitantes ÷ área. 50 000 pessoas em 100 km² = <strong>500 hab/km²</strong>.</p></div>
+    <div class="card"><h3>Escala</h3><p class="muted">medida no desenho ÷ medida real. Escala 1 : 100 → 1 cm no desenho = 100 cm (1 m) de verdade.</p></div>
+  </div>
+
+  <h3>2. Proporção</h3>
+  <p>Se a/b = c/d, então <strong>a × d = b × c</strong>: multiplica-se cruzado.</p>
+  <div class="calc">2/5 = x/20 → 5 × x = 2 × 20 → x = 40 ÷ 5 = <strong>8</strong></div>
+
+  <h3>3. Diretamente ou inversamente proporcional?</h3>
+  <div class="grid">
+    <div class="card"><h3>Diretamente proporcionais</h3><p class="muted">Uma <strong>aumenta</strong>, a outra <strong>aumenta</strong> na mesma proporção. Exemplo: quantidade de pães e preço a pagar. O dobro de pães, o dobro do preço.</p></div>
+    <div class="card"><h3>Inversamente proporcionais</h3><p class="muted">Uma <strong>aumenta</strong>, a outra <strong>diminui</strong> na mesma proporção. Exemplo: número de pessoas trabalhando e tempo de serviço. O dobro de pessoas, a metade do tempo.</p></div>
+  </div>
+
+  <h3>4. Dividir um valor em partes proporcionais</h3>
+  <p><strong>Diretamente:</strong> R$ 900 divididos entre duas pessoas na proporção de 1 e 2. Some as partes (1 + 2 = 3) e divida: 900 ÷ 3 = 300 por parte. A primeira recebe <strong>R$ 300</strong> e a segunda, <strong>R$ 600</strong>.</p>
+  <p><strong>Inversamente:</strong> use os inversos (1/2, 1/3, 1/5...) como partes. Quem tem o número <strong>maior recebe menos</strong>. Caiu no ENEM 2019 (está no simulado).</p>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Razão = <strong>divisão</strong> (a ordem importa). Proporção = <strong>multiplicação cruzada</strong>. Direta: <strong>sobe e sobe</strong>. Inversa: <strong>sobe e desce</strong>.</p></div>
+</section>
+
+<!-- ======================= REGRA DE TRÊS ======================= -->
+<section id="regra3">
+  <div class="tabrow"><span class="tab">Parte 3</span></div>
+  <h2>Regra de três</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>É o jeito de descobrir um valor desconhecido quando você sabe que as grandezas são proporcionais.</p></div>
+
+  <h3>1. Regra de três simples e direta</h3>
+  <p>3 kg de arroz custam R$ 18. Quanto custam 5 kg?</p>
+  <div class="calc">3 kg → R$ 18<br>5 kg → x<br>Mais quilos, mais caro (direta): 3 × x = 5 × 18 → x = 90 ÷ 3 = <strong>R$ 30</strong></div>
+
+  <h3>2. Regra de três simples e inversa</h3>
+  <p>4 pedreiros constroem um muro em 6 dias. Em quantos dias 8 pedreiros fazem o mesmo muro?</p>
+  <div class="calc">Mais pedreiros, menos dias (inversa): <strong>multiplique em linha reta</strong><br>4 × 6 = 8 × x → x = 24 ÷ 8 = <strong>3 dias</strong></div>
+  <div class="note"><span class="label">Como não errar</span><p>Antes de fazer a conta, pergunte: <strong>"se um aumenta, o outro aumenta ou diminui?"</strong> Se aumenta, multiplique <strong>cruzado</strong> (direta). Se diminui, multiplique <strong>em linha</strong> (inversa).</p></div>
+
+  <h3>3. Regra de três composta (com 3 ou mais grandezas)</h3>
+  <p>5 máquinas produzem 200 peças em 4 horas. Quantas peças 10 máquinas produzem em 6 horas?</p>
+  <ul class="clean">
+    <li>Deixe sozinha a grandeza que você quer descobrir (as peças).</li>
+    <li>Compare cada outra grandeza com ela: <strong>mais máquinas → mais peças</strong> (direta) e <strong>mais horas → mais peças</strong> (direta).</li>
+    <li>Monte: 200 ÷ x = (5 ÷ 10) × (4 ÷ 6) → 200 ÷ x = 20 ÷ 60 → x = 200 × 60 ÷ 20 = <strong>600 peças</strong>.</li>
+  </ul>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Pergunte <strong>"aumenta ou diminui?"</strong>. Direta: <strong>cruzado</strong>. Inversa: <strong>em linha</strong>. Na composta, compare <strong>cada grandeza</strong> com a que você quer descobrir.</p></div>
+</section>
+
+<!-- ======================= ESTATÍSTICA ======================= -->
+<section id="estatistica">
+  <div class="tabrow"><span class="tab">Parte 4</span></div>
+  <h2>Média, moda e mediana</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>São três formas de resumir um conjunto de números num único valor "do meio".</p></div>
+  <p>Exemplo usado em toda a parte: as notas <strong>5, 7, 7, 8 e 9</strong>.</p>
+  <div class="grid">
+    <div class="card"><h3>Média aritmética</h3><p class="muted"><strong>Some tudo e divida pela quantidade.</strong> (5 + 7 + 7 + 8 + 9) ÷ 5 = 36 ÷ 5 = <strong>7,2</strong>.</p></div>
+    <div class="card"><h3>Moda</h3><p class="muted">O valor que <strong>mais se repete</strong>. Aqui, <strong>7</strong>. Pode haver mais de uma moda, ou nenhuma.</p></div>
+    <div class="card"><h3>Mediana</h3><p class="muted"><strong>Coloque em ordem</strong> e pegue o do <strong>meio</strong>. Em 5, 7, <strong>7</strong>, 8, 9, a mediana é <strong>7</strong>.</p></div>
+  </div>
+  <h3>Cuidados com a mediana</h3>
+  <ul class="clean">
+    <li><strong>Sempre coloque os números em ordem</strong> antes. Esquecer isso é o erro mais comum.</li>
+    <li>Se a quantidade de números for <strong>par</strong>, a mediana é a <strong>média dos dois do meio</strong>. Em 2, 4, <strong>6, 8</strong>, 10, 12: (6 + 8) ÷ 2 = <strong>7</strong>.</li>
+    <li>Com 21 valores em ordem, a mediana é o <strong>11º</strong>, que tem 10 valores antes e 10 depois.</li>
+  </ul>
+  <h3>Média ponderada (com pesos)</h3>
+  <p>Usada quando cada valor tem um "peso" diferente, como nas notas de vestibular e do Sisu.</p>
+  <div class="calc">Prova com peso 2 e nota 6, trabalho com peso 1 e nota 9:<br>(6 × 2 + 9 × 1) ÷ (2 + 1) = 21 ÷ 3 = <strong>7</strong></div>
+  <h3>Truque: quando um valor muda</h3>
+  <p>Se um único valor do grupo muda, a <strong>média muda essa diferença dividida pela quantidade de valores</strong>. Num grupo de 20 pessoas, trocar alguém por outra pessoa 20 cm mais baixa diminui a média em 20 ÷ 20 = <strong>1 cm</strong>. Isso caiu no ENEM 2019!</p>
+  <div class="note sun"><span class="label">Guarde isto</span><p><strong>Média</strong> = soma ÷ quantidade. <strong>Moda</strong> = o que mais repete. <strong>Mediana</strong> = o do meio, <strong>depois de ordenar</strong>. Se a quantidade for par, faça a média dos dois do meio.</p></div>
+</section>
+
+<!-- ======================= GRÁFICOS ======================= -->
+<section id="graficos">
+  <div class="tabrow"><span class="tab">Parte 5</span></div>
+  <h2>Gráficos e tabelas</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Aparecem em muitas questões, e a maior parte dos erros vem de <strong>ler rápido demais</strong>, não da conta.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Gráfico de barras</h3><p class="muted">Bom para <strong>comparar quantidades</strong>: qual é a maior, qual é a menor.</p></div>
+    <div class="card"><h3>Gráfico de linhas</h3><p class="muted">Mostra a <strong>evolução no tempo</strong>: quando subiu, quando caiu, quando ficou estável.</p></div>
+    <div class="card"><h3>Gráfico de setores (pizza)</h3><p class="muted">Mostra as <strong>partes de um todo</strong>. Todas as fatias somam 100%. A volta inteira tem 360°, então 25% equivale a 90°.</p></div>
+  </div>
+  <h3>Roteiro para ler qualquer gráfico</h3>
+  <ul class="clean">
+    <li>Leia o <strong>título</strong> e a <strong>fonte</strong>: do que se trata?</li>
+    <li>Veja a <strong>unidade</strong>: é em mil? Em milhões? Em porcentagem?</li>
+    <li>Confira os <strong>eixos</strong>: o que está na horizontal e o que está na vertical?</li>
+    <li>Repare se o eixo <strong>começa no zero</strong>. Se não começa, as diferenças parecem maiores do que são.</li>
+    <li>Só depois leia a pergunta e procure no gráfico <strong>exatamente o dado pedido</strong>.</li>
+  </ul>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Título, unidade, eixos e só então a conta. Barras <strong>comparam</strong>, linhas mostram <strong>evolução</strong>, setores mostram <strong>partes do todo</strong>.</p></div>
+</section>
+
+<section id="simulado" class="sim">
+  <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
+  <h2>Simulado com questões reais do ENEM</h2>
+  <p class="intro">Doze questões que <strong>caíram de verdade</strong> no ENEM, de 2017 a 2023, sobre porcentagem, proporção, regra de três e média. Estão em ordem, da mais fácil para a mais difícil. O texto e o gabarito são oficiais, e eu conferi cada conta. As explicações mostram o passo a passo.</p>
+  <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Faça as contas num papel, como na prova. Tente gastar até 3 minutos por questão.</p></div>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">ENEM 2022 · Porcentagem</span></div>
+    <div class="eq-text"><p>Em janeiro de 2013, foram declaradas 1 794 272 admissões e 1 765 372 desligamentos no Brasil, ou seja, foram criadas 28 900 vagas de emprego, segundo dados do Cadastro Geral de Empregados e Desempregados (Caged), divulgados pelo Ministério do Trabalho e Emprego (MTE). Segundo o Caged, o número de vagas criadas em janeiro de 2013 sofreu uma queda de 75%, quando comparado com o mesmo período de 2012.</p><cite>Disponível em: http://portal.mte.gov.br. Acesso em: 23 fev. 2013 (adaptado).</cite></div>
+    <p class="eq-cmd">De acordo com as informações dadas, o número de vagas criadas em janeiro de 2012 foi</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
+      <label class="alt"><input type="radio" name="mat1-q1" value="A"><span class="letter">A</span><span class="alt-t">16 514.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q1" value="B"><span class="letter">B</span><span class="alt-t">86 700.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q1" value="C"><span class="letter">C</span><span class="alt-t">115 600.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q1" value="D"><span class="letter">D</span><span class="alt-t">441 343.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q1" value="E"><span class="letter">E</span><span class="alt-t">448 568.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Se houve uma queda de 75%, o que sobrou foram 25% do valor de 2012. Então 28 900 é 25% do número de 2012: 28 900 ÷ 0,25 = 115 600.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">ENEM 2017 · Razão</span></div>
+    <div class="eq-text"><p>A mensagem digitada no celular, enquanto você dirige, tira a sua atenção e, por isso, deve ser evitada. Pesquisas mostram que um motorista que dirige um carro a uma velocidade constante percorre “às cegas” (isto é, sem ter visão da pista) uma distância proporcional ao tempo gasto ao olhar para o celular durante a digitação da mensagem. Considere que isso de fato aconteça. Suponha que dois motoristas (X e Y) dirigem com a mesma velocidade constante e digitam a mesma mensagem em seus celulares. Suponha, ainda, que o tempo gasto pelo motorista X olhando para seu celular enquanto digita a mensagem corresponde a 25% do tempo gasto pelo motorista Y para executar a mesma tarefa.</p><cite>Disponível em: http://g1.globo.com. Acesso em: 21 jul. 2012 (adaptado).</cite></div>
+    <p class="eq-cmd">A razão entre as distâncias percorridas às cegas por X e Y, nessa ordem, é igual a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="mat1-q2" value="A"><span class="letter">A</span><span class="alt-t">5/4</span></label>
+      <label class="alt"><input type="radio" name="mat1-q2" value="B"><span class="letter">B</span><span class="alt-t">1/4</span></label>
+      <label class="alt"><input type="radio" name="mat1-q2" value="C"><span class="letter">C</span><span class="alt-t">4/3</span></label>
+      <label class="alt"><input type="radio" name="mat1-q2" value="D"><span class="letter">D</span><span class="alt-t">4/1</span></label>
+      <label class="alt"><input type="radio" name="mat1-q2" value="E"><span class="letter">E</span><span class="alt-t">3/4</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A distância é proporcional ao tempo. Se o tempo de X é 25% (ou 1/4) do tempo de Y, a distância de X também é 1/4 da de Y. Razão = 1/4.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">ENEM 2022 · Porcentagem</span></div>
+    <div class="eq-text"><p>Em uma loja, o preço promocional de uma geladeira é de R$ 1 000,00 para pagamento somente em dinheiro. Seu preço normal, fora da promoção, é 10% maior. Para pagamento feito com o cartão de crédito da loja, é dado um desconto de 2% sobre o preço normal. Uma cliente decidiu comprar essa geladeira, optando pelo pagamento com o cartão de crédito da loja. Ela calculou que o valor a ser pago seria o preço promocional acrescido de 8%. Ao ser informada pela loja do valor a pagar, segundo sua opção, percebeu uma diferença entre seu cálculo e o valor que lhe foi apresentado</p></div>
+    <p class="eq-cmd">O valor apresentado pela loja, comparado ao valor calculado pela cliente, foi</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="mat1-q3" value="A"><span class="letter">A</span><span class="alt-t">R$ 2,00 menor.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q3" value="B"><span class="letter">B</span><span class="alt-t">R$ 100,00 menor.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q3" value="C"><span class="letter">C</span><span class="alt-t">R$ 200,00 menor.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q3" value="D"><span class="letter">D</span><span class="alt-t">R$ 42,00 maior.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q3" value="E"><span class="letter">E</span><span class="alt-t">R$ 80,00 maior.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Preço normal: 1 000 × 1,10 = R$ 1 100. Com o cartão: 1 100 × 0,98 = R$ 1 078. A cliente calculou 1 000 × 1,08 = R$ 1 080. A loja cobrou R$ 2,00 a menos. Por isso não se somam porcentagens seguidas!</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">ENEM 2023 · Porcentagem</span></div>
+    <div class="eq-text"><p>Em janeiro do ano passado, a direção de uma fábrica abriu uma creche para os filhos de seus funcionários, com 10 salas, cada uma com capacidade para atender 10 crianças a cada ano. As vagas são sorteadas entre os filhos dos funcionários inscritos, enquanto os não contemplados pelo sorteio formam uma lista de espera. No ano passado, a lista de espera teve 400 nomes e, neste ano, esse número cresceu 10%. A direção da fábrica realizou uma pesquisa e constatou que a lista de espera para o próximo ano terá a mesma quantidade de nomes da lista de espera deste ano. Decidiu, então, construir, ao longo desse ano, novas salas para a creche, também com capacidade de atendimento para 10 crianças cada, de modo que o número de nomes na lista de espera no próximo ano seja 25% menor que o deste ano.</p></div>
+    <p class="eq-cmd">O número mínimo de salas que deverão ser construídas é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="mat1-q4" value="A"><span class="letter">A</span><span class="alt-t">10</span></label>
+      <label class="alt"><input type="radio" name="mat1-q4" value="B"><span class="letter">B</span><span class="alt-t">11</span></label>
+      <label class="alt"><input type="radio" name="mat1-q4" value="C"><span class="letter">C</span><span class="alt-t">12</span></label>
+      <label class="alt"><input type="radio" name="mat1-q4" value="D"><span class="letter">D</span><span class="alt-t">30</span></label>
+      <label class="alt"><input type="radio" name="mat1-q4" value="E"><span class="letter">E</span><span class="alt-t">33</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Lista deste ano: 400 × 1,10 = 440 nomes. A meta é 25% menor: 440 × 0,75 = 330. É preciso atender 440 − 330 = 110 crianças a mais. Com 10 por sala: 110 ÷ 10 = 11 salas.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">ENEM 2019 · Média</span></div>
+    <div class="eq-text"><p>O preparador físico de um time de basquete dispõe de um plantel de 20 jogadores, com média de altura igual a 1,80 m. No último treino antes da estreia em um campeonato, um dos jogadores desfalcou o time em razão de uma séria contusão, forçando o técnico a contratar outro jogador para recompor o grupo.</p></div>
+    <p class="eq-cmd">Se o novo jogador é 0,20 m mais baixo que o anterior, qual é a média de altura, em metro, do novo grupo?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="mat1-q5" value="A"><span class="letter">A</span><span class="alt-t">1,60.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q5" value="B"><span class="letter">B</span><span class="alt-t">1,78.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q5" value="C"><span class="letter">C</span><span class="alt-t">1,79.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q5" value="D"><span class="letter">D</span><span class="alt-t">1,81.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q5" value="E"><span class="letter">E</span><span class="alt-t">1,82.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Trocar um jogador por outro 0,20 m mais baixo diminui a soma das alturas em 0,20 m. Dividindo pelos 20 jogadores, a média cai 0,20 ÷ 20 = 0,01 m: 1,80 − 0,01 = 1,79 m.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">ENEM 2021 · Proporção inversa</span></div>
+    <div class="eq-text"><p>Em uma corrida automobilística, os carros podem fazer paradas nos boxes para efetuar trocar de pneus. Nessas trocas, o trabalho é feito por um grupo de três pessoas em cada pneu. Considere que os grupos iniciam o trabalho no mesmo instante, trabalham à mesma velocidade e cada grupo trabalha em um único pneu. Com os quatro grupos completos, são necessários 4 segundos para que a troca seja efetuada. O tempo gasto por um grupo para trocar um pneu é inversamente proporcional ao número de pessoas trabalhando nele. Em uma dessas paradas, um dos trabalhadores passou mal, não pôde participar da troca e nem foi substituído, de forma que um dos quatro grupos de troca ficou reduzido.</p></div>
+    <p class="eq-cmd">Nessa parada específica, com um dos grupos reduzido, qual foi o tempo gasto, em segundo, para trocar os quatro pneus?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="mat1-q6" value="A"><span class="letter">A</span><span class="alt-t">6,0</span></label>
+      <label class="alt"><input type="radio" name="mat1-q6" value="B"><span class="letter">B</span><span class="alt-t">5,7</span></label>
+      <label class="alt"><input type="radio" name="mat1-q6" value="C"><span class="letter">C</span><span class="alt-t">5,0</span></label>
+      <label class="alt"><input type="radio" name="mat1-q6" value="D"><span class="letter">D</span><span class="alt-t">4,5</span></label>
+      <label class="alt"><input type="radio" name="mat1-q6" value="E"><span class="letter">E</span><span class="alt-t">4,4</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Tempo e número de pessoas são inversamente proporcionais: 3 pessoas → 4 s, então 2 pessoas → 3 × 4 ÷ 2 = 6 s. Como os grupos trabalham juntos, a troca só termina quando o grupo mais lento acaba: 6,0 s.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">ENEM 2019 · Divisão proporcional</span></div>
+    <div class="eq-text"><p>Para contratar três máquinas que farão o reparo de vias rurais de um município, a prefeitura elaborou um edital que, entre outras cláusulas, previa:<br>• Cada empresa interessada só pode cadastrar uma única máquina para concorrer ao edital;<br>• O total de recursos destinados para contratar o conjunto das três máquinas é de R$ 31 000,00;<br>• O valor a ser pago a cada empresa será inversamente proporcional à idade de uso da máquina cadastrada pela empresa para o presente edital.<br>As três empresas vencedoras do edital cadastraram máquinas com 2, 3 e 5 anos de idade de uso.</p></div>
+    <p class="eq-cmd">Quanto receberá a empresa que cadastrou a máquina com maior idade de uso?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="mat1-q7" value="A"><span class="letter">A</span><span class="alt-t">R$ 3.100,00</span></label>
+      <label class="alt"><input type="radio" name="mat1-q7" value="B"><span class="letter">B</span><span class="alt-t">R$ 6.000,00</span></label>
+      <label class="alt"><input type="radio" name="mat1-q7" value="C"><span class="letter">C</span><span class="alt-t">R$ 6.200,00</span></label>
+      <label class="alt"><input type="radio" name="mat1-q7" value="D"><span class="letter">D</span><span class="alt-t">R$ 15.000,00</span></label>
+      <label class="alt"><input type="radio" name="mat1-q7" value="E"><span class="letter">E</span><span class="alt-t">R$ 15.500,00</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Inversamente proporcional a 2, 3 e 5 significa usar as partes 1/2, 1/3 e 1/5, ou 15/30, 10/30 e 6/30. As partes somam 31/30, então cada "parte" vale 31 000 ÷ 31 × 30 = 30 000. A máquina de 5 anos recebe 30 000 ÷ 5 = R$ 6 000.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">ENEM 2023 · Proporção e porcentagem</span></div>
+    <div class="eq-text"><p>A cada bimestre, a diretora de uma escola compra uma quantidade de folhas de papel ofício proporcional ao número de alunos matriculados. No bimestre passado, ela comprou 6 000 folhas para serem utilizadas pelos 1 200 alunos matriculados. Neste bimestre, alguns alunos cancelaram suas matrículas e a escola tem, agora, 1 150 alunos. A diretora só pode gastar R$ 220,00 nessa compra, e sabe que o fornecedor da escola vende as folhas de papel ofício em embalagens de 100 unidades a R$ 4,00 a embalagem. Assim, será preciso convencer o fornecedor a dar um desconto à escola, de modo que seja possível comprar a quantidade total de papel ofício necessária para o bimestre.</p></div>
+    <p class="eq-cmd">O desconto necessário no preço final da compra, em porcentagem, pertence ao intervalo</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="mat1-q8" value="A"><span class="letter">A</span><span class="alt-t">(5,0 ; 5,5).</span></label>
+      <label class="alt"><input type="radio" name="mat1-q8" value="B"><span class="letter">B</span><span class="alt-t">(8,0 ; 8,5).</span></label>
+      <label class="alt"><input type="radio" name="mat1-q8" value="C"><span class="letter">C</span><span class="alt-t">(11,5 ; 12,5).</span></label>
+      <label class="alt"><input type="radio" name="mat1-q8" value="D"><span class="letter">D</span><span class="alt-t">(19,5 ; 20,5).</span></label>
+      <label class="alt"><input type="radio" name="mat1-q8" value="E"><span class="letter">E</span><span class="alt-t">(3,5 ; 4,0).</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">São 5 folhas por aluno (6 000 ÷ 1 200). Para 1 150 alunos: 5 750 folhas, o que exige 58 embalagens (57 não bastam), ou 58 × 4 = R$ 232. Com R$ 220, o desconto é de 12 ÷ 232 ≈ 5,2%.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">ENEM 2019 · Proporção e porcentagem</span></div>
+    <div class="eq-text"><p>Três sócios resolveram fundar uma fábrica. O investimento inicial foi de R$ 1 000 000,00. E, independentemente do valor que cada um investiu nesse primeiro momento, resolveram considerar que cada um deles contribuiu com um terço do investimento inicial.<br>Algum tempo depois, um quarto sócio entrou para a sociedade, e os quatro, juntos, investiram mais R$ 800 000,00 na fábrica. Cada um deles contribuiu com um quarto desse valor. Quando venderam a fábrica, nenhum outro investimento havia sido feito. Os sócios decidiram então dividir o montante de R$ 1 800 000,00 obtido com a venda, de modo proporcional à quantia total investida por cada sócio.</p></div>
+    <p class="eq-cmd">Quais os valores mais próximos, em porcentagens, correspondentes às parcelas financeiras que cada um dos três sócios iniciais e o quarto sócio, respectivamente, receberam?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="mat1-q9" value="A"><span class="letter">A</span><span class="alt-t">29,60 e 11,11.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q9" value="B"><span class="letter">B</span><span class="alt-t">28,70 e 13,89.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q9" value="C"><span class="letter">C</span><span class="alt-t">25,00 e 25,00.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q9" value="D"><span class="letter">D</span><span class="alt-t">18,52 e 11,11.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q9" value="E"><span class="letter">E</span><span class="alt-t">12,96 e 13,89.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Cada sócio inicial investiu 1 000 000 ÷ 3 ≈ 333 333 mais 800 000 ÷ 4 = 200 000, ou seja, ≈ 533 333 ÷ 1 800 000 ≈ 29,6%. O quarto sócio investiu só 200 000 ÷ 1 800 000 ≈ 11,1%.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">ENEM 2020 · Média</span></div>
+    <div class="eq-text"><p>O técnico de um time de basquete pretende aumentar a estatura média de sua equipe de 1,93 m para, no mínimo, 1,99 m. Para tanto, dentre os 15 jogadores que fazem parte de sua equipe, irá substituir os quatro mais baixos, de estaturas: 1,78 m, 1,82 m, 1,84 m e 1,86 m. Para isso, o técnico contratou um novo jogador de 2,02 m. Os outros três jogadores que ele ainda precisa contratar devem satisfazer à sua necessidade de aumentar a média das estaturas da equipe. Ele fixará a média das estaturas para os três jogadores que ainda precisa contratar dentro do critério inicialmente estabelecido.</p></div>
+    <p class="eq-cmd">Qual deverá ser a média mínima das estaturas, em metro, que ele deverá fixar para o grupo de três novos jogadores que ainda irá contratar?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="mat1-q10" value="A"><span class="letter">A</span><span class="alt-t">1,96</span></label>
+      <label class="alt"><input type="radio" name="mat1-q10" value="B"><span class="letter">B</span><span class="alt-t">1,98</span></label>
+      <label class="alt"><input type="radio" name="mat1-q10" value="C"><span class="letter">C</span><span class="alt-t">2,05</span></label>
+      <label class="alt"><input type="radio" name="mat1-q10" value="D"><span class="letter">D</span><span class="alt-t">2,06</span></label>
+      <label class="alt"><input type="radio" name="mat1-q10" value="E"><span class="letter">E</span><span class="alt-t">2,08</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Soma atual: 15 × 1,93 = 28,95. Sem os quatro mais baixos (7,30): 21,65. Com o jogador de 2,02: 23,67. A meta é 15 × 1,99 = 29,85. Os três novos precisam somar 29,85 − 23,67 = 6,18, ou seja, média de 6,18 ÷ 3 = 2,06 m.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 11</span><span class="eq-area">ENEM 2022 · Porcentagem e proporção</span></div>
+    <div class="eq-text"><p>Uma equipe de marketing digital foi contratada para aumentar as vendas de um produto ofertado em um site de comércio eletrônico. Para isso, elaborou um anúncio que, quando o cliente clica sobre ele, é direcionado para a página de vendas do produto. Esse anúncio foi divulgado em duas redes sociais, A e B, e foram obtidos os seguintes resultados:<br>• rede social A: o anúncio foi visualizado por 3 000 pessoas; 10% delas clicaram sobre o anúncio e foram redirecionadas para o site; 3% das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de R$ 100,00;<br>• rede social B: o anúncio foi visualizado por 1 000 pessoas; 30% delas clicaram sobre o anúncio e foram redirecionadas para o site; 2% das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de R$ 200,00.<br>Por experiência, o pessoal da equipe de marketing considera que a quantidade de novas pessoas que verão o anúncio é diretamente proporcional ao investimento realizado, e que a quantidade de pessoas que comprarão o produto também se manterá proporcional à quantidade de pessoas que clicarão sobre o anúncio. O responsável pelo produto decidiu, então, investir mais R$ 300,00 em cada uma das duas redes sociais para a divulgação desse anúncio e obteve, de fato, o aumento proporcional esperado na quantidade de clientes que compraram esse produto. Para classificar o aumento obtido na quantidade (Q) de compradores desse produto, em consequência dessa segunda divulgação, em relação aos resultados observados na primeira divulgação, o responsável pelo produto adotou o seguinte critério:<br>• Q ≤ 60%: não satisfatório; • 60% &lt; Q ≤ 100%: regular; • 100% &lt; Q ≤ 150%: bom; • 150% &lt; Q ≤ 190%: muito bom; • 190% &lt; Q ≤ 200%: excelente</p></div>
+    <p class="eq-cmd">O aumento na quantidade de compradores, em consequência dessa segunda divulgação, em relação ao que foi registrado com a primeira divulgação, foi classificado como</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 11</legend>
+      <label class="alt"><input type="radio" name="mat1-q11" value="A"><span class="letter">A</span><span class="alt-t">Não satisfatório.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q11" value="B"><span class="letter">B</span><span class="alt-t">Regular.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q11" value="C"><span class="letter">C</span><span class="alt-t">Bom.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q11" value="D"><span class="letter">D</span><span class="alt-t">Muito bom.</span></label>
+      <label class="alt"><input type="radio" name="mat1-q11" value="E"><span class="letter">E</span><span class="alt-t">Excelente.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Primeira divulgação: A teve 3 000 × 10% × 3% = 9 compradores, e B teve 1 000 × 30% × 2% = 6. Total: 15. Com R$ 300 a mais, A atinge 3 vezes mais pessoas (27 compradores) e B, 1,5 vez mais (9). Os novos 36 compradores representam um aumento de (36 − 15) ÷ 15 = 140%: "bom".</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 12</span><span class="eq-area">ENEM 2018 · Moda e mediana</span></div>
+    <div class="eq-text"><p>Um rapaz estuda em uma escola que fica longe de sua casa, e por isso precisa utilizar o transporte público. Como é muito observador, todos os dias ele anota a hora exata (sem considerar os segundos) em que o ônibus passa pelo ponto de espera. Também notou que nunca consegue chegar ao ponto de ônibus antes de 6h 15 min da manhã. Analisando os dados coletados durante o mês de fevereiro, o  qual teve 21 dias letivos, ele concluiu que 6 h 21 min foi o que mais se repetiu, e que a mediana do conjunto de dados é 6 h 22 min.</p></div>
+    <p class="eq-cmd">A probabilidade de que, em algum dos dias letivos de fevereiro, esse rapaz tenha apanhado o ônibus antes de 6 h 21 min da manhã é, no máximo,</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 12</legend>
+      <label class="alt"><input type="radio" name="mat1-q12" value="A"><span class="letter">A</span><span class="alt-t">4/21</span></label>
+      <label class="alt"><input type="radio" name="mat1-q12" value="B"><span class="letter">B</span><span class="alt-t">5/21</span></label>
+      <label class="alt"><input type="radio" name="mat1-q12" value="C"><span class="letter">C</span><span class="alt-t">6/21</span></label>
+      <label class="alt"><input type="radio" name="mat1-q12" value="D"><span class="letter">D</span><span class="alt-t">7/21</span></label>
+      <label class="alt"><input type="radio" name="mat1-q12" value="E"><span class="letter">E</span><span class="alt-t">8/21</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Com 21 dias, a mediana (6h22) é o 11º valor, então 6h21 e tudo o que vem antes estão nos 10 primeiros. Como 6h21 é a moda, ela aparece mais vezes que qualquer outro horário. O melhor caso é 6h21 aparecer 3 vezes e sobrarem 7 dias antes dela, com horários entre 6h15 e 6h20 aparecendo no máximo 2 vezes cada. Resposta: 7/21.</p></div>
+  </article>
+  <div class="sim-end card">
+    <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
+    <button type="button" class="sim-reset">Refazer o simulado</button>
+  </div>
+</section>
+<script>
+(function () {
+  document.querySelectorAll(".sim").forEach(function (sim) {
+    var qs = Array.prototype.slice.call(sim.querySelectorAll(".eq"));
+    var score = sim.querySelector(".sim-score");
+    function update() {
+      var done = qs.filter(function (q) { return q.dataset.done; });
+      var ok = done.filter(function (q) { return q.dataset.done === "ok"; }).length;
+      if (!done.length) { score.textContent = "Responda as questões para ver quantas você acertou."; return; }
+      var msg = "Você acertou " + ok + " de " + done.length + (done.length === 1 ? " questão respondida." : " questões respondidas.");
+      if (done.length === qs.length) {
+        msg = "Resultado: você acertou " + ok + " de " + qs.length + ". ";
+        msg += ok >= 9 ? "Excelente! Você está pronta para esse conteúdo." : ok >= 6 ? "Muito bem! Releia a explicação das que errou." : "Tudo bem errar no treino: releia as partes do dia e tente de novo amanhã cedo.";
+      }
+      score.textContent = msg;
+    }
+    qs.forEach(function (q) {
+      var btn = q.querySelector(".eq-check"), fb = q.querySelector(".eq-fb"), res = q.querySelector(".eq-res"), exp = q.querySelector(".eq-exp");
+      btn.addEventListener("click", function () {
+        var sel = q.querySelector("input:checked");
+        if (!sel) { fb.hidden = false; exp.hidden = true; fb.className = "eq-fb is-empty"; res.textContent = "Escolha uma alternativa antes de confirmar."; return; }
+        var ans = q.dataset.ans, right = sel.value === ans;
+        q.querySelectorAll(".alt").forEach(function (lab) {
+          var inp = lab.querySelector("input"); inp.disabled = true;
+          if (inp.value === ans) lab.classList.add("is-right");
+          else if (inp === sel) lab.classList.add("is-wrong");
+        });
+        q.dataset.done = right ? "ok" : "no";
+        fb.hidden = false; exp.hidden = false;
+        fb.className = "eq-fb " + (right ? "is-ok" : "is-no");
+        res.textContent = right ? "Acertou! Letra " + ans + "." : "Não foi dessa vez. A resposta certa é a letra " + ans + ".";
+        btn.hidden = true;
+        update();
+      });
+    });
+    sim.querySelector(".sim-reset").addEventListener("click", function () {
+      qs.forEach(function (q) {
+        delete q.dataset.done;
+        q.querySelectorAll(".alt").forEach(function (lab) { lab.classList.remove("is-right", "is-wrong"); var i = lab.querySelector("input"); i.disabled = false; i.checked = false; });
+        q.querySelector(".eq-fb").hidden = true; q.querySelector(".eq-check").hidden = false;
+      });
+      update();
+      sim.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
+<section id="formulario">
+  <div class="tabrow"><span class="tab sun">Formulário de bolso</span></div>
+  <h2>Tudo de hoje em um quadro</h2>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:38%">O quê</th><th>Como</th></tr></thead>
+      <tbody>
+        <tr><td><strong>x% de um valor</strong></td><td>(x ÷ 100) × valor</td></tr>
+        <tr><td><strong>Aumento de i%</strong></td><td>valor × (1 + i)</td></tr>
+        <tr><td><strong>Desconto de i%</strong></td><td>valor × (1 − i)</td></tr>
+        <tr><td><strong>Porcentagens seguidas</strong></td><td>multiplique os fatores</td></tr>
+        <tr><td><strong>Valor original</strong></td><td>valor final ÷ fator</td></tr>
+        <tr><td><strong>Variação %</strong></td><td>(novo − antigo) ÷ antigo × 100</td></tr>
+        <tr><td><strong>Juros simples</strong></td><td>J = C × i × t</td></tr>
+        <tr><td><strong>Juros compostos</strong></td><td>M = C × (1 + i)<sup>t</sup></td></tr>
+        <tr><td><strong>Proporção</strong></td><td>a/b = c/d → a × d = b × c</td></tr>
+        <tr><td><strong>Regra de três direta</strong></td><td>multiplique cruzado</td></tr>
+        <tr><td><strong>Regra de três inversa</strong></td><td>multiplique em linha</td></tr>
+        <tr><td><strong>Média</strong></td><td>soma ÷ quantidade</td></tr>
+        <tr><td><strong>Mediana</strong></td><td>ordene e pegue o do meio</td></tr>
+        <tr><td><strong>Moda</strong></td><td>o valor que mais se repete</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="amanha">
+  <div class="note sun">
+    <span class="label">E amanhã?</span>
+    <p>Amanhã é dia de <strong>Biologia</strong>: ecologia, corpo humano, genética e saúde, com muita coisa ligada à Fisioterapia!</p>
+  </div>
+</section>
+
+
+<footer>
+  <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "adriely-10-terca-matematica-v1";
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+  document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {
+    if (state[box.id]) box.checked = true;
+    box.addEventListener("change", function () {
+      state[box.id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+  var body = document.getElementById("sheet-body");
+  var nums = document.getElementById("nums");
+  function numberLines() {
+    if (!body || !nums || !body.offsetHeight) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight) || 30;
+    var count = Math.max(1, Math.round(body.offsetHeight / lh));
+    var out = [];
+    for (var i = 1; i <= count; i++) out.push(i);
+    nums.innerHTML = out.join("<br>");
+  }
+  numberLines();
+  window.addEventListener("resize", numberLines);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(numberLines);
+})();
+</script>
+
+</body>
+</html>

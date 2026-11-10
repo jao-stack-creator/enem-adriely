@@ -249,6 +249,9 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
 /* Tabelas */
 .tbl-wrap table { font-size: 0.94rem; }
 .tbl-wrap td { vertical-align: top; }
+.tbl-wrap table.fit { table-layout: fixed; }
+.tbl-wrap table.fit th, .tbl-wrap table.fit td { overflow-wrap: anywhere; hyphens: auto; padding: 8px 6px; }
+.tbl-wrap table.fit th { letter-spacing: 0; font-size: 0.72rem; }
 /* Respostas abertas */
 .quiz { gap: 8px; }
 .quiz .q { font-weight: 400; }
@@ -570,7 +573,7 @@ footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: 
   <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer em até 3 minutos por questão, como na prova.</p></div>
   <article class="eq card" data-ans="A">
     <div class="eq-head"><span>Questão 1</span><span class="eq-area">ENEM 2014 · Agrário</span></div>
-    <div class="eq-text"><p>Mas plantar pra dividir<br>Não faço mais isso, não.<br>Eu sou um pobre caboclo,<br>Ganho a vida na enxada.<br>O que eu colho é dividido<br>Com quem não planta nada.<br>Se assim continuar<br>vou deixar o meu sertão,<br>mesmo os olhos cheios d’água<br>e com dor no coração.<br>Vou pro Rio carregar massas<br>pros pedreiros em construção.<br>Deus até está ajudando:<br>está chovendo no sertão!<br>Mas plantar pra dividir,<br>Não faço mais isso, não.</p><cite>VALE, J.; AQUINO, J. B. Sina de caboclo. São Paulo: Polygram, 1994 (fragmento).</cite></div>
+    <div class="eq-text"><p>Mas plantar pra dividir<br>Não faço mais isso, não.<br>[…]<br>O que eu colho é dividido<br>Com quem não planta nada.<br>[…]</p><cite>VALE, J.; AQUINO, J. B. Sina de caboclo. São Paulo: Polygram, 1994 (fragmento).</cite></div>
     <p class="eq-cmd">No trecho da canção, composta na década de 1960, retrata-se a insatisfação do trabalhador rural com:</p>
     <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
       <label class="alt"><input type="radio" name="geo-q1" value="A"><span class="letter">A</span><span class="alt-t">A distribuição desigual da produção.</span></label>
