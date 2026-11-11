@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matemática completa da Adriely</title>
+<meta name="description" content="Matemática completa do ENEM, explicada passo a passo, com 20 questões reais.">
+<meta property="og:title" content="Matemática completa da Adriely">
+<meta property="og:description" content="Matemática completa do ENEM, explicada passo a passo, com 20 questões reais.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Lexend:wght@400;700&display=swap">
+<style>
+/* Paleta: azul de caneta + amarelo de marca-texto. Layout: uma coluna pensada para celular; cada seção é um "caderno" com etiqueta colorida; checklists em bolinhas de cartão-resposta; a redação-modelo numa folha pautada. */
+:root {
+  --bg: #F5F7FC;
+  --surface: #FFFFFF;
+  --ink: #18203A;
+  --muted: #4E5874;
+  --line: #D8DEEE;
+  --accent: #2445B5;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E4EAFB;
+  --sun: #F5C518;
+  --sun-soft: #FFF5C2;
+  --warn: #C0392B;
+  --warn-soft: #FCE6E3;
+  --rule: #C9D6EE;
+  --margin: #E8A0A0;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Lexend", "Segoe UI", system-ui, sans-serif;
+  --lh-sheet: 30px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+    --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+    --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+    --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+  --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+  --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+  --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h2 { font-size: 1.75rem; font-weight: 750; letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, input:focus-visible + .bubble, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+strong { font-weight: 700; }
+.muted { color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.stack-lg { display: flex; flex-direction: column; gap: 22px; }
+
+/* Hero */
+.hero { padding-block: 40px 8px; display: flex; flex-direction: column; gap: 16px; }
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.hero h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 1.12rem; max-width: 60ch; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.nav a { text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: 0.92rem; }
+.nav a:hover { border-color: var(--accent); }
+
+/* Seção como caderno */
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 16px; }
+.tab { align-self: flex-start; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.tab.sun { background: var(--sun-soft); color: var(--ink); }
+.intro { font-size: 1.05rem; max-width: 62ch; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.stat b { font-family: var(--font-display); font-size: 2.3rem; font-weight: 800; line-height: 1; color: var(--accent); display: block; font-variant-numeric: tabular-nums; }
+.stat span { font-weight: 700; }
+
+.note { border-radius: 12px; padding: 14px 16px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 6px; }
+.note.sun { background: var(--sun-soft); }
+.note.warn { background: var(--warn-soft); }
+.note .label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+.note.warn .label { color: var(--warn); }
+
+ul.clean { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+ul.clean li { padding-left: 22px; position: relative; }
+ul.clean li::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+ul.clean.x li::before { background: var(--warn); border-radius: 2px; transform: rotate(45deg); }
+
+/* Fórmula da média */
+.calc { font-family: var(--font-display); font-size: 1.05rem; background: var(--surface); border: 1px dashed var(--accent); border-radius: 12px; padding: 14px 16px; }
+
+/* Bolinhas de cartão-resposta */
+.check { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; padding: 6px 0; }
+.check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.bubble { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--ink); margin-top: 1px; display: grid; place-items: center; transition: background .15s; }
+.check input:checked + .bubble { background: var(--ink); }
+.check input:checked + .bubble + .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+.day { display: grid; grid-template-columns: 64px 1fr; gap: 14px; }
+.day .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 12px; background: var(--accent); color: var(--accent-ink); padding: 8px 4px; align-self: start; line-height: 1.1; }
+.day .date small { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.day .date b { font-size: 1.7rem; }
+.day.light .date { background: var(--sun); color: #2A2200; }
+.day h3 { margin-bottom: 4px; }
+
+/* Competências */
+.comp { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: start; }
+.comp .n { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; background: var(--accent-soft); color: var(--accent); border-radius: 10px; text-align: center; padding: 8px 0; }
+
+/* Proposta estilo ENEM */
+.proposta { background: var(--surface); border: 2px solid var(--ink); border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.proposta .head { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+.tema { font-weight: 700; background: var(--sun-soft); padding: 1px 4px; border-radius: 3px; }
+.texto { border-left: 3px solid var(--line); padding-left: 14px; display: flex; flex-direction: column; gap: 6px; }
+.texto .t { font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.08em; }
+.texto cite { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+
+/* Esqueleto */
+.bone { display: flex; flex-direction: column; gap: 8px; }
+.bone .part { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.bone .lines { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.slot { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 4px; font-weight: 700; }
+
+/* Repertórios */
+.rep .who { font-family: var(--font-display); font-weight: 750; font-size: 1.1rem; }
+.rep .when { font-size: 0.92rem; color: var(--muted); }
+.rep q { font-style: italic; }
+
+/* Folha pautada */
+.sheet { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 16px 56px; overflow: hidden; }
+.sheet .nums { position: absolute; left: 0; top: 16px; width: 40px; text-align: right; font-size: 0.75rem; color: var(--muted); line-height: var(--lh-sheet); font-variant-numeric: tabular-nums; user-select: none; }
+.sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 46px; width: 1px; background: var(--margin); }
+.sheet .body {
+  line-height: var(--lh-sheet); font-size: 16px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--lh-sheet) - 1px), var(--rule) calc(var(--lh-sheet) - 1px), var(--rule) var(--lh-sheet));
+}
+.sheet .body p { text-indent: 2em; }
+.sheet .title-line { text-align: center; font-weight: 700; }
+mark.fix { background: var(--sun-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+.legend { display: flex; gap: 10px; align-items: center; font-size: 0.92rem; }
+.legend i { width: 28px; height: 14px; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 3px; display: inline-block; flex: none; }
+
+.five { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.five .card { padding: 14px; gap: 4px; }
+.five .k { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: 0.95rem; }
+
+/* Linha do tempo da prova */
+.timeline { display: flex; flex-direction: column; gap: 0; border-left: 3px solid var(--accent-soft); margin-left: 8px; }
+.timeline .step { position: relative; padding: 0 0 18px 20px; }
+.timeline .step::before { content: ""; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.timeline .step .time { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+.final { background: var(--accent); color: var(--accent-ink); border-radius: 18px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+.final h2 { font-size: 1.9rem; }
+.final p { font-size: 1.06rem; }
+footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+
+/* Liberação por dia */
+.today-pill { align-self: flex-start; display: inline-flex; gap: 8px; align-items: center; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 0.95rem; }
+.today-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); }
+.new-badge { align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sun); color: #2A2200; border-radius: 6px; padding: 3px 8px; }
+.tabrow { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.mission { border: 2px solid var(--accent); }
+.mission .tab { margin-bottom: 2px; }
+.road { display: flex; flex-direction: column; gap: 10px; }
+.road .item { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.road .item .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 10px; padding: 6px 4px; line-height: 1.1; background: var(--accent-soft); color: var(--accent); }
+.road .item .date small { display: block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.road .item .date b { font-size: 1.4rem; }
+.road .item.is-today { border: 2px solid var(--sun); }
+.road .item.is-today .date { background: var(--sun); color: #2A2200; }
+.road .item.is-locked { opacity: 0.78; }
+.road .item.is-locked .date { background: var(--line); color: var(--muted); }
+.road .state { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; gap: 6px; align-items: center; color: var(--accent); }
+.road .is-locked .state { color: var(--muted); }
+.road .is-today .state { color: var(--ink); }
+.road .state svg { width: 13px; height: 13px; }
+.road h3 { font-size: 1.08rem; margin-top: 2px; }
+.road p { font-size: 0.95rem; color: var(--muted); }
+
+/* Para quem nunca viu */
+.howto { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.howto div { display: flex; gap: 10px; align-items: flex-start; }
+.howto .n, .parts .n { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-family: var(--font-display); font-weight: 800; display: grid; place-items: center; }
+.parts { display: grid; gap: 10px; }
+.parts .card { flex-direction: row; gap: 12px; align-items: flex-start; padding: 14px; }
+.parts .lines { font-size: 0.85rem; color: var(--muted); }
+.gloss { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 0; }
+.gloss div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.gloss dt { font-family: var(--font-display); font-weight: 750; font-size: 1.05rem; }
+.gloss dd { margin: 4px 0 0; color: var(--muted); }
+.gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Simulado estilo ENEM */
+:root { --ok: #1E7A46; --ok-soft: #E1F4E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #6FD39A; --ok-soft: #163A26; } }
+:root[data-theme="dark"] { --ok: #6FD39A; --ok-soft: #163A26; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eq { gap: 12px; }
+.eq-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-family: var(--font-display); font-weight: 800; }
+.eq-area { font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; }
+.eq-text { background: var(--bg); border-left: 3px solid var(--line); border-radius: 0 10px 10px 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-text cite { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.eq-cmd { font-weight: 700; }
+.alts { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.alt { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.alt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.alt .letter { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.alt .alt-t { min-width: 0; }
+.alt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.alt:has(input:checked) .letter { background: var(--ink); color: var(--bg); }
+.alt:has(input:focus-visible) { outline: 3px solid var(--sun); outline-offset: 2px; }
+.alts .alt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.alts .alt.is-right .letter { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.alts .alt.is-wrong { border-color: var(--warn); background: var(--warn-soft); }
+.alts .alt.is-wrong .letter { background: var(--warn); border-color: var(--warn); color: var(--surface); }
+.alt:has(input:disabled) { cursor: default; }
+.eq-check, .sim-reset { align-self: flex-start; font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.sim-reset { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.eq-fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-fb.is-ok { background: var(--ok-soft); } .eq-fb.is-ok .eq-res { color: var(--ok); font-weight: 700; }
+.eq-fb.is-no { background: var(--warn-soft); } .eq-fb.is-no .eq-res { color: var(--warn); font-weight: 700; }
+.eq-fb.is-empty { background: var(--sun-soft); }
+.sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
+
+/* Tabelas */
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+.tbl-wrap table.fit { table-layout: fixed; }
+.tbl-wrap table.fit th, .tbl-wrap table.fit td { overflow-wrap: anywhere; hyphens: auto; padding: 8px 6px; }
+.tbl-wrap table.fit th { letter-spacing: 0; font-size: 0.72rem; }
+/* Respostas abertas */
+.quiz { gap: 8px; }
+.quiz .q { font-weight: 400; }
+.quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
+.quiz ol.opts li::marker { font-weight: 700; color: var(--accent); }
+.quiz details { border-top: 1px dashed var(--line); padding-top: 8px; }
+.quiz summary { cursor: pointer; font-weight: 700; color: var(--accent); list-style: none; display: inline-flex; gap: 6px; align-items: center; padding: 4px 12px; border: 1.5px solid var(--accent); border-radius: 999px; }
+.quiz summary::-webkit-details-marker { display: none; }
+.quiz details[open] summary { background: var(--accent); color: var(--accent-ink); }
+.quiz details p { margin-top: 8px; background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">ENEM · 1º dia · domingo, 8 de novembro</div>
+  <h1>Adriely, a Matemática <span>completa</span></h1>
+  <div class="today-pill"><span class="dot"></span>Matemática do ENEM, passo a passo</div>
+  <p class="lede">Toda a Matemática que mais cai no ENEM, <strong>explicada com calma e com exemplos resolvidos passo a passo</strong>, montada a partir das provas de 2009 a 2023. No fim, um simulado com <strong>20 questões reais do ENEM</strong>.</p>
+  <nav class="nav" aria-label="Partes do guia">
+    <a href="#plano">Plano</a>
+    <a href="#mais-cai">O que mais cai</a>
+    <a href="#basica">Básica</a>
+    <a href="#medidas">Medidas</a>
+    <a href="#escala">Escala</a>
+    <a href="#geoplana">Geometria plana</a>
+    <a href="#geoespacial">Geometria espacial</a>
+    <a href="#estatistica">Estatística</a>
+    <a href="#probabilidade">Probabilidade</a>
+    <a href="#funcoes">Funções</a>
+    <a href="#apostas">Apostas</a>
+    <a href="#simulado">Simulado</a>
+    <a href="#formulario">Formulário</a>
+  </nav>
+</header>
+
+<section id="plano" class="mission-sec">
+  <div class="card mission stack">
+    <span class="tab sun">Plano de estudo</span>
+    <h2>Como usar esta página, Adriely</h2>
+    <p class="muted">É a Matemática completa do ENEM, numa página só. Dá para dividir em dois dias: a <strong>Parte A</strong> num dia e a <strong>Parte B</strong> com o simulado no outro.</p>
+    
+    <p class="muted"><strong>Parte A</strong></p>
+    <label class="check"><input type="checkbox" id="mc-1"><span class="bubble"></span><span class="txt">Ler <a href="#mais-cai">O que mais cai</a> e <a href="#apostas">Apostas para 2026</a> (≈ 10 min).</span></label>
+    <label class="check"><input type="checkbox" id="mc-2"><span class="bubble"></span><span class="txt">Revisar a <a href="#basica">Matemática básica</a> (≈ 30 min).</span></label>
+    <label class="check"><input type="checkbox" id="mc-3"><span class="bubble"></span><span class="txt">Estudar <a href="#medidas">Unidades de medida</a> e <a href="#escala">Escala</a> (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="mc-4"><span class="bubble"></span><span class="txt">Estudar <a href="#geoplana">Geometria plana</a> e <a href="#geoespacial">Geometria espacial</a> (≈ 50 min).</span></label>
+    <p class="muted"><strong>Parte B</strong></p>
+    <label class="check"><input type="checkbox" id="mc-5"><span class="bubble"></span><span class="txt">Estudar <a href="#estatistica">Estatística</a> e <a href="#probabilidade">Probabilidade e contagem</a> (≈ 40 min).</span></label>
+    <label class="check"><input type="checkbox" id="mc-6"><span class="bubble"></span><span class="txt">Estudar <a href="#funcoes">Funções e sequências</a> (≈ 30 min).</span></label>
+    <label class="check"><input type="checkbox" id="mc-7"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado</a>: 20 questões reais do ENEM (≈ 1 hora).</span></label>
+    <label class="check"><input type="checkbox" id="mc-8"><span class="bubble"></span><span class="txt">Copiar o <a href="#formulario">formulário de bolso</a> e reler antes da prova.</span></label>
+  </div>
+</section>
+
+<section id="mais-cai">
+  <div class="tabrow"><span class="tab sun">Pesquisa</span></div>
+  <h2>O que mais cai em Matemática</h2>
+  <p class="intro">Análise de <strong>416 questões de Matemática</strong> das provas do ENEM de 2009 a 2023, de um banco público com as provas e o gabarito oficial.</p>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:62%">Assunto</th><th>Questões</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Unidades de medida e conversões</strong></td><td>64</td></tr>
+        <tr><td><strong>Geometria plana</strong> (áreas e perímetros)</td><td>62</td></tr>
+        <tr><td><strong>Gráficos e tabelas</strong></td><td>61</td></tr>
+        <tr><td><strong>Geometria espacial</strong> (volumes)</td><td>57</td></tr>
+        <tr><td><strong>Porcentagem e juros</strong></td><td>52</td></tr>
+        <tr><td><strong>Média, moda e mediana</strong></td><td>34</td></tr>
+        <tr><td><strong>Probabilidade</strong></td><td>25</td></tr>
+        <tr><td><strong>Funções</strong></td><td>24</td></tr>
+        <tr><td><strong>Razão, proporção e regra de três</strong> (*)</td><td>21</td></tr>
+        <tr><td><strong>Sequências (PA e PG)</strong></td><td>12</td></tr>
+        <tr><td><strong>Escala</strong></td><td>10</td></tr>
+        <tr><td><strong>Análise combinatória</strong></td><td>6</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">(*) Contagem feita pelas palavras do enunciado. Proporção e regra de três aparecem escondidas em quase todas as contas, então esse assunto pesa muito mais do que o número indica. Uma questão também pode tratar de mais de um assunto.</p>
+  <div class="note sun"><span class="label">A conclusão</span><p>O ENEM cobra principalmente <strong>matemática do dia a dia</strong>: medidas, áreas, volumes, porcentagem, gráficos e média. Fórmula difícil é raridade: trigonometria, por exemplo, quase não aparece.</p></div>
+
+  <h3 id="como-cobra">Como a Matemática do ENEM é cobrada</h3>
+  <div class="grid">
+    <div class="card"><h3>Leitura primeiro</h3><p class="muted">Cada questão é uma situação real. Sublinhe os números, as <strong>unidades</strong> e o que a pergunta pede.</p></div>
+    <div class="card"><h3>Teste as alternativas</h3><p class="muted">Muitas vezes é mais rápido <strong>testar</strong> as respostas ou <strong>estimar</strong> e eliminar as absurdas.</p></div>
+    <div class="card"><h3>Fáceis primeiro</h3><p class="muted">Pela TRI, errar questão fácil pesa muito. Conta enorme? Marque, pule e volte depois.</p></div>
+    <div class="card"><h3>Tempo</h3><p class="muted">No 2º dia são cerca de <strong>5 horas para 90 questões</strong>, ou 3 minutos e pouco por questão. Garanta as rápidas.</p></div>
+  </div>
+</section>
+
+<!-- ======================= BÁSICA ======================= -->
+<section id="basica">
+  <div class="tabrow"><span class="tab">Parte 1</span></div>
+  <h2>Matemática básica</h2>
+  <div class="note"><span class="label">Você já estudou isso na terça</span><p>Aqui está um resumo para revisar. Se tiver dúvida, volte na <strong>página de Matemática 1</strong>, que tem tudo explicado com calma.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Porcentagem</h3><p class="muted">x% = x ÷ 100. <strong>Aumento</strong> de i%: multiplique por (1 + i). <strong>Desconto</strong>: por (1 − i). Porcentagens <strong>seguidas</strong>: multiplique os fatores. <strong>Valor original</strong>: divida pelo fator.</p></div>
+    <div class="card"><h3>Juros</h3><p class="muted"><strong>Simples:</strong> J = C × i × t. <strong>Compostos:</strong> M = C × (1 + i)<sup>t</sup>.</p></div>
+    <div class="card"><h3>Razão e proporção</h3><p class="muted">Razão = divisão (a ordem importa). Proporção: a/b = c/d → a × d = b × c.</p></div>
+    <div class="card"><h3>Regra de três</h3><p class="muted">Pergunte: "se um aumenta, o outro aumenta ou diminui?". <strong>Direta:</strong> multiplique cruzado. <strong>Inversa:</strong> multiplique em linha.</p></div>
+  </div>
+  <h3>Passo a passo: aumento seguido de desconto</h3>
+  <div class="calc">Um produto de R$ 100 sobe 20% e depois tem 20% de desconto.<br>1º passo: 100 × 1,20 = 120<br>2º passo: 120 × 0,80 = 96<br>Resultado: <strong>R$ 96</strong>. Ele não volta para R$ 100! Por isso não se somam porcentagens seguidas.</div>
+</section>
+
+<!-- ======================= MEDIDAS ======================= -->
+<section id="medidas">
+  <div class="tabrow"><span class="tab">Parte 2 · a que mais cai</span></div>
+  <h2>Unidades de medida e conversões</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Quase toda questão do ENEM tem uma <strong>troca de unidade</strong> escondida: metros para centímetros, mililitros para litros, minutos para horas.</p></div>
+
+  <h3>1. Comprimento, área e volume</h3>
+  <p>A "escadinha" das unidades: <strong>km · hm · dam · m · dm · cm · mm</strong>. Para descer um degrau (unidade menor), multiplique. Para subir, divida.</p>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th>Tipo</th><th>Cada degrau vale</th><th>Exemplo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Comprimento</strong> (m)</td><td>× 10</td><td>1 m = 100 cm</td></tr>
+        <tr><td><strong>Área</strong> (m²)</td><td>× 100</td><td>1 m² = 10 000 cm²</td></tr>
+        <tr><td><strong>Volume</strong> (m³)</td><td>× 1 000</td><td>1 m³ = 1 000 000 cm³</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><span class="label">Por que área é × 100?</span><p>Um quadrado de 1 m de lado tem 100 cm de lado. A área dele é 100 cm × 100 cm = <strong>10 000 cm²</strong>. Como a área tem "duas dimensões", o fator aparece duas vezes. No volume, que tem três dimensões, ele aparece três vezes.</p></div>
+
+  <h3>2. Capacidade (litros): as igualdades que mais caem</h3>
+  <div class="chips"><span><strong>1 L = 1 000 mL</strong></span><span><strong>1 dm³ = 1 L</strong></span><span><strong>1 cm³ = 1 mL</strong></span><span><strong>1 m³ = 1 000 L</strong></span><span>1 cL = 10 mL (centésima parte do litro)</span></div>
+
+  <h3>3. Massa, tempo e outras</h3>
+  <div class="grid">
+    <div class="card"><h3>Massa</h3><p class="muted">1 t = 1 000 kg · 1 kg = 1 000 g · 1 g = 1 000 mg</p></div>
+    <div class="card"><h3>Tempo</h3><p class="muted">1 h = 60 min = 3 600 s · 1 dia = 24 h. Cuidado: <strong>1,5 h = 1 h 30 min</strong>, e não 1 h 50 min!</p></div>
+    <div class="card"><h3>Velocidade</h3><p class="muted">De km/h para m/s: <strong>divida por 3,6</strong>. 72 km/h = 20 m/s.</p></div>
+    <div class="card"><h3>Área rural</h3><p class="muted">1 hectare (ha) = <strong>10 000 m²</strong>, um quadrado de 100 m × 100 m.</p></div>
+    <div class="card"><h3>Densidade</h3><p class="muted">densidade = massa ÷ volume. Então volume = massa ÷ densidade.</p></div>
+    <div class="card"><h3>Dosagem (cai muito em saúde!)</h3><p class="muted">"500 mg por kg": para 20 kg, 500 × 20 = 10 000 mg = <strong>10 g</strong> por dia.</p></div>
+  </div>
+  <h3>Passo a passo: consumo de combustível</h3>
+  <div class="calc">Um carro faz 12 km com 1 litro. Quantos litros gasta em 300 km?<br>1º: identifique a relação → 12 km por litro.<br>2º: divida a distância pela relação → 300 ÷ 12 = <strong>25 litros</strong>.<br>Confira: 25 L × 12 km = 300 km ✔</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Comprimento ×10, área ×100, volume ×1 000. <strong>1 dm³ = 1 L</strong>, <strong>1 cm³ = 1 mL</strong>, <strong>1 m³ = 1 000 L</strong>. km/h ÷ 3,6 = m/s. Sempre confira se as unidades do enunciado e das alternativas são iguais.</p></div>
+</section>
+
+<!-- ======================= ESCALA ======================= -->
+<section id="escala">
+  <div class="tabrow"><span class="tab">Parte 3</span></div>
+  <h2>Escala</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Escala é a <strong>razão entre o desenho (ou a maquete) e o tamanho real</strong>. Escala 1 : 200 quer dizer que 1 cm no desenho vale 200 cm (2 m) na realidade.</p></div>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th>Escala 1 : k</th><th>Multiplique por</th><th>Exemplo com 1 : 200</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Comprimento</strong></td><td>k</td><td>× 200</td></tr>
+        <tr><td><strong>Área</strong></td><td>k²</td><td>× 40 000</td></tr>
+        <tr><td><strong>Volume</strong></td><td>k³</td><td>× 8 000 000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Essa é a pegadinha preferida do ENEM: em <strong>maquetes</strong>, o volume real é o da maquete <strong>multiplicado pela escala ao cubo</strong>. Caiu em 2017 e em 2019 (as duas estão no simulado).</p>
+  <h3>Passo a passo: mapa</h3>
+  <div class="calc">Num mapa de escala 1 : 50 000, duas cidades estão a 4 cm.<br>1º: 4 cm × 50 000 = 200 000 cm.<br>2º: passe para km. 200 000 cm = 2 000 m = <strong>2 km</strong>.<br>Truque: para passar de cm para km, divida por 100 000.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Comprimento × k, área × k², <strong>volume × k³</strong>. Depois, converta as unidades: cm³ para m³ é dividir por 1 000 000.</p></div>
+</section>
+
+<!-- ======================= GEOMETRIA PLANA ======================= -->
+<section id="geoplana">
+  <div class="tabrow"><span class="tab">Parte 4</span></div>
+  <h2>Geometria plana</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Área é o "tamanho da superfície" (quanto piso, tinta ou grama cabe). Perímetro é a <strong>soma dos lados</strong> (o tamanho da cerca).</p></div>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:38%">Figura</th><th>Área</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Quadrado</strong> (lado l)</td><td>l × l = l²</td></tr>
+        <tr><td><strong>Retângulo</strong></td><td>base × altura</td></tr>
+        <tr><td><strong>Triângulo</strong></td><td>(base × altura) ÷ 2</td></tr>
+        <tr><td><strong>Triângulo equilátero</strong> (lado l)</td><td>(l² × √3) ÷ 4</td></tr>
+        <tr><td><strong>Trapézio</strong></td><td>(base maior + base menor) × altura ÷ 2</td></tr>
+        <tr><td><strong>Losango</strong></td><td>(diagonal maior × diagonal menor) ÷ 2</td></tr>
+        <tr><td><strong>Hexágono regular</strong></td><td>6 triângulos equiláteros</td></tr>
+        <tr><td><strong>Círculo</strong> (raio r)</td><td>π × r²</td></tr>
+        <tr><td><strong>Comprimento da circunferência</strong></td><td>2 × π × r</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">O ENEM costuma dizer "use 3 como aproximação para π" e "1,7 para √3". O <strong>raio</strong> é a metade do diâmetro.</p>
+
+  <h3>Teorema de Pitágoras</h3>
+  <p>No triângulo retângulo (com um ângulo de 90°): <strong>hipotenusa² = cateto² + cateto²</strong>. O triângulo <strong>3, 4, 5</strong> é o mais comum: 3² + 4² = 9 + 16 = 25 = 5².</p>
+  <h3>Outras ideias que caem</h3>
+  <ul class="clean">
+    <li>A soma dos ângulos de qualquer triângulo é <strong>180°</strong>.</li>
+    <li><strong>Triângulos semelhantes</strong> têm a mesma forma e lados proporcionais. Use proporção (multiplicação cruzada), como na sombra de um prédio e de uma pessoa.</li>
+    <li>Para encontrar a <strong>área de uma "coroa"</strong> (anel entre dois círculos), faça a área do círculo maior − a do menor. Caiu em 2019!</li>
+  </ul>
+  <h3>Passo a passo: quantos pisos comprar</h3>
+  <div class="calc">Uma sala de 4 m × 5 m vai receber pisos quadrados de 50 cm de lado.<br>1º: área da sala = 4 × 5 = 20 m².<br>2º: área do piso = 0,5 m × 0,5 m = 0,25 m² (passe tudo para metro!).<br>3º: 20 ÷ 0,25 = <strong>80 pisos</strong>.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Retângulo = b × h. Triângulo = b × h ÷ 2. Círculo = π × r². Pitágoras: a² = b² + c². <strong>Passe tudo para a mesma unidade antes de calcular.</strong></p></div>
+</section>
+
+<!-- ======================= GEOMETRIA ESPACIAL ======================= -->
+<section id="geoespacial">
+  <div class="tabrow"><span class="tab">Parte 5</span></div>
+  <h2>Geometria espacial</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Volume é "quanto cabe dentro": água numa caixa-d'água, concreto numa laje, suco numa embalagem.</p></div>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:38%">Sólido</th><th>Volume</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cubo</strong> (aresta a)</td><td>a × a × a = a³</td></tr>
+        <tr><td><strong>Paralelepípedo</strong> (caixa)</td><td>comprimento × largura × altura</td></tr>
+        <tr><td><strong>Prisma</strong> e <strong>cilindro</strong></td><td>área da base × altura (cilindro: π × r² × h)</td></tr>
+        <tr><td><strong>Pirâmide</strong> e <strong>cone</strong></td><td>(área da base × altura) ÷ 3</td></tr>
+        <tr><td><strong>Esfera</strong></td><td>(4 × π × r³) ÷ 3</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Ampliação e redução</h3>
+  <p>Se todas as medidas de um objeto forem multiplicadas por k, a área fica multiplicada por <strong>k²</strong> e o volume por <strong>k³</strong>. Dobrar as medidas de uma caixa multiplica o volume por <strong>8</strong>.</p>
+  <h3>Planificação e vistas</h3>
+  <p>A <strong>planificação</strong> é o sólido "desmontado" no papel: um cubo vira 6 quadrados, e um cilindro vira 2 círculos e 1 retângulo. As questões de <strong>vista</strong> perguntam como o objeto aparece visto de cima, de frente ou de lado.</p>
+  <h3>Passo a passo: caixa-d'água</h3>
+  <div class="calc">Uma caixa-d'água cilíndrica tem raio de 1 m e altura de 2 m. Quantos litros cabem? (Use π = 3)<br>1º: área da base = π × r² = 3 × 1² = 3 m².<br>2º: volume = 3 × 2 = 6 m³.<br>3º: 1 m³ = 1 000 L → <strong>6 000 litros</strong>.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Prisma e cilindro = base × altura. Pirâmide e cone = base × altura ÷ 3. Medidas × k → volume × <strong>k³</strong>. No fim, 1 m³ = 1 000 L.</p></div>
+</section>
+
+<!-- ======================= ESTATÍSTICA ======================= -->
+<section id="estatistica">
+  <div class="tabrow"><span class="tab">Parte 6</span></div>
+  <h2>Estatística</h2>
+  <div class="grid">
+    <div class="card"><h3>Média</h3><p class="muted">Some tudo e divida pela quantidade. <strong>Média ponderada:</strong> multiplique cada valor pelo seu peso, some e divida pela soma dos pesos.</p></div>
+    <div class="card"><h3>Moda</h3><p class="muted">O valor que <strong>mais se repete</strong>.</p></div>
+    <div class="card"><h3>Mediana</h3><p class="muted"><strong>Ordene</strong> e pegue o valor do meio. Se a quantidade for par, faça a média dos dois do meio.</p></div>
+    <div class="card"><h3>Desvio padrão</h3><p class="muted">Mede o quanto os valores <strong>se espalham</strong> em torno da média. <strong>Quanto menor, mais regular</strong> é o conjunto. É o mais "constante".</p></div>
+  </div>
+  <p><strong>Truque:</strong> se um único valor muda, a média muda essa diferença dividida pela quantidade de valores.</p>
+  <h3>Passo a passo: mediana com quantidade par</h3>
+  <div class="calc">Notas: 8, 3, 6, 9, 5, 7.<br>1º: ordene → 3, 5, <strong>6, 7</strong>, 8, 9.<br>2º: são 6 números (par). Os do meio são 6 e 7.<br>3º: (6 + 7) ÷ 2 = <strong>6,5</strong>.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Média = soma ÷ quantidade. Moda = mais repete. Mediana = meio, <strong>depois de ordenar</strong>. Desvio padrão menor = mais regular.</p></div>
+</section>
+
+<!-- ======================= PROBABILIDADE ======================= -->
+<section id="probabilidade">
+  <div class="tabrow"><span class="tab">Parte 7</span></div>
+  <h2>Probabilidade e contagem</h2>
+  <div class="note"><span class="label">Em uma frase</span><p><strong>Probabilidade = casos que eu quero ÷ casos possíveis.</strong> O resultado fica sempre entre 0 (impossível) e 1 (certo), ou entre 0% e 100%.</p></div>
+  <div class="grid">
+    <div class="card"><h3>"E" multiplica</h3><p class="muted">Dois eventos acontecendo um depois do outro. Tirar cara <strong>e</strong> cara: ½ × ½ = <strong>¼</strong>.</p></div>
+    <div class="card"><h3>"Ou" soma</h3><p class="muted">Um ou outro, quando não acontecem juntos. Num dado, sair 1 <strong>ou</strong> 2: 1/6 + 1/6 = <strong>2/6</strong>.</p></div>
+    <div class="card"><h3>"Pelo menos um"</h3><p class="muted">Use o contrário: P(pelo menos um) = <strong>1 − P(nenhum)</strong>. Caiu em 2021!</p></div>
+    <div class="card"><h3>Sem reposição</h3><p class="muted">Se a bola tirada não volta, na segunda retirada <strong>há uma bola a menos</strong> no total.</p></div>
+    <div class="card"><h3>"Sabendo que..."</h3><p class="muted">É a probabilidade condicional: o total de casos <strong>diminui</strong> para só os que cumprem a condição.</p></div>
+  </div>
+  <h3>Contagem (análise combinatória)</h3>
+  <ul class="clean">
+    <li><strong>Princípio multiplicativo:</strong> 3 camisas e 4 calças dão 3 × 4 = <strong>12</strong> combinações de roupa.</li>
+    <li><strong>Quando a ordem importa</strong> (senhas, filas, pódio), multiplique as opções de cada posição.</li>
+    <li><strong>Quando a ordem não importa</strong> (escolher uma comissão, um grupo), divida pelas repetições. Escolher 2 pessoas de 4: (4 × 3) ÷ 2 = <strong>6</strong>.</li>
+  </ul>
+  <h3>Passo a passo: sorteio com condição</h3>
+  <div class="calc">Numa turma de 30 alunos, 12 usam óculos, e 5 dos que usam óculos são meninas. Sorteando alguém <strong>que usa óculos</strong>, qual a chance de ser menina?<br>1º: o "sabendo que" muda o total → agora são só os 12 de óculos.<br>2º: casos que eu quero = 5 meninas.<br>3º: P = 5/12.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>P = quero ÷ total. <strong>E = multiplica</strong>, <strong>ou = soma</strong>. "Pelo menos um" = 1 − nenhum. "Sabendo que" = muda o total.</p></div>
+</section>
+
+<!-- ======================= FUNÇÕES ======================= -->
+<section id="funcoes">
+  <div class="tabrow"><span class="tab">Parte 8</span></div>
+  <h2>Funções e sequências</h2>
+  <div class="grid">
+    <div class="card"><h3>Função afim: y = ax + b</h3><p class="muted">O gráfico é uma <strong>reta</strong>. <strong>b</strong> é o valor fixo (a "taxa"), e <strong>a</strong> é quanto aumenta a cada unidade. Exemplo: táxi com bandeirada de R$ 5 e R$ 3 por km → y = 3x + 5. Caiu em 2023!</p></div>
+    <div class="card"><h3>Função quadrática: y = ax² + bx + c</h3><p class="muted">O gráfico é uma <strong>parábola</strong>. Se a &lt; 0, ela tem um ponto <strong>máximo</strong> (lucro máximo, altura máxima), que fica em <strong>x = −b ÷ (2a)</strong>.</p></div>
+    <div class="card"><h3>Função exponencial</h3><p class="muted">Algo que <strong>multiplica</strong> sempre pelo mesmo número: população que dobra, juros compostos, bactérias. "Multiplica por 10 a cada 3 dias": de 100 a 1 000 000 são 4 multiplicações, ou 12 dias.</p></div>
+  </div>
+  <h3>Sequências</h3>
+  <div class="grid">
+    <div class="card"><h3>PA (progressão aritmética)</h3><p class="muted">Soma sempre o mesmo número (a razão r). 2, 5, 8, 11... (r = 3). Termo: <strong>aₙ = a₁ + (n − 1) × r</strong>.</p></div>
+    <div class="card"><h3>PG (progressão geométrica)</h3><p class="muted">Multiplica sempre pelo mesmo número (a razão q). 3, 6, 12, 24... (q = 2). Termo: <strong>aₙ = a₁ × qⁿ⁻¹</strong>.</p></div>
+  </div>
+  <h3>Passo a passo: montar a função de uma tarifa</h3>
+  <div class="calc">Uma academia cobra R$ 80 de matrícula e R$ 60 por mês.<br>1º: o que é fixo? R$ 80 → é o <strong>b</strong>.<br>2º: o que muda a cada mês? R$ 60 → é o <strong>a</strong>.<br>3º: y = 60x + 80. Para 6 meses: 60 × 6 + 80 = <strong>R$ 440</strong>.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Afim = <strong>reta</strong> (fixo + variável). Quadrática = <strong>parábola</strong> (máximo em −b ÷ 2a). Exponencial = <strong>multiplica</strong> sempre. PA soma, PG multiplica.</p></div>
+</section>
+
+<section id="graficos">
+  <div class="tabrow"><span class="tab">Parte 9</span></div>
+  <h2>Gráficos e tabelas</h2>
+  <ul class="clean">
+    <li>Leia o <strong>título</strong>, a <strong>fonte</strong> e a <strong>unidade</strong> (mil? milhões? %?).</li>
+    <li>Confira os <strong>eixos</strong> e se o eixo vertical <strong>começa no zero</strong>.</li>
+    <li>Barras <strong>comparam</strong>, linhas mostram <strong>evolução</strong> e setores mostram <strong>partes de um todo</strong> (100% = 360°).</li>
+    <li>Só depois leia a pergunta e procure <strong>exatamente o dado pedido</strong>.</li>
+  </ul>
+</section>
+
+<section id="apostas">
+  <div class="tabrow"><span class="tab">O que pode cair em 2026</span></div>
+  <h2>Apostas para domingo</h2>
+  <div class="note"><span class="label">Importante</span><p>Ninguém sabe o que vai cair. Estas apostas seguem o que <strong>mais caiu</strong> nas provas anteriores e situações comuns do dia a dia.</p></div>
+  <div class="stack">
+    <div class="card"><h3>1. Medidas em situações reais</h3><p class="muted">Receitas, remédios (dosagem por kg), consumo de combustível, litros de água. É o assunto que mais cai.</p></div>
+    <div class="card"><h3>2. Áreas e volumes de objetos do cotidiano</h3><p class="muted">Pisos, terrenos, caixas-d'água, embalagens, reservatórios.</p></div>
+    <div class="card"><h3>3. Escala de maquetes e mapas</h3><p class="muted">Com a pegadinha do volume × k³.</p></div>
+    <div class="card"><h3>4. Matemática financeira</h3><p class="muted">Descontos, parcelamento, juros compostos e comparação de preços.</p></div>
+    <div class="card"><h3>5. Tarifas com parte fixa e parte variável</h3><p class="muted">Aplicativos de transporte, conta de luz, planos de celular. É a função afim.</p></div>
+    <div class="card"><h3>6. Estatística com dados reais</h3><p class="muted">Média, mediana e gráficos com dados de pesquisas ou do IBGE.</p></div>
+    <div class="card"><h3>7. Probabilidade em sorteios e jogos</h3><p class="muted">"Pelo menos um", sem reposição e "sabendo que".</p></div>
+  </div>
+</section>
+
+<section id="simulado" class="sim">
+  <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
+  <h2>Simulado com questões reais do ENEM</h2>
+  <p class="intro">Vinte questões que <strong>caíram de verdade</strong> no ENEM, de 2013 a 2023, cobrindo todos os assuntos da página, na mesma ordem. O texto e o gabarito são oficiais, e eu conferi cada conta. As explicações mostram o passo a passo. Faça as contas num papel.</p>
+  <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Faça as contas num papel, como na prova. Tente gastar até 3 minutos por questão.</p></div>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">ENEM 2022 · Porcentagem</span></div>
+    <div class="eq-text"><p>Em janeiro de 2013, foram declaradas 1 794 272 admissões e 1 765 372 desligamentos no Brasil, ou seja, foram criadas 28 900 vagas de emprego, segundo dados do Cadastro Geral de Empregados e Desempregados (Caged), divulgados pelo Ministério do Trabalho e Emprego (MTE). Segundo o Caged, o número de vagas criadas em janeiro de 2013 sofreu uma queda de 75%, quando comparado com o mesmo período de 2012.</p><cite>Disponível em: http://portal.mte.gov.br. Acesso em: 23 fev. 2013 (adaptado).</cite></div>
+    <p class="eq-cmd">De acordo com as informações dadas, o número de vagas criadas em janeiro de 2012 foi</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
+      <label class="alt"><input type="radio" name="mc-q1" value="A"><span class="letter">A</span><span class="alt-t">16 514.</span></label>
+      <label class="alt"><input type="radio" name="mc-q1" value="B"><span class="letter">B</span><span class="alt-t">86 700.</span></label>
+      <label class="alt"><input type="radio" name="mc-q1" value="C"><span class="letter">C</span><span class="alt-t">115 600.</span></label>
+      <label class="alt"><input type="radio" name="mc-q1" value="D"><span class="letter">D</span><span class="alt-t">441 343.</span></label>
+      <label class="alt"><input type="radio" name="mc-q1" value="E"><span class="letter">E</span><span class="alt-t">448 568.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Se houve uma queda de 75%, sobraram 25% do valor de 2012. Então 28 900 é 25% do número de 2012: 28 900 ÷ 0,25 = 115 600.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">ENEM 2022 · Porcentagem</span></div>
+    <div class="eq-text"><p>Em uma loja, o preço promocional de uma geladeira é de R$ 1 000,00 para pagamento somente em dinheiro. Seu preço normal, fora da promoção, é 10% maior. Para pagamento feito com o cartão de crédito da loja, é dado um desconto de 2% sobre o preço normal. Uma cliente decidiu comprar essa geladeira, optando pelo pagamento com o cartão de crédito da loja. Ela calculou que o valor a ser pago seria o preço promocional acrescido de 8%. Ao ser informada pela loja do valor a pagar, segundo sua opção, percebeu uma diferença entre seu cálculo e o valor que lhe foi apresentado</p></div>
+    <p class="eq-cmd">O valor apresentado pela loja, comparado ao valor calculado pela cliente, foi</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="mc-q2" value="A"><span class="letter">A</span><span class="alt-t">R$ 2,00 menor.</span></label>
+      <label class="alt"><input type="radio" name="mc-q2" value="B"><span class="letter">B</span><span class="alt-t">R$ 100,00 menor.</span></label>
+      <label class="alt"><input type="radio" name="mc-q2" value="C"><span class="letter">C</span><span class="alt-t">R$ 200,00 menor.</span></label>
+      <label class="alt"><input type="radio" name="mc-q2" value="D"><span class="letter">D</span><span class="alt-t">R$ 42,00 maior.</span></label>
+      <label class="alt"><input type="radio" name="mc-q2" value="E"><span class="letter">E</span><span class="alt-t">R$ 80,00 maior.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Preço normal: 1 000 × 1,10 = R$ 1 100. Com o cartão: 1 100 × 0,98 = R$ 1 078. A cliente calculou 1 000 × 1,08 = R$ 1 080. A loja cobrou R$ 2,00 a menos. Porcentagens seguidas não se somam!</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">ENEM 2023 · Porcentagem</span></div>
+    <div class="eq-text"><p>Em janeiro do ano passado, a direção de uma fábrica abriu uma creche para os filhos de seus funcionários, com 10 salas, cada uma com capacidade para atender 10 crianças a cada ano. As vagas são sorteadas entre os filhos dos funcionários inscritos, enquanto os não contemplados pelo sorteio formam uma lista de espera. No ano passado, a lista de espera teve 400 nomes e, neste ano, esse número cresceu 10%. A direção da fábrica realizou uma pesquisa e constatou que a lista de espera para o próximo ano terá a mesma quantidade de nomes da lista de espera deste ano. Decidiu, então, construir, ao longo desse ano, novas salas para a creche, também com capacidade de atendimento para 10 crianças cada, de modo que o número de nomes na lista de espera no próximo ano seja 25% menor que o deste ano.</p></div>
+    <p class="eq-cmd">O número mínimo de salas que deverão ser construídas é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="mc-q3" value="A"><span class="letter">A</span><span class="alt-t">10</span></label>
+      <label class="alt"><input type="radio" name="mc-q3" value="B"><span class="letter">B</span><span class="alt-t">11</span></label>
+      <label class="alt"><input type="radio" name="mc-q3" value="C"><span class="letter">C</span><span class="alt-t">12</span></label>
+      <label class="alt"><input type="radio" name="mc-q3" value="D"><span class="letter">D</span><span class="alt-t">30</span></label>
+      <label class="alt"><input type="radio" name="mc-q3" value="E"><span class="letter">E</span><span class="alt-t">33</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Lista deste ano: 400 × 1,10 = 440 nomes. A meta é 25% menor: 440 × 0,75 = 330. Faltam vagas para 440 − 330 = 110 crianças. Com 10 por sala: 110 ÷ 10 = 11 salas.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">ENEM 2021 · Proporção inversa</span></div>
+    <div class="eq-text"><p>Em uma corrida automobilística, os carros podem fazer paradas nos boxes para efetuar trocar de pneus. Nessas trocas, o trabalho é feito por um grupo de três pessoas em cada pneu. Considere que os grupos iniciam o trabalho no mesmo instante, trabalham à mesma velocidade e cada grupo trabalha em um único pneu. Com os quatro grupos completos, são necessários 4 segundos para que a troca seja efetuada. O tempo gasto por um grupo para trocar um pneu é inversamente proporcional ao número de pessoas trabalhando nele. Em uma dessas paradas, um dos trabalhadores passou mal, não pôde participar da troca e nem foi substituído, de forma que um dos quatro grupos de troca ficou reduzido.</p></div>
+    <p class="eq-cmd">Nessa parada específica, com um dos grupos reduzido, qual foi o tempo gasto, em segundo, para trocar os quatro pneus?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="mc-q4" value="A"><span class="letter">A</span><span class="alt-t">6,0</span></label>
+      <label class="alt"><input type="radio" name="mc-q4" value="B"><span class="letter">B</span><span class="alt-t">5,7</span></label>
+      <label class="alt"><input type="radio" name="mc-q4" value="C"><span class="letter">C</span><span class="alt-t">5,0</span></label>
+      <label class="alt"><input type="radio" name="mc-q4" value="D"><span class="letter">D</span><span class="alt-t">4,5</span></label>
+      <label class="alt"><input type="radio" name="mc-q4" value="E"><span class="letter">E</span><span class="alt-t">4,4</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Tempo e número de pessoas são inversamente proporcionais: 3 pessoas levam 4 s, então 2 pessoas levam 3 × 4 ÷ 2 = 6 s. A troca só termina quando o grupo mais lento acaba: 6,0 s.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">ENEM 2013 · Unidades de medida</span></div>
+    <div class="eq-text"><p>Nos Estados Unidos a unidade de medida de volume mais utilizada em latas de refrigerante é a onça fluida (fl oz), que equivale a aproximadamente 2,95 centilitros (cL).<br>Sabe-se que o centilitro é a centésima parte do litro e que a lata de refrigerante usualmente comercializada no Brasil tem capacidade de 355 mL.</p></div>
+    <p class="eq-cmd">Assim, a medida do volume da lata de refrigerante de 355 mL, em onça fluida (fl oz), é mais próxima de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="mc-q5" value="A"><span class="letter">A</span><span class="alt-t">0,83</span></label>
+      <label class="alt"><input type="radio" name="mc-q5" value="B"><span class="letter">B</span><span class="alt-t">1,20</span></label>
+      <label class="alt"><input type="radio" name="mc-q5" value="C"><span class="letter">C</span><span class="alt-t">12,03</span></label>
+      <label class="alt"><input type="radio" name="mc-q5" value="D"><span class="letter">D</span><span class="alt-t">104,73</span></label>
+      <label class="alt"><input type="radio" name="mc-q5" value="E"><span class="letter">E</span><span class="alt-t">120,34</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">1 cL é a centésima parte do litro, ou seja, 10 mL. Então 355 mL = 35,5 cL. Dividindo por 2,95 cL (uma onça): 35,5 ÷ 2,95 ≈ 12,03.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">ENEM 2022 · Unidades de medida</span></div>
+    <div class="eq-text"><p>Um borrifador de atuação automática libera, a cada acionamento, uma mesma quantidade de inseticida. O recipiente desse produto, quando cheio, contém 360 mL de inseticida, que duram 60 dias se o borrifador permanecer ligado ininterruptamente e for acionado a cada 48 minutos.</p></div>
+    <p class="eq-cmd">A quantidade de inseticida que é liberada a cada acionamento do borrifador, em mililitro, é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="mc-q6" value="A"><span class="letter">A</span><span class="alt-t">0,125.</span></label>
+      <label class="alt"><input type="radio" name="mc-q6" value="B"><span class="letter">B</span><span class="alt-t">0,200.</span></label>
+      <label class="alt"><input type="radio" name="mc-q6" value="C"><span class="letter">C</span><span class="alt-t">4,800.</span></label>
+      <label class="alt"><input type="radio" name="mc-q6" value="D"><span class="letter">D</span><span class="alt-t">6,000.</span></label>
+      <label class="alt"><input type="radio" name="mc-q6" value="E"><span class="letter">E</span><span class="alt-t">12,000.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">60 dias têm 60 × 24 × 60 = 86 400 minutos. Com um acionamento a cada 48 minutos: 86 400 ÷ 48 = 1 800 acionamentos. Cada um libera 360 ÷ 1 800 = 0,2 mL.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">ENEM 2019 · Unidades de medida</span></div>
+    <div class="eq-text"><p>A bula de um antibiótico infantil, fabricado na forma de xarope, recomenda que sejam ministrados, diariamente, no máximo 500 mg desse medicamento para cada quilograma de massa do paciente. Um pediatra prescreveu a dosagem máxima desse antibiótico para ser ministrada diariamente a uma criança de 20 kg pelo período de 5 dias.<br>Esse medicamento pode ser comprado em frascos de 10 mL, 50 mL, 100 mL, 250 mL e 500 mL. Os pais dessa criança decidiram comprar a quantidade exata de medicamento que precisará ser ministrada no tratamento, evitando a sobra de medicamento.<br>Considere que 1 g desse medicamento ocupe um volume de 1 cm³.</p></div>
+    <p class="eq-cmd">A capacidade do frasco, em mililitro, que esses pais deverão comprar é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="mc-q7" value="A"><span class="letter">A</span><span class="alt-t">10</span></label>
+      <label class="alt"><input type="radio" name="mc-q7" value="B"><span class="letter">B</span><span class="alt-t">50</span></label>
+      <label class="alt"><input type="radio" name="mc-q7" value="C"><span class="letter">C</span><span class="alt-t">100</span></label>
+      <label class="alt"><input type="radio" name="mc-q7" value="D"><span class="letter">D</span><span class="alt-t">250</span></label>
+      <label class="alt"><input type="radio" name="mc-q7" value="E"><span class="letter">E</span><span class="alt-t">500</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Por dia: 500 mg × 20 kg = 10 000 mg = 10 g. Em 5 dias: 50 g. Como 1 g ocupa 1 cm³, e 1 cm³ = 1 mL, são 50 mL.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">ENEM 2017 · Densidade</span></div>
+    <div class="eq-text"><p>Para uma temporada das corridas de Fórmula 1, a capacidade do tanque de combustível de cada carro passou a ser de 100 kg de gasolina. Uma equipe optou por utilizar uma gasolina com densidade de 750 gramas por litro, iniciando a corrida com o tanque cheio. Na primeira parada de reabastecimento, um carro dessa equipe apresentou um registro em seu computador de bordo acusando o consumo de quatro décimos da gasolina originalmente existente no tanque. Para minimizar o peso desse carro e garantir o término da corrida, a equipe de apoio reabasteceu o carro com a terça parte do que restou no tanque na chegada ao reabastecimento.</p><cite>Disponível em: www.superdanilof1page.com.br. Acesso em: 6 jul. 2015 (adaptado).</cite></div>
+    <p class="eq-cmd">A quantidade de gasolina utilizada, em litro, no reabastecimento foi</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="mc-q8" value="A"><span class="letter">A</span><span class="alt-t">20/0,075</span></label>
+      <label class="alt"><input type="radio" name="mc-q8" value="B"><span class="letter">B</span><span class="alt-t">20/0,75</span></label>
+      <label class="alt"><input type="radio" name="mc-q8" value="C"><span class="letter">C</span><span class="alt-t">20/7,5</span></label>
+      <label class="alt"><input type="radio" name="mc-q8" value="D"><span class="letter">D</span><span class="alt-t">20 x 0,075</span></label>
+      <label class="alt"><input type="radio" name="mc-q8" value="E"><span class="letter">E</span><span class="alt-t">20 x 0,75</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Gastou 4/10 de 100 kg = 40 kg, então sobraram 60 kg. O reabastecimento foi de 1/3 de 60 = 20 kg. Como a densidade é 750 g/L = 0,75 kg/L, o volume é massa ÷ densidade = 20 ÷ 0,75 litros.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">ENEM 2020 · Unidades de medida</span></div>
+    <div class="eq-text"><p>Um motociclista planeja realizar uma viagem cujo destino fica a 500 km de sua casa. Sua moto consome 5 litros de gasolina para cada 100 km rodados, e o tanque da moto tem capacidade para 22 litros. Pelo mapa, observou que no trajeto da viagem o último posto disponível para reabastecimento, chamado Estrela, fica a 80 km do seu destino. Ele pretende partir com o tanque da moto cheio e planeja fazer somente duas paradas para reabastecimento, uma na ida e outra na volta, ambas no posto Estrela. No reabastecimento para a viagem de ida, deve considerar também combustível suficiente para se deslocar por 200 km no seu destino.</p></div>
+    <p class="eq-cmd">A quantidade mínima de combustível, em litro, que esse motociclista deve reabastecer no posto Estrela na viagem de ida, que seja suficiente para fazer o segundo reabastecimento, é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="mc-q9" value="A"><span class="letter">A</span><span class="alt-t">13.</span></label>
+      <label class="alt"><input type="radio" name="mc-q9" value="B"><span class="letter">B</span><span class="alt-t">14.</span></label>
+      <label class="alt"><input type="radio" name="mc-q9" value="C"><span class="letter">C</span><span class="alt-t">17.</span></label>
+      <label class="alt"><input type="radio" name="mc-q9" value="D"><span class="letter">D</span><span class="alt-t">18.</span></label>
+      <label class="alt"><input type="radio" name="mc-q9" value="E"><span class="letter">E</span><span class="alt-t">21.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A moto gasta 5 L a cada 100 km, ou 0,05 L por km. Até o posto Estrela são 500 − 80 = 420 km, ou 21 L: chega com 1 L dos 22. Depois do posto, ele roda 80 km até o destino, mais 200 km lá e mais 80 km de volta ao posto, num total de 360 km, ou 18 L. Como já tem 1 L, precisa colocar 17 L.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">ENEM 2017 · Escala</span></div>
+    <div class="eq-text"><p>Em uma de suas viagens, um turista comprou uma lembrança de um dos monumentos que visitou. Na base do objeto há informações dizendo que se trata de uma peça em escala 1: 400, e que seu volume é de 25 cm³.</p></div>
+    <p class="eq-cmd">O volume do monumento original, em metro cúbico, é de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="mc-q10" value="A"><span class="letter">A</span><span class="alt-t">100</span></label>
+      <label class="alt"><input type="radio" name="mc-q10" value="B"><span class="letter">B</span><span class="alt-t">400</span></label>
+      <label class="alt"><input type="radio" name="mc-q10" value="C"><span class="letter">C</span><span class="alt-t">1600</span></label>
+      <label class="alt"><input type="radio" name="mc-q10" value="D"><span class="letter">D</span><span class="alt-t">6250</span></label>
+      <label class="alt"><input type="radio" name="mc-q10" value="E"><span class="letter">E</span><span class="alt-t">10000</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Na escala 1 : 400, o volume é multiplicado por 400³ = 64 000 000. Então 25 cm³ × 64 000 000 = 1 600 000 000 cm³. Como 1 m³ = 1 000 000 cm³, o volume é 1 600 m³.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 11</span><span class="eq-area">ENEM 2019 · Escala</span></div>
+    <div class="eq-text"><p>Comum em lançamentos de empreendimentos imobiliários, as maquetes de condomínios funcionam como uma ótima ferramenta de marketing para as construtoras, pois, além de encantar clientes, auxiliam de maneira significativa os corretores na negociação e venda de imóveis.<br>Um condomínio está sendo lançado em um novo bairro de uma cidade. Na maquete projetada pela construtora, em escala de 1 : 200, existe um reservatório de água com capacidade de 45 cm³.<br>Quando todas as famílias estiverem residindo no condomínio, a estimativa é que, por dia, sejam consumidos 30.000 litros de água.</p></div>
+    <p class="eq-cmd">Em uma eventual falta de água, o reservatório cheio será suficiente para abastecer o condomínio por quantos dias?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 11</legend>
+      <label class="alt"><input type="radio" name="mc-q11" value="A"><span class="letter">A</span><span class="alt-t">30</span></label>
+      <label class="alt"><input type="radio" name="mc-q11" value="B"><span class="letter">B</span><span class="alt-t">15</span></label>
+      <label class="alt"><input type="radio" name="mc-q11" value="C"><span class="letter">C</span><span class="alt-t">12</span></label>
+      <label class="alt"><input type="radio" name="mc-q11" value="D"><span class="letter">D</span><span class="alt-t">6</span></label>
+      <label class="alt"><input type="radio" name="mc-q11" value="E"><span class="letter">E</span><span class="alt-t">3</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Na escala 1 : 200, o volume é multiplicado por 200³ = 8 000 000. Então 45 cm³ × 8 000 000 = 360 000 000 cm³ = 360 m³ = 360 000 L. Dividindo por 30 000 L por dia: 12 dias.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 12</span><span class="eq-area">ENEM 2019 · Geometria plana</span></div>
+    <div class="eq-text"><p>Em um condomínio, uma área pavimentada, que tem a forma de um círculo com diâmetro medindo 6m, é cercado por grama. A administração do condomínio deseja ampliar essa área, mantendo seu formato circular, e aumentando, em 8m, o diâmetro dessa região, mantendo o revestimento da parte já existente. O condomínio dispõe, em estoque, de material suficiente para pavimentar mais 100 m² de área.<br>O síndico do condomínio irá avaliar se esse material disponível será suficiente para pavimentar a região a ser ampliada.<br>Utilize 3 como aproximação para π.</p></div>
+    <p class="eq-cmd">A conclusão correta a que o síndico deverá chegar, considerando a nova área a ser pavimentada, é a de que o material disponível em estoque:</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 12</legend>
+      <label class="alt"><input type="radio" name="mc-q12" value="A"><span class="letter">A</span><span class="alt-t">Será suficiente, pois a área da nova região a ser pavimentada mede 21 m².</span></label>
+      <label class="alt"><input type="radio" name="mc-q12" value="B"><span class="letter">B</span><span class="alt-t">Será suficiente, pois a área da nova região a ser pavimentada mede 24 m².</span></label>
+      <label class="alt"><input type="radio" name="mc-q12" value="C"><span class="letter">C</span><span class="alt-t">Será suficiente, pois a área da nova região a ser pavimentada mede 48 m².</span></label>
+      <label class="alt"><input type="radio" name="mc-q12" value="D"><span class="letter">D</span><span class="alt-t">Não será suficiente, pois a área da nova região a ser pavimentada mede 108 m².</span></label>
+      <label class="alt"><input type="radio" name="mc-q12" value="E"><span class="letter">E</span><span class="alt-t">Não será suficiente, pois a área da nova região a ser pavimentada mede 120 m².</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Círculo antigo: diâmetro 6, raio 3, área 3 × 3² = 27 m². Círculo novo: diâmetro 14, raio 7, área 3 × 7² = 147 m². A nova região é o "anel" entre os dois: 147 − 27 = 120 m², mais do que os 100 m² do estoque.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 13</span><span class="eq-area">ENEM 2021 · Geometria plana</span></div>
+    <div class="eq-text"><p>O dono de uma loja pretende usar cartões imantados para a sua divulgação de sua loja. A empresa que fornecerá o serviço lhe informa que o custo de fabricação do cartão é de R$0,01 por centímetro quadrado e que disponibiliza modelos tendo como faces úteis para impressão:<br>• um triângulo equilátero de lado 12 cm;<br>• um quadrado de lado 8 cm;<br>• um retângulo de lados 11 cm e 8 cm;<br>• um hexágono regular de lado 6cm;<br>• um círculo de diâmetro 10 cm.<br>O dono da loja está disposto a pagar, no máximo, R$0,80 por cartão. Ele escolherá, dentro desse limite de preço, o modelo que tiver maior área de impressão.<br>Use 3 como aproximação para π e use 1,7 como aproximação para √3.</p></div>
+    <p class="eq-cmd">Nessas condições, o modelo que deverá ser escolhido tem como face útil para impressão um</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 13</legend>
+      <label class="alt"><input type="radio" name="mc-q13" value="A"><span class="letter">A</span><span class="alt-t">Triângulo</span></label>
+      <label class="alt"><input type="radio" name="mc-q13" value="B"><span class="letter">B</span><span class="alt-t">Quadrado</span></label>
+      <label class="alt"><input type="radio" name="mc-q13" value="C"><span class="letter">C</span><span class="alt-t">Retângulo</span></label>
+      <label class="alt"><input type="radio" name="mc-q13" value="D"><span class="letter">D</span><span class="alt-t">Hexágono</span></label>
+      <label class="alt"><input type="radio" name="mc-q13" value="E"><span class="letter">E</span><span class="alt-t">Círculo</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O limite é R$ 0,80 ÷ R$ 0,01 = 80 cm². As áreas são: triângulo 12² × 1,7 ÷ 4 = 61,2; quadrado 8² = 64; retângulo 11 × 8 = 88 (passa do limite); hexágono 6 × (6² × 1,7 ÷ 4) = 91,8 (passa do limite); círculo 3 × 5² = 75. A maior área até 80 cm² é a do círculo.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 14</span><span class="eq-area">ENEM 2019 · Média</span></div>
+    <div class="eq-text"><p>O preparador físico de um time de basquete dispõe de um plantel de 20 jogadores, com média de altura igual a 1,80 m. No último treino antes da estreia em um campeonato, um dos jogadores desfalcou o time em razão de uma séria contusão, forçando o técnico a contratar outro jogador para recompor o grupo.</p></div>
+    <p class="eq-cmd">Se o novo jogador é 0,20 m mais baixo que o anterior, qual é a média de altura, em metro, do novo grupo?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 14</legend>
+      <label class="alt"><input type="radio" name="mc-q14" value="A"><span class="letter">A</span><span class="alt-t">1,60.</span></label>
+      <label class="alt"><input type="radio" name="mc-q14" value="B"><span class="letter">B</span><span class="alt-t">1,78.</span></label>
+      <label class="alt"><input type="radio" name="mc-q14" value="C"><span class="letter">C</span><span class="alt-t">1,79.</span></label>
+      <label class="alt"><input type="radio" name="mc-q14" value="D"><span class="letter">D</span><span class="alt-t">1,81.</span></label>
+      <label class="alt"><input type="radio" name="mc-q14" value="E"><span class="letter">E</span><span class="alt-t">1,82.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Trocar um jogador por outro 0,20 m mais baixo diminui a soma das alturas em 0,20 m. Dividindo pelos 20 jogadores, a média cai 0,20 ÷ 20 = 0,01: 1,80 − 0,01 = 1,79 m.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 15</span><span class="eq-area">ENEM 2023 · Função afim</span></div>
+    <div class="eq-text"><p>Para concretar a laje de sua residência, uma pessoa contratou uma construtora. Tal empresa informa que o preço y do concreto bombeado é composto de duas partes: uma fixa, chamada de taxa de bombeamento, e uma variável, que depende do volume x de concreto utilizado. Sabe-se que a taxa de bombeamento custa R$ 500,00 e que o metro cúbico do concreto bombeado é de R$ 250,00.</p></div>
+    <p class="eq-cmd">A expressão que representa o preço y em função do volume x, em metro cúbico, é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 15</legend>
+      <label class="alt"><input type="radio" name="mc-q15" value="A"><span class="letter">A</span><span class="alt-t">Y = 250x</span></label>
+      <label class="alt"><input type="radio" name="mc-q15" value="B"><span class="letter">B</span><span class="alt-t">Y = 500x</span></label>
+      <label class="alt"><input type="radio" name="mc-q15" value="C"><span class="letter">C</span><span class="alt-t">Y = 750x</span></label>
+      <label class="alt"><input type="radio" name="mc-q15" value="D"><span class="letter">D</span><span class="alt-t">Y = 250x + 500</span></label>
+      <label class="alt"><input type="radio" name="mc-q15" value="E"><span class="letter">E</span><span class="alt-t">Y = 500x + 250</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A parte fixa (R$ 500) é o b, e o que muda por metro cúbico (R$ 250) é o a: y = 250x + 500.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 16</span><span class="eq-area">ENEM 2023 · Função exponencial</span></div>
+    <div class="eq-text"><p>Um agricultor é informado sobre um método de proteção para sua lavoura que consiste em inserir larvas específicas, de rápida reprodução. A reprodução dessas larvas faz com que sua população multiplique-se por 10 a cada 3 dias e, para evitar eventuais desequilíbrios, é possível cessar essa reprodução aplicando-se um produto X. O agricultor decide iniciar esse método com 100 larvas e dispõe de 5 litros do produto X, cuja aplicação recomendada é de exatamente 1 litro para cada população de 200 000 larvas. A quantidade total do produto X de que ele dispõe deverá ser aplicada de uma única vez.</p></div>
+    <p class="eq-cmd">Quantos dias após iniciado esse método o agricultor deverá aplicar o produto X?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 16</legend>
+      <label class="alt"><input type="radio" name="mc-q16" value="A"><span class="letter">A</span><span class="alt-t">2</span></label>
+      <label class="alt"><input type="radio" name="mc-q16" value="B"><span class="letter">B</span><span class="alt-t">4</span></label>
+      <label class="alt"><input type="radio" name="mc-q16" value="C"><span class="letter">C</span><span class="alt-t">6</span></label>
+      <label class="alt"><input type="radio" name="mc-q16" value="D"><span class="letter">D</span><span class="alt-t">12</span></label>
+      <label class="alt"><input type="radio" name="mc-q16" value="E"><span class="letter">E</span><span class="alt-t">18</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">São necessárias 5 × 200 000 = 1 000 000 larvas. A população vai de 100 para 1 000, depois 10 000, 100 000 e 1 000 000: são 4 multiplicações por 10, cada uma de 3 dias. 4 × 3 = 12 dias.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 17</span><span class="eq-area">ENEM 2018 · Sequências e lógica</span></div>
+    <div class="eq-text"><p>Um edifício tem a numeração dos andares iniciando no térreo (T), e continuando com primeiro, segundo, terceiro, …, até o último andar. Uma criança entrou no elevador e, tocando no painel, seguiu uma sequência de andares, parando, abrindo e fechando a porta em diversos andares. A partir de onde entrou a criança, o elevador subiu sete andares, em seguida desceu dez, desceu mais treze, subiu nove, desceu quatro e parou no quinto andar, finalizando a sequência. Considere que, no trajeto seguido pela criança, o elevador parou uma vez no último andar do edifício.</p></div>
+    <p class="eq-cmd">De acordo com as informações dadas, o último andar do edifício é o</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 17</legend>
+      <label class="alt"><input type="radio" name="mc-q17" value="A"><span class="letter">A</span><span class="alt-t">16º</span></label>
+      <label class="alt"><input type="radio" name="mc-q17" value="B"><span class="letter">B</span><span class="alt-t">22º</span></label>
+      <label class="alt"><input type="radio" name="mc-q17" value="C"><span class="letter">C</span><span class="alt-t">23º</span></label>
+      <label class="alt"><input type="radio" name="mc-q17" value="D"><span class="letter">D</span><span class="alt-t">25º</span></label>
+      <label class="alt"><input type="radio" name="mc-q17" value="E"><span class="letter">E</span><span class="alt-t">32º</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Somando os movimentos: +7 − 10 − 13 + 9 − 4 = −11. Ele terminou no 5º andar, então começou no 16º. O caminho foi 16 → 23 → 13 → térreo → 9 → 5. O andar mais alto foi o 23º, que é o último.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 18</span><span class="eq-area">ENEM 2013 · Probabilidade</span></div>
+    <div class="eq-text"><p>Numa escola com 1 200 alunos foi realizada uma pesquisa sobre o conhecimento desses em duas línguas estrangeiras, inglês e espanhol.<br>Nessa pesquisa constatou-se que 600 alunos falam inglês, 500 falam espanhol e 300 não falam qualquer um desses idiomas.</p></div>
+    <p class="eq-cmd">Escolhendo-se um aluno dessa escola ao acaso e sabendo-se que ele não fala inglês, qual a probabilidade de que esse aluno fale espanhol?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 18</legend>
+      <label class="alt"><input type="radio" name="mc-q18" value="A"><span class="letter">A</span><span class="alt-t">1/2</span></label>
+      <label class="alt"><input type="radio" name="mc-q18" value="B"><span class="letter">B</span><span class="alt-t">5/8</span></label>
+      <label class="alt"><input type="radio" name="mc-q18" value="C"><span class="letter">C</span><span class="alt-t">1/4</span></label>
+      <label class="alt"><input type="radio" name="mc-q18" value="D"><span class="letter">D</span><span class="alt-t">5/6</span></label>
+      <label class="alt"><input type="radio" name="mc-q18" value="E"><span class="letter">E</span><span class="alt-t">5/14</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O "sabendo que não fala inglês" muda o total para 1 200 − 600 = 600 alunos. Falam pelo menos uma língua 1 200 − 300 = 900 alunos, e as duas, 600 + 500 − 900 = 200. Então falam só espanhol 500 − 200 = 300. P = 300 ÷ 600 = 1/2.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 19</span><span class="eq-area">ENEM 2021 · Probabilidade</span></div>
+    <div class="eq-text"><p>O organizador de uma competição de lançamento de dados pretende tornar o campeonato mais competitivo. Pelas regras atuais da competição, numa rodada, o jogador lança 3 dardos e pontua caso acerte pelo menos um deles no alvo. O organizador considera que, em média, os jogadores tem, em cada lançamento, 1/2 de probabilidade de acertar um dardo no alvo. A fim de tornar o jogo mais atrativo, planeja modificar as regras de modo que a probabilidade de um jogador pontuar em uma rodada seja igual ou superior a 9/10. Para isso, decide aumentar a quantidade de dardos a serem lançados em cada rodada.</p></div>
+    <p class="eq-cmd">Com base nos valores considerados pelo organizador da competição, a quantidade mínima de dardos que devem ser disponibilizados em uma rodada para tornar o jogo mais atrativo é</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 19</legend>
+      <label class="alt"><input type="radio" name="mc-q19" value="A"><span class="letter">A</span><span class="alt-t">2</span></label>
+      <label class="alt"><input type="radio" name="mc-q19" value="B"><span class="letter">B</span><span class="alt-t">4</span></label>
+      <label class="alt"><input type="radio" name="mc-q19" value="C"><span class="letter">C</span><span class="alt-t">6</span></label>
+      <label class="alt"><input type="radio" name="mc-q19" value="D"><span class="letter">D</span><span class="alt-t">9</span></label>
+      <label class="alt"><input type="radio" name="mc-q19" value="E"><span class="letter">E</span><span class="alt-t">10</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Use o contrário: P(pelo menos um acerto) = 1 − P(errar todos) = 1 − (1/2)ⁿ. Para ser no mínimo 9/10, (1/2)ⁿ precisa ser no máximo 1/10. Com 3 dardos dá 1/8, que ainda é mais que 1/10. Com 4 dardos dá 1/16, que é menor. Resposta: 4.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 20</span><span class="eq-area">ENEM 2018 · Probabilidade</span></div>
+    <div class="eq-text"><p>Para ganhar um prêmio, uma pessoa deverá retirar, sucessivamente e sem reposição, duas bolas pretas de uma mesma urna. Inicialmente, as quantidades e cores das bolas são como descritas a seguir: • Urna A – Possui três bolas brancas, duas bolas pretas e uma bola verde; • Urna B – Possui seis bolas brancas, três bolas pretas e uma bola verde; • Urna C – Possui duas bolas pretas e duas bolas verdes; • Urna D – Possui três bolas brancas e três bolas pretas. A pessoa deve escolher uma entre as cinco opções apresentadas: • Opção 1 – Retirar, aleatoriamente, duas bolas da urna A; • Opção 2 – Retirar, aleatoriamente, duas bolas da urna B; • Opção 3 – Passar, aleatoriamente, uma bola da urna C para a urna A; após isso, retirar, aleatoriamente, duas bolas da urna A; • Opção 4 – Passar, aleatoriamente, uma bola da urna D para a urna C; após isso, retirar, aleatoriamente, duas bolas da urna C; • Opção 5 – Passar, aleatoriamente, uma bola da urna C para a urna D; após isso, retirar, aleatoriamente, duas bolas da urna D.</p></div>
+    <p class="eq-cmd">Com o objetivo de obter a maior probabilidade possível de ganhar o prêmio, a pessoa deve escolher a opção</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 20</legend>
+      <label class="alt"><input type="radio" name="mc-q20" value="A"><span class="letter">A</span><span class="alt-t">1.</span></label>
+      <label class="alt"><input type="radio" name="mc-q20" value="B"><span class="letter">B</span><span class="alt-t">2.</span></label>
+      <label class="alt"><input type="radio" name="mc-q20" value="C"><span class="letter">C</span><span class="alt-t">3.</span></label>
+      <label class="alt"><input type="radio" name="mc-q20" value="D"><span class="letter">D</span><span class="alt-t">4.</span></label>
+      <label class="alt"><input type="radio" name="mc-q20" value="E"><span class="letter">E</span><span class="alt-t">5.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Calcule cada opção, lembrando que é sem reposição. Opção 1: 2/6 × 1/5 ≈ 0,07. Opção 2: 3/10 × 2/9 ≈ 0,07. Opção 3 ≈ 0,10. Opção 4: metade das vezes a urna C fica com 3 pretas em 5 (0,3) e metade com 2 em 5 (0,1), média 0,2. Opção 5: a urna D fica com 4 pretas em 7 (≈ 0,29) ou com 3 em 7 (≈ 0,14), média ≈ 0,21. A maior é a opção 5.</p></div>
+  </article>
+  <div class="sim-end card">
+    <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
+    <button type="button" class="sim-reset">Refazer o simulado</button>
+  </div>
+</section>
+<script>
+(function () {
+  document.querySelectorAll(".sim").forEach(function (sim) {
+    var qs = Array.prototype.slice.call(sim.querySelectorAll(".eq"));
+    var score = sim.querySelector(".sim-score");
+    function update() {
+      var done = qs.filter(function (q) { return q.dataset.done; });
+      var ok = done.filter(function (q) { return q.dataset.done === "ok"; }).length;
+      if (!done.length) { score.textContent = "Responda as questões para ver quantas você acertou."; return; }
+      var msg = "Você acertou " + ok + " de " + done.length + (done.length === 1 ? " questão respondida." : " questões respondidas.");
+      if (done.length === qs.length) {
+        msg = "Resultado: você acertou " + ok + " de " + qs.length + ". ";
+        msg += ok >= 9 ? "Excelente! Você está pronta para esse conteúdo." : ok >= 6 ? "Muito bem! Releia a explicação das que errou." : "Tudo bem errar no treino: releia as partes do dia e tente de novo amanhã cedo.";
+      }
+      score.textContent = msg;
+    }
+    qs.forEach(function (q) {
+      var btn = q.querySelector(".eq-check"), fb = q.querySelector(".eq-fb"), res = q.querySelector(".eq-res"), exp = q.querySelector(".eq-exp");
+      btn.addEventListener("click", function () {
+        var sel = q.querySelector("input:checked");
+        if (!sel) { fb.hidden = false; exp.hidden = true; fb.className = "eq-fb is-empty"; res.textContent = "Escolha uma alternativa antes de confirmar."; return; }
+        var ans = q.dataset.ans, right = sel.value === ans;
+        q.querySelectorAll(".alt").forEach(function (lab) {
+          var inp = lab.querySelector("input"); inp.disabled = true;
+          if (inp.value === ans) lab.classList.add("is-right");
+          else if (inp === sel) lab.classList.add("is-wrong");
+        });
+        q.dataset.done = right ? "ok" : "no";
+        fb.hidden = false; exp.hidden = false;
+        fb.className = "eq-fb " + (right ? "is-ok" : "is-no");
+        res.textContent = right ? "Acertou! Letra " + ans + "." : "Não foi dessa vez. A resposta certa é a letra " + ans + ".";
+        btn.hidden = true;
+        update();
+      });
+    });
+    sim.querySelector(".sim-reset").addEventListener("click", function () {
+      qs.forEach(function (q) {
+        delete q.dataset.done;
+        q.querySelectorAll(".alt").forEach(function (lab) { lab.classList.remove("is-right", "is-wrong"); var i = lab.querySelector("input"); i.disabled = false; i.checked = false; });
+        q.querySelector(".eq-fb").hidden = true; q.querySelector(".eq-check").hidden = false;
+      });
+      update();
+      sim.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
+<section id="formulario">
+  <div class="tabrow"><span class="tab sun">Formulário de bolso</span></div>
+  <h2>Toda a Matemática em um quadro</h2>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:40%">O quê</th><th>Como</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Aumento / desconto</strong></td><td>× (1 + i) / × (1 − i)</td></tr>
+        <tr><td><strong>Juros compostos</strong></td><td>M = C × (1 + i)<sup>t</sup></td></tr>
+        <tr><td><strong>Regra de três</strong></td><td>direta: cruzado · inversa: em linha</td></tr>
+        <tr><td><strong>Conversões</strong></td><td>comprimento ×10 · área ×100 · volume ×1 000</td></tr>
+        <tr><td><strong>Litros</strong></td><td>1 dm³ = 1 L · 1 cm³ = 1 mL · 1 m³ = 1 000 L</td></tr>
+        <tr><td><strong>Escala 1 : k</strong></td><td>comprimento × k · área × k² · volume × k³</td></tr>
+        <tr><td><strong>Áreas</strong></td><td>retângulo b × h · triângulo b × h ÷ 2 · círculo π r²</td></tr>
+        <tr><td><strong>Pitágoras</strong></td><td>a² = b² + c²</td></tr>
+        <tr><td><strong>Volumes</strong></td><td>prisma e cilindro: base × h · cone e pirâmide: base × h ÷ 3</td></tr>
+        <tr><td><strong>Média / mediana</strong></td><td>soma ÷ quantidade / ordene e pegue o meio</td></tr>
+        <tr><td><strong>Probabilidade</strong></td><td>quero ÷ total · e = × · ou = + · pelo menos um = 1 − nenhum</td></tr>
+        <tr><td><strong>Função afim</strong></td><td>y = ax + b (b = fixo)</td></tr>
+        <tr><td><strong>Parábola</strong></td><td>máximo ou mínimo em x = −b ÷ 2a</td></tr>
+        <tr><td><strong>PA / PG</strong></td><td>aₙ = a₁ + (n−1)r / aₙ = a₁ × qⁿ⁻¹</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<footer>
+  <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "adriely-20-matematica-adriely-v1";
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+  document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {
+    if (state[box.id]) box.checked = true;
+    box.addEventListener("change", function () {
+      state[box.id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+  var body = document.getElementById("sheet-body");
+  var nums = document.getElementById("nums");
+  function numberLines() {
+    if (!body || !nums || !body.offsetHeight) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight) || 30;
+    var count = Math.max(1, Math.round(body.offsetHeight / lh));
+    var out = [];
+    for (var i = 1; i <= count; i++) out.push(i);
+    nums.innerHTML = out.join("<br>");
+  }
+  numberLines();
+  window.addEventListener("resize", numberLines);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(numberLines);
+})();
+</script>
+
+</body>
+</html>
