@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adriely · Biologia</title>
+<meta name="description" content="Hoje: Biologia. Corpo humano, doenças, ecologia, genética e simulado com 19 questões reais do ENEM.">
+<meta property="og:title" content="Adriely · Biologia">
+<meta property="og:description" content="Hoje: Biologia. Corpo humano, doenças, ecologia, genética e simulado com 19 questões reais do ENEM.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Lexend:wght@400;700&display=swap">
+<style>
+/* Paleta: azul de caneta + amarelo de marca-texto. Layout: uma coluna pensada para celular; cada seção é um "caderno" com etiqueta colorida; checklists em bolinhas de cartão-resposta; a redação-modelo numa folha pautada. */
+:root {
+  --bg: #F5F7FC;
+  --surface: #FFFFFF;
+  --ink: #18203A;
+  --muted: #4E5874;
+  --line: #D8DEEE;
+  --accent: #2445B5;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E4EAFB;
+  --sun: #F5C518;
+  --sun-soft: #FFF5C2;
+  --warn: #C0392B;
+  --warn-soft: #FCE6E3;
+  --rule: #C9D6EE;
+  --margin: #E8A0A0;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Lexend", "Segoe UI", system-ui, sans-serif;
+  --lh-sheet: 30px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+    --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+    --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+    --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1426; --surface: #171E35; --ink: #E7EBF7; --muted: #A2ABC6; --line: #2A3456;
+  --accent: #93AAFF; --accent-ink: #0B1230; --accent-soft: #1F2A52;
+  --sun: #F5C518; --sun-soft: #3A3313; --warn: #F49A90; --warn-soft: #3D1C19;
+  --rule: #2A3756; --margin: #7A3A3A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h2 { font-size: 1.75rem; font-weight: 750; letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, input:focus-visible + .bubble, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+strong { font-weight: 700; }
+.muted { color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.stack-lg { display: flex; flex-direction: column; gap: 22px; }
+
+/* Hero */
+.hero { padding-block: 40px 8px; display: flex; flex-direction: column; gap: 16px; }
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.hero h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 1.12rem; max-width: 60ch; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.nav a { text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: 0.92rem; }
+.nav a:hover { border-color: var(--accent); }
+
+/* Seção como caderno */
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 16px; }
+.tab { align-self: flex-start; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.tab.sun { background: var(--sun-soft); color: var(--ink); }
+.intro { font-size: 1.05rem; max-width: 62ch; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.stat b { font-family: var(--font-display); font-size: 2.3rem; font-weight: 800; line-height: 1; color: var(--accent); display: block; font-variant-numeric: tabular-nums; }
+.stat span { font-weight: 700; }
+
+.note { border-radius: 12px; padding: 14px 16px; background: var(--accent-soft); display: flex; flex-direction: column; gap: 6px; }
+.note.sun { background: var(--sun-soft); }
+.note.warn { background: var(--warn-soft); }
+.note .label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+.note.warn .label { color: var(--warn); }
+
+ul.clean { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+ul.clean li { padding-left: 22px; position: relative; }
+ul.clean li::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+ul.clean.x li::before { background: var(--warn); border-radius: 2px; transform: rotate(45deg); }
+
+/* Fórmula da média */
+.calc { font-family: var(--font-display); font-size: 1.05rem; background: var(--surface); border: 1px dashed var(--accent); border-radius: 12px; padding: 14px 16px; }
+
+/* Bolinhas de cartão-resposta */
+.check { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; padding: 6px 0; }
+.check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.bubble { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--ink); margin-top: 1px; display: grid; place-items: center; transition: background .15s; }
+.check input:checked + .bubble { background: var(--ink); }
+.check input:checked + .bubble + .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+.day { display: grid; grid-template-columns: 64px 1fr; gap: 14px; }
+.day .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 12px; background: var(--accent); color: var(--accent-ink); padding: 8px 4px; align-self: start; line-height: 1.1; }
+.day .date small { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.day .date b { font-size: 1.7rem; }
+.day.light .date { background: var(--sun); color: #2A2200; }
+.day h3 { margin-bottom: 4px; }
+
+/* Competências */
+.comp { display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: start; }
+.comp .n { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; background: var(--accent-soft); color: var(--accent); border-radius: 10px; text-align: center; padding: 8px 0; }
+
+/* Proposta estilo ENEM */
+.proposta { background: var(--surface); border: 2px solid var(--ink); border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.proposta .head { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+.tema { font-weight: 700; background: var(--sun-soft); padding: 1px 4px; border-radius: 3px; }
+.texto { border-left: 3px solid var(--line); padding-left: 14px; display: flex; flex-direction: column; gap: 6px; }
+.texto .t { font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.08em; }
+.texto cite { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+
+/* Esqueleto */
+.bone { display: flex; flex-direction: column; gap: 8px; }
+.bone .part { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.bone .lines { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.slot { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 4px; font-weight: 700; }
+
+/* Repertórios */
+.rep .who { font-family: var(--font-display); font-weight: 750; font-size: 1.1rem; }
+.rep .when { font-size: 0.92rem; color: var(--muted); }
+.rep q { font-style: italic; }
+
+/* Folha pautada */
+.sheet { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 16px 16px 56px; overflow: hidden; }
+.sheet .nums { position: absolute; left: 0; top: 16px; width: 40px; text-align: right; font-size: 0.75rem; color: var(--muted); line-height: var(--lh-sheet); font-variant-numeric: tabular-nums; user-select: none; }
+.sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 46px; width: 1px; background: var(--margin); }
+.sheet .body {
+  line-height: var(--lh-sheet); font-size: 16px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--lh-sheet) - 1px), var(--rule) calc(var(--lh-sheet) - 1px), var(--rule) var(--lh-sheet));
+}
+.sheet .body p { text-indent: 2em; }
+.sheet .title-line { text-align: center; font-weight: 700; }
+mark.fix { background: var(--sun-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+.legend { display: flex; gap: 10px; align-items: center; font-size: 0.92rem; }
+.legend i { width: 28px; height: 14px; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 3px; display: inline-block; flex: none; }
+
+.five { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.five .card { padding: 14px; gap: 4px; }
+.five .k { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: 0.95rem; }
+
+/* Linha do tempo da prova */
+.timeline { display: flex; flex-direction: column; gap: 0; border-left: 3px solid var(--accent-soft); margin-left: 8px; }
+.timeline .step { position: relative; padding: 0 0 18px 20px; }
+.timeline .step::before { content: ""; position: absolute; left: -9px; top: 6px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.timeline .step .time { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+.final { background: var(--accent); color: var(--accent-ink); border-radius: 18px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+.final h2 { font-size: 1.9rem; }
+.final p { font-size: 1.06rem; }
+footer { font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+
+/* Liberação por dia */
+.today-pill { align-self: flex-start; display: inline-flex; gap: 8px; align-items: center; background: var(--sun-soft); border: 1px solid var(--sun); border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 0.95rem; }
+.today-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); }
+.new-badge { align-self: flex-start; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sun); color: #2A2200; border-radius: 6px; padding: 3px 8px; }
+.tabrow { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.mission { border: 2px solid var(--accent); }
+.mission .tab { margin-bottom: 2px; }
+.road { display: flex; flex-direction: column; gap: 10px; }
+.road .item { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.road .item .date { font-family: var(--font-display); font-weight: 800; text-align: center; border-radius: 10px; padding: 6px 4px; line-height: 1.1; background: var(--accent-soft); color: var(--accent); }
+.road .item .date small { display: block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.road .item .date b { font-size: 1.4rem; }
+.road .item.is-today { border: 2px solid var(--sun); }
+.road .item.is-today .date { background: var(--sun); color: #2A2200; }
+.road .item.is-locked { opacity: 0.78; }
+.road .item.is-locked .date { background: var(--line); color: var(--muted); }
+.road .state { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; gap: 6px; align-items: center; color: var(--accent); }
+.road .is-locked .state { color: var(--muted); }
+.road .is-today .state { color: var(--ink); }
+.road .state svg { width: 13px; height: 13px; }
+.road h3 { font-size: 1.08rem; margin-top: 2px; }
+.road p { font-size: 0.95rem; color: var(--muted); }
+
+/* Para quem nunca viu */
+.howto { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.howto div { display: flex; gap: 10px; align-items: flex-start; }
+.howto .n, .parts .n { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-family: var(--font-display); font-weight: 800; display: grid; place-items: center; }
+.parts { display: grid; gap: 10px; }
+.parts .card { flex-direction: row; gap: 12px; align-items: flex-start; padding: 14px; }
+.parts .lines { font-size: 0.85rem; color: var(--muted); }
+.gloss { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 0; }
+.gloss div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.gloss dt { font-family: var(--font-display); font-weight: 750; font-size: 1.05rem; }
+.gloss dd { margin: 4px 0 0; color: var(--muted); }
+.gloss dd em { color: var(--ink); font-style: normal; background: var(--sun-soft); padding: 0 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Simulado estilo ENEM */
+:root { --ok: #1E7A46; --ok-soft: #E1F4E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ok: #6FD39A; --ok-soft: #163A26; } }
+:root[data-theme="dark"] { --ok: #6FD39A; --ok-soft: #163A26; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eq { gap: 12px; }
+.eq-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-family: var(--font-display); font-weight: 800; }
+.eq-area { font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; }
+.eq-text { background: var(--bg); border-left: 3px solid var(--line); border-radius: 0 10px 10px 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-text cite { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.eq-cmd { font-weight: 700; }
+.alts { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.alt { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.alt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.alt .letter { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.alt .alt-t { min-width: 0; }
+.alt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.alt:has(input:checked) .letter { background: var(--ink); color: var(--bg); }
+.alt:has(input:focus-visible) { outline: 3px solid var(--sun); outline-offset: 2px; }
+.alts .alt.is-right { border-color: var(--ok); background: var(--ok-soft); }
+.alts .alt.is-right .letter { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.alts .alt.is-wrong { border-color: var(--warn); background: var(--warn-soft); }
+.alts .alt.is-wrong .letter { background: var(--warn); border-color: var(--warn); color: var(--surface); }
+.alt:has(input:disabled) { cursor: default; }
+.eq-check, .sim-reset { align-self: flex-start; font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.sim-reset { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.eq-fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.eq-fb.is-ok { background: var(--ok-soft); } .eq-fb.is-ok .eq-res { color: var(--ok); font-weight: 700; }
+.eq-fb.is-no { background: var(--warn-soft); } .eq-fb.is-no .eq-res { color: var(--warn); font-weight: 700; }
+.eq-fb.is-empty { background: var(--sun-soft); }
+.sim-score { font-family: var(--font-display); font-weight: 750; font-size: 1.15rem; }
+
+/* Tabelas */
+.tbl-wrap table { font-size: 0.94rem; }
+.tbl-wrap td { vertical-align: top; }
+.tbl-wrap table.fit { table-layout: fixed; }
+.tbl-wrap table.fit th, .tbl-wrap table.fit td { overflow-wrap: anywhere; hyphens: auto; padding: 8px 6px; }
+.tbl-wrap table.fit th { letter-spacing: 0; font-size: 0.72rem; }
+/* Respostas abertas */
+.quiz { gap: 8px; }
+.quiz .q { font-weight: 400; }
+.quiz ol.opts { list-style: upper-alpha; margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 4px; }
+.quiz ol.opts li::marker { font-weight: 700; color: var(--accent); }
+.quiz details { border-top: 1px dashed var(--line); padding-top: 8px; }
+.quiz summary { cursor: pointer; font-weight: 700; color: var(--accent); list-style: none; display: inline-flex; gap: 6px; align-items: center; padding: 4px 12px; border: 1.5px solid var(--accent); border-radius: 999px; }
+.quiz summary::-webkit-details-marker { display: none; }
+.quiz details[open] summary { background: var(--accent); color: var(--accent-ink); }
+.quiz details p { margin-top: 8px; background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">ENEM · 2º dia · domingo, 15 de novembro</div>
+  <h1>Adriely, hoje é dia de <span>Biologia</span></h1>
+  <div class="today-pill"><span class="dot"></span>Hoje: corpo humano, doenças, ecologia e genética</div>
+  <p class="lede">A Biologia é a parte de Natureza que mais cai e a que mais tem a ver com <strong>Fisioterapia</strong>. Hoje: <strong>corpo humano, saúde e doenças, ecologia, células, genética, biotecnologia, plantas e evolução</strong>. Tudo explicado do zero, com passo a passo e um simulado com <strong>19 questões reais do ENEM</strong>.</p>
+  <nav class="nav" aria-label="Partes do guia">
+    <a href="#plano">Missão de hoje</a>
+    <a href="#mais-cai">O que mais cai</a>
+    <a href="#corpo">Corpo humano</a>
+    <a href="#saude">Saúde e doenças</a>
+    <a href="#ecologia">Ecologia</a>
+    <a href="#celulas">Células</a>
+    <a href="#genetica">Genética</a>
+    <a href="#biotec">Biotecnologia</a>
+    <a href="#plantas">Plantas</a>
+    <a href="#evolucao">Evolução</a>
+    <a href="#simulado">Simulado</a>
+    <a href="#resumo">Resumo</a>
+  </nav>
+</header>
+
+<section id="plano" class="mission-sec">
+  <div class="card mission stack">
+    <span class="tab sun">Missão de hoje</span>
+    <h2>Quinta: dia de Biologia</h2>
+    <p class="muted">A Biologia é a matéria que mais combina com Fisioterapia, então vale caprichar. Siga a ordem abaixo e marque o que for terminando.</p>
+    <label class="check"><input type="checkbox" id="bio-1"><span class="bubble"></span><span class="txt">Ler <a href="#mais-cai">O que mais cai</a> e <a href="#como-cobra">Como o ENEM cobra Biologia</a> (≈ 10 min).</span></label>
+    <label class="check"><input type="checkbox" id="bio-2"><span class="bubble"></span><span class="txt">Estudar <a href="#corpo">Corpo humano</a> e <a href="#saude">Saúde e doenças</a> (≈ 50 min).</span></label>
+    <label class="check"><input type="checkbox" id="bio-3"><span class="bubble"></span><span class="txt">Estudar <a href="#ecologia">Ecologia</a> (≈ 30 min).</span></label>
+    <label class="check"><input type="checkbox" id="bio-4"><span class="bubble"></span><span class="txt">Estudar <a href="#celulas">Células</a>, <a href="#genetica">Genética</a> e <a href="#biotec">Biotecnologia</a> (≈ 50 min).</span></label>
+    <label class="check"><input type="checkbox" id="bio-5"><span class="bubble"></span><span class="txt">Estudar <a href="#plantas">Plantas</a> e <a href="#evolucao">Evolução</a> (≈ 25 min).</span></label>
+    <label class="check"><input type="checkbox" id="bio-6"><span class="bubble"></span><span class="txt">Fazer o <a href="#simulado">simulado</a>: 19 questões reais do ENEM (≈ 1 hora).</span></label>
+    <label class="check"><input type="checkbox" id="bio-7"><span class="bubble"></span><span class="txt">Reler o <a href="#resumo">resumo de bolso</a> antes de dormir.</span></label>
+  </div>
+</section>
+
+<section id="mais-cai">
+  <div class="tabrow"><span class="tab sun">Pesquisa</span></div>
+  <h2>O que mais cai em Biologia</h2>
+  <p class="intro">Análise das <strong>404 questões de Ciências da Natureza</strong> das provas do ENEM de 2009 a 2023, de um banco público com as provas e o gabarito oficial. Cerca de <strong>224</strong> eram de Biologia. Num domingo de prova, isso dá umas <strong>15 questões de Biologia</strong> das 45 de Natureza.</p>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:62%">Assunto</th><th>Questões</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Corpo humano</strong> (órgãos, hormônios, sangue)</td><td>95</td></tr>
+        <tr><td><strong>Plantas e fotossíntese</strong> (*)</td><td>61</td></tr>
+        <tr><td><strong>Ecologia e meio ambiente</strong></td><td>56</td></tr>
+        <tr><td><strong>Células</strong> (organelas, membrana, energia)</td><td>55</td></tr>
+        <tr><td><strong>Saúde e doenças</strong> (vírus, bactérias, vacinas)</td><td>54</td></tr>
+        <tr><td><strong>Genética</strong> (DNA, herança)</td><td>50</td></tr>
+        <tr><td><strong>Evolução</strong></td><td>20</td></tr>
+        <tr><td><strong>Biotecnologia</strong> (transgênicos, terapia gênica)</td><td>11</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">(*) Contagem feita pelas palavras do enunciado, e uma questão pode tratar de mais de um assunto. "Plantas" inclui questões de energia e de ciclo do carbono, que citam fotossíntese.</p>
+  <div class="note sun"><span class="label">A conclusão</span><p>O ENEM gosta de Biologia ligada à <strong>saúde e ao dia a dia</strong>: como o corpo funciona, doenças, vacinas, remédios e meio ambiente. Nome decorado de estrutura quase não cai. O que cai é <strong>entender para que as coisas servem</strong>.</p></div>
+</section>
+
+<section id="como-cobra">
+  <div class="tabrow"><span class="tab">Antes de começar</span></div>
+  <h2>Como o ENEM cobra Biologia</h2>
+  <p>Quase toda questão começa com uma <strong>notícia ou um texto científico</strong> (da Fiocruz, do Ministério da Saúde, de uma revista). Muitas vezes a resposta está meio escondida no próprio texto. Use este método:</p>
+  <div class="calc">1º passo: leia primeiro a <strong>pergunta</strong> (a frase logo antes das alternativas). Assim você sabe o que procurar.<br>2º passo: leia o texto <strong>caçando a pista</strong>. Sublinhe números, palavras como "quatro sorotipos", "mesma espécie", "cromossomo X".<br>3º passo: traduza para a Biologia que você sabe. Ex.: "hipoglicemia" = pouco açúcar no sangue.<br>4º passo: <strong>elimine</strong> as alternativas absurdas ou que falam de outra coisa. Sobram duas? Escolha a que responde exatamente o que foi perguntado.</div>
+  <div class="note"><span class="label">Pegadinha clássica</span><p>Alternativa que é <strong>verdadeira, mas não responde a pergunta</strong>. Ex.: a pergunta é sobre a vacina e a alternativa fala uma coisa certa sobre o remédio. Sempre volte na pergunta antes de marcar.</p></div>
+</section>
+
+<!-- ======================= CORPO HUMANO ======================= -->
+<section id="corpo">
+  <div class="tabrow"><span class="tab">Parte 1 · o que mais cai</span></div>
+  <h2>Corpo humano</h2>
+  <div class="note"><span class="label">Isso é Fisioterapia!</span><p>Músculos, ossos, nervos, coração e pulmão são o dia a dia de quem trabalha com Fisioterapia. Tudo o que você aprender aqui você vai rever na faculdade.</p></div>
+  <p>Pense no corpo como uma <strong>cidade</strong>: cada sistema é um serviço. Um entrega comida, outro entrega oxigênio, outro limpa o lixo, outro manda mensagens.</p>
+  <div class="grid">
+    <div class="card"><h3>Digestório</h3><p class="muted">Quebra o alimento em pedaços pequenos (glicose, aminoácidos, gorduras) para o sangue levar. A digestão começa na <strong>boca</strong>, continua no <strong>estômago</strong> (ácido) e termina no <strong>intestino delgado</strong>, onde a maior parte é absorvida. O <strong>fígado</strong> produz a bile, que ajuda a digerir gordura.</p></div>
+    <div class="card"><h3>Respiratório</h3><p class="muted">Coloca <strong>oxigênio</strong> no sangue e tira o <strong>gás carbônico</strong> (CO₂). A troca acontece nos <strong>alvéolos</strong>, saquinhos no fim dos pulmões. O músculo principal da respiração é o <strong>diafragma</strong>.</p></div>
+    <div class="card"><h3>Circulatório</h3><p class="muted">O <strong>coração</strong> bombeia o sangue. Pequena circulação: coração → pulmão → coração (pega oxigênio). Grande circulação: coração → corpo → coração (entrega oxigênio). <strong>Artéria</strong> sai do coração; <strong>veia</strong> volta para ele.</p></div>
+    <div class="card"><h3>Sangue</h3><p class="muted"><strong>Hemácias</strong> (glóbulos vermelhos) carregam oxigênio pela hemoglobina, que tem <strong>ferro</strong>. <strong>Leucócitos</strong> (glóbulos brancos) defendem. <strong>Plaquetas</strong> fazem a coagulação. O hormônio <strong>EPO</strong>, dos rins, manda produzir mais hemácias.</p></div>
+    <div class="card"><h3>Excretor (rins)</h3><p class="muted">Os rins <strong>filtram o sangue</strong> e fazem a urina, tirando a ureia (lixo do nitrogênio) e controlando a água do corpo. O hormônio <strong>ADH</strong> faz o rim segurar água.</p></div>
+    <div class="card"><h3>Nervoso</h3><p class="muted">O "sistema de mensagens". O <strong>neurônio</strong> leva o impulso elétrico. O cérebro decide, a medula espinhal faz a ligação com o corpo e os <strong>reflexos</strong> (como tirar a mão do fogo) passam pela medula, sem esperar o cérebro.</p></div>
+    <div class="card"><h3>Muscular e esquelético</h3><p class="muted">Ossos dão sustentação e protegem; músculos fazem o movimento. O músculo precisa de <strong>ATP</strong> (energia) e de <strong>cálcio</strong> para contrair. Sem oxigênio suficiente, o músculo faz <strong>fermentação lática</strong>.</p></div>
+    <div class="card"><h3>Imunológico</h3><p class="muted">Defesa do corpo. Os <strong>anticorpos</strong> são proteínas que reconhecem e "grudam" no invasor (o <strong>antígeno</strong>). O corpo guarda memória: na segunda vez, a defesa é mais rápida. É assim que a vacina funciona.</p></div>
+  </div>
+
+  <h3>Hormônios que mais caem</h3>
+  <p>Hormônio é um "mensageiro químico": é produzido numa glândula, viaja pelo sangue e dá uma ordem em outro lugar.</p>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:30%">Hormônio</th><th>O que faz</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Insulina</strong> (pâncreas)</td><td><strong>Baixa</strong> o açúcar do sangue: manda a glicose entrar nas células e ser guardada como glicogênio. Falta dela = <strong>diabetes mellitus</strong>.</td></tr>
+        <tr><td><strong>Glucagon</strong> (pâncreas)</td><td><strong>Sobe</strong> o açúcar do sangue: manda o fígado quebrar o glicogênio. É o contrário da insulina.</td></tr>
+        <tr><td><strong>ADH</strong> (hipófise)</td><td>Faz o rim <strong>segurar água</strong>. Falta dele = <strong>diabetes insipidus</strong>: muito xixi e desidratação. O álcool inibe o ADH, por isso faz urinar mais.</td></tr>
+        <tr><td><strong>EPO</strong> (rins)</td><td>Aumenta a produção de <strong>hemácias</strong>. Usada como doping.</td></tr>
+        <tr><td><strong>Adrenalina</strong> (suprarrenal)</td><td>Prepara para "lutar ou fugir": acelera o coração e a respiração e sobe a glicose.</td></tr>
+        <tr><td><strong>Estrogênio, progesterona, testosterona</strong></td><td>Hormônios sexuais. A pílula anticoncepcional usa hormônios femininos para <strong>impedir a ovulação</strong>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Passo a passo: o açúcar do sangue</h3>
+  <div class="calc">Você almoçou → muita glicose no sangue → o pâncreas solta <strong>insulina</strong> → a glicose entra nas células e sobra vira glicogênio → a glicose volta ao normal.<br>Você ficou horas sem comer → pouca glicose (<strong>hipoglicemia</strong>) → o pâncreas solta <strong>glucagon</strong> → o fígado quebra o glicogênio → a glicose volta ao normal.</div>
+  <div class="note"><span class="label">Circulação do bebê</span><p>O feto não respira (o oxigênio vem da placenta pelo cordão umbilical). Por isso o sangue dele quase não passa pelo pulmão: um furinho entre os átrios, o <strong>forame oval</strong>, deixa o sangue pular esse caminho. Depois do nascimento, o furo deve fechar.</p></div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Hemácia = <strong>oxigênio</strong>. Leucócito = <strong>defesa</strong>. Plaqueta = <strong>coagulação</strong>. Insulina <strong>baixa</strong> a glicose, glucagon <strong>sobe</strong>. ADH <strong>segura água</strong>. Alvéolo = troca de gases. Mais oxigênio no músculo = <strong>mais ATP</strong>.</p></div>
+</section>
+
+<!-- ======================= SAÚDE ======================= -->
+<section id="saude">
+  <div class="tabrow"><span class="tab">Parte 2</span></div>
+  <h2>Saúde e doenças</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Para acertar, descubra primeiro <strong>quem causa</strong> a doença (vírus, bactéria, protozoário ou verme) e <strong>como ela pega</strong>. A prevenção sai disso.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Vírus</h3><p class="muted">Não é célula. É só material genético (DNA <strong>ou</strong> RNA) dentro de uma capa de proteína. Só se reproduz <strong>dentro</strong> de uma célula. <strong>Antibiótico não funciona</strong>. Ex.: dengue, zika, chikungunya, febre amarela, gripe, covid, HIV, sarampo, raiva.</p></div>
+    <div class="card"><h3>Bactéria</h3><p class="muted">Célula simples, <strong>sem núcleo</strong> (procarionte), com parede celular. Tratamento: <strong>antibiótico</strong>. Ex.: tuberculose, leptospirose, tétano, cólera, sífilis, meningite bacteriana.</p></div>
+    <div class="card"><h3>Protozoário</h3><p class="muted">Ser de uma célula só, <strong>com núcleo</strong>. Muitas vezes é transmitido por um inseto (vetor). Ex.: <strong>doença de Chagas</strong> (barbeiro), <strong>malária</strong> (mosquito Anopheles), <strong>leishmaniose</strong> (mosquito-palha), giardíase e amebíase (água suja).</p></div>
+    <div class="card"><h3>Verme</h3><p class="muted">Animal com várias células. Ex.: <strong>esquistossomose</strong> (larva do caramujo entra pela pele em água parada), <strong>ascaridíase</strong> (lombriga, pelos ovos em alimento sujo), teníase (carne mal passada).</p></div>
+  </div>
+
+  <h3>As doenças que o ENEM adora</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:30%">Doença</th><th>Causa → como pega → como prevenir</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Dengue, zika, chikungunya</strong></td><td>Vírus → picada do <strong>Aedes aegypti</strong> → acabar com <strong>água parada</strong>. A dengue tem <strong>4 sorotipos</strong>, por isso a vacina demorou tanto (hoje já existe no SUS).</td></tr>
+        <tr><td><strong>Febre amarela</strong></td><td>Vírus → picada de mosquito → <strong>vacina</strong>.</td></tr>
+        <tr><td><strong>Doença de Chagas</strong></td><td>Protozoário (Trypanosoma) → <strong>fezes do barbeiro</strong> ou alimento contaminado (açaí, caldo de cana) → casa de alvenaria, higiene dos alimentos.</td></tr>
+        <tr><td><strong>Malária</strong></td><td>Protozoário (Plasmodium) → mosquito <strong>Anopheles</strong> → mosquiteiro, repelente.</td></tr>
+        <tr><td><strong>Leishmaniose</strong></td><td>Protozoário → mosquito-palha → o <strong>cão</strong> é reservatório; o parasita fica no <strong>sangue</strong> e nos tecidos.</td></tr>
+        <tr><td><strong>Esquistossomose</strong></td><td>Verme → larva sai do <strong>caramujo</strong> e entra pela <strong>pele</strong> → saneamento básico, não entrar em água parada.</td></tr>
+        <tr><td><strong>Leptospirose</strong></td><td>Bactéria → <strong>urina de rato</strong> em água de enchente → saneamento, evitar enchentes.</td></tr>
+        <tr><td><strong>Tuberculose</strong></td><td>Bactéria → ar (tosse) → vacina BCG, tratamento com antibiótico.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Vacina, soro e antibiótico: não confunda</h3>
+  <div class="grid">
+    <div class="card"><h3>Vacina = prevenção</h3><p class="muted">Leva um "pedaço" do invasor (antígeno), morto ou fraco, ou a "receita" dele (RNAm). O corpo <strong>produz os próprios anticorpos</strong> e guarda memória. Demora para fazer efeito, mas dura. Imunização <strong>ativa</strong>.</p></div>
+    <div class="card"><h3>Soro = tratamento rápido</h3><p class="muted">Já leva <strong>anticorpos prontos</strong>, feitos em outro animal (geralmente cavalo). Usado em picada de cobra, escorpião, tétano. Age na hora, mas não dá memória. Imunização <strong>passiva</strong>.</p></div>
+    <div class="card"><h3>Antibiótico = só bactéria</h3><p class="muted">Ataca partes que <strong>só a bactéria tem</strong>, como a parede celular. Não serve para vírus. Usar errado ajuda a criar <strong>bactérias resistentes</strong>.</p></div>
+  </div>
+  <h3>Passo a passo: como a vacina de RNAm funciona</h3>
+  <div class="calc">1º: a vacina leva o <strong>RNAm</strong> (a "receita" de uma proteína do vírus) protegido por uma capinha de gordura.<br>2º: ele entra na célula e o <strong>ribossomo lê a receita</strong> (tradução).<br>3º: a célula fabrica a <strong>proteína do vírus</strong>, que sozinha não causa doença.<br>4º: o sistema imune vê essa proteína, produz <strong>anticorpos</strong> e guarda memória.<br>O RNAm <strong>não entra no núcleo</strong> e não muda o seu DNA. Depois ele é destruído.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Vírus → <strong>vacina</strong>, nada de antibiótico. Bactéria → <strong>antibiótico</strong>. Vacina = anticorpo feito por você (<strong>prevenção</strong>). Soro = anticorpo pronto (<strong>tratamento</strong>). Aedes = dengue, zika, chikungunya. Barbeiro = Chagas. Caramujo = esquistossomose. Rato = leptospirose. <strong>Saneamento básico</strong> previne muitas delas.</p></div>
+</section>
+
+<!-- ======================= ECOLOGIA ======================= -->
+<section id="ecologia">
+  <div class="tabrow"><span class="tab">Parte 3</span></div>
+  <h2>Ecologia e meio ambiente</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>Ecologia estuda <strong>quem come quem</strong>, como os seres <strong>se relacionam</strong> e como o ser humano <strong>atrapalha</strong> esse equilíbrio.</p></div>
+  <h3>Cadeia alimentar</h3>
+  <div class="calc">Capim → gafanhoto → sapo → cobra → gavião<br><strong>Produtor</strong> (planta, faz fotossíntese) → <strong>consumidor primário</strong> (herbívoro) → secundário → terciário...<br>Os <strong>decompositores</strong> (fungos e bactérias) devolvem os nutrientes ao solo.<br>A cada degrau, cerca de <strong>90% da energia se perde</strong> (como calor e movimento). Por isso as cadeias são curtas e há poucos predadores no topo.</div>
+  <div class="note"><span class="label">Biomagnificação</span><p>Venenos que não saem do corpo, como o <strong>mercúrio</strong> e alguns agrotóxicos, se <strong>acumulam</strong> a cada degrau. Quem está no <strong>topo</strong> da cadeia (o gavião, o peixe grande, o ser humano) fica com a maior concentração.</p></div>
+
+  <h3>Relações entre os seres vivos</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:32%">Relação</th><th>O que é (+ ganha, − perde, 0 nada)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Competição</strong></td><td>Disputa pelo <strong>mesmo recurso</strong> (comida, espaço, parceiro). Os dois perdem (− −). Pode ser da mesma espécie ou de espécies diferentes.</td></tr>
+        <tr><td><strong>Predatismo</strong></td><td>Um <strong>mata e come</strong> o outro (+ −). Ex.: onça e capivara.</td></tr>
+        <tr><td><strong>Parasitismo</strong></td><td>Vive <strong>no corpo</strong> do outro e o prejudica sem matar logo (+ −). Ex.: carrapato, lombriga.</td></tr>
+        <tr><td><strong>Mutualismo</strong></td><td>Os dois ganham e <strong>dependem</strong> um do outro (+ +). Ex.: líquen (alga + fungo), bactérias fixadoras na raiz do feijão.</td></tr>
+        <tr><td><strong>Protocooperação</strong></td><td>Os dois ganham, mas <strong>vivem separados</strong> (+ +). Ex.: pássaro-palito e crocodilo.</td></tr>
+        <tr><td><strong>Comensalismo</strong></td><td>Um ganha (restos de comida) e o outro fica igual (+ 0). Ex.: rêmora e tubarão.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Ciclos que caem</h3>
+  <div class="grid">
+    <div class="card"><h3>Carbono</h3><p class="muted">A <strong>fotossíntese tira</strong> CO₂ do ar. A <strong>respiração, a decomposição e as queimadas devolvem</strong>. Queimar petróleo e carvão aumenta o CO₂ e o <strong>efeito estufa</strong>. CO₂ na água forma ácido e deixa o oceano mais ácido (menor pH).</p></div>
+    <div class="card"><h3>Nitrogênio</h3><p class="muted">O ar tem muito N₂, mas plantas e animais <strong>não conseguem usar</strong>. Só <strong>bactérias fixadoras</strong> (muitas na raiz do feijão e da soja) transformam. Os animais pegam nitrogênio <strong>comendo</strong>. Por isso se planta feijão para adubar o solo (adubação verde).</p></div>
+  </div>
+
+  <h3>Impactos ambientais</h3>
+  <div class="grid">
+    <div class="card"><h3>Fragmentação</h3><p class="muted">Desmatar e deixar "ilhas" de mata isola os animais. Solução: <strong>corredores ecológicos</strong>, faixas de mata ligando as ilhas.</p></div>
+    <div class="card"><h3>Espécies exóticas</h3><p class="muted">Espécie trazida de outro lugar, sem predador natural, se espalha e <strong>toma o lugar das nativas</strong>. Ex.: jaqueira, caramujo-africano, javali. Diminui a biodiversidade.</p></div>
+    <div class="card"><h3>Eutrofização</h3><p class="muted">Esgoto e adubo no rio → excesso de nutrientes → as algas explodem → elas morrem e as bactérias decompõem gastando o <strong>oxigênio</strong> → os peixes morrem.</p></div>
+    <div class="card"><h3>Sucessão ecológica</h3><p class="muted">Um lugar destruído se recupera em etapas: primeiro chegam as espécies <strong>pioneiras</strong> (capim, liquens), depois arbustos, depois a mata. É a lógica do <strong>reflorestamento</strong>.</p></div>
+  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Produtor → consumidores → decompositores; a energia <strong>diminui</strong> a cada degrau e o veneno <strong>aumenta</strong>. Mesmo recurso = <strong>competição</strong>. Ilhas de mata = <strong>corredores ecológicos</strong>. Espécie exótica = <strong>perda de biodiversidade</strong>. Esgoto no rio = <strong>falta de oxigênio</strong>. Animal pega nitrogênio <strong>comendo</strong>.</p></div>
+</section>
+
+<!-- ======================= CÉLULAS ======================= -->
+<section id="celulas">
+  <div class="tabrow"><span class="tab">Parte 4</span></div>
+  <h2>Células</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>A célula é uma <strong>fábrica</strong>: tem portaria (membrana), escritório com os planos (núcleo), usina de energia (mitocôndria) e máquinas que fabricam proteínas (ribossomos).</p></div>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:32%">Parte</th><th>Função</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Membrana plasmática</strong></td><td>A "portaria": escolhe o que entra e o que sai.</td></tr>
+        <tr><td><strong>Núcleo</strong></td><td>Guarda o <strong>DNA</strong> (os planos da célula). Bactéria não tem núcleo.</td></tr>
+        <tr><td><strong>Mitocôndria</strong></td><td>Faz a <strong>respiração celular</strong>: usa glicose e oxigênio para produzir <strong>ATP</strong> (energia). O músculo tem muitas.</td></tr>
+        <tr><td><strong>Ribossomo</strong></td><td>Fabrica <strong>proteínas</strong>, lendo o RNA mensageiro.</td></tr>
+        <tr><td><strong>Lisossomo</strong></td><td>O "estômago" da célula: tem <strong>enzimas</strong> que digerem coisas.</td></tr>
+        <tr><td><strong>Cloroplasto</strong></td><td>Só em plantas e algas. Faz a <strong>fotossíntese</strong>.</td></tr>
+        <tr><td><strong>Parede celular</strong></td><td>Capa rígida de plantas (celulose), fungos e bactérias. <strong>A célula animal não tem.</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Difusão e osmose: o que mais cai de célula</h3>
+  <div class="grid">
+    <div class="card"><h3>Difusão</h3><p class="muted">A <strong>substância</strong> (sal, oxigênio, açúcar) anda do lugar <strong>mais concentrado</strong> para o <strong>menos concentrado</strong>, sem gastar energia. Ex.: o sal do feijão entrando na batata.</p></div>
+    <div class="card"><h3>Osmose</h3><p class="muted">Só a <strong>água</strong> anda, através de uma membrana, indo para o lado que tem <strong>mais sal ou açúcar</strong>. Ex.: salada temperada murcha, carne salgada não estraga (as bactérias perdem água).</p></div>
+    <div class="card"><h3>Transporte ativo</h3><p class="muted">Leva a substância <strong>contra</strong> a corrente (do menos para o mais concentrado). Por isso <strong>gasta ATP</strong>. Ex.: bomba de sódio e potássio nos neurônios.</p></div>
+  </div>
+  <h3>Passo a passo: por que a salada murcha?</h3>
+  <div class="calc">1º: você coloca sal na alface. Fora da folha ficou <strong>mais salgado</strong> do que dentro.<br>2º: a água "corre" para onde tem mais sal (<strong>osmose</strong>).<br>3º: a água sai das células da folha.<br>4º: a folha perde água e <strong>murcha</strong>. Por isso se tempera a salada na hora de comer.</div>
+  <h3>Respiração x fermentação</h3>
+  <div class="calc"><strong>Respiração aeróbica</strong> (com oxigênio, na mitocôndria): glicose + O₂ → CO₂ + água + <strong>muito ATP</strong>.<br><strong>Fermentação</strong> (sem oxigênio): glicose → álcool + CO₂ (fermento do pão, cerveja) ou → <strong>ácido lático</strong> (músculo cansado, iogurte). Dá <strong>pouco ATP</strong>.<br>A fermentação também produz combustíveis, como o <strong>etanol</strong> da cana e o <strong>metano</strong> do biogás.</div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Mitocôndria = <strong>energia (ATP)</strong>. Ribossomo = <strong>proteína</strong>. Núcleo = <strong>DNA</strong>. Cloroplasto e parede = <strong>só planta</strong> (e a parede também em bactéria e fungo). Difusão = a substância vai do mais para o menos. Osmose = a <strong>água</strong> vai para onde tem <strong>mais sal</strong>. Com oxigênio = muito ATP; sem oxigênio = fermentação.</p></div>
+</section>
+
+<!-- ======================= GENÉTICA ======================= -->
+<section id="genetica">
+  <div class="tabrow"><span class="tab">Parte 5</span></div>
+  <h2>Genética</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>O <strong>DNA</strong> é um livro de receitas. Cada receita é um <strong>gene</strong>, e cada receita fabrica uma <strong>proteína</strong>. Você recebe <strong>metade das receitas da mãe e metade do pai</strong>.</p></div>
+  <h3>Do DNA à proteína</h3>
+  <div class="calc"><strong>DNA</strong> (no núcleo) → é copiado em <strong>RNA mensageiro</strong> (transcrição) → o RNAm vai ao <strong>ribossomo</strong> → o ribossomo lê e monta a <strong>proteína</strong> (tradução).<br>Mutação = um "erro de digitação" no DNA, que pode estragar a proteína.</div>
+  <div class="grid">
+    <div class="card"><h3>Gene e alelo</h3><p class="muted">Você tem <strong>duas cópias</strong> de cada gene, uma de cada pai. As versões de um gene se chamam <strong>alelos</strong>: A (maiúscula, dominante) e a (minúscula, recessivo).</p></div>
+    <div class="card"><h3>Dominante</h3><p class="muted">Basta <strong>um</strong> alelo para aparecer: AA ou Aa já mostram a característica.</p></div>
+    <div class="card"><h3>Recessivo</h3><p class="muted">Só aparece com <strong>os dois</strong>: aa. Quem é Aa é <strong>portador</strong>: é saudável, mas pode passar o alelo para os filhos.</p></div>
+    <div class="card"><h3>Cromossomos</h3><p class="muted">Temos <strong>46</strong> (23 pares). Um par é o sexual: mulher <strong>XX</strong>, homem <strong>XY</strong>. O óvulo e o espermatozoide têm só <strong>23</strong>.</p></div>
+  </div>
+  <h3>Passo a passo: pais saudáveis, filho doente</h3>
+  <div class="calc">Se dois pais <strong>saudáveis</strong> têm um filho <strong>doente</strong>, a doença é <strong>recessiva</strong> e os dois são <strong>Aa</strong>.<br>Monte o quadro: cada pai dá A ou a.<br>A + A = <strong>AA</strong> (saudável) · A + a = <strong>Aa</strong> (portador) · a + A = <strong>Aa</strong> (portador) · a + a = <strong>aa</strong> (doente)<br>Chance de nascer doente: <strong>1 em 4 (25%)</strong>. Chance de ser saudável: 3 em 4 (75%).</div>
+  <div class="grid">
+    <div class="card"><h3>Herança ligada ao X</h3><p class="muted">O gene está no cromossomo X. O <strong>homem</strong> (XY) tem um X só, então se esse X tiver o alelo doente, ele <strong>já tem a doença</strong>. A mulher (XX) costuma ser só portadora. Por isso <strong>daltonismo, hemofilia e distrofia de Duchenne</strong> são muito mais comuns em homens. O menino recebe o X <strong>da mãe</strong>.</p></div>
+    <div class="card"><h3>Inativação do X</h3><p class="muted">Em cada célula da mulher, <strong>um dos dois X é desligado</strong>, ao acaso. Por isso duas gêmeas idênticas e portadoras podem ser diferentes: em uma, por azar, ficou ligado o X com o alelo doente na maioria das células.</p></div>
+    <div class="card"><h3>Síndrome de Down</h3><p class="muted">É uma <strong>trissomia</strong>: três cromossomos 21 em vez de dois (47 no total). Acontece quando um gameta vem com <strong>dois</strong> cromossomos 21, por um erro na separação dos cromossomos (meiose).</p></div>
+    <div class="card"><h3>Grupo sanguíneo</h3><p class="muted">A, B, AB e O. <strong>O</strong> é doador universal (de hemácias) e <strong>AB</strong> é receptor universal. O fator Rh (+ ou −) também conta na transfusão.</p></div>
+  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>DNA → RNAm → <strong>proteína</strong>. Dominante: basta um (A_). Recessivo: precisa de dois (aa). <strong>Pais saudáveis + filho doente = recessivo</strong>, Aa × Aa, chance de <strong>1/4</strong>. Ligada ao X = mais comum em <strong>homens</strong>. Down = <strong>três</strong> cromossomos 21.</p></div>
+</section>
+
+<!-- ======================= BIOTECNOLOGIA ======================= -->
+<section id="biotec">
+  <div class="tabrow"><span class="tab">Parte 6</span></div>
+  <h2>Biotecnologia</h2>
+  <div class="note"><span class="label">Em uma frase</span><p>É usar o que sabemos de DNA para <strong>resolver problemas</strong>: fazer remédio, vacina, planta mais resistente, tratar doença genética.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Transgênico</h3><p class="muted">Ser vivo que recebeu um <strong>gene de outra espécie</strong>. Ex.: bactéria com o gene humano da <strong>insulina</strong> passa a fabricar insulina para diabéticos; milho com gene de bactéria que mata a lagarta.</p></div>
+    <div class="card"><h3>Terapia gênica</h3><p class="muted">Colocar uma <strong>cópia do gene normal</strong> nas células do paciente, muitas vezes usando um <strong>vírus modificado</strong> como "carteiro". A célula passa a fabricar a proteína que faltava.</p></div>
+    <div class="card"><h3>Células-tronco</h3><p class="muted">Células que ainda <strong>não se especializaram</strong> e podem virar vários tipos (músculo, nervo, sangue). Por isso são estudadas para tratar lesões, inclusive na medula.</p></div>
+    <div class="card"><h3>Clonagem</h3><p class="muted">Cria um ser com o <strong>mesmo DNA</strong> de outro. Na ovelha Dolly, o núcleo de uma célula adulta foi colocado num óvulo sem núcleo.</p></div>
+    <div class="card"><h3>Teste de DNA</h3><p class="muted">Compara pedaços do DNA para descobrir paternidade ou identificar pessoas. O <strong>PCR</strong> faz muitas cópias de um pedaço de DNA (foi o teste da covid).</p></div>
+  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Transgênico = gene de <strong>outra espécie</strong>. Terapia gênica = entregar o <strong>gene normal</strong> para a célula voltar a fabricar a proteína. Célula-tronco = ainda pode <strong>virar outras células</strong>. Clone = <strong>mesmo DNA</strong>.</p></div>
+</section>
+
+<!-- ======================= PLANTAS ======================= -->
+<section id="plantas">
+  <div class="tabrow"><span class="tab">Parte 7</span></div>
+  <h2>Plantas e fotossíntese</h2>
+  <div class="calc"><strong>Fotossíntese</strong> (no cloroplasto, só com luz):<br>gás carbônico + água + <strong>luz</strong> → glicose + <strong>oxigênio</strong><br><strong>Respiração</strong> (dia e noite, em todos os seres vivos):<br>glicose + oxigênio → gás carbônico + água + energia (ATP)<br>Uma é o contrário da outra!</div>
+  <div class="grid">
+    <div class="card"><h3>O que aumenta a fotossíntese</h3><p class="muted">Mais <strong>luz</strong>, mais <strong>CO₂</strong> e temperatura boa, até um limite. A <strong>clorofila</strong> (verde) é o pigmento que absorve a luz.</p></div>
+    <div class="card"><h3>A planta respira?</h3><p class="muted">Sim, o tempo todo. De dia, a fotossíntese é maior que a respiração e sobra oxigênio. À noite, ela só respira.</p></div>
+    <div class="card"><h3>Água na planta</h3><p class="muted">A raiz absorve água e sais. O <strong>xilema</strong> leva água para cima; o <strong>floema</strong> leva o açúcar produzido nas folhas. Os <strong>estômatos</strong> (furinhos da folha) trocam gases e perdem água: fecham quando falta água.</p></div>
+  </div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Fotossíntese: CO₂ + água + luz → glicose + O₂, no <strong>cloroplasto</strong>. Respiração: o contrário, na <strong>mitocôndria</strong>. A planta faz <strong>as duas</strong>. Xilema = água sobe. Floema = açúcar. Estômato = troca de gases.</p></div>
+</section>
+
+<!-- ======================= EVOLUÇÃO ======================= -->
+<section id="evolucao">
+  <div class="tabrow"><span class="tab">Parte 8</span></div>
+  <h2>Evolução</h2>
+  <div class="grid">
+    <div class="card"><h3>Lamarck (errado)</h3><p class="muted">Achava que o ser <strong>muda porque precisa</strong> e passa isso para os filhos ("a girafa esticou o pescoço"). O ENEM coloca isso como alternativa errada.</p></div>
+    <div class="card"><h3>Darwin (certo)</h3><p class="muted">Os indivíduos já <strong>nascem diferentes</strong>. O ambiente "escolhe" os que sobrevivem e se reproduzem mais: é a <strong>seleção natural</strong>. Hoje sabemos que essas diferenças vêm de <strong>mutações</strong> e da mistura de genes na reprodução.</p></div>
+  </div>
+  <h3>Passo a passo: bactérias resistentes</h3>
+  <div class="calc">1º: numa infecção há milhões de bactérias, e algumas <strong>já nasceram</strong> resistentes ao antibiótico (por mutação).<br>2º: a pessoa toma o antibiótico: as comuns morrem, as resistentes <strong>sobrevivem</strong>.<br>3º: se a pessoa para o remédio antes da hora, as resistentes <strong>se multiplicam</strong>.<br>4º: agora quase todas são resistentes. O antibiótico <strong>não criou</strong> a resistência: ele <strong>selecionou</strong> quem já era resistente.</div>
+  <div class="note"><span class="label">Coevolução</span><p>Parasita e hospedeiro evoluem juntos. O parasita "bem adaptado" <strong>não mata rápido</strong>, porque precisa do hospedeiro vivo para se espalhar. Doença que <strong>mata pouco</strong> costuma ser uma convivência <strong>antiga</strong>; doença que mata muito costuma ser "nova" para a espécie.</p></div>
+  <div class="note sun"><span class="label">Guarde isto</span><p>Lamarck = uso e desuso (<strong>errado</strong>). Darwin = <strong>seleção natural</strong> das diferenças que já existiam. O ambiente <strong>seleciona</strong>, não cria. Antibiótico e inseticida selecionam os resistentes.</p></div>
+</section>
+
+<section id="apostas">
+  <div class="tabrow"><span class="tab">O que pode cair em 2026</span></div>
+  <h2>Apostas para domingo</h2>
+  <div class="note"><span class="label">Importante</span><p>Ninguém sabe o que vai cair. Estas apostas seguem o que <strong>mais caiu</strong> nas provas anteriores e os assuntos de saúde e meio ambiente que estão nas notícias.</p></div>
+  <div class="stack">
+    <div class="card"><h3>1. Arboviroses e vacinas</h3><p class="muted">Dengue (que ganhou vacina no SUS), chikungunya, febre amarela, sarampo. Prevenção, vetor e como a vacina age.</p></div>
+    <div class="card"><h3>2. Hormônios e órgãos</h3><p class="muted">Insulina e diabetes, ADH, EPO no esporte, anabolizantes. Sempre ligados a uma notícia.</p></div>
+    <div class="card"><h3>3. Resistência a antibióticos</h3><p class="muted">Seleção natural na prática: as "superbactérias".</p></div>
+    <div class="card"><h3>4. Mudanças climáticas e queimadas</h3><p class="muted">Ciclo do carbono, efeito estufa, perda de biodiversidade, fragmentação de matas.</p></div>
+    <div class="card"><h3>5. Genética de doenças</h3><p class="muted">Herança recessiva (pais saudáveis, filho doente), doenças ligadas ao X, terapia gênica.</p></div>
+    <div class="card"><h3>6. Osmose e difusão no dia a dia</h3><p class="muted">Salgar alimentos, conservar comida, soro caseiro.</p></div>
+  </div>
+</section>
+
+<section id="simulado" class="sim">
+  <div class="tabrow"><span class="tab sun">Simulado do dia</span></div>
+  <h2>Simulado com questões reais do ENEM</h2>
+  <p class="intro">Dezenove questões que <strong>caíram de verdade</strong> no ENEM, de 2015 a 2023, cobrindo todos os assuntos da página, na mesma ordem. O texto e o gabarito são oficiais, e eu conferi cada uma. As explicações mostram o raciocínio passo a passo.</p>
+  <div class="note"><span class="label">Como fazer</span><p>Leia o texto, escolha uma alternativa e toque em <strong>Confirmar</strong>. Você vê na hora se acertou e por quê. Tente fazer em até 3 minutos por questão, como na prova.</p></div>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 1</span><span class="eq-area">ENEM 2016 · Corpo humano · Rins e hormônios</span></div>
+    
+    <p class="eq-cmd">Tendo em vista o papel funcional do ADH, qual é um sintoma clássico de um paciente acometido por diabetes insipidus?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 1</legend>
+      <label class="alt"><input type="radio" name="bio-q1" value="A"><span class="letter">A</span><span class="alt-t">Alta taxa de glicose no sangue.</span></label>
+      <label class="alt"><input type="radio" name="bio-q1" value="B"><span class="letter">B</span><span class="alt-t">Aumento da pressão arterial.</span></label>
+      <label class="alt"><input type="radio" name="bio-q1" value="C"><span class="letter">C</span><span class="alt-t">Ganho de massa corporal.</span></label>
+      <label class="alt"><input type="radio" name="bio-q1" value="D"><span class="letter">D</span><span class="alt-t">Anemia crônica.</span></label>
+      <label class="alt"><input type="radio" name="bio-q1" value="E"><span class="letter">E</span><span class="alt-t">Desidratação.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O ADH (hormônio antidiurético) manda os rins segurarem água, devolvendo-a ao sangue. No diabetes insipidus falta ADH (ou o rim não responde a ele): a pessoa faz muito xixi, bem diluído, e perde água demais. Resultado: desidratação e muita sede. Pegadinha: "diabetes" aqui não tem nada a ver com açúcar no sangue (isso é o diabetes mellitus, da insulina).</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 2</span><span class="eq-area">ENEM 2018 · Corpo humano · Hormônios</span></div>
+    <div class="eq-text"><p>Anabolismo e catabolismo são processos celulares antagônicos, que são controlados principalmente pela ação hormonal. Por exemplo, no fígado a insulina atua como um hormônio com ação anabólica, enquanto o glucagon tem ação catabólica e ambos são secretados em resposta ao nível de glicose sanguínea.</p></div>
+    <p class="eq-cmd">Em caso de um indivíduo com hipoglicemia, o hormônio citado que atua no catabolismo induzirá o organismo a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 2</legend>
+      <label class="alt"><input type="radio" name="bio-q2" value="A"><span class="letter">A</span><span class="alt-t">Realizar a fermentação lática.</span></label>
+      <label class="alt"><input type="radio" name="bio-q2" value="B"><span class="letter">B</span><span class="alt-t">Metabolizar aerobicamente a glicose.</span></label>
+      <label class="alt"><input type="radio" name="bio-q2" value="C"><span class="letter">C</span><span class="alt-t">Produzir aminoácidos a partir de ácidos graxos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q2" value="D"><span class="letter">D</span><span class="alt-t">Transformar ácidos graxos em glicogênio.</span></label>
+      <label class="alt"><input type="radio" name="bio-q2" value="E"><span class="letter">E</span><span class="alt-t">Estimular a utilização do glicogênio.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Hipoglicemia = pouco açúcar no sangue. O hormônio "catabólico" do texto é o glucagon, que faz o fígado quebrar o glicogênio (o estoque de glicose) e soltar glicose no sangue. A insulina faz o contrário: guarda glicose quando ela está alta.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 3</span><span class="eq-area">ENEM 2019 · Corpo humano · Sangue</span></div>
+    <div class="eq-text"><p>A eritropoetina (EPO) é um hormônio endógeno secretado pelos rins que influencia a maturação dos eritrócitos. Suas formas recombinantes, sintetizadas em laboratório, têm sido usadas por alguns atletas em esportes de resistência na busca por melhores resultados. No entanto, a administração da EPO recombinante no esporte foi proibida pelo Comitê Olímpico Internacional e seu uso considerado doping.</p><cite>MARTELLI, A. Eritropoetina: síntese e liberação fisiológica e o uso de sua forma recombinante no esporte. Perspectivas Online: biológicas &amp; saúde, v. 10, n. 3, 2013 (adaptado).</cite></div>
+    <p class="eq-cmd">Uma influência que esse doping poderá exercer na melhoria da capacidade física desses atletas está relacionada ao transporte de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 3</legend>
+      <label class="alt"><input type="radio" name="bio-q3" value="A"><span class="letter">A</span><span class="alt-t">Lipídios, para aumento do gasto calórico.</span></label>
+      <label class="alt"><input type="radio" name="bio-q3" value="B"><span class="letter">B</span><span class="alt-t">ATP, para aumento da síntese hormonal.</span></label>
+      <label class="alt"><input type="radio" name="bio-q3" value="C"><span class="letter">C</span><span class="alt-t">Oxigênio, para aumento da produção de ATP.</span></label>
+      <label class="alt"><input type="radio" name="bio-q3" value="D"><span class="letter">D</span><span class="alt-t">Proteínas, para aumento da massa muscular.</span></label>
+      <label class="alt"><input type="radio" name="bio-q3" value="E"><span class="letter">E</span><span class="alt-t">Vitamina C, para aumento da integridade dos vasos sanguíneos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A EPO aumenta a produção de hemácias (eritrócitos). Hemácia carrega oxigênio pela hemoglobina. Mais oxigênio chegando ao músculo = mais respiração celular = mais ATP (energia). Por isso o atleta rende mais e por isso é doping.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 4</span><span class="eq-area">ENEM 2021 · Corpo humano · Circulação</span></div>
+    <div class="eq-text"><p>Durante o desenvolvimento embrionário humano ocorre uma comunicação entre os átrios direito e esquerdo através do forame oval (ou forame de Botal). Essa comunicação não causa prejuízos à circulação do bebê em formação, exceto se ela perdurar após o nascimento.</p></div>
+    <p class="eq-cmd">Os prejuízos no período embrionário são evitados porque a circulação fetal se assemelha à dos (as)</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 4</legend>
+      <label class="alt"><input type="radio" name="bio-q4" value="A"><span class="letter">A</span><span class="alt-t">Aves, porque a pequena circulação e a grande circulação estão presentes.</span></label>
+      <label class="alt"><input type="radio" name="bio-q4" value="B"><span class="letter">B</span><span class="alt-t">Répteis, porque a mistura de sangue é minimizada por um metabolismo lento.</span></label>
+      <label class="alt"><input type="radio" name="bio-q4" value="C"><span class="letter">C</span><span class="alt-t">Crocodilianos, porque a separação dos ventrículos impede a mistura sanguínea.</span></label>
+      <label class="alt"><input type="radio" name="bio-q4" value="D"><span class="letter">D</span><span class="alt-t">Peixes, porque a circulação é simples, ocorrendo uma passagem única pelo coração.</span></label>
+      <label class="alt"><input type="radio" name="bio-q4" value="E"><span class="letter">E</span><span class="alt-t">Anfíbios, porque pressões diferenciais isolam temporalmente o sangue venoso do arterial.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O feto não respira: o pulmão dele está cheio de líquido e o oxigênio vem da placenta. Então não faz sentido o sangue ir ao pulmão, e o forame oval deixa o sangue "pular" esse caminho, passando quase direto pelo coração. Uma única passagem pelo coração, sem pequena circulação (pulmonar) funcionando, é a circulação simples dos peixes.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 5</span><span class="eq-area">ENEM 2017 · Saúde · Antibióticos</span></div>
+    <div class="eq-text"><p>Os medicamentos são rotineiramente utilizados pelo ser humano com o intuito de diminuir ou, por muitas vezes, curar possíveis transtornos de saúde. Os antibióticos são grupos de fármacos inseridos no tratamento de doenças causadas por bactérias.</p></div>
+    <p class="eq-cmd">Na terapêutica das doenças mencionadas, alguns desses fármacos atuam</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 5</legend>
+      <label class="alt"><input type="radio" name="bio-q5" value="A"><span class="letter">A</span><span class="alt-t">Ativando o sistema imunológico do hospedeiro.</span></label>
+      <label class="alt"><input type="radio" name="bio-q5" value="B"><span class="letter">B</span><span class="alt-t">Interferindo na cascata bioquímica da inflamação.</span></label>
+      <label class="alt"><input type="radio" name="bio-q5" value="C"><span class="letter">C</span><span class="alt-t">Removendo as toxinas sintetizadas pelas bactérias.</span></label>
+      <label class="alt"><input type="radio" name="bio-q5" value="D"><span class="letter">D</span><span class="alt-t">Combatendo as células hospedeiras das bactérias.</span></label>
+      <label class="alt"><input type="radio" name="bio-q5" value="E"><span class="letter">E</span><span class="alt-t">Danificando estruturas específicas da célula bacteriana.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Antibiótico mata ou trava bactéria atacando partes que só a célula bacteriana tem: a parede celular, os ribossomos bacterianos etc. Ele não ativa a imunidade (isso é vacina) e não ataca as nossas células. Lembre: antibiótico não serve para vírus.</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 6</span><span class="eq-area">ENEM 2015 · Saúde · Vírus e vacinas</span></div>
+    <div class="eq-text"><p>Tanto a febre amarela quanto a dengue são doenças causadas por vírus do grupo dos arbovírus, pertencentes ao gênero Flavivirus, existindo quatro sorotipos para o vírus causador da dengue. A transmissão de ambas acontece por meio da picada de mosquitos, como o Aedes aegypti. Entretanto, embora compartilhem essas características, hoje somente existe vacina, no Brasil, para a febre amarela e nenhuma vacina efetiva para a dengue.</p><cite>MINISTÉRIO DA SAÚDE. Fundação Nacional de Saúde. Dengue: Instruções para pessoal de combate ao vetor. Manual de Normas Técnicas. Disponível em: http://portal.saude.gov.br. Acesso em: 7 ago. 2012 (adaptado).</cite></div>
+    <p class="eq-cmd">Esse fato pode ser atribuído à</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 6</legend>
+      <label class="alt"><input type="radio" name="bio-q6" value="A"><span class="letter">A</span><span class="alt-t">Maior taxa de mutação do vírus da febre amarela do que do vírus da dengue.</span></label>
+      <label class="alt"><input type="radio" name="bio-q6" value="B"><span class="letter">B</span><span class="alt-t">Alta variabilidade antigênica do vírus da dengue em relação ao vírus da febre amarela.</span></label>
+      <label class="alt"><input type="radio" name="bio-q6" value="C"><span class="letter">C</span><span class="alt-t">Menor adaptação do vírus da dengue à população humana do que do vírus da febre amarela.</span></label>
+      <label class="alt"><input type="radio" name="bio-q6" value="D"><span class="letter">D</span><span class="alt-t">Presença de dois tipos de ácidos nucleicos no vírus da dengue e somente um tipo no vírus da febre amarela.</span></label>
+      <label class="alt"><input type="radio" name="bio-q6" value="E"><span class="letter">E</span><span class="alt-t">Baixa capacidade de indução da resposta imunológica pelo vírus da dengue em relação ao da febre amarela.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O texto dá a pista: existem quatro sorotipos do vírus da dengue. Cada sorotipo tem "antígenos" um pouco diferentes, e a vacina precisa proteger contra todos ao mesmo tempo. Isso é a alta variabilidade antigênica. A febre amarela tem um tipo só, por isso a vacina dela é mais simples.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 7</span><span class="eq-area">ENEM 2019 · Saúde · Verminoses e vacinas</span></div>
+    <div class="eq-text"><p>A esquistossomose (barriga-d’água) caracteriza-se pela inflamação do fígado e do baço causada pelo verme Schistosoma mansoni (esquistossomo). O contágio ocorre depois que larvas do verme são liberadas na água pelo caramujo do gênero Biomphalaria, seu hospedeiro intermediário, e penetram na pele humana. Após o diagnóstico, o tratamento tradicional utiliza medicamentos por via oral para matar o parasita dentro do corpo. Uma nova estratégia terapêutica baseia-se na utilização de uma vacina, feita a partir de uma proteína extraída do verme, que induz o organismo humano a produzir anticorpos para combater e prevenir a doença.</p><cite>Instituto Oswaldo Cruz/Fundação Oswaldo Cruz (IOC/Fiocruz). Fiocruz anuncia nova fase de vacina para esquistossomose. Disponível em: http://agencia.fiocruz.br. Acesso em: 3 maio 2019 (adaptado).</cite></div>
+    <p class="eq-cmd">Uma vantagem da vacina em relação ao tratamento tradicional é que ela poderá</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 7</legend>
+      <label class="alt"><input type="radio" name="bio-q7" value="A"><span class="letter">A</span><span class="alt-t">Impedir a penetração do parasita pela pele.</span></label>
+      <label class="alt"><input type="radio" name="bio-q7" value="B"><span class="letter">B</span><span class="alt-t">Eliminar o caramujo para que não haja contágio.</span></label>
+      <label class="alt"><input type="radio" name="bio-q7" value="C"><span class="letter">C</span><span class="alt-t">Impedir o acesso do esquistossomo especificamente para o fígado.</span></label>
+      <label class="alt"><input type="radio" name="bio-q7" value="D"><span class="letter">D</span><span class="alt-t">Eliminar o esquistossomo antes que ocorra contato com o organismo.</span></label>
+      <label class="alt"><input type="radio" name="bio-q7" value="E"><span class="letter">E</span><span class="alt-t">Eliminar o esquistossomo dentro do organismo antes da manifestação de sintomas.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O remédio tradicional só age depois que a pessoa já está doente e diagnosticada. A vacina deixa o corpo com anticorpos prontos: quando o verme entra, ele é destruído dentro do organismo antes de causar sintomas. Cuidado com a A e a D: a vacina não impede a larva de entrar pela pele, ela age depois que o verme já está dentro.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 8</span><span class="eq-area">ENEM 2023 · Saúde · Vacina de RNAm</span></div>
+    <div class="eq-text"><p>A tecnologia de vacinas de RNA mensageiro (RNAm) é investigada há anos. Avanços científicos em genética molecular permitiram desenvolver uma vacina para controle da pandemia da covid-19 causada pelo vírus de RNA SARS-CoV-2. A vacina de RNAm tem sequências de genes do vírus. Entretanto, por ser muito instável, o RNAm deve ser recoberto por uma capa de lipídios que evita sua degradação e favorece sua ação. Dessa forma, o RNAm desempenhará sua função específica atuando no mesmo compartimento celular de sempre.</p><cite>Disponível em: https://sbim.org.br. Acesso em: 29 nov. 2021 (adaptado).</cite></div>
+    <p class="eq-cmd">A imunização produzida por esse tipo de vacina é alcançada por meio da</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 8</legend>
+      <label class="alt"><input type="radio" name="bio-q8" value="A"><span class="letter">A</span><span class="alt-t">Estimulação de leucócitos induzida pela capa lipídica contendo RNAm.</span></label>
+      <label class="alt"><input type="radio" name="bio-q8" value="B"><span class="letter">B</span><span class="alt-t">Atuação do RNAm como sequestrador do vírus para o meio extracelular.</span></label>
+      <label class="alt"><input type="radio" name="bio-q8" value="C"><span class="letter">C</span><span class="alt-t">Tradução do RNAm em proteína viral, desencadeando a resposta antigênica.</span></label>
+      <label class="alt"><input type="radio" name="bio-q8" value="D"><span class="letter">D</span><span class="alt-t">Competição entre o RNAm vacinal e o RNA viral pelos sítios dos ribossomos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q8" value="E"><span class="letter">E</span><span class="alt-t">Incorporação do RNAm viral ao genoma do hospedeiro, gerando novo fenótipo.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O RNA mensageiro é uma "receita" que o ribossomo lê para fabricar uma proteína (tradução). Na vacina, a receita é de uma proteína do vírus. A célula fabrica essa proteína, o sistema imune a reconhece como estranha (antígeno) e produz defesa. O RNAm não entra no núcleo e não muda o nosso DNA: por isso a E está errada.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 9</span><span class="eq-area">ENEM 2019 · Ecologia · Relações</span></div>
+    <div class="eq-text"><p>As cutias, pequenos roedores das zonas tropicais, transportam pela boca as sementes que caem das árvores, mas, em vez de comê-las, enterram-nas em outro lugar. Esse procedimento lhes permite salvar a maioria de suas sementes enterradas para as épocas mais secas, quando não há frutos maduros disponíveis. Cientistas descobriram que as cutias roubam as sementes enterradas por outra, e esse comportamento de “ladroagem” faz com que uma mesma semente possa ser enterrada dezenas de vezes.</p><cite>Disponível em: http://chc.cienciahoje.uol.com.br. Acesso em: 30 jul. 2012.</cite></div>
+    <p class="eq-cmd">Essa “ladroagem” está associada à relação de</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 9</legend>
+      <label class="alt"><input type="radio" name="bio-q9" value="A"><span class="letter">A</span><span class="alt-t">Sinfilia.</span></label>
+      <label class="alt"><input type="radio" name="bio-q9" value="B"><span class="letter">B</span><span class="alt-t">Predatismo.</span></label>
+      <label class="alt"><input type="radio" name="bio-q9" value="C"><span class="letter">C</span><span class="alt-t">Parasitismo.</span></label>
+      <label class="alt"><input type="radio" name="bio-q9" value="D"><span class="letter">D</span><span class="alt-t">Competição.</span></label>
+      <label class="alt"><input type="radio" name="bio-q9" value="E"><span class="letter">E</span><span class="alt-t">Comensalismo.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">As cutias são da mesma espécie e disputam o mesmo recurso (as sementes). Disputa pelo mesmo recurso = competição. Como são da mesma espécie, é competição intraespecífica. Predatismo seria uma comer a outra; parasitismo seria viver no corpo da outra.</p></div>
+  </article>
+  <article class="eq card" data-ans="C">
+    <div class="eq-head"><span>Questão 10</span><span class="eq-area">ENEM 2020 · Ecologia · Conservação</span></div>
+    <div class="eq-text"><p>A fragmentação dos hábitats é caracterizada pela formação de ilhas da paisagem original, circundadas por áreas transformadas. Esse tipo de interferência no ambiente ameaça a biodiversidade. Imagine que uma população de onças foi isolada em uma mata pequena. Elas se extinguiriam mesmo sem terem sido abatidas. Diversos componentes da ilha de hábitat, como o tamanho, a heterogeneidade, o seu entorno, a sua conectividade e o efeito de borda são determinantes para a persistência ou não das espécies originais.</p></div>
+    <p class="eq-cmd">Uma medida que auxilia na conservação da biodiversidade nas ilhas mencionadas no texto compreende a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 10</legend>
+      <label class="alt"><input type="radio" name="bio-q10" value="A"><span class="letter">A</span><span class="alt-t">Formação de micro-hábitats.</span></label>
+      <label class="alt"><input type="radio" name="bio-q10" value="B"><span class="letter">B</span><span class="alt-t">Ampliação do efeito de borda.</span></label>
+      <label class="alt"><input type="radio" name="bio-q10" value="C"><span class="letter">C</span><span class="alt-t">Construção de corredores ecológicos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q10" value="D"><span class="letter">D</span><span class="alt-t">Promoção da sucessão ecológica.</span></label>
+      <label class="alt"><input type="radio" name="bio-q10" value="E"><span class="letter">E</span><span class="alt-t">Introdução de novas espécies de animais e vegetais.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O problema das "ilhas" de mata é o isolamento: os animais não conseguem sair para achar comida e parceiros, e a população vai enfraquecendo. A solução é ligar as ilhas com faixas de mata, os corredores ecológicos. Aumentar o efeito de borda piora; introduzir espécies novas também atrapalha.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 11</span><span class="eq-area">ENEM 2022 · Ecologia · Espécies exóticas</span></div>
+    <div class="eq-text"><p>A extinção de espécies é uma ameaça real que afeta diversas regiões do país. A introdução de espécies exóticas pode ser considerada um fator maximizador desse processo. A jaqueira (Artocarpus heterophyllus), por exemplo, é uma árvore originária da Índia e de regiões do Sudeste Asiático que foi introduzida ainda na era colonial e se aclimatou muito bem em praticamente todo o território nacional.</p></div>
+    <p class="eq-cmd">Casos como o dessa árvore podem provocar a redução da biodiversidade, pois elas</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 11</legend>
+      <label class="alt"><input type="radio" name="bio-q11" value="A"><span class="letter">A</span><span class="alt-t">Ocupam áreas de vegetação nativa e substituem parcialmente a flora original.</span></label>
+      <label class="alt"><input type="radio" name="bio-q11" value="B"><span class="letter">B</span><span class="alt-t">Estimulam a competição por seus frutos entre animais típicos da região e eliminam as espécies perdedoras.</span></label>
+      <label class="alt"><input type="radio" name="bio-q11" value="C"><span class="letter">C</span><span class="alt-t">Alteram os nichos e aumentam o número de possibilidades de relações entre os seres vivos daquele ambiente.</span></label>
+      <label class="alt"><input type="radio" name="bio-q11" value="D"><span class="letter">D</span><span class="alt-t">Apresentam alta taxa de reprodução e se mantêm com um número de indivíduos superior à capacidade suporte do ambiente.</span></label>
+      <label class="alt"><input type="radio" name="bio-q11" value="E"><span class="letter">E</span><span class="alt-t">Diminuem a relação de competição entre os polinizadores e facilitam a ação de dispersores de sementes de espécies nativas.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">A jaqueira veio de fora (é exótica) e se espalhou muito bem. Ela ocupa o espaço das plantas nativas e vai substituindo a vegetação original. Menos espécies nativas = menos biodiversidade.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 12</span><span class="eq-area">ENEM 2015 · Ecologia · Ciclo do nitrogênio</span></div>
+    <div class="eq-text"><p>O nitrogênio é essencial para a vida e o maior reservatório global desse elemento, na forma de N2, é a atmosfera. Os principais responsáveis por sua incorporação na matéria orgânica são microrganismos fixadores de N2, que ocorrem de forma livre ou simbiontes com plantas.</p><cite>ADUAN, R. E. et al. Os grandes ciclos biogeoquímicos do planeta. Planaltina: Embrapa, 2004 (adaptado).</cite></div>
+    <p class="eq-cmd">Animais garantem suas necessidades metabólicas desse elemento pela</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 12</legend>
+      <label class="alt"><input type="radio" name="bio-q12" value="A"><span class="letter">A</span><span class="alt-t">Absorção do gás nitrogênio pela respiração.</span></label>
+      <label class="alt"><input type="radio" name="bio-q12" value="B"><span class="letter">B</span><span class="alt-t">Ingestão de moléculas de carboidratos vegetais.</span></label>
+      <label class="alt"><input type="radio" name="bio-q12" value="C"><span class="letter">C</span><span class="alt-t">Incorporação de nitritos dissolvidos na água consumida.</span></label>
+      <label class="alt"><input type="radio" name="bio-q12" value="D"><span class="letter">D</span><span class="alt-t">Transferência da matéria orgânica pelas cadeias tróficas.</span></label>
+      <label class="alt"><input type="radio" name="bio-q12" value="E"><span class="letter">E</span><span class="alt-t">Protocooperação com microrganismos fixadores de nitrogênio.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Nós respiramos N₂ o tempo todo, mas não conseguimos usá-lo. Só bactérias fixadoras fazem isso. A planta pega o nitrogênio do solo e o coloca em proteínas. Os animais recebem esse nitrogênio comendo: a planta, ou quem comeu a planta. Ou seja, pela cadeia alimentar. A B erra porque carboidrato não tem nitrogênio.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 13</span><span class="eq-area">ENEM 2019 · Células · Transporte</span></div>
+    <div class="eq-text"><p>Uma cozinheira colocou sal a mais no feijão que estava cozinhando. Para solucionar o problema, ela acrescentou batatas cruas e sem tempero dentro da panela. Quando terminou de cozinhá-lo, as batatas estavam salgadas, porque absorveram parte do caldo com excesso de sal. Finalmente, ela adicionou água para completar o caldo do feijão.</p></div>
+    <p class="eq-cmd">O sal foi absorvido pelas batatas por:</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 13</legend>
+      <label class="alt"><input type="radio" name="bio-q13" value="A"><span class="letter">A</span><span class="alt-t">Osmose, por envolver apenas o transporte do solvente.</span></label>
+      <label class="alt"><input type="radio" name="bio-q13" value="B"><span class="letter">B</span><span class="alt-t">Fagocitose, porque o sal transportado é uma substância sólida.</span></label>
+      <label class="alt"><input type="radio" name="bio-q13" value="C"><span class="letter">C</span><span class="alt-t">Exocitose, uma vez que o sal foi transportado da água para a batata.</span></label>
+      <label class="alt"><input type="radio" name="bio-q13" value="D"><span class="letter">D</span><span class="alt-t">Pinocitose, porque o sal estava diluído na água quando foi transportado.</span></label>
+      <label class="alt"><input type="radio" name="bio-q13" value="E"><span class="letter">E</span><span class="alt-t">Difusão, porque o transporte ocorreu a favor do gradiente de concentração.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O sal estava mais concentrado no caldo do que dentro da batata. Ele passou do lugar com mais sal para o lugar com menos, sem gastar energia: isso é difusão, a favor do gradiente. Osmose seria o movimento da água (solvente), não do sal. Fagocitose e pinocitose são de células vivas "engolindo" coisas.</p></div>
+  </article>
+  <article class="eq card" data-ans="A">
+    <div class="eq-head"><span>Questão 14</span><span class="eq-area">ENEM 2021 · Genética · Herança</span></div>
+    <div class="eq-text"><p>A deficiência de lipase ácida lisossômica é uma doença hereditária associada a um gene do cromossomo 10. Os pais dos pacientes podem não saber que são portadores dos genes da doença até o nascimento do primeiro filho afetado. Quando ambos os progenitores são portadores, existe uma chance, em quatro, de que seu bebê possa nascer com essa doença.</p><cite>ANDERSON, R. A. et. al. In: Situ Localization of the Genetic Locus Encoding the Lysosomal Acid Lipase/Cholesteryl Esterase (LIPA) Deficient in Wolman Disease to Chromosome 10q23.2-q23.3. Genomics, n. 1, jan, 1993 (adaptado).</cite></div>
+    <p class="eq-cmd">Essa é uma doença hereditária de caráter</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 14</legend>
+      <label class="alt"><input type="radio" name="bio-q14" value="A"><span class="letter">A</span><span class="alt-t">Recessivo.</span></label>
+      <label class="alt"><input type="radio" name="bio-q14" value="B"><span class="letter">B</span><span class="alt-t">Dominante.</span></label>
+      <label class="alt"><input type="radio" name="bio-q14" value="C"><span class="letter">C</span><span class="alt-t">Codominante.</span></label>
+      <label class="alt"><input type="radio" name="bio-q14" value="D"><span class="letter">D</span><span class="alt-t">Poligênico.</span></label>
+      <label class="alt"><input type="radio" name="bio-q14" value="E"><span class="letter">E</span><span class="alt-t">Polialélico.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Dois pais saudáveis tiveram um filho doente: a doença estava "escondida" neles. Isso só acontece em herança recessiva. Aa × Aa dá AA, Aa, Aa e aa: 1 em 4 nasce doente, exatamente o que o texto diz.</p></div>
+  </article>
+  <article class="eq card" data-ans="D">
+    <div class="eq-head"><span>Questão 15</span><span class="eq-area">ENEM 2017 · Genética · Cromossomo X</span></div>
+    <div class="eq-text"><p>A distrofia muscular Duchenne (DMD) é uma doença causada por uma mutação em um gene localizado no cromossomo X. Pesquisadores estudaram uma família na qual gêmeas monozigóticas eram portadoras de um alelo mutante recessivo para esse gene (heterozigóticas). O interessante é que uma das gêmeas apresentava o fenótipo relacionado ao alelo mutante, isto é, DMD, enquanto a sua irmã apresentava fenótipo normal.</p><cite>RICHARDS, C. S. et al. The American Journal of Human Genetics, n. 4, 1990 (adaptado).</cite></div>
+    <p class="eq-cmd">A diferença na manifestação da DMD entre as gêmeas pode ser explicada pela</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 15</legend>
+      <label class="alt"><input type="radio" name="bio-q15" value="A"><span class="letter">A</span><span class="alt-t">Dominância incompleta do alelo mutante em relação ao alelo normal.</span></label>
+      <label class="alt"><input type="radio" name="bio-q15" value="B"><span class="letter">B</span><span class="alt-t">Falha na separação dos cromossomos X no momento da separação dos dois embriões.</span></label>
+      <label class="alt"><input type="radio" name="bio-q15" value="C"><span class="letter">C</span><span class="alt-t">Recombinação cromossômica em uma divisão celular embrionária anterior à separação dos dois embriões.</span></label>
+      <label class="alt"><input type="radio" name="bio-q15" value="D"><span class="letter">D</span><span class="alt-t">Inativação aleatória de um dos cromossomos X em fase posterior à divisão que resulta nos dois embriões.</span></label>
+      <label class="alt"><input type="radio" name="bio-q15" value="E"><span class="letter">E</span><span class="alt-t">Origem paterna do cromossomo portador do alelo mutante em uma das gêmeas e origem materna na outra.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">As gêmeas são idênticas: as duas têm um X normal e um X com o alelo mutante. Em toda mulher, cada célula desliga um dos dois X, ao acaso. Isso acontece cedo no embrião, mas depois da separação das gêmeas. Na gêmea doente, por azar, a maioria das células desligou o X normal e ficou só com o X mutante funcionando.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 16</span><span class="eq-area">ENEM 2023 · Genética · Síndrome de Down</span></div>
+    <div class="eq-text"><p>Pais com síndrome de Down<br>A síndrome de Down é uma alteração genética associada à trissomia do cromossomo 21, ou seja, o indivíduo possui três cromossomos 21 e não um par, como é normal. Isso ocorre pela união de um gameta contendo um cromossomo 21 com um gameta possuidor de dois cromossomos 21. Embora, normalmente, as mulheres com a síndrome sejam estéreis, em 2008, no interior de São Paulo, uma delas deu à luz uma menina sem a síndrome de Down<br>Sabendo disso, um jovem casal, ambos com essa síndrome, procura um médico especialista para aconselhamento genético porque querem ter um bebê.</p><cite>MORENO, T. Três anos após dar à luz, mãe portadora de síndrome de Down revela detalhes de seu dia a dia. Disponível em: www.band.uol.com.br. Acesso em: 31 out. 2013 (adaptado).</cite></div>
+    <p class="eq-cmd">O médico informa ao casal que, com relação ao cromossomo 21, os zigotos formados serão</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 16</legend>
+      <label class="alt"><input type="radio" name="bio-q16" value="A"><span class="letter">A</span><span class="alt-t">Todos normais.</span></label>
+      <label class="alt"><input type="radio" name="bio-q16" value="B"><span class="letter">B</span><span class="alt-t">Todos tetrassômicos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q16" value="C"><span class="letter">C</span><span class="alt-t">Apenas normais ou tetrassômicos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q16" value="D"><span class="letter">D</span><span class="alt-t">Apenas trissômicos ou tetrassômicos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q16" value="E"><span class="letter">E</span><span class="alt-t">Normais, trissômicos ou tetrassômicos.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Cada pai tem três cromossomos 21, então pode formar gametas com 1 ou com 2 cromossomos 21. Junte as possibilidades: 1 + 1 = 2 (normal); 1 + 2 = 3 (trissômico); 2 + 2 = 4 (tetrassômico). Aparecem os três tipos.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 17</span><span class="eq-area">ENEM 2022 · Biotecnologia · Terapia gênica</span></div>
+    <div class="eq-text"><p>A Agência Nacional de Vigilância Sanitária (Anvisa) aprovou um produto de terapia gênica no país, indicado para o tratamento da distrofia hereditária da retina. O procedimento é recomendado para crianças acima de 12 meses e adultos com perda de visão causada pela mutação do gene humano RPE65. O produto, elaborado por engenharia genética, é composto por um vírus, no qual foi inserida uma cópia do gene normal humano RPE65 para corrigir o funcionamento das células da retina.</p><cite>ANVISA. Disponível em: www.gov.br/anvisa. Acesso em: 4 dez. 2021 (adaptado)</cite></div>
+    <p class="eq-cmd">O sucesso dessa terapia advém do fato de que o produto favorecerá a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 17</legend>
+      <label class="alt"><input type="radio" name="bio-q17" value="A"><span class="letter">A</span><span class="alt-t">Correção do código genético para a tradução da proteína.</span></label>
+      <label class="alt"><input type="radio" name="bio-q17" value="B"><span class="letter">B</span><span class="alt-t">Alteração do RNA ribossômico ligado à síntese da proteína.</span></label>
+      <label class="alt"><input type="radio" name="bio-q17" value="C"><span class="letter">C</span><span class="alt-t">Produção de mutações benéficas para a correção do problema.</span></label>
+      <label class="alt"><input type="radio" name="bio-q17" value="D"><span class="letter">D</span><span class="alt-t">Liberação imediata da proteína normal na região ocular humana.</span></label>
+      <label class="alt"><input type="radio" name="bio-q17" value="E"><span class="letter">E</span><span class="alt-t">Expressão do gene responsável pela produção da enzima normal.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O vírus funciona como um "carteiro": ele entrega uma cópia do gene normal às células da retina. Com o gene certo lá dentro, a célula consegue ler o gene (expressão) e fabricar a proteína (enzima) que faltava. O código genético não muda (A errada), e a terapia não cria mutações (C errada).</p></div>
+  </article>
+  <article class="eq card" data-ans="B">
+    <div class="eq-head"><span>Questão 18</span><span class="eq-area">ENEM 2017 · Plantas · Fotossíntese</span></div>
+    <div class="eq-text"><p>Pesquisadores conseguiram estimular a absorção de energia luminosa em plantas graças ao uso de nanotubos de carbono. Para isso, nanotubos de carbono “se inseriram” no interior dos cloroplastos por uma montagem espontânea, através das membranas dos cloroplastos. Pigmentos da planta absorvem as radiações luminosas, os elétrons são “excitados” e se deslocam no interior de membranas dos cloroplastos, e a planta utiliza em seguida essa energia elétrica para a fabricação de açúcares. Os nanotubos de carbono podem absorver comprimentos de onda habitualmente não utilizados pelos cloroplastos, e os pesquisadores tiveram a ideia de utilizá-los como “antenas”, estimulando a conversão de energia solar pelos cloroplastos, com o aumento do transporte de elétrons. Nanotubos de carbono incrementam a fotossíntese de plantas.</p><cite>Disponível em: http://lqes.iqm.unicamp.br. Acesso em: 14 nov. 2014 (adaptado).</cite></div>
+    <p class="eq-cmd">O aumento da eficiência fotossintética ocorreu pelo fato de os nanotubos de carbono promoverem diretamente a</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 18</legend>
+      <label class="alt"><input type="radio" name="bio-q18" value="A"><span class="letter">A</span><span class="alt-t">Utilização de água.</span></label>
+      <label class="alt"><input type="radio" name="bio-q18" value="B"><span class="letter">B</span><span class="alt-t">Absorção de fótons.</span></label>
+      <label class="alt"><input type="radio" name="bio-q18" value="C"><span class="letter">C</span><span class="alt-t">Formação de gás oxigênio.</span></label>
+      <label class="alt"><input type="radio" name="bio-q18" value="D"><span class="letter">D</span><span class="alt-t">Proliferação dos cloroplastos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q18" value="E"><span class="letter">E</span><span class="alt-t">Captação de dióxido de carbono.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">O texto diz que os nanotubos funcionam como "antenas" que absorvem comprimentos de onda de luz. Luz é feita de fótons. Então eles aumentam a absorção de fótons, a primeira etapa da fotossíntese.</p></div>
+  </article>
+  <article class="eq card" data-ans="E">
+    <div class="eq-head"><span>Questão 19</span><span class="eq-area">ENEM 2021 · Evolução · Coevolução</span></div>
+    <div class="eq-text"><p>Entre 2014 e 2016, as regiões central e oeste da África sofreram uma grave epidemia de febre hemorrágica causada pelo vírus ebola, que se manifesta em até 21 dias após a infecção e cuja taxa de letalidade (enfermos que vão a óbito) pode chegar a 90%. Em regiões de clima tropical e subtropical, um outro vírus também pode causar febre hemorrágica: o vírus da dengue, que, embora tenha período de incubação menor (até 10 dias), apresenta taxa de letalidade abaixo de 1%.</p><cite>Disponível em: www.who.int. Acesso em: 1 fev. 2017 (adaptado).</cite></div>
+    <p class="eq-cmd">Segundo as informações do texto e aplicando princípios de evolução biológica às relações do tipo patógeno-hospedeiro, qual dos dois vírus infecta seres humanos há mais tempo?</p>
+    <fieldset class="alts"><legend class="sr-only">Alternativas da questão 19</legend>
+      <label class="alt"><input type="radio" name="bio-q19" value="A"><span class="letter">A</span><span class="alt-t">Ebola, pois o maior período de incubação reflete duração mais longa do processo de coevolução patógeno-hospedeiro.</span></label>
+      <label class="alt"><input type="radio" name="bio-q19" value="B"><span class="letter">B</span><span class="alt-t">Dengue, pois o menor período de incubação reflete duração mais longa do processo de coevolução patógeno-hospedeiro.</span></label>
+      <label class="alt"><input type="radio" name="bio-q19" value="C"><span class="letter">C</span><span class="alt-t">Ebola, cuja alta letalidade indica maior eficiência do vírus em parasitar seus hospedeiros, estabelecida ao longo de sua evolução.</span></label>
+      <label class="alt"><input type="radio" name="bio-q19" value="D"><span class="letter">D</span><span class="alt-t">Ebola, cujos surtos epidêmicos concentram-se no continente africano, reconhecido como berço da origem evolutiva dos seres humanos.</span></label>
+      <label class="alt"><input type="radio" name="bio-q19" value="E"><span class="letter">E</span><span class="alt-t">Dengue, cuja baixa letalidade indica maior eficiência do vírus em parasitar seus hospedeiros, estabelecida ao longo da coevolução patógeno-hospedeiro.</span></label>
+    </fieldset>
+    <button type="button" class="eq-check">Confirmar</button>
+    <div class="eq-fb" hidden><p class="eq-res"></p><p class="eq-exp">Um parasita "esperto" não mata o hospedeiro rápido, porque precisa dele vivo para se espalhar. Com o tempo, a evolução favorece vírus menos letais e hospedeiros mais resistentes (coevolução). A dengue mata menos de 1%: sinal de convivência mais antiga com os humanos. O ebola, que mata até 90%, é um vírus "novo" para nós.</p></div>
+  </article>
+  <div class="sim-end card">
+    <p class="sim-score" aria-live="polite">Responda as questões para ver quantas você acertou.</p>
+    <button type="button" class="sim-reset">Refazer o simulado</button>
+  </div>
+</section>
+<script>
+(function () {
+  document.querySelectorAll(".sim").forEach(function (sim) {
+    var qs = Array.prototype.slice.call(sim.querySelectorAll(".eq"));
+    var score = sim.querySelector(".sim-score");
+    function update() {
+      var done = qs.filter(function (q) { return q.dataset.done; });
+      var ok = done.filter(function (q) { return q.dataset.done === "ok"; }).length;
+      if (!done.length) { score.textContent = "Responda as questões para ver quantas você acertou."; return; }
+      var msg = "Você acertou " + ok + " de " + done.length + (done.length === 1 ? " questão respondida." : " questões respondidas.");
+      if (done.length === qs.length) {
+        msg = "Resultado: você acertou " + ok + " de " + qs.length + ". ";
+        msg += ok >= 9 ? "Excelente! Você está pronta para esse conteúdo." : ok >= 6 ? "Muito bem! Releia a explicação das que errou." : "Tudo bem errar no treino: releia as partes do dia e tente de novo amanhã cedo.";
+      }
+      score.textContent = msg;
+    }
+    qs.forEach(function (q) {
+      var btn = q.querySelector(".eq-check"), fb = q.querySelector(".eq-fb"), res = q.querySelector(".eq-res"), exp = q.querySelector(".eq-exp");
+      btn.addEventListener("click", function () {
+        var sel = q.querySelector("input:checked");
+        if (!sel) { fb.hidden = false; exp.hidden = true; fb.className = "eq-fb is-empty"; res.textContent = "Escolha uma alternativa antes de confirmar."; return; }
+        var ans = q.dataset.ans, right = sel.value === ans;
+        q.querySelectorAll(".alt").forEach(function (lab) {
+          var inp = lab.querySelector("input"); inp.disabled = true;
+          if (inp.value === ans) lab.classList.add("is-right");
+          else if (inp === sel) lab.classList.add("is-wrong");
+        });
+        q.dataset.done = right ? "ok" : "no";
+        fb.hidden = false; exp.hidden = false;
+        fb.className = "eq-fb " + (right ? "is-ok" : "is-no");
+        res.textContent = right ? "Acertou! Letra " + ans + "." : "Não foi dessa vez. A resposta certa é a letra " + ans + ".";
+        btn.hidden = true;
+        update();
+      });
+    });
+    sim.querySelector(".sim-reset").addEventListener("click", function () {
+      qs.forEach(function (q) {
+        delete q.dataset.done;
+        q.querySelectorAll(".alt").forEach(function (lab) { lab.classList.remove("is-right", "is-wrong"); var i = lab.querySelector("input"); i.disabled = false; i.checked = false; });
+        q.querySelector(".eq-fb").hidden = true; q.querySelector(".eq-check").hidden = false;
+      });
+      update();
+      sim.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
+<section id="resumo">
+  <div class="tabrow"><span class="tab sun">Resumo de bolso</span></div>
+  <h2>Toda a Biologia em um quadro</h2>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th style="width:36%">Assunto</th><th>O que lembrar</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Sangue</strong></td><td>hemácia = O₂ · leucócito = defesa · plaqueta = coagulação</td></tr>
+        <tr><td><strong>Hormônios</strong></td><td>insulina baixa a glicose · glucagon sobe · ADH segura água · EPO = mais hemácias</td></tr>
+        <tr><td><strong>Doenças</strong></td><td>vírus → vacina · bactéria → antibiótico · Aedes, barbeiro, caramujo, rato</td></tr>
+        <tr><td><strong>Vacina x soro</strong></td><td>vacina = prevenção (ativa) · soro = anticorpo pronto (passiva)</td></tr>
+        <tr><td><strong>Cadeia alimentar</strong></td><td>energia diminui · veneno acumula no topo</td></tr>
+        <tr><td><strong>Relações</strong></td><td>mesmo recurso = competição · parasita no corpo · mutualismo +/+</td></tr>
+        <tr><td><strong>Impactos</strong></td><td>ilhas → corredores · exótica → perde biodiversidade · esgoto → falta O₂</td></tr>
+        <tr><td><strong>Célula</strong></td><td>mitocôndria = ATP · ribossomo = proteína · núcleo = DNA</td></tr>
+        <tr><td><strong>Transporte</strong></td><td>difusão: mais → menos · osmose: a água vai para o lado mais salgado</td></tr>
+        <tr><td><strong>Genética</strong></td><td>pais saudáveis + filho doente = recessivo (1/4) · ligada ao X = homens</td></tr>
+        <tr><td><strong>Biotecnologia</strong></td><td>transgênico = gene de outra espécie · terapia gênica = gene normal</td></tr>
+        <tr><td><strong>Fotossíntese</strong></td><td>CO₂ + água + luz → glicose + O₂ (cloroplasto)</td></tr>
+        <tr><td><strong>Evolução</strong></td><td>Darwin: o ambiente seleciona · Lamarck: errado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<footer>
+  <p>Regras do Prouni, do Fies e de ingresso nas faculdades mudam a cada ano. Confira sempre no site oficial do MEC e nos editais da <a href="https://www.udf.edu.br" target="_blank" rel="noopener">UDF</a> e do <a href="https://www.uniceub.br" target="_blank" rel="noopener">UniCEUB</a>.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "adriely-11-quinta-biologia-v1";
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+  document.querySelectorAll('.check input[type="checkbox"]').forEach(function (box) {
+    if (state[box.id]) box.checked = true;
+    box.addEventListener("change", function () {
+      state[box.id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+  var body = document.getElementById("sheet-body");
+  var nums = document.getElementById("nums");
+  function numberLines() {
+    if (!body || !nums || !body.offsetHeight) return;
+    var lh = parseFloat(getComputedStyle(body).lineHeight) || 30;
+    var count = Math.max(1, Math.round(body.offsetHeight / lh));
+    var out = [];
+    for (var i = 1; i <= count; i++) out.push(i);
+    nums.innerHTML = out.join("<br>");
+  }
+  numberLines();
+  window.addEventListener("resize", numberLines);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(numberLines);
+})();
+</script>
+
+</body>
+</html>
